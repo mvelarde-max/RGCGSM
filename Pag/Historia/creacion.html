@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -17,39 +16,34 @@
             animation: fade .5s;
         }
 
-            .pagina.activa {
-                display: block;
-            }
+        .pagina.activa {
+            display: block;
+        }
 
         @keyframes fade {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
+        /* Flechas más chicas */
         .flechas {
-            margin-top: 30px;
-            font-size: 30px;
+            margin-top: 15px;
+            font-size: 18px;
             display: flex;
             justify-content: space-between;
-            cursor: pointer;
         }
 
-            .flechas span {
-                padding: 10px 20px;
-                background: rgba(0,224,255,.2);
-                border-radius: 10px;
-            }
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
         h2 {
             color: #00e0ff;
         }
     </style>
-
 </head>
 
 <body>
@@ -57,6 +51,12 @@
 
         <div class="lado">
             <p>CRONOLOGÍA</p>
+
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
+
             <button onclick="window.location.href='cronologia.html'">Volver</button>
         </div>
 
@@ -89,11 +89,6 @@
                     <p>Texto histórico...<br>Texto histórico...<br>Texto histórico...</p>
                 </div>
 
-                <div class="flechas">
-                    <span onclick="anterior()">⬅</span>
-                    <span onclick="siguiente()">➡</span>
-                </div>
-
             </div>
         </div>
     </div>
@@ -108,12 +103,22 @@
         }
 
         function siguiente() {
-            if (pagina < paginas.length - 1) { pagina++; mostrarPagina(pagina); }
-            else { window.location.href = "retiro.html"; }
+            if (pagina < paginas.length - 1) {
+                pagina++;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "retiro.html";
+            }
         }
 
         function anterior() {
-            if (pagina > 0) { pagina--; mostrarPagina(pagina); }
+            if (pagina > 0) {
+                pagina--;
+                mostrarPagina(pagina);
+            } else {
+                // AHORA vuelve a RETIRO si estás en la primera
+                window.location.href = "retiro.html";
+            }
         }
     </script>
 

@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,21 +14,31 @@
             display: none;
         }
 
-            .pagina.activa {
-                display: block;
-            }
-
-        .flechas {
-            margin-top: 30px;
-            font-size: 30px;
-            display: flex;
-            justify-content: space-between;
+        .pagina.activa {
+            display: block;
         }
 
-            .flechas span {
-                padding: 10px;
-                background: rgba(0,224,255,.2);
-            }
+        /* Flechas más chicas y columna en panel izquierdo */
+        .lado {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .flechas {
+            margin: 10px 0;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
         h2 {
             color: #00e0ff;
@@ -41,29 +50,69 @@
     <div class="contenedor">
         <div class="lado">
             <p>CRONOLOGÍA</p>
+
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
+
             <button onclick="window.location.href='cronologia.html'">Volver</button>
         </div>
 
         <div class="centro">
             <div class="contenido">
 
-                <div class="pagina activa"><h2>Uniforme, Armas y Equipos</h2><h3>Sus uniformes</h3><p>Texto...</p></div>
-                <div class="pagina"><h3>Sus armas</h3><p>Texto...</p></div>
-                <div class="pagina"><h3>Sus caballos</h3><p>Texto...</p></div>
-                <div class="pagina"><h3>Servicios auxiliares</h3><p>Texto...</p></div>
+                <div class="pagina activa">
+                    <h2>Uniforme, Armas y Equipos</h2>
+                    <h3>Sus uniformes</h3>
+                    <p>Texto...</p>
+                </div>
 
-                <div class="flechas"><span onclick="anterior()">⬅</span><span onclick="siguiente()">➡</span></div>
+                <div class="pagina">
+                    <h3>Sus armas</h3>
+                    <p>Texto...</p>
+                </div>
+
+                <div class="pagina">
+                    <h3>Sus caballos</h3>
+                    <p>Texto...</p>
+                </div>
+
+                <div class="pagina">
+                    <h3>Servicios auxiliares</h3>
+                    <p>Texto...</p>
+                </div>
 
             </div>
         </div>
     </div>
 
     <script>
-let pagina=0;
-const paginas=document.querySelectorAll(".pagina");
-function mostrarPagina(i){paginas.forEach(p=>p.classList.remove("activa"));paginas[i].classList.add("activa");}
-function siguiente(){if(pagina<paginas.length-1){pagina++;mostrarPagina(pagina);}else{window.location.href="operaciones.html";}}
-function anterior(){if(pagina>0){pagina--;mostrarPagina(pagina);}}
+        let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+
+        function mostrarPagina(i){
+            paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
+        }
+
+        function siguiente(){
+            if(pagina < paginas.length - 1){
+                pagina++;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "operaciones.html";
+            }
+        }
+
+        function anterior(){
+            if(pagina > 0){
+                pagina--;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "retiro.html";
+            }
+        }
     </script>
 
 </body>
