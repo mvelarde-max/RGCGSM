@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Creación del Regimiento</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
+
+            .pagina.activa {
+                display: block;
+            }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flechas {
+            margin-top: 30px;
+            font-size: 30px;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+            .flechas span {
+                padding: 10px 20px;
+                background: rgba(0,224,255,.2);
+                border-radius: 10px;
+            }
+
+        h2 {
+            color: #00e0ff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <div class="lado">
+            <p>CRONOLOGÍA</p>
+            <button onclick="window.location.href='cronologia.html'">Volver</button>
+        </div>
+
+        <div class="centro">
+            <div class="contenido">
+
+                <div class="pagina activa">
+                    <h2>Creación del Regimiento y Bautismo de Fuego</h2>
+                    <h3>Creación del Regimiento</h3>
+                    <p>Texto histórico...<br>Texto histórico...<br>Texto histórico...<br>Texto histórico...<br>Texto histórico...</p>
+                </div>
+
+                <div class="pagina">
+                    <h3>Composición del Regimiento</h3>
+                    <p>Texto histórico...<br>Texto histórico...<br>Texto histórico...</p>
+                </div>
+
+                <div class="pagina">
+                    <h3>Sus Hombres - composición y selección</h3>
+                    <p>Texto histórico...<br>Texto histórico...<br>Texto histórico...</p>
+                </div>
+
+                <div class="pagina">
+                    <h3>Primeras operaciones</h3>
+                    <p>Texto histórico...<br>Texto histórico...<br>Texto histórico...</p>
+                </div>
+
+                <div class="pagina">
+                    <h3>San Lorenzo</h3>
+                    <p>Texto histórico...<br>Texto histórico...<br>Texto histórico...</p>
+                </div>
+
+                <div class="flechas">
+                    <span onclick="anterior()">⬅</span>
+                    <span onclick="siguiente()">➡</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+
+        function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
+        }
+
+        function siguiente() {
+            if (pagina < paginas.length - 1) { pagina++; mostrarPagina(pagina); }
+            else { window.location.href = "retiro.html"; }
+        }
+
+        function anterior() {
+            if (pagina > 0) { pagina--; mostrarPagina(pagina); }
+        }
+    </script>
+
+</body>
+</html>
