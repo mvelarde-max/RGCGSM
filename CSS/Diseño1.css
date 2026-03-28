@@ -1,3 +1,4 @@
+/* -------------------- BODY -------------------- */
 body {
     margin: 0;
     padding: 0;
@@ -10,25 +11,25 @@ body {
     color: white;
 }
 
-    /* Capa oscura arriba del fondo */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        z-index: -1;
-    }
+/* Capa oscura encima del fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
 
-/* Contenedor principal */
+/* -------------------- CONTENEDOR -------------------- */
 .contenedor {
     display: flex;
     height: 100vh;
 }
 
-/* Lado izquierdo */
+/* -------------------- LADO IZQUIERDO -------------------- */
 .lado {
     width: 120px;
     background: rgba(0,0,0,0.6);
@@ -39,31 +40,31 @@ body {
     gap: 15px;
 }
 
-    /* Texto vertical */
-    .lado p {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        font-size: 24px;
-        text-align: center;
-    }
+/* Texto vertical */
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 24px;
+    text-align: center;
+}
 
-    /* Botones */
-    .lado button {
-        width: 80px;
-        padding: 6px;
-        background: #3b82f6;
-        border: none;
-        color: white;
-        cursor: pointer;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
+/* Botones */
+.lado button {
+    width: 80px;
+    padding: 6px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
 
-        .lado button:hover {
-            background: #2563eb;
-        }
+.lado button:hover {
+    background: #2563eb;
+}
 
-/* Centro */
+/* -------------------- CENTRO -------------------- */
 .centro {
     flex: 1;
     position: relative;
@@ -72,45 +73,46 @@ body {
     align-items: center;
 }
 
-/* Opciones */
+/* -------------------- OPCIONES -------------------- */
 .opcion {
     position: absolute;
     text-align: center;
     cursor: pointer;
     color: #00e0ff;
     font-weight: bold;
+    text-decoration: none;
     transition: transform 0.3s;
 }
 
-    /* Imágenes más grandes */
-    .opcion img {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 10px;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        object-fit: cover;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
-    }
+/* Tamaño uniforme de imágenes para todas las opciones */
+.centro .opcion img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 10px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
+}
 
-    /* Texto */
-    .opcion p {
-        margin: 0;
-    }
+/* Texto debajo de las imágenes */
+.centro .opcion p {
+    margin: 0;
+    font-size: 16px;
+}
 
-    /* Hover general */
-    .opcion:hover {
-        transform: scale(1.1);
-        text-shadow: 0 0 10px #00e0ff;
-    }
+/* Hover uniforme para todas las opciones */
+.centro .opcion:hover {
+    transform: scale(1.15);
+    text-shadow: 0 0 10px #00e0ff;
+}
 
-        /* Giro 3D de imagen */
-        .opcion:hover img {
-            transform: rotateY(360deg) rotateX(10deg) scale(1.2);
-        }
+.centro .opcion:hover img {
+    transform: rotateY(360deg) rotateX(10deg) scale(1.3);
+}
 
-/* Posiciones */
+/* -------------------- POSICIONES -------------------- */
 .arriba-izq {
     top: 20%;
     left: 25%;
@@ -119,6 +121,12 @@ body {
 .arriba-der {
     top: 20%;
     right: 25%;
+}
+
+.abajo-centro {
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-10%);
 }
 
 .abajo-izq {
@@ -131,19 +139,7 @@ body {
     right: 25%;
 }
 
-.opcion {
-    text-decoration: none;
-    color: #00e0ff;
-}
-
-.abajo-centro {
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-/* TIMELINE */
+/* -------------------- TIMELINE Y EVENTOS (opcional si los usas) -------------------- */
 .timeline {
     display: flex;
     align-items: center;
@@ -152,114 +148,50 @@ body {
     padding: 20px;
 }
 
-    /* Línea horizontal */
-    .timeline::before {
-        content: "";
-        position: absolute;
-        width: 80%;
-        height: 4px;
-        background: #00e0ff;
-        top: 50%;
-        left: 10%;
-        z-index: 0;
-    }
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 4px;
+    background: #00e0ff;
+    top: 50%;
+    left: 10%;
+    z-index: 0;
+}
 
-/* Evento */
 .evento {
     position: relative;
     text-align: center;
     z-index: 1;
 }
 
-    /* Imagen */
-    .evento img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 3px solid #00e0ff;
-        box-shadow: 0 0 15px rgba(0,224,255,0.6);
-        transition: transform 0.4s;
-    }
-
-    /* Hover */
-    .evento:hover img {
-        transform: scale(1.2);
-    }
-
-    /* Texto */
-    .evento p {
-        margin-top: 10px;
-        font-weight: bold;
-        color: #00e0ff;
-    }
-
-/* TIMELINE VERTICAL */
-.timeline-vertical {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-top: 40px;
+.evento img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00e0ff;
+    box-shadow: 0 0 15px rgba(0,224,255,0.6);
+    transition: transform 0.3s;
 }
 
-/* Filas */
-.fila {
-    display: flex;
-    gap: 40px;
+.evento:hover img {
+    transform: scale(1.2);
 }
 
-/* Alineación */
-.izquierda {
-    justify-content: flex-start;
+.evento p {
+    font-size: 13px;
+    max-width: 120px;
+    margin: 8px auto 0;
+    line-height: 1.2;
 }
 
-.derecha {
-    justify-content: flex-end;
-    margin-left: 150px;
+.evento:hover {
+    transform: scale(1.1);
 }
 
-
-/* Evento */
-.evento {
-    text-align: center;
-}
-
-    /* Imagen */
-    .evento img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        border: 3px solid #00e0ff;
-        box-shadow: 0 0 15px rgba(0,224,255,0.6);
-        transition: 0.3s;
-    }
-
-    /* Hover */
-    .evento:hover img {
-        transform: scale(1.2);
-    }
-
-    /* Texto */
-    .evento p {
-        font-size: 13px;
-        max-width: 120px;
-        margin: 8px auto 0;
-        line-height: 1.2;
-    }
-
-.evento {
-    text-decoration: none;
-    color: #00e0ff;
-    display: block;
-}
-
-    .evento:hover {
-        transform: scale(1.1);
-    }
-
-
-    .triangulo {
+/* -------------------- TRIÁNGULO (si lo usas) -------------------- */
+.triangulo {
     position: relative;
     width: 100%;
     display: flex;
@@ -274,14 +206,12 @@ body {
     margin-bottom: 20px;
 }
 
-/* Desplazar filas para formar triángulo */
 .fila-triangulo.fila-1 { justify-content: center; }
 .fila-triangulo.fila-2 { justify-content: center; transform: translateX(-50px); }
 .fila-triangulo.fila-3 { justify-content: center; transform: translateX(-100px); }
 .fila-triangulo.fila-4 { justify-content: center; transform: translateX(-150px); }
 .fila-triangulo.fila-5 { justify-content: center; transform: translateX(-200px); }
 
-/* Estilo de imágenes */
 .fila-triangulo .opcion img {
     width: 80px;
     height: 80px;
