@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Achupallas 1817</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+```
+<style>
+    .contenido {
+        max-width: 700px;
+        text-align: center;
+    }
+
+    .flechas {
+        margin-top: 15px;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flechas span {
+        padding: 5px 10px;
+        background: rgba(0,224,255,.2);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .flechas span:hover {
+        background: rgba(0,224,255,.5);
+    }
+
+    h2 {
+        color: #00e0ff;
+    }
+
+    .imagen {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        margin: 15px 0;
+        box-shadow: 0 0 10px rgba(0,224,255,0.5);
+    }
+
+    p {
+        line-height: 1.6;
+    }
+</style>
+```
+
+</head>
+
+<body>
+    <div class="contenedor">
+
+```
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>COMBATE HISTÓRICO</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='combate.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>Achupallas 1817</h2>
+
+            <img src="../Fondos/Sable5.jpg" class="imagen">
+
+            <p>
+                El combate de Achupallas se desarrolló durante la campaña de Chile,
+                en el contexto del avance del Ejército de los Andes tras el cruce
+                de la cordillera.
+            </p>
+
+            <p>
+                Las fuerzas patriotas se enfrentaron a destacamentos realistas
+                con el objetivo de asegurar posiciones estratégicas en el territorio
+                chileno.
+            </p>
+
+            <p>
+                Este enfrentamiento permitió debilitar la resistencia enemiga
+                y consolidar el control de rutas clave para el avance militar.
+            </p>
+
+            <p>
+                Las acciones en Achupallas fueron parte de una serie de combates
+                que prepararon el escenario para la decisiva batalla de Chacabuco.
+            </p>
+
+            <p>
+                La victoria contribuyó al éxito general de la campaña libertadora
+                en Chile.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function siguiente() {
+        window.location.href = "lascoimas.html";
+    }
+
+    function anterior() {
+        window.location.href = "guardiavieja.html";
+    }
+</script>
+```
+
+</body>
+</html>

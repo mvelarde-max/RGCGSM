@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Manuel José Soler</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0,224,255,0.5);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>BIOGRAFÍA</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='biografia.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>Manuel José Soler</h2>
+
+            <p>
+                Manuel José Soler fue un militar argentino que participó activamente
+                en las luchas por la independencia del Río de la Plata.
+            </p>
+
+            <p>
+                Formó parte de las fuerzas patriotas y colaboró en diversas campañas
+                militares junto a otros destacados oficiales de la época.
+            </p>
+
+            <p>
+                Su desempeño se caracterizó por la disciplina y el compromiso con la
+                causa independentista, contribuyendo al fortalecimiento del ejército.
+            </p>
+
+            <p>
+                Su figura representa a los oficiales que, aunque menos conocidos,
+                tuvieron un papel fundamental en el desarrollo de la independencia.
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function siguiente() {
+    window.location.href = "eugenio_necochea.html";
+}
+
+function anterior() {
+    window.location.href = "bogado.html";
+}
+</script>
+
+</body>
+</html>

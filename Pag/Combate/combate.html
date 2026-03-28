@@ -3,43 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Combate del Regimiento</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
-    <style>
-        /* Contenedor del triángulo */
-        .triangulo {
-            position: relative;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 40px;
-        }
-
-        .fila-triangulo {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .fila-triangulo .opcion img {
-            width: 80px;
-            height: 80px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
-            cursor: pointer;
-            transition: transform 0.4s;
-        }
-
-        .fila-triangulo .opcion:hover img {
-            transform: scale(1.2) rotateY(360deg);
-        }
-
-        .fila-triangulo .opcion p {
-            font-size: 12px;
-            margin-top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../CSS/combate.css">
 </head>
 <body>
 
@@ -47,56 +11,102 @@
 
         <!-- Lado izquierdo -->
         <div class="lado">
-            <p>Regimiento de Granaderos a Caballo General San Martín</p>
+            <p>Combates Historicos</p>
 
-            <button onclick="window.location.href='../index.html'">Inicio</button>
-            <button onclick="window.history.back()">Volver</button>
+            <button onclick="window.location.href='../../index.html'">Inicio</button>
+            <button onclick="window.location.href='../historia.html'">Volver</button>
         </div>
 
         <!-- Zona central -->
         <div class="centro">
 
-            <div class="triangulo">
+            <div class="formacion-militar">
 
-    <!-- Fila 1 -->
-    <div class="fila-triangulo fila-1">
-        <div class="opcion">
-            <img src="../Fondos/Sable1.jpg" alt="Sable 1">
-            <p>Combate 1</p>
-        </div>
-    </div>
+                <!-- FILA 1 -->
+                <div class="fila">
+                    <a href="sanlorenzo.html" class="opcion">
+                        <img src="../Fondos/Sable1.jpg">
+                        <p>San Lorenzo 1813</p>
+                    </a>
 
-    <!-- Fila 2 -->
-    <div class="fila-triangulo fila-2">
-        <div class="opcion"><img src="../Fondos/Sable2.jpg" alt="Sable 2"><p>Combate 2</p></div>
-        <div class="opcion"><img src="../Fondos/Sable3.jpg" alt="Sable 3"><p>Combate 3</p></div>
-    </div>
+                    <a href="montevideo.html" class="opcion">
+                        <img src="../Fondos/Sable2.jpg">
+                        <p>Montevideo 1814</p>
+                    </a>
 
-    <!-- Fila 3 -->
-    <div class="fila-triangulo fila-3">
-        <div class="opcion"><img src="../Fondos/Sable4.jpg" alt="Sable 4"><p>Combate 4</p></div>
-        <div class="opcion"><img src="../Fondos/Sable5.jpg" alt="Sable 5"><p>Combate 5</p></div>
-        <div class="opcion"><img src="../Fondos/Sable6.jpg" alt="Sable 6"><p>Combate 6</p></div>
-    </div>
+                    <a href="potrerillos.html" class="opcion">
+                        <img src="../Fondos/Sable3.jpg">
+                        <p>Potrerillos 1817</p>
+                    </a>
 
-    <!-- Fila 4 -->
-    <div class="fila-triangulo fila-4">
-        <div class="opcion"><img src="../Fondos/Sable7.jpg" alt="Sable 7"><p>Combate 7</p></div>
-        <div class="opcion"><img src="../Fondos/Sable8.jpg" alt="Sable 8"><p>Combate 8</p></div>
-        <div class="opcion"><img src="../Fondos/Sable9.jpg" alt="Sable 9"><p>Combate 9</p></div>
-        <div class="opcion"><img src="../Fondos/Sable10.jpg" alt="Sable 10"><p>Combate 10</p></div>
-    </div>
+                    <a href="guardiavieja.html" class="opcion">
+                        <img src="../Fondos/Sable4.jpg">
+                        <p>Guardia Vieja 1817</p>
+                    </a>
 
-    <!-- Fila 5 -->
-    <div class="fila-triangulo fila-5">
-        <div class="opcion"><img src="../Fondos/Sable11.jpg" alt="Sable 11"><p>Combate 11</p></div>
-        <div class="opcion"><img src="../Fondos/Sable12.jpg" alt="Sable 12"><p>Combate 12</p></div>
-        <div class="opcion"><img src="../Fondos/Sable13.jpg" alt="Sable 13"><p>Combate 13</p></div>
-        <div class="opcion"><img src="../Fondos/Sable14.jpg" alt="Sable 14"><p>Combate 14</p></div>
-        <div class="opcion"><img src="../Fondos/Sable15.jpg" alt="Sable 15"><p>Combate 15</p></div>
-    </div>
+                    <a href="achupallas.html" class="opcion">
+                        <img src="../Fondos/Sable5.jpg">
+                        <p>Achupallas 1817</p>
+                    </a>
+                </div>
 
-</div>
+                <!-- FILA 2 -->
+                <div class="fila">
+                    <a href="lascoimas.html" class="opcion">
+                        <img src="../Fondos/Sable6.jpg">
+                        <p>Las Coimas 1817</p>
+                    </a>
+
+                    <a href="chacabuco.html" class="opcion">
+                        <img src="../Fondos/Sable7.jpg">
+                        <p>Chacabuco 1817</p>
+                    </a>
+
+                    <a href="gabilan.html" class="opcion">
+                        <img src="../Fondos/Sable8.jpg">
+                        <p>Gabilan 1817</p>
+                    </a>
+
+                    <a href="curapaligue.html" class="opcion">
+                        <img src="../Fondos/Sable9.jpg">
+                        <p>Curapaligüe 1817</p>
+                    </a>
+
+                    <a href="talcahuano.html" class="opcion">
+                        <img src="../Fondos/Sable10.jpg">
+                        <p>Talcahuano 1817</p>
+                    </a>
+                </div>
+
+                <!-- FILA 3 -->
+                <div class="fila">
+                    <a href="cancharayada.html" class="opcion">
+                        <img src="../Fondos/Sable11.jpg">
+                        <p>Cancha Rayada 1818</p>
+                    </a>
+
+                    <a href="maipu.html" class="opcion">
+                        <img src="../Fondos/Sable12.jpg">
+                        <p>Maipú 1818</p>
+                    </a>
+
+                    <a href="riobamba.html" class="opcion">
+                        <img src="../Fondos/Sable13.jpg">
+                        <p>Río Bamba 1822</p>
+                    </a>
+
+                    <a href="junin.html" class="opcion">
+                        <img src="../Fondos/Sable14.jpg">
+                        <p>Junín 1824</p>
+                    </a>
+
+                    <a href="ayacucho.html" class="opcion">
+                        <img src="../Fondos/Sable15.jpg">
+                        <p>Ayacucho 1824</p>
+                    </a>
+                </div>
+
+            </div>
 
         </div>
 

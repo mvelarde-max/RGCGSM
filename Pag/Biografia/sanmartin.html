@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>José de San Martín</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 12px;
+            margin: 15px 0;
+            box-shadow: 0 0 15px rgba(0,224,255,0.7);
+        }
+
+        p {
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>BIOGRAFÍA</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='biografia.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>José de San Martín</h2>
+
+            <img src="../Fondos/sanmartin.jpg" class="imagen">
+
+            <p>
+                José de San Martín fue un militar y líder político argentino,
+                considerado uno de los principales libertadores de América del Sur.
+                Nació en 1778 y desarrolló gran parte de su formación militar en España,
+                donde adquirió experiencia en el ejército real.
+            </p>
+
+            <p>
+                En 1812 regresó al Río de la Plata y fundó el Regimiento de Granaderos
+                a Caballo, con el objetivo de crear una fuerza militar disciplinada
+                y eficiente para la lucha por la independencia.
+            </p>
+
+            <p>
+                Su primera acción destacada fue el Combate de San Lorenzo en 1813,
+                donde logró una rápida victoria que consolidó su prestigio militar.
+            </p>
+
+            <p>
+                San Martín fue el creador del Ejército de los Andes, con el cual llevó
+                adelante una de las campañas más importantes de la historia:
+                el Cruce de los Andes en 1817, logrando la liberación de Chile.
+            </p>
+
+            <p>
+                Posteriormente, continuó su campaña hacia Perú, donde proclamó
+                la independencia en 1821, contribuyendo decisivamente a la caída
+                del dominio español en América del Sur.
+            </p>
+
+            <p>
+                Su figura es símbolo de estrategia, disciplina y compromiso con la
+                libertad de los pueblos, siendo reconocido como uno de los grandes
+                héroes de la historia argentina y americana.
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function siguiente() {
+    window.location.href = "zapiola.html";
+}
+
+function anterior() {
+    window.location.href = "escalada.html";
+}
+</script>
+
+</body>
+</html>

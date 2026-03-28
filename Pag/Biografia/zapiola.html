@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>José Matías Zapiola</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0,224,255,0.5);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>BIOGRAFÍA</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='biografia.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>José Matías Zapiola</h2>
+
+            <img src="../Fondos/zapiola.jpg" class="imagen">
+
+            <p>
+                José Matías Zapiola fue un militar argentino que participó activamente
+                en las guerras por la independencia de América del Sur.
+            </p>
+
+            <p>
+                Integró el Regimiento de Granaderos a Caballo y formó parte del
+                Ejército de los Andes bajo el mando del General José de San Martín.
+            </p>
+
+            <p>
+                Participó en el Cruce de los Andes y en las campañas de Chile,
+                demostrando valor y disciplina en combate.
+            </p>
+
+            <p>
+                Su actuación contribuyó al éxito de las campañas libertadoras
+                y a la consolidación del proceso independentista en la región.
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function siguiente() {
+    window.location.href = "necochea.html";
+}
+
+function anterior() {
+    window.location.href = "sanmartin.html";
+}
+</script>
+
+</body>
+</html>
