@@ -1,0 +1,68 @@
+/* CENTRO (corrige que no quede pegado arriba) */
+.centro {
+    align-items: flex-start;
+}
+
+/* CONTENEDOR */
+.biografia-contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin-top: 50px;
+}
+
+/* FILAS */
+.biografia-contenedor .fila {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+/* PERSONAJES */
+.biografia-contenedor .personaje {
+    text-align: center;
+    text-decoration: none;
+    color: #00e0ff;
+    transition: 0.3s;
+}
+
+/* IMÁGENES */
+.biografia-contenedor .personaje img {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(0,224,255,0.7);
+    transition: transform 0.5s;
+}
+
+/* TEXTO GRANDE */
+.biografia-contenedor .personaje p {
+    margin-top: 12px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* HOVER */
+.biografia-contenedor .personaje:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 12px #00e0ff;
+}
+
+.biografia-contenedor .personaje:hover img {
+    transform: rotateY(360deg) scale(1.2);
+}
+
+/* LISTA DE NOMBRES */
+.biografia-contenedor .lista-nombres {
+    margin-top: 12px;
+    text-align: left;
+    font-size: 18px;
+    color: #00e0ff;
+}
+
+.biografia-contenedor .lista-nombres p {
+    margin: 4px 0;
+}
