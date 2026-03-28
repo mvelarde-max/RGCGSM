@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Alejo Bruix</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0,224,255,0.5);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>BIOGRAFÍA</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='biografia.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>Alejo Bruix</h2>
+
+            <p>
+                Alejo Bruix fue un militar que participó en las luchas por la
+                independencia del Río de la Plata junto a las fuerzas patriotas.
+            </p>
+
+            <p>
+                Formó parte del conjunto de oficiales que integraron los ejércitos
+                revolucionarios en los primeros años del proceso independentista.
+            </p>
+
+            <p>
+                Su actuación, aunque menos documentada que la de otros protagonistas,
+                contribuyó al desarrollo de las campañas militares en favor de la independencia.
+            </p>
+
+            <p>
+                Representa a los numerosos hombres que, desde distintos roles,
+                colaboraron en la construcción de la libertad en América del Sur.
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function siguiente() {
+    window.location.href = "biografia.html";
+}
+
+function anterior() {
+    window.location.href = "eugenio_necochea.html";
+}
+</script>
+
+</body>
+</html>

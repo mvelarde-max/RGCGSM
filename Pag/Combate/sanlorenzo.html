@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>San Lorenzo 1813</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+```
+<style>
+    .contenido {
+        max-width: 700px;
+        text-align: center;
+    }
+
+    .flechas {
+        margin-top: 15px;
+        font-size: 18px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .flechas span {
+        padding: 5px 10px;
+        background: rgba(0,224,255,.2);
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .flechas span:hover {
+        background: rgba(0,224,255,.5);
+    }
+
+    h2 {
+        color: #00e0ff;
+    }
+
+    .imagen {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        margin: 15px 0;
+        box-shadow: 0 0 10px rgba(0,224,255,0.5);
+    }
+
+    p {
+        line-height: 1.6;
+    }
+</style>
+```
+
+</head>
+
+<body>
+    <div class="contenedor">
+
+```
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>COMBATE HISTÓRICO</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='combate.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>San Lorenzo 1813</h2>
+
+            <img src="../Fondos/Sable1.jpg" class="imagen">
+
+            <p>
+                El Combate de San Lorenzo, ocurrido el 3 de febrero de 1813,
+                fue la primera acción militar del Regimiento de Granaderos a Caballo,
+                creado por el General José de San Martín.
+            </p>
+
+            <p>
+                Las fuerzas realistas desembarcaban en las costas del río Paraná
+                con el objetivo de abastecerse y hostigar a las poblaciones patriotas.
+                San Martín organizó un ataque sorpresa con una rápida carga de caballería.
+            </p>
+
+            <p>
+                El combate fue breve pero decisivo. La maniobra permitió derrotar
+                a las tropas enemigas y asegurar la zona.
+            </p>
+
+            <p>
+                Durante la acción, el sargento Juan Bautista Cabral salvó la vida
+                de San Martín, convirtiéndose en uno de los héroes más recordados
+                de la historia argentina.
+            </p>
+
+            <p>
+                Esta victoria consolidó el prestigio del Regimiento de Granaderos
+                a Caballo y marcó el inicio de una serie de campañas decisivas
+                para la independencia sudamericana.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function siguiente() {
+        window.location.href = "montevideo.html";
+    }
+
+    function anterior() {
+        window.location.href = "combate.html";
+    }
+</script>
+```
+
+</body>
+</html>
