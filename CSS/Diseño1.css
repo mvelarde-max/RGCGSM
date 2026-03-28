@@ -43,7 +43,7 @@ body {
     .lado p {
         writing-mode: vertical-rl;
         transform: rotate(180deg);
-        font-size: 14px;
+        font-size: 24px;
         text-align: center;
     }
 
@@ -219,12 +219,6 @@ body {
     margin-left: 150px;
 }
 
-/* Línea vertical */
-.linea {
-    width: 4px;
-    height: 40px;
-    background: #00e0ff;
-}
 
 /* Evento */
 .evento {
@@ -248,7 +242,61 @@ body {
 
     /* Texto */
     .evento p {
-        color: #00e0ff;
-        margin-top: 8px;
+        font-size: 13px;
+        max-width: 120px;
+        margin: 8px auto 0;
+        line-height: 1.2;
     }
 
+.evento {
+    text-decoration: none;
+    color: #00e0ff;
+    display: block;
+}
+
+    .evento:hover {
+        transform: scale(1.1);
+    }
+
+
+    .triangulo {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.fila-triangulo {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Desplazar filas para formar triángulo */
+.fila-triangulo.fila-1 { justify-content: center; }
+.fila-triangulo.fila-2 { justify-content: center; transform: translateX(-50px); }
+.fila-triangulo.fila-3 { justify-content: center; transform: translateX(-100px); }
+.fila-triangulo.fila-4 { justify-content: center; transform: translateX(-150px); }
+.fila-triangulo.fila-5 { justify-content: center; transform: translateX(-200px); }
+
+/* Estilo de imágenes */
+.fila-triangulo .opcion img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.6);
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.fila-triangulo .opcion:hover img {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+.fila-triangulo .opcion p {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
