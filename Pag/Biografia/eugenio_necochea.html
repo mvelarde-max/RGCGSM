@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eugenio Necochea</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0,224,255,0.5);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>BIOGRAFÍA</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='biografia.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>Eugenio Necochea</h2>
+
+            <p>
+                Eugenio Necochea fue un militar argentino que participó en las
+                campañas por la independencia de América del Sur.
+            </p>
+
+            <p>
+                Integró las fuerzas patriotas que lucharon bajo el mando de
+                José de San Martín, colaborando en las campañas militares
+                que buscaban liberar territorios del dominio español.
+            </p>
+
+            <p>
+                Su actuación formó parte del conjunto de oficiales que
+                contribuyeron al éxito de las operaciones del Ejército de los Andes.
+            </p>
+
+            <p>
+                Aunque menos conocido que otros protagonistas, su participación
+                fue importante dentro del proceso independentista.
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function siguiente() {
+    window.location.href = "bruix.html";
+}
+
+function anterior() {
+    window.location.href = "soler.html";
+}
+</script>
+
+</body>
+</html>

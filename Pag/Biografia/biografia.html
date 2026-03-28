@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Biografía</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <link rel="stylesheet" href="../../CSS/biografia.css">
+
+    <style>
+        .biografia-contenedor {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .fila {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .personaje {
+            text-align: center;
+            text-decoration: none;
+            color: #00e0ff;
+            transition: 0.3s;
+        }
+
+        .personaje img {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0,224,255,0.6);
+            transition: transform 0.5s;
+        }
+
+        .personaje:hover {
+            transform: scale(1.1);
+            text-shadow: 0 0 10px #00e0ff;
+        }
+
+        .personaje:hover img {
+            transform: rotateY(360deg) scale(1.2);
+        }
+
+        .personaje p {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <!-- LADO -->
+    <div class="lado">
+        <p>Biografia</p>
+
+        <button onclick="window.location.href='../../index.html'">Inicio</button>
+        <button onclick="window.location.href='../historia.html'">Volver</button>
+    </div>
+
+    <!-- CENTRO -->
+    <div class="centro">
+
+        <div class="biografia-contenedor">
+
+            <!-- 🔹 FILA 1 (2 imágenes) -->
+            <div class="fila">
+
+                <a href="lavalle.html" class="personaje">
+                    <img src="../Fondos/lavalle.jpg" alt="">
+                    <p>Juan Galo de Lavalle</p>
+                </a>
+
+                <a href="alvarado.html" class="personaje">
+                    <img src="../Fondos/alvarado.jpg" alt="">
+                    <p>Rudecindo Alvarado</p>
+                </a>
+
+            </div>
+
+            <!-- 🔹 FILA 2 (3 imágenes) -->
+            <div class="fila">
+
+                <a href="escalada.html" class="personaje">
+                    <img src="../Fondos/escalada.jpg" alt="">
+                    <p>Manuel Escalada</p>
+                </a>
+
+                <a href="sanmartin.html" class="personaje">
+                    <img src="../Fondos/sanmartin.jpg" alt="">
+                    <p>José de San Martín</p>
+                </a>
+
+                <a href="zapiola.html" class="personaje">
+                    <img src="../Fondos/zapiola.jpg" alt="">
+                    <p>José Matías Zapiola</p>
+                </a>
+
+            </div>
+
+            <!-- 🔹 FILA 3 (2 imágenes) -->
+            <div class="fila">
+
+                <a href="necochea.html" class="personaje">
+                    <img src="../Fondos/necochea.jpg" alt="">
+                    <p>Mariano Necochea</p>
+                </a>
+
+                <a href="bogado.html" class="personaje">
+                    <img src="../Fondos/bogado.jpg" alt="">
+                    <p>José Félix Bogado</p>
+                </a>
+
+            </div>
+
+            <!-- 🔹 EXTRA (3 nombres sin imagen) -->
+            <!-- 🔹 EXTRA (3 nombres sin imagen) -->
+<div class="fila">
+
+    <a href="soler.html" class="personaje">
+        <p>Manuel José Soler</p>
+    </a>
+
+    <a href="eugenio_necochea.html" class="personaje">
+        <p>Eugenio Necochea</p>
+    </a>
+
+    <a href="bruix.html" class="personaje">
+        <p>Alejo Bruix</p>
+    </a>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

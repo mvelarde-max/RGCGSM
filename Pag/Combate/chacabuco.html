@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Chacabuco 1817</title>
+<link rel="stylesheet" href="../../CSS/Diseño1.css">
+<style>
+.contenido{max-width:700px;text-align:center;}
+.flechas{margin-top:15px;font-size:18px;display:flex;justify-content:space-between;}
+.flechas span{padding:5px 10px;background:rgba(0,224,255,.2);border-radius:8px;cursor:pointer;}
+h2{color:#00e0ff;}
+.imagen{max-width:400px;margin:15px 0;border-radius:10px;}
+</style>
+</head>
+<body>
+<div class="contenedor">
+<div class="lado">
+<p>COMBATE HISTÓRICO</p>
+<div class="flechas">
+<span onclick="anterior()">⬅</span>
+<span onclick="siguiente()">➡</span>
+</div>
+<button onclick="window.location.href='combate.html'">Volver</button>
+</div>
+
+<div class="centro"><div class="contenido">
+<h2>Chacabuco 1817</h2>
+<img src="../Fondos/Sable7.jpg" class="imagen">
+<p>Batalla decisiva que permitió liberar Chile del dominio realista.</p>
+</div></div>
+</div>
+
+<script>
+function siguiente(){window.location.href="gabilan.html";}
+function anterior(){window.location.href="lascoimas.html";}
+</script>
+
+</body>
+</html>
