@@ -7,36 +7,45 @@
     <link rel="stylesheet" href="../../CSS/biografia.css">
 
     <style>
+        /* Contenedor principal */
         .biografia-contenedor {
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 50px;
+            gap: 40px;
+            padding: 10px;
+            box-sizing: border-box;
         }
 
+        /* Cada fila de personajes */
         .fila {
             display: flex;
-            justify-content: center;
-            gap: 60px;
+            justify-content: space-around; /* distribuye equitativamente */
+            flex-wrap: wrap; /* baja elementos si no caben */
+            gap: 20px;
+            width: 100%;
         }
 
+        /* Cada personaje */
         .personaje {
             text-align: center;
-            text-decoration: none;
             color: #00e0ff;
-            transition: 0.3s;
+            text-decoration: none;
+            flex: 1 1 120px; /* crece y se reduce según espacio */
+            max-width: 150px;
         }
 
+        /* Imagen del personaje */
         .personaje img {
-            width: 120px;
-            height: 120px;
+            width: 100%;
+            height: auto;
             border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 0 10px rgba(0,224,255,0.6);
             transition: transform 0.5s;
         }
 
+        /* Hover de personaje */
         .personaje:hover {
             transform: scale(1.1);
             text-shadow: 0 0 10px #00e0ff;
@@ -46,9 +55,24 @@
             transform: rotateY(360deg) scale(1.2);
         }
 
+        /* Nombre debajo de la imagen */
         .personaje p {
-            margin-top: 10px;
+            margin-top: 8px;
             font-size: 14px;
+        }
+
+        /* Pantallas pequeñas */
+        @media (max-width: 600px) {
+            .fila {
+                justify-content: center;
+            }
+            .personaje {
+                max-width: 100px;
+                flex: 1 1 80px;
+            }
+            .personaje p {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -59,7 +83,7 @@
 
     <!-- LADO -->
     <div class="lado">
-        <p>Biografia</p>
+        <p>Biografía</p>
 
         <button onclick="window.location.href='../../index.html'">Inicio</button>
         <button onclick="window.location.href='../historia.html'">Volver</button>
@@ -70,73 +94,53 @@
 
         <div class="biografia-contenedor">
 
-            <!-- 🔹 FILA 1 (2 imágenes) -->
+            <!-- FILA 1: 5 personajes -->
             <div class="fila">
-
                 <a href="lavalle.html" class="personaje">
-                    <img src="../Fondos/lavalle.jpg" alt="">
+                    <img src="../../Fondos/lavalle.jpg" alt="">
                     <p>Juan Galo de Lavalle</p>
                 </a>
-
                 <a href="alvarado.html" class="personaje">
-                    <img src="../Fondos/alvarado.jpg" alt="">
+                    <img src="../../Fondos/alvarado.jpg" alt="">
                     <p>Rudecindo Alvarado</p>
                 </a>
-
-            </div>
-
-            <!-- 🔹 FILA 2 (3 imágenes) -->
-            <div class="fila">
-
                 <a href="escalada.html" class="personaje">
-                    <img src="../Fondos/escalada.jpg" alt="">
+                    <img src="../../Fondos/escalada.jpg" alt="">
                     <p>Manuel Escalada</p>
                 </a>
-
                 <a href="sanmartin.html" class="personaje">
-                    <img src="../Fondos/sanmartin.jpg" alt="">
+                    <img src="../../Fondos/sanmartin.jpg" alt="">
                     <p>José de San Martín</p>
                 </a>
-
                 <a href="zapiola.html" class="personaje">
-                    <img src="../Fondos/zapiola.jpg" alt="">
+                    <img src="../../Fondos/zapiola.jpg" alt="">
                     <p>José Matías Zapiola</p>
                 </a>
-
             </div>
 
-            <!-- 🔹 FILA 3 (2 imágenes) -->
+            <!-- FILA 2: 5 personajes -->
             <div class="fila">
-
                 <a href="necochea.html" class="personaje">
-                    <img src="../Fondos/necochea.jpg" alt="">
+                    <img src="../../Fondos/necochea.jpg" alt="">
                     <p>Mariano Necochea</p>
                 </a>
-
                 <a href="bogado.html" class="personaje">
-                    <img src="../Fondos/bogado.jpg" alt="">
+                    <img src="../../Fondos/bogado.jpg" alt="">
                     <p>José Félix Bogado</p>
                 </a>
-
+                <a href="soler.html" class="personaje">
+                    <img src="../../Fondos/soler.jpg" alt="Manuel José Soler">
+                    <p>Manuel José Soler</p>
+                </a>
+                <a href="eugenio_necochea.html" class="personaje">
+                    <img src="../../Fondos/eugenio_necochea.jpg" alt="Eugenio Necochea">
+                    <p>Eugenio Necochea</p>
+                </a>
+                <a href="bruix.html" class="personaje">
+                    <img src="../../Fondos/bruix.jpg" alt="Alejo Bruix">
+                    <p>Alejo Bruix</p>
+                </a>
             </div>
-
-            <!-- 🔹 EXTRA (3 nombres sin imagen) -->
-            <!-- 🔹 EXTRA (3 nombres sin imagen) -->
-<div class="fila">
-
-    <a href="soler.html" class="personaje">
-        <p>Manuel José Soler</p>
-    </a>
-
-    <a href="eugenio_necochea.html" class="personaje">
-        <p>Eugenio Necochea</p>
-    </a>
-
-    <a href="bruix.html" class="personaje">
-        <p>Alejo Bruix</p>
-    </a>
-
-</div>
 
         </div>
 
