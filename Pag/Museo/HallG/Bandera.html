@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bandera del Ejército Argentino</title>
+    <link rel="stylesheet" href="../../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            display: flex;
+            align-items: flex-start; /* importante */
+            gap: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #00e0ff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* IMAGEN IZQUIERDA */
+        .imagen {
+            width: 350px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,224,255,0.6);
+            flex-shrink: 0; /* evita que se achique */
+        }
+
+        /* TEXTO DERECHA */
+        .texto {
+            flex: 1;
+            text-align: left;
+        }
+
+        .texto p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* RESPONSIVE (celular) */
+        @media (max-width: 768px) {
+            .contenido {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .imagen {
+                width: 90%;
+            }
+
+            .texto {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO -->
+    <div class="lado">
+        <p>Bandera</p>
+
+        <button onclick="window.location.href='../../museo.html'">Inicio</button>
+        <button onclick="window.location.href='../Hall.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+
+        <h2>Bandera del Ejército Argentino</h2>
+
+        <div class="contenido">
+
+            <!-- IZQUIERDA -->
+            <img src="../../../CLIPS/bandera.jpg" class="imagen" alt="Bandera del Ejército Argentino">
+
+            <!-- DERECHA -->
+            <div class="texto">
+                <p>
+                    La Bandera del Ejército Argentino representa los valores, la historia y el honor de la institución.
+                </p>
+
+                <p>
+                    Es un símbolo que acompaña a los soldados en actos, ceremonias y misiones.
+                </p>
+
+                <p>
+                    Sus colores reflejan la identidad nacional y su presencia en el Regimiento de Granaderos
+                    a Caballo simboliza la continuidad del legado sanmartiniano.
+                </p>
+
+                <p>
+                    Representa el compromiso, la disciplina y el orgullo de quienes forman parte del Ejército Argentino.
+                </p>
+
+                <p>
+                    Es uno de los emblemas más importantes dentro del patrimonio histórico militar del país.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

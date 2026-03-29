@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hall de los Granaderos</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        .imagenes-grandes {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .imagenes-grandes .item {
+            width: 300px;
+            text-align: center;
+        }
+
+        .imagenes-grandes img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,224,255,0.6);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .imagenes-grandes img:hover {
+            transform: scale(1.08);
+        }
+
+        .imagenes-grandes p {
+            margin-top: 10px;
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>Hall</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='../../index.html'">Inicio</button>
+        <button onclick="window.location.href='../museo.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>Hall de los Granaderos</h2>
+
+            <div class="imagenes-grandes">
+
+                <!-- Bandera -->
+                <div class="item">
+                    <a href="HallG/Bandera.html">
+                        <img src="../../CLIPS/bandera.jpg" alt="Bandera del Ejército Argentino">
+                    </a>
+                    <p>Bandera del Ejército Argentino</p>
+                </div>
+
+                <!-- Sable -->
+                <div class="item">
+                    <a href="HallG/Sable.html">
+                        <img src="../../CLIPS/sable.jpg" alt="Sable de San Martín">
+                    </a>
+                    <p>Sable de San Martín</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function siguiente() {
+    window.location.href = "museo.html"; // vuelve al menú
+}
+
+function anterior() {
+    window.location.href = "Salas.html"; // vuelve a salas
+}
+</script>
+
+</body>
+</html>

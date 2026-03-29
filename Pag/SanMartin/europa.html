@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Europa</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+            padding-bottom: 150px;
+        }
+
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
+
+        .pagina.activa {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        p {
+            color: white;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        footer .media-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer .media-opcion img,
+        footer .media-opcion video {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s;
+        }
+
+        footer .media-opcion:hover img,
+        footer .media-opcion:hover video {
+            transform: scale(1.2);
+        }
+
+        footer .media-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img,
+        .modal-content video {
+            max-width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- BARRA LATERAL -->
+    <div class="lado">
+        <p>San Martín en Europa</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='../../index.html'">Inicio</button>
+        <button onclick="window.location.href='../sanmartin.html'">Volver</button>
+    </div>
+
+    <!-- CENTRO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <div class="pagina activa">
+                <h2>Comienzo del destierro: Londres y Brusela</h2>
+                <p>San Martín inicia su etapa en Europa tras dejar América. Durante su estadía en Londres y Bruselas, mantiene contacto con figuras políticas y sigue de cerca la situación de las nuevas naciones independientes.</p>
+            </div>
+
+            <div class="pagina">
+                <h2>Vigía y custodia de la libertad de América</h2>
+                <p>Desde el exilio, continúa atento a los acontecimientos en América. Su figura sigue siendo símbolo de libertad y defensa de los ideales independentistas.</p>
+            </div>
+
+            <div class="pagina">
+                <h2>Grand Bourg: Un acto solemne de la historia</h2>
+                <p>En Grand Bourg, Francia, San Martín se establece con su familia. Allí lleva una vida más tranquila, dedicada al retiro, pero siempre recordado como uno de los grandes libertadores.</p>
+            </div>
+
+            <div class="pagina">
+                <h2>Desde Boulogne-sur-Mer: rumbo a la gloria</h2>
+                <p>En Boulogne-sur-Mer transcurren sus últimos días. Su legado se consolida como uno de los más importantes en la historia de América Latina.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footerMedia"></footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+let pagina = 0;
+const paginas = document.querySelectorAll(".pagina");
+const footer = document.getElementById("footerMedia");
+const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modalContent");
+
+const mediaData = {
+    0: [
+        {type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Europa 1'}
+    ],
+    1: [
+        {type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Europa 2'}
+    ],
+    2: [
+        {type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Europa 3'}
+    ],
+    3: [
+        {type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Europa 4'}
+    ]
+};
+
+function mostrarPagina(i){
+    paginas.forEach(p => p.classList.remove('activa'));
+    paginas[i].classList.add('activa');
+    pagina = i;
+    actualizarFooter();
+}
+
+function siguiente(){
+    pagina = (pagina + 1) % paginas.length;
+    mostrarPagina(pagina);
+}
+
+function anterior(){
+    pagina = (pagina - 1 + paginas.length) % paginas.length;
+    mostrarPagina(pagina);
+}
+
+function actualizarFooter(){
+    footer.innerHTML = '';
+    mediaData[pagina].forEach(m => {
+        const div = document.createElement('div');
+        div.classList.add('media-opcion');
+
+        const vid = document.createElement('video');
+        vid.src = m.src;
+        vid.muted = true;
+        vid.onclick = () => abrirModal(m);
+
+        div.appendChild(vid);
+
+        const t = document.createElement('p');
+        t.textContent = m.nombre;
+        div.appendChild(t);
+
+        footer.appendChild(div);
+    });
+}
+
+function abrirModal(m){
+    modal.style.display = 'flex';
+    modalContent.innerHTML = '';
+    const vid = document.createElement('video');
+    vid.src = m.src;
+    vid.controls = true;
+    vid.autoplay = true;
+    modalContent.appendChild(vid);
+}
+
+function cerrarModal(){
+    modal.style.display = 'none';
+    modalContent.innerHTML = '';
+}
+
+actualizarFooter();
+</script>
+
+</body>
+</html>

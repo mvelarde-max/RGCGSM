@@ -234,3 +234,46 @@ body::before {
 }
 
 
+/* ----- LAYOUT SAN MARTIN ----- */
+.sanmartin-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Filas */
+.fila {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+/* Ajustes específicos */
+.fila-centro {
+    justify-content: center;
+}
+
+.fila-superior {
+    margin-top: 40px;
+}
+
+.fila-inferior {
+    margin-bottom: 40px;
+}
+
+/* Evento más grande para destacar */
+.fila-centro .evento img {
+    width: 140px;
+    height: 140px;
+}
+
+/* Animación suave */
+.evento {
+    transition: transform 0.3s;
+}
+
+.evento:hover {
+    transform: scale(1.15);
+}

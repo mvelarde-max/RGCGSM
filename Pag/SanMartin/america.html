@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>América</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+            padding-bottom: 150px;
+        }
+
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
+
+        .pagina.activa {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        p {
+            color: white;
+            line-height: 1.5;
+        }
+
+        /* FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        footer .media-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer .media-opcion img,
+        footer .media-opcion video {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s;
+        }
+
+        footer .media-opcion:hover img,
+        footer .media-opcion:hover video {
+            transform: scale(1.2);
+        }
+
+        footer .media-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img,
+        .modal-content video {
+            max-width: 90%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- BARRA LATERAL -->
+    <div class="lado">
+        <p>San Martín en América</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='../../index.html'">Inicio</button>
+        <button onclick="window.location.href='../sanmartin.html'">Volver</button>
+    </div>
+
+    <!-- CENTRO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <div class="pagina activa">
+                <h2>San Martín: la proyección americana de la Revolución de Mayo</h2>
+                <p>San Martín comprendió que la independencia no debía limitarse al Río de la Plata. Su visión estratégica lo llevó a impulsar la liberación de todo el continente sudamericano, extendiendo los ideales de la Revolución de Mayo.</p>
+            </div>
+
+            <div class="pagina">
+                <h2>La vuelta de San Martín</h2>
+                <p>Tras su experiencia en Europa, regresó a América decidido a poner sus conocimientos militares al servicio de la causa independentista, marcando el inicio de su etapa más trascendental.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footerMedia"></footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+let pagina = 0;
+const paginas = document.querySelectorAll(".pagina");
+const footer = document.getElementById("footerMedia");
+const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modalContent");
+
+const mediaData = {
+    0: [
+        {type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Revolución de Mayo'}
+    ],
+    1: [
+        {type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Regreso a América'}
+    ]
+};
+
+function mostrarPagina(i){
+    paginas.forEach(p => p.classList.remove('activa'));
+    paginas[i].classList.add('activa');
+    pagina = i;
+    actualizarFooter();
+}
+
+function siguiente(){
+    pagina = (pagina + 1) % paginas.length;
+    mostrarPagina(pagina);
+}
+
+function anterior(){
+    pagina = (pagina - 1 + paginas.length) % paginas.length;
+    mostrarPagina(pagina);
+}
+
+function actualizarFooter(){
+    footer.innerHTML = '';
+    mediaData[pagina].forEach(m => {
+        const div = document.createElement('div');
+        div.classList.add('media-opcion');
+
+        const vid = document.createElement('video');
+        vid.src = m.src;
+        vid.muted = true;
+        vid.onclick = () => abrirModal(m);
+
+        div.appendChild(vid);
+
+        const t = document.createElement('p');
+        t.textContent = m.nombre;
+        div.appendChild(t);
+
+        footer.appendChild(div);
+    });
+}
+
+function abrirModal(m){
+    modal.style.display = 'flex';
+    modalContent.innerHTML = '';
+    const vid = document.createElement('video');
+    vid.src = m.src;
+    vid.controls = true;
+    vid.autoplay = true;
+    modalContent.appendChild(vid);
+}
+
+function cerrarModal(){
+    modal.style.display = 'none';
+    modalContent.innerHTML = '';
+}
+
+actualizarFooter();
+</script>
+
+</body>
+</html>

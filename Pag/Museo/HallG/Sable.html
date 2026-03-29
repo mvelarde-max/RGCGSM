@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sable de San Martín</title>
+    <link rel="stylesheet" href="../../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #00e0ff;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* FILA SUPERIOR */
+        .fila-superior {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .imagen {
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,224,255,0.6);
+        }
+
+        /* ICONO VIDEO */
+        .icono-video {
+            width: 45px;
+            height: 45px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .icono-video:hover {
+            background: rgba(0,224,255,0.7);
+        }
+
+        .icono-video img {
+            width: 22px;
+            height: 22px;
+        }
+
+        /* TEXTO */
+        .texto {
+            text-align: left;
+        }
+
+        .texto p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        /* ================= MODAL ================= */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content video {
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 35px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* CELULAR */
+        @media (max-width: 768px) {
+            .fila-superior {
+                flex-direction: column;
+            }
+
+            .imagen {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO -->
+    <div class="lado">
+        <p>Sable</p>
+
+        <button onclick="window.location.href='../../museo.html'">Inicio</button>
+        <button onclick="window.location.href='../Hall.html'">Volver</button>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+
+        
+
+        <div class="contenido">
+
+            <div class="centro"><h2>Sable de San Martín</h2></div>
+
+            <!-- IMAGEN + ICONO -->
+             <div class="centro">
+            <div class="fila-superior">
+                <img src="../../../CLIPS/1114M3A.BMP" class="imagen" alt="Sable de San Martín">
+
+                <div class="icono-video" onclick="abrirModal('../../../VIDEOS/RCG9.mp4')">
+                    <img src="../../../CLIPS/play.png" alt="Video">
+                </div>
+            </div>
+            </div>
+
+            <!-- TEXTO -->
+            <div class="texto">
+                <p>
+                    El sable corvo del General José de San Martín es uno de los símbolos más importantes
+                    de la historia argentina.
+                </p>
+
+                <p>
+                    Fue utilizado durante las campañas de la independencia y representa el liderazgo,
+                    la estrategia y el compromiso con la libertad de América.
+                </p>
+
+                <p>
+                    Actualmente es considerado una reliquia histórica de enorme valor simbólico.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <span class="modal-close">&times;</span>
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+const modal = document.getElementById('modal');
+const modalContent = document.getElementById('modalContent');
+
+function abrirModal(src){
+    modal.style.display = 'flex';
+    modalContent.innerHTML = '';
+
+    const vid = document.createElement('video');
+    vid.src = src;
+    vid.controls = true;
+    vid.autoplay = true;
+
+    modalContent.appendChild(vid);
+}
+
+function cerrarModal(){
+    modal.style.display = 'none';
+    modalContent.innerHTML = '';
+}
+</script>
+
+</body>
+</html>
