@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fanfarria Militar Alto Perú</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <style>
+        /* ==================== CONTENEDOR CENTRAL ==================== */
+        .centro {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            text-align: center;
+            padding-bottom: 150px; /* espacio para footer */
+        }
+
+        .centro h1 {
+            color: #00e0ff;
+            margin-bottom: 20px;
+        }
+
+        .centro .descripcion {
+            color: #00e0ff;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        footer .video-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer .video-opcion video {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: transform 0.4s, border 0.3s;
+        }
+
+        footer .video-opcion:hover video {
+            transform: scale(1.2);
+            border: 2px solid #00e0ff;
+        }
+
+        footer .video-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        /* ==================== MODAL ==================== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content video {
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <!-- Barra lateral -->
+    <div class="lado">
+        <p>Organización</p>
+        <button onclick="window.location.href='../../index.html'">Inicio</button>
+        <button onclick="window.location.href='../regimiento.html'">Volver</button>
+    </div>
+
+    <!-- Zona central -->
+    <div class="centro">
+        <h1>Fanfarria Militar Alto Perú</h1>
+
+        <div class="descripcion">
+            La Fanfarria Militar Alto Perú es una unidad musical de tradición del Regimiento de Granaderos a Caballo General San Martín. 
+            Se encarga de acompañar ceremonias oficiales, desfiles y eventos conmemorativos, manteniendo viva la historia y la disciplina militar.
+            <br><br>
+            Sus integrantes son destacados por su destreza musical y su impecable presentación, siendo un símbolo de orgullo y patrimonio cultural.
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER CON 3 VIDEOS Y NOMBRE -->
+<footer id="footerMedia"></footer>
+
+<!-- MODAL PARA VER VIDEOS -->
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <span class="modal-close">&times;</span>
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+    const footer = document.getElementById('footerMedia');
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+
+    // Videos con nombre
+    const videos = [
+        {src:'../../VIDEOS/fanfarria1.mp4', nombre:'Desfile 1950'},
+        {src:'../../VIDEOS/rcg3.mp4', nombre:'Fanfarria Ensayo'},
+        {src:'../../VIDEOS/fanfarria3.mp4', nombre:'Concierto Oficial'}
+    ];
+
+    // Crear miniaturas en footer con nombre debajo
+    videos.forEach(v => {
+        const div = document.createElement('div');
+        div.classList.add('video-opcion');
+
+        const vid = document.createElement('video');
+        vid.src = v.src;
+        vid.muted = true;
+        vid.loop = true;
+        vid.autoplay = true;
+        vid.onclick = () => abrirModal(v.src);
+
+        div.appendChild(vid);
+
+        const titulo = document.createElement('p');
+        titulo.textContent = v.nombre;
+        div.appendChild(titulo);
+
+        footer.appendChild(div);
+    });
+
+    // Modal
+    function abrirModal(src){
+        modal.style.display = 'flex';
+        modalContent.innerHTML = '';
+        const vid = document.createElement('video');
+        vid.src = src;
+        vid.controls = true;
+        vid.autoplay = true;
+        modalContent.appendChild(vid);
+    }
+
+    function cerrarModal(){
+        modal.style.display = 'none';
+        modalContent.innerHTML = '';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+/* ==================== BODY ==================== */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url("../Fondos/RGCGSM.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+/* Capa oscura encima del fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+/* ==================== CONTENEDOR ==================== */
+.contenedor {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==================== BARRA LATERAL ==================== */
+.lado {
+    width: 120px;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Texto vertical */
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Botones laterales */
+.lado button {
+    width: 80px;
+    padding: 6px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.lado button:hover {
+    background: #2563eb;
+}
+
+/* ==================== ZONA CENTRAL ==================== */
+.centro {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Título de la galería */
+.centro h1 {
+    color: #00e0ff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ==================== GALERÍA ==================== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* Cada imagen dentro de la galería */
+.galeria .opcion {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.galeria .opcion img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+    transition: transform 0.5s;
+}
+
+.galeria .opcion p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #00e0ff;
+}
+
+/* Hover sobre imagen */
+.galeria .opcion:hover {
+    transform: scale(1.15);
+    text-shadow: 0 0 10px #00e0ff;
+}
+
+.galeria .opcion:hover img {
+    transform: rotateY(360deg) scale(1.2);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media screen and (max-width: 1400px) {
+    .galeria {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .galeria .opcion img { width: 100px; height: 100px; }
+}
+
+@media screen and (max-width: 1000px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .galeria .opcion img { width: 90px; height: 90px; }
+}
+
+@media screen and (max-width: 600px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .galeria .opcion img { width: 80px; height: 80px; }
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Armas del Museo</title>
+    <link rel="stylesheet" href="../../../CSS/Diseño1.css">
+
+    <style>
+        .contenido { max-width: 600px; text-align: left; }
+        .pagina { display: none; animation: fade .5s; }
+        .pagina.activa { display: block; }
+        @keyframes fade { from {opacity:0;} to {opacity:1;} }
+
+        .flechas { margin-top: 15px; font-size: 18px; display:flex; justify-content: space-between;}
+        .flechas span { padding:5px 10px; background: rgba(0,224,255,.2); border-radius:8px; cursor:pointer; }
+        .flechas span:hover { background: rgba(0,224,255,.5); }
+
+        h2 { color: #00e0ff; margin-bottom: 20px; }
+
+        .fila { display:flex; gap:30px; }
+        .texto { flex:2; }
+        .imagen-cuadro { flex:1; display:flex; justify-content:center; align-items:flex-start; }
+        .imagen-cuadro img { width:250px; height:auto; border-radius:10px; box-shadow:0 0 15px rgba(0,224,255,0.6);}
+        p { line-height: 1.6; }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <div class="lado">
+        <p>ARMAS</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='../../../index.html'">Inicio</button>
+        <button onclick="window.location.href='../Salas.html'">Volver</button>
+    </div>
+
+    <div class="centro">
+        <div class="fila">
+            <div class="contenido texto">
+
+                <!-- Subtítulos -->
+                <div class="pagina activa" data-imagen="../../CLIPS/FojaServicio.jpg" data-nombre="Foja de servicio de San Martin en el ejercito Español hasta 1804">
+                    <h2>Foja de servicio de San Martin en el ejercito Español hasta 1804</h2>
+                    <p>Detalle de la foja de servicio de José de San Martín durante su paso por el ejército español.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/Rosario.jpg" data-nombre="Rosario del General San Martin">
+                    <h2>Rosario del General San Martin</h2>
+                    <p>Rosario perteneciente al General San Martin.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/EscudoPistoleras.jpg" data-nombre="Escudo de las Pistoleras de arzon del General San Martin">
+                    <h2>Escudo de las Pistoleras de arzon del General San Martin</h2>
+                    <p>Escudo que perteneció a las pistoleras de arzon de San Martin.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/Mate.jpg" data-nombre="Mate que pertenecio al General San Martin">
+                    <h2>Mate que pertenecio al General San Martin</h2>
+                    <p>Mate personal del General José de San Martin.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/JarraBandeja.jpg" data-nombre="Jarra y bandeja de plata que pertenecieron al General San Martin">
+                    <h2>Jarra y bandeja de plata que pertenecieron al General San Martin</h2>
+                    <p>Jarra y bandeja de plata que pertenecieron al General San Martin.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/CuelloUniforme.jpg" data-nombre="Cuello, bocamanga y chattereras del uniforme de jefe de Granaderos de San Martin">
+                    <h2>Cuello, bocamanga y chattereras del uniforme de jefe de Granaderos de San Martin</h2>
+                    <p>Detalle del uniforme de jefe de Granaderos de San Martin.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/LibrosSanMartin.jpg" data-nombre="Libros que pertenecieron al General San Martin">
+                    <h2>Libros que pertenecieron al General San Martin</h2>
+                    <p>Libros que fueron propiedad del General San Martin.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/CondecoracionChacabuco.jpg" data-nombre="Condecoracion entregada a San Martin por la batalla de Chacabuco">
+                    <h2>Condecoracion entregada a San Martin por la batalla de Chacabuco</h2>
+                    <p>Medalla entregada a San Martin por su participación en la batalla de Chacabuco.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/RelogArenales.jpg" data-nombre="Relog de bolsillo que pertenecio al General D Jose Antonio Alvarez de Arenales">
+                    <h2>Relog de bolsillo que pertenecio al General D Jose Antonio Alvarez de Arenales</h2>
+                    <p>Reloj de bolsillo perteneciente al General Arenales.</p>
+                </div>
+
+                <div class="pagina" data-imagen="../../CLIPS/LibroTacticas.jpg" data-nombre="Libro de Tacticas Militares que pertenecio al General Pacheco">
+                    <h2>Libro de Tacticas Militares que pertenecio al General Pacheco</h2>
+                    <p>Libro de tácticas militares propiedad del General Pacheco.</p>
+                </div>
+
+            </div>
+
+            <div class="imagen-cuadro">
+                <img id="imagenDerecha" src="../../CLIPS/FojaServicio.jpg" alt="Imagen Armas">
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    let pagina = 0;
+    const paginas = document.querySelectorAll(".pagina");
+    const imagenDerecha = document.getElementById("imagenDerecha");
+
+    function mostrarPagina(i) {
+        paginas.forEach(p => p.classList.remove("activa"));
+        paginas[i].classList.add("activa");
+        imagenDerecha.src = paginas[i].dataset.imagen;
+        document.title = paginas[i].dataset.nombre;
+        paginas[i].querySelector('h2').textContent = paginas[i].dataset.nombre;
+    }
+
+    function siguiente() {
+        if(pagina < paginas.length-1){
+            pagina++;
+            mostrarPagina(pagina);
+        } else {
+            // Siguiente página
+            window.location.href = "UniformesL.html";
+        }
+    }
+
+    function anterior() {
+        if(pagina > 0){
+            pagina--;
+            mostrarPagina(pagina);
+        } else {
+            // Volver a OrigenL.html al subtítulo "Replica de la espada de Ballen"
+            window.location.href = "../OrigenL.html?subtitulo=ReplicaEspadaBallen";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Escuadrones</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+            padding-bottom: 120px; /* espacio para el footer */
+        }
+
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
+
+        .pagina.activa {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Flechas */
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        h2, h3 {
+            color: #00e0ff;
+        }
+
+        p {
+            line-height: 1.5;
+            color: white;
+        }
+
+        /* ---------------- FOOTER DE IMÁGENES ---------------- */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        footer .img-opcion {
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        footer .img-opcion img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid transparent;
+            transition: transform 0.5s, border 0.3s;
+        }
+
+        footer .img-opcion:hover img {
+            transform: scale(1.2) rotateY(360deg);
+        }
+
+        footer .img-opcion p {
+            margin: 3px 0 0 0;
+            color: #00e0ff;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Imagen seleccionada */
+        footer .img-opcion.activa img {
+            border: 2px solid #00e0ff;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="contenedor">
+
+        <!-- Barra lateral -->
+        <div class="lado">
+            <p>El Regimiento Hoy</p>
+
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
+
+            <button onclick="window.location.href='../../index.html'">Inicio</button>
+            <button onclick="window.location.href='../regimiento.html'">Volver</button>
+        </div>
+
+        <!-- Zona central -->
+        <div class="centro">
+            <div class="contenido">
+
+                <!-- Página 1 -->
+                <div class="pagina activa">
+                    <h2>Riobamba</h2>
+                    <p>El Escuadrón Riobamba participó en las campañas de la independencia, destacando por su valentía y disciplina en las operaciones militares.</p>
+                </div>
+
+                <!-- Página 2 -->
+                <div class="pagina">
+                    <h2>Junín</h2>
+                    <p>El Escuadrón Junín se destacó en la famosa batalla de Junín, siendo un elemento crucial en la victoria de las fuerzas patriotas.</p>
+                </div>
+
+                <!-- Página 3 -->
+                <div class="pagina">
+                    <h2>San Lorenzo</h2>
+                    <p>El Escuadrón San Lorenzo honró el legado de la histórica batalla, demostrando compromiso y excelencia en las maniobras militares.</p>
+                </div>
+
+                <!-- Página 4 -->
+                <div class="pagina">
+                    <h2>Maipú</h2>
+                    <p>El Escuadrón Maipú participó activamente en la batalla homónima, contribuyendo significativamente al triunfo patriota y la consolidación de la independencia.</p>
+                </div>
+
+                <!-- Página 5 -->
+                <div class="pagina">
+                    <h2>Chacabuco</h2>
+                    <p>El Escuadrón Chacabuco jugó un papel estratégico en la campaña de Chile, destacando su disciplina y capacidad táctica en combate.</p>
+                </div>
+
+                <!-- Página 6 -->
+                <div class="pagina">
+                    <h2>Ayacucho</h2>
+                    <p>El Escuadrón Ayacucho contribuyó decisivamente a las operaciones finales de la independencia sudamericana, demostrando valor y determinación.</p>
+                </div>
+
+                <!-- Página 7 -->
+                <div class="pagina">
+                    <h2>Montevideo</h2>
+                    <p>El Escuadrón Montevideo participó en la liberación y control de la región, consolidando la presencia patriota y fortaleciendo la disciplina militar.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER CON IMÁGENES -->
+    <footer>
+        <div class="img-opcion activa" onclick="mostrarPagina(0)">
+            <img src="../../Imagenes/1.jpg" alt="Riobamba">
+            <p>1</p>
+        </div>
+        <div class="img-opcion" onclick="mostrarPagina(1)">
+            <img src="../../Imagenes/2.jpg" alt="Junín">
+            <p>2</p>
+        </div>
+        <div class="img-opcion" onclick="mostrarPagina(2)">
+            <img src="../../Imagenes/3.jpg" alt="San Lorenzo">
+            <p>3</p>
+        </div>
+        <div class="img-opcion" onclick="mostrarPagina(3)">
+            <img src="../../Imagenes/4.jpg" alt="Maipú">
+            <p>4</p>
+        </div>
+        <div class="img-opcion" onclick="mostrarPagina(4)">
+            <img src="../../Imagenes/5.jpg" alt="Chacabuco">
+            <p>5</p>
+        </div>
+        <div class="img-opcion" onclick="mostrarPagina(5)">
+            <img src="../../Imagenes/6.jpg" alt="Ayacucho">
+            <p>6</p>
+        </div>
+        <div class="img-opcion" onclick="mostrarPagina(6)">
+            <img src="../../Imagenes/7.jpg" alt="Montevideo">
+            <p>7</p>
+        </div>
+    </footer>
+
+    <script>
+        let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const imgsFooter = document.querySelectorAll("footer .img-opcion");
+
+        function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
+            pagina = i;
+
+            // Resaltar la imagen activa en el footer
+            imgsFooter.forEach(img => img.classList.remove("activa"));
+            imgsFooter[i].classList.add("activa");
+        }
+
+        function siguiente() {
+            if (pagina < paginas.length - 1) {
+                pagina++;
+                mostrarPagina(pagina);
+            } else {
+                pagina = 0;
+                mostrarPagina(pagina);
+            }
+        }
+
+        function anterior() {
+            if (pagina > 0) {
+                pagina--;
+                mostrarPagina(pagina);
+            } else {
+                pagina = paginas.length - 1;
+                mostrarPagina(pagina);
+            }
+        }
+    </script>
+
+</body>
+</html>

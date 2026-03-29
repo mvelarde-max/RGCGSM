@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Misiones Actuales</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+            padding-bottom: 150px; /* espacio para footer */
+        }
+
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
+
+        .pagina.activa {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Flechas */
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        h2, h3 {
+            color: #00e0ff;
+        }
+
+        p {
+            line-height: 1.5;
+            color: white;
+        }
+
+        /* ---------------- FOOTER ---------------- */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        footer .media-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer .media-opcion img,
+        footer .media-opcion video {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: transform 0.4s, border 0.3s;
+        }
+
+        footer .media-opcion:hover img,
+        footer .media-opcion:hover video {
+            transform: scale(1.2);
+            border: 2px solid #00e0ff;
+        }
+
+        footer .media-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+            max-width: 70px;
+        }
+
+        /* ---------------- MODAL ---------------- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img,
+        .modal-content video {
+            width: 100%;
+            height: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- Barra lateral -->
+    <div class="lado">
+        <p>El Regimiento Hoy</p>
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+        <button onclick="window.location.href='../../index.html'">Inicio</button>
+        <button onclick="window.location.href='../regimiento.html'">Volver</button>
+    </div>
+
+    <!-- Zona central -->
+    <div class="centro">
+        <div class="contenido">
+
+            <!-- Página 1 -->
+            <div class="pagina activa" data-media="0">
+                <h2>Ceremonia de Estado y seguridad del Presidente</h2>
+                <p>El Regimiento participa en ceremonias oficiales, desfiles y guardias de honor...</p>
+            </div>
+
+            <!-- Página 2 -->
+            <div class="pagina" data-media="1">
+                <h2>Preservación del Solar Natal del Libertador</h2>
+                <p>Se encarga de mantener y proteger el Solar Natal de José de San Martín...</p>
+            </div>
+
+            <!-- Página 3 -->
+            <div class="pagina" data-media="2">
+                <h2>Mantener e Incrementar el Espíritu Sanmartiniano</h2>
+                <p>Mediante actividades educativas, culturales y protocolares...</p>
+            </div>
+
+            <!-- Página 4 -->
+            <div class="pagina" data-media="3">
+                <h2>Otras Actividades Operacionales</h2>
+                <p>Incluye misiones logísticas, apoyo ceremonial, capacitación del personal...</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER DINÁMICO -->
+<footer id="footerMedia"></footer>
+
+<!-- MODAL PARA VER MEDIA -->
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <span class="modal-close">&times;</span>
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script>
+    let pagina = 0;
+    const paginas = document.querySelectorAll(".pagina");
+    const footer = document.getElementById("footerMedia");
+    const modal = document.getElementById("modal");
+    const modalContent = document.getElementById("modalContent");
+
+    // Datos de media por página (imágenes/videos) con nombre
+    const mediaData = {
+        0: [
+            {type: 'img', src:'../../Imagenes/ceremonia1.jpg', nombre:'Desfile Oficial'},
+            {type: 'img', src:'../../Imagenes/ceremonia2.jpg', nombre:'Guardia de Honor'},
+            {type: 'img', src:'../../Imagenes/ceremonia3.jpg', nombre:'Formación'},
+            {type: 'img', src:'../../Imagenes/ceremonia4.jpg', nombre:'Ceremonia Exterior'},
+            {type: 'img', src:'../../Imagenes/ceremonia5.jpg', nombre:'Desfile Interno'}
+        ],
+        1: [
+            {type: 'img', src:'../../Imagenes/solar1.jpg', nombre:'Solar Natal'}
+        ],
+        2: [
+            {type: 'img', src:'../../Imagenes/espiritu1.jpg', nombre:'Actividad 1'},
+            {type: 'img', src:'../../Imagenes/espiritu2.jpg', nombre:'Actividad 2'},
+            {type: 'img', src:'../../Imagenes/espiritu3.jpg', nombre:'Actividad 3'},
+            {type: 'img', src:'../../Imagenes/espiritu4.jpg', nombre:'Actividad 4'},
+            {type: 'img', src:'../../Imagenes/espiritu5.jpg', nombre:'Actividad 5'}
+        ],
+        3: [
+            {type: 'img', src:'../../Imagenes/operaciones1.jpg', nombre:'Operación 1'},
+            {type: 'img', src:'../../Imagenes/operaciones2.jpg', nombre:'Operación 2'},
+            {type: 'video', src:'../../Videos/operaciones1.mp4', nombre:'Video Operación 1'},
+            {type: 'video', src:'../../Videos/operaciones2.mp4', nombre:'Video Operación 2'},
+            {type: 'video', src:'../../Videos/rcg3.mp4', nombre:'Video Fanfarria'}
+        ]
+    };
+
+    function mostrarPagina(i) {
+        paginas.forEach(p => p.classList.remove('activa'));
+        paginas[i].classList.add('activa');
+        pagina = i;
+        actualizarFooter();
+    }
+
+    function siguiente() {
+        if (pagina < paginas.length - 1) { pagina++; }
+        else { pagina = 0; }
+        mostrarPagina(pagina);
+    }
+
+    function anterior() {
+        if (pagina > 0) { pagina--; }
+        else { pagina = paginas.length -1; }
+        mostrarPagina(pagina);
+    }
+
+    // ------------------- FOOTER -------------------
+    function actualizarFooter() {
+        footer.innerHTML = '';
+        const media = mediaData[pagina];
+        media.forEach((m) => {
+            const div = document.createElement('div');
+            div.classList.add('media-opcion');
+
+            if(m.type === 'img'){
+                const img = document.createElement('img');
+                img.src = m.src;
+                img.onclick = () => abrirModal(m);
+                div.appendChild(img);
+            } else if(m.type === 'video'){
+                const vid = document.createElement('video');
+                vid.src = m.src;
+                vid.muted = true;
+                vid.onclick = () => abrirModal(m);
+                div.appendChild(vid);
+            }
+
+            // Nombre debajo de la miniatura
+            const titulo = document.createElement('p');
+            titulo.textContent = m.nombre;
+            div.appendChild(titulo);
+
+            footer.appendChild(div);
+        });
+    }
+
+    // ------------------- MODAL -------------------
+    function abrirModal(m){
+        modal.style.display = 'flex';
+        modalContent.innerHTML = '';
+        if(m.type==='img'){
+            const img = document.createElement('img');
+            img.src = m.src;
+            modalContent.appendChild(img);
+        } else if(m.type==='video'){
+            const vid = document.createElement('video');
+            vid.src = m.src;
+            vid.controls = true;
+            vid.autoplay = true;
+            modalContent.appendChild(vid);
+        }
+    }
+
+    function cerrarModal(){
+        modal.style.display = 'none';
+        modalContent.innerHTML = '';
+    }
+
+    // Inicializa footer al cargar
+    actualizarFooter();
+</script>
+
+</body>
+</html>

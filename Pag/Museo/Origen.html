@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Origen del Regimiento</title>
+    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <style>
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        h2 {
+            color: #00e0ff;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0,224,255,0.5);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+<div class="contenedor">
+
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>Origen</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
+        </div>
+
+        <button onclick="window.location.href='../../index.html'">Inicio</button>
+        <button onclick="window.location.href='../museo.html'">Volver</button>
+        
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="centro">
+        <div class="contenido">
+
+            <h2>Origen del Regimiento de Granaderos a Caballo</h2>
+
+            <img src="../../CLIPS/1111F3A.BMP" class="imagen" alt="Origen del Regimiento">
+
+            <p>
+                El Regimiento de Granaderos a Caballo General San Martín fue creado en 1812 por el Libertador José de San Martín, con el objetivo de proteger la independencia de las Provincias Unidas del Río de la Plata.
+            </p>
+
+            <p>
+                Su formación estuvo marcada por disciplina, coraje y compromiso con la libertad de la patria. A lo largo de la historia, el regimiento participó en campañas clave de la independencia y se convirtió en un símbolo de honor y lealtad.
+            </p>
+
+            <p>
+                Los granaderos se destacaron en combate y en ceremonias militares, manteniendo hasta hoy tradiciones que reflejan la historia y el legado de José de San Martín.
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+function siguiente() {
+    window.location.href = "Salas.html"; // Siguiente página del museo
+}
+
+function anterior() {
+    window.location.href = "museo.html"; // Regresa al menú del museo
+}
+</script>
+
+</body>
+</html>
