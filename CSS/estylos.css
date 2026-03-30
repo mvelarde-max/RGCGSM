@@ -1,0 +1,259 @@
+/* ============================= */
+/* RESET + BODY */
+/* ============================= */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url("../Fondos/RGCGSM.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Capa oscura */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+
+/* ============================= */
+/* CONTENEDOR GENERAL */
+/* ============================= */
+.contenedor {
+    display: flex;
+    height: 100vh;
+}
+
+/* ============================= */
+/* LADO IZQUIERDO */
+/* ============================= */
+.lado {
+    width: 140px;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 22px;
+    text-align: center;
+}
+
+.lado button {
+    width: 90px;
+    padding: 8px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.lado button:hover {
+    background: #2563eb;
+}
+
+/* ============================= */
+/* CENTRO GENERAL */
+/* ============================= */
+.centro {
+    flex: 1;
+    position: relative;
+}
+
+/* ============================= */
+/* OPCIONES GENERALES */
+/* ============================= */
+.opcion {
+    text-align: center;
+    cursor: pointer;
+    color: #00e0ff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.opcion img {
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,224,255,0.6);
+    transition: 0.5s;
+}
+
+.opcion p {
+    margin: 8px 0 0;
+}
+
+/* Hover general */
+.opcion:hover {
+    transform: scale(1.15);
+    text-shadow: 0 0 10px #00e0ff;
+}
+
+.opcion:hover img {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+/* ============================= */
+/* HISTORIA (pantalla principal) */
+/* ============================= */
+.centro .opcion {
+    position: absolute;
+}
+
+.arriba-izq {
+    top: 20%;
+    left: 25%;
+}
+
+.arriba-der {
+    top: 20%;
+    right: 25%;
+}
+
+.abajo-centro {
+    bottom: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.centro .opcion img {
+    width: 140px;
+    height: 140px;
+}
+
+/* ============================= */
+/* CRONOLOGÍA */
+/* ============================= */
+.timeline-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+    padding: 60px 20px;
+}
+
+/* Filas */
+.fila {
+    display: flex;
+    justify-content: space-between;
+    gap: 120px;
+}
+
+.fila.derecha {
+    flex-direction: row;
+}
+
+.fila.izquierda {
+    flex-direction: row-reverse;
+}
+
+/* Eventos */
+.evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.evento img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #00e0ff;
+    box-shadow: 0 0 20px rgba(0,224,255,0.7);
+    transition: 0.5s;
+}
+
+.evento:hover img {
+    transform: scale(1.2) rotateY(360deg);
+}
+
+.evento p {
+    margin-top: 12px;
+    max-width: 160px;
+    font-size: 15px;
+    text-shadow: 0 0 6px #00e0ff;
+}
+
+.evento:hover p {
+    color: #00e0ff;
+}
+
+/* ============================= */
+/* COMBATE (formación militar) */
+/* ============================= */
+.formacion-militar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 40px;
+}
+
+.formacion-militar .fila {
+    justify-content: space-evenly;
+}
+
+/* Opciones combate */
+.formacion-militar .opcion img {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    border: 2px solid #00e0ff;
+}
+
+.formacion-militar .opcion p {
+    font-size: 13px;
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+@media screen and (max-width: 900px) {
+
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .lado {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .lado p {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 20px;
+    }
+
+    .centro {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .centro .opcion {
+        position: static;
+        transform: none !important;
+    }
+
+    .fila {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 60px;
+    }
+}

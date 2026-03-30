@@ -4,7 +4,7 @@ body {
     padding: 0;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    background-image: url("../Fondos/RGCGSM.jpg");
+    background-image: url("../Fondos/Mil.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -46,6 +46,7 @@ body::before {
     transform: rotate(180deg);
     font-size: 20px;
     text-align: center;
+    color: white;
 }
 
 /* Botones laterales */
@@ -76,7 +77,7 @@ body::before {
 
 /* Título de la galería */
 .centro h1 {
-    color: #00e0ff;
+    color: white;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -100,22 +101,23 @@ body::before {
 .galeria .opcion img {
     width: 120px;
     height: 120px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
     transition: transform 0.5s;
+    background-color: rgba(0,0,0,0.3);
 }
 
 .galeria .opcion p {
     margin-top: 5px;
     font-size: 14px;
-    color: #00e0ff;
+    color: white;
 }
 
 /* Hover sobre imagen */
 .galeria .opcion:hover {
     transform: scale(1.15);
-    text-shadow: 0 0 10px #00e0ff;
+    text-shadow: 0 0 10px white;
 }
 
 .galeria .opcion:hover img {
@@ -143,4 +145,58 @@ body::before {
         gap: 15px;
     }
     .galeria .opcion img { width: 80px; height: 80px; }
+}
+
+/* ==================== LIGHTBOX ==================== */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Imagen ampliada */
+#lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 15px;
+    box-shadow: 0 0 30px white;
+    animation: zoom 0.3s ease;
+}
+
+/* Texto debajo */
+#lightbox p {
+    margin-top: 15px;
+    color: white;
+    font-size: 18px;
+}
+
+/* Botón cerrar */
+#cerrar {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Animación */
+@keyframes zoom {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
