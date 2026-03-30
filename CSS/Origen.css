@@ -1,0 +1,126 @@
+/* -------------------- BODY -------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("../Fondos/RGCGSM.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Capa oscura encima del fondo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* -------------------- CONTENEDOR -------------------- */
+.contenedor {
+    display: flex;
+}
+
+/* -------------------- LADO IZQUIERDO -------------------- */
+.lado {
+    width: 120px;
+    background: rgba(0,0,0,0.6);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Texto vertical */
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Flechas */
+.flechas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.flechas span {
+    padding: 5px 10px;
+    background: rgba(0,224,255,.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.flechas span:hover {
+    background: rgba(0,224,255,.5);
+}
+
+/* Botones */
+.lado button {
+    width: 80px;
+    padding: 6px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.lado button:hover {
+    background: #2563eb;
+}
+
+/* -------------------- CONTENIDO -------------------- */
+.centro {
+    margin-left: 120px;
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caja del texto */
+.contenido {
+    max-width: 700px;
+    text-align: center;
+    padding: 20px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Título */
+h2 {
+    color: #00e0ff;
+}
+
+/* Imágenes */
+.imagen {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 0 10px rgba(0,224,255,0.5);
+}
+
+/* Párrafos */
+p {
+    line-height: 1.6;
+}
