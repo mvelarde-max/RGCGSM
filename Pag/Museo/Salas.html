@@ -3,73 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Salas del Museo</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
-
-    <style>
-        .contenido {
-            max-width: 900px;
-            text-align: center;
-        }
-
-        .flechas {
-            margin-top: 15px;
-            font-size: 18px;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .flechas span {
-            padding: 5px 10px;
-            background: rgba(0,224,255,.2);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .flechas span:hover {
-            background: rgba(0,224,255,.5);
-        }
-
-        h2 {
-            color: #00e0ff;
-        }
-
-        .fila-imagenes {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .fila-imagenes .imagen-container {
-            text-align: center;
-            width: 150px;
-        }
-
-        .fila-imagenes img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,224,255,0.5);
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .fila-imagenes img:hover {
-            transform: scale(1.1);
-        }
-
-        .fila-imagenes p {
-            margin-top: 5px;
-            font-size: 14px;
-            color: white;
-        }
-
-        p.texto {
-            line-height: 1.6;
-            margin-top: 30px;
-        }
-    </style>
+    <link rel="stylesheet" href="../../CSS/Salas.css">
 </head>
 
 <body>
@@ -79,10 +13,6 @@
     <div class="lado">
         <p>Salas</p>
 
-        <div class="flechas">
-            <span onclick="anterior()">⬅</span>
-            <span onclick="siguiente()">➡</span>
-        </div>
         <button onclick="window.location.href='../../index.html'">Inicio</button>
         <button onclick="window.location.href='../museo.html'">Volver</button>
     </div>
@@ -91,26 +21,24 @@
     <div class="centro">
         <div class="contenido">
 
-            <h2>Salas del Museo</h2>
-
             <div class="fila-imagenes">
                 <div class="imagen-container">
                     <a href="Lecturas/OrigenL.html">
-                        <img src="../../CLIPS/13M1A.BMP" alt="Iconografía Sanmartiniana">
+                        <img src="../../CLIPS/Z320P6.BMP">
                     </a>
                     <p>Iconografía Sanmartiniana</p>
                 </div>
 
                 <div class="imagen-container">
                     <a href="Lecturas/ArmasL.html">
-                        <img src="../../CLIPS/SanMartinYSusJefes.jpg" alt="San Martín y sus Jefes">
+                        <img src="../../CLIPS/Z320F13.BMP">
                     </a>
                     <p>San Martín y sus Jefes</p>
                 </div>
 
                 <div class="imagen-container">
                     <a href="Lecturas/UniformesL.html">
-                        <img src="../../CLIPS/UniformesHistoricos.jpg" alt="Uniformes Históricos">
+                        <img src="../../CLIPS/320F48.BMP">
                     </a>
                     <p>Uniformes Históricos</p>
                 </div>
@@ -119,21 +47,21 @@
             <div class="fila-imagenes">
                 <div class="imagen-container">
                     <a href="Lecturas/CombateL.html">
-                        <img src="../../CLIPS/CombateSanLorenzo.jpg" alt="Combate de San Lorenzo">
+                        <img src="../../CLIPS/320F67.BMP">
                     </a>
                     <p>Combate de San Lorenzo</p>
                 </div>
 
                 <div class="imagen-container">
                     <a href="Lecturas/BatallasL.html">
-                        <img src="../../CLIPS/Batallas.jpg" alt="Batallas">
+                        <img src="../../CLIPS/320F76.BMP">
                     </a>
                     <p>Batallas</p>
                 </div>
 
                 <div class="imagen-container">
                     <a href="Lecturas/RecreacionL.html">
-                        <img src="../../CLIPS/Recreacion.jpg" alt="Recreación">
+                        <img src="../../CLIPS/320F81.BMP">
                     </a>
                     <p>Recreación</p>
                 </div>
@@ -143,16 +71,5 @@
     </div>
 
 </div>
-
-<script>
-function siguiente() {
-    window.location.href = "Hall.html"; // siguiente página
-}
-
-function anterior() {
-    window.location.href = "Origen.html"; // página anterior
-}
-</script>
-
 </body>
 </html>
