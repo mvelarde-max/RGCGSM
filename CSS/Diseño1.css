@@ -277,3 +277,11 @@ body::before {
 .evento:hover {
     transform: scale(1.15);
 }
+
+
+p {
+            line-height: 1.4;
+    margin-bottom: 15px;
+    text-align: justify;
+    text-justify: inter-word;
+        }
