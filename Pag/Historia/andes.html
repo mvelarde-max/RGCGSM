@@ -1,51 +1,99 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Andes</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <link rel="stylesheet" href="../../CSS/EA.css">
     <style>
-    .contenido {
-        max-width: 700px;
-        text-align: center;
-    }
+        .contenido {
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
 
-    .pagina {
-        display: none;
-    }
+    /* Fondo semi-negro y texto blanco */
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
 
-    .pagina.activa {
-        display: block;
-    }
+    /* Borde sutil azul como detalle */
+    border: 1px solid rgba(0, 224, 255, 0.2);
+}
 
-    /* 🔥 FLECHAS IGUALES A LAS OTRAS PÁGINAS */
-    .flechas {
-        margin-top: 15px;
-        font-size: 18px;
-        display: flex;
-        justify-content: space-between;
-    }
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-    .flechas span {
-        padding: 5px 10px;
-        background: rgba(0,224,255,.2);
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        .pagina.activa {
+            display: block;
+        }
 
-    .flechas span:hover {
-        background: rgba(0,224,255,.5);
-    }
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    h2 {
-        color: #00e0ff;
-    }
-</style>
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2,
+        h3 {
+            color: #00e0ff;
+        }
+
+        p {
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #00e0ff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #00b8cc;
+        }
+    </style>
 </head>
 
 <body>
     <div class="contenedor">
+
+        <!-- LADO IZQUIERDO -->
         <div class="lado">
             <p>CRONOLOGÍA</p>
 
@@ -54,41 +102,61 @@
                 <span onclick="siguiente()">➡</span>
             </div>
 
+            <div class="contador" id="contador">1 / 6</div>
+
             <button onclick="window.location.href='cronologia.html'">Volver</button>
         </div>
 
+        <!-- CONTENIDO -->
         <div class="centro">
             <div class="contenido">
 
+                <!-- PÁGINA 1 -->
                 <div class="pagina activa">
                     <h2>Cruce de los Andes</h2>
                     <h3>Ejército de los Andes</h3>
-                    <p>Texto...</p>
+                    <p>El Ejército de los Andes, liderado por José de San Martín, se preparó cuidadosamente para liberar Chile del dominio español. 
+                    Este ejército estaba compuesto por soldados experimentados, voluntarios y hombres de distintas provincias argentinas, entrenados en montaña y combate. 
+                    Su organización, disciplina y planificación estratégica fueron decisivas para el éxito de la campaña libertadora en la cordillera.</p>
                 </div>
 
+                <!-- PÁGINA 2 -->
                 <div class="pagina">
                     <h3>Regimiento reunido</h3>
-                    <p>Texto...</p>
+                    <p>El Regimiento de Granaderos a Caballo se incorporó al Ejército de los Andes como una unidad de élite. 
+                    Los granaderos se reunieron en Mendoza para coordinar movimientos, logística y entrenamientos específicos en terreno montañoso. 
+                    Su experiencia en campañas previas y su disciplina los convirtió en una de las fuerzas más confiables durante la campaña del cruce.</p>
                 </div>
 
+                <!-- PÁGINA 3 -->
                 <div class="pagina">
                     <h3>Plumerillo</h3>
-                    <p>Texto...</p>
+                    <p>El campamento de Plumerillo, ubicado cerca de Mendoza, fue el lugar donde San Martín organizó el entrenamiento del Ejército de los Andes. 
+                    Allí se practicaron marchas, técnicas de supervivencia en alta montaña, manejo de armamento y coordinación de unidades. 
+                    Plumerillo fue fundamental para preparar a los soldados para enfrentar los rigores del cruce de la cordillera.</p>
                 </div>
 
+                <!-- PÁGINA 4 -->
                 <div class="pagina">
                     <h3>Cruce de los Andes</h3>
-                    <p>Texto...</p>
+                    <p>En enero de 1817, el Ejército de los Andes inició el histórico cruce de la cordillera. 
+                    Las tropas enfrentaron condiciones extremas: nieve, frío intenso y terreno difícil. 
+                    La estrategia de dividir el ejército en columnas permitió avanzar con rapidez y sorpresa, logrando superar las defensas realistas y posicionarse para la batalla decisiva en territorio chileno.</p>
                 </div>
 
+                <!-- PÁGINA 5 -->
                 <div class="pagina">
                     <h3>Chacabuco</h3>
-                    <p>Texto...</p>
+                    <p>El 12 de febrero de 1817, tuvo lugar la Batalla de Chacabuco, donde el Ejército de los Andes derrotó al ejército realista. 
+                    Esta victoria permitió liberar Santiago y consolidar la independencia de Chile. 
+                    San Martín demostró su capacidad estratégica y liderazgo, mientras que las tropas, incluyendo los Granaderos a Caballo, se destacaron por su disciplina y valentía.</p>
                 </div>
 
+                <!-- PÁGINA 6 -->
                 <div class="pagina">
                     <h3>Maipú</h3>
-                    <p>Texto...</p>
+                    <p>El 5 de abril de 1818, en la Batalla de Maipú, las fuerzas patriotas lideradas por San Martín lograron una victoria decisiva sobre los realistas, asegurando la independencia de Chile. 
+                    Esta batalla consolidó el éxito del cruce de los Andes y demostró la eficacia del entrenamiento, la organización y la disciplina del Ejército de los Andes en combate abierto.</p>
                 </div>
 
             </div>
@@ -96,32 +164,35 @@
     </div>
 
     <script>
-        let pagina = 0;
-        const paginas = document.querySelectorAll(".pagina");
+let pagina = 0;
+const paginas = document.querySelectorAll(".pagina");
+const contador = document.getElementById("contador");
 
-        function mostrarPagina(i){
-            paginas.forEach(p => p.classList.remove("activa"));
-            paginas[i].classList.add("activa");
-        }
+function mostrarPagina(i) {
+    paginas.forEach(p => p.classList.remove("activa"));
+    paginas[i].classList.add("activa");
+    contador.textContent = `${i + 1} / ${paginas.length}`;
+}
 
-        function siguiente(){
-            if(pagina < paginas.length - 1){
-                pagina++;
-                mostrarPagina(pagina);
-            } else {
-                window.location.href = "peru.html";
-            }
-        }
+function siguiente() {
+    if (pagina < paginas.length - 1) {
+        pagina++;
+        mostrarPagina(pagina);
+    } 
+    // No hace nada si ya estás en la última página
+}
 
-        function anterior(){
-            if(pagina > 0){
-                pagina--;
-                mostrarPagina(pagina);
-            } else {
-                window.location.href = "operaciones.html";
-            }
-        }
-    </script>
+function anterior() {
+    if (pagina > 0) {
+        pagina--;
+        mostrarPagina(pagina);
+    } 
+    // No hace nada si ya estás en la primera página
+}
+
+// Mostrar la primera página al cargar
+mostrarPagina(pagina);
+</script>
 
 </body>
 </html>

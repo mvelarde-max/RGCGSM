@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Misiones Actuales</title>
-    <link rel="stylesheet" href="../../CSS/misiones.css">
+    <link rel="stylesheet" href="../../CSS/escuadrones.css">
 
     <style>
         .contenido {
             max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
             text-align: center;
-            padding-bottom: 150px; /* espacio para footer */
+            padding-right: 10px;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
         }
 
         .pagina {
@@ -22,8 +28,13 @@
         }
 
         @keyframes fade {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* Flechas */
@@ -36,41 +47,36 @@
 
         .flechas span {
             padding: 5px 10px;
-            background: rgba(0,224,255,.2);
+            background: rgba(0, 224, 255, .2);
             border-radius: 8px;
             cursor: pointer;
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             color: #00e0ff;
         }
 
         p {
             line-height: 1.5;
             color: white;
+            text-align: justify;
         }
 
-        /* ---------------- FOOTER ---------------- */
+        /* -------- FOOTER (IGUAL A ESCUADRONES) -------- */
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
             width: 100%;
-            background: rgba(0,0,0,0.85);
+            background: rgba(0, 0, 0, 0.8);
             padding: 10px 0;
             display: flex;
             justify-content: center;
             gap: 10px;
-            z-index: 1000;
             flex-wrap: wrap;
         }
 
         footer .media-opcion {
             cursor: pointer;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         footer .media-opcion img,
@@ -80,12 +86,16 @@
             object-fit: cover;
             border-radius: 8px;
             border: 2px solid transparent;
-            transition: transform 0.4s, border 0.3s;
+            transition: transform 0.5s, border 0.3s;
         }
 
         footer .media-opcion:hover img,
         footer .media-opcion:hover video {
             transform: scale(1.2);
+        }
+
+        footer .media-opcion.activa img,
+        footer .media-opcion.activa video {
             border: 2px solid #00e0ff;
         }
 
@@ -93,11 +103,9 @@
             color: #00e0ff;
             font-size: 12px;
             margin-top: 4px;
-            text-align: center;
-            max-width: 70px;
         }
 
-        /* ---------------- MODAL ---------------- */
+        /* -------- MODAL -------- */
         .modal {
             display: none;
             position: fixed;
@@ -106,7 +114,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(0, 0, 0, 0.9);
             justify-content: center;
             align-items: center;
         }
@@ -134,173 +142,293 @@
 </head>
 
 <body>
-<div class="contenedor">
+    <div class="contenedor">
 
-    <!-- Barra lateral -->
+        <!-- LADO IZQUIERDO -->
+        <div class="lado">
+            <p>El Regimiento Hoy</p>
 
-    
-    <div class="lado">
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
 
-        
-        <p>El Regimiento Hoy</p>
-        <div class="flechas">
-            <span onclick="anterior()">⬅</span>
-            <span onclick="siguiente()">➡</span>
+            <button onclick="window.location.href='../../index.html'">Inicio</button>
+            <button onclick="window.location.href='../regimiento.html'">Volver</button>
         </div>
-        <button onclick="window.location.href='../../index.html'">Inicio</button>
-        <button onclick="window.location.href='../regimiento.html'">Volver</button>
+
+        <!-- CENTRO -->
+        <div class="centro">
+            <div class="contenido">
+
+                <div class="pagina activa">
+                    <h2>Ceremonia de Estado y seguridad del Presidente</h2>
+                    <p>
+                        El Regimiento de Granaderos a Caballo desempeña en la actualidad un papel fundamental dentro de
+                        las ceremonias oficiales del Estado argentino, constituyéndose como una de las unidades más
+                        representativas en términos históricos, simbólicos e institucionales. Su presencia en actos
+                        protocolares, recepciones oficiales, visitas de dignatarios extranjeros y celebraciones patrias
+                        no solo aporta solemnidad, sino que también refuerza la identidad nacional y la continuidad de
+                        las tradiciones militares heredadas desde la época de la independencia.
+
+                        Una de sus funciones más visibles es la participación en desfiles militares y ceremonias de
+                        Estado, donde sus integrantes, perfectamente uniformados y montados, ejecutan formaciones y
+                        movimientos que reflejan disciplina, precisión y coordinación. Estas presentaciones no son
+                        meramente estéticas, sino que implican un alto nivel de entrenamiento, preparación física y
+                        conocimiento técnico. Cada detalle, desde la postura hasta el manejo del caballo, responde a
+                        normas estrictas que garantizan la excelencia en la ejecución.
+
+                        Además de su rol ceremonial, el Regimiento cumple una función clave en la seguridad
+                        presidencial, particularmente en contextos protocolares. Si bien no se trata de una fuerza de
+                        seguridad en el sentido operativo moderno, su presencia forma parte del dispositivo simbólico y
+                        estratégico que rodea al Presidente de la Nación. En eventos oficiales, actos públicos y
+                        ceremonias institucionales, los granaderos acompañan y custodian al mandatario, reforzando la
+                        imagen de autoridad, estabilidad y tradición del Estado argentino.
+
+                        Este rol requiere no solo preparación militar, sino también una formación específica en
+                        ceremonial y protocolo. Los integrantes del Regimiento deben conocer en detalle las normas que
+                        rigen los actos oficiales, el orden de precedencias, las formas de saludo y las conductas
+                        adecuadas en cada situación. Esto los convierte en verdaderos especialistas en representación
+                        institucional, capaces de adaptarse a distintos contextos con profesionalismo.
+
+                        Asimismo, el Regimiento participa en ceremonias de relevancia histórica, como los cambios de
+                        guardia en lugares emblemáticos o los homenajes a figuras destacadas de la historia nacional.
+                        Estas actividades contribuyen a mantener viva la memoria colectiva y a transmitir valores como
+                        el respeto, el honor y el compromiso con la patria.
+
+                        En síntesis, la misión ceremonial y de seguridad presidencial del Regimiento de Granaderos a
+                        Caballo combina tradición, disciplina y simbolismo, constituyéndose como un elemento esencial en
+                        la representación del Estado argentino y en la preservación de su identidad histórica.
+                    </p>
+                </div>
+                <div class="pagina">
+                    <h2>Preservación del Solar Natal del Libertador</h2>
+                    <p>
+                        La preservación del Solar Natal del Libertador José de San Martín constituye una de las
+                        misiones más significativas del Regimiento de Granaderos a Caballo en la actualidad. Este
+                        sitio histórico, ubicado en la localidad de Yapeyú, en la provincia de Corrientes,
+                        representa un símbolo fundamental de la identidad nacional y un punto de referencia clave
+                        para comprender la vida y obra del Padre de la Patria.
+
+                        El Regimiento tiene la responsabilidad de custodiar, mantener y poner en valor este espacio,
+                        asegurando su conservación para las generaciones futuras. Esta tarea implica no solo la
+                        protección física del lugar, sino también la realización de actividades que permitan
+                        difundir su importancia histórica y cultural. En este sentido, los granaderos cumplen un rol
+                        educativo, participando en visitas guiadas, actos conmemorativos y eventos destinados a
+                        fortalecer el conocimiento sobre la figura de San Martín.
+
+                        El mantenimiento del Solar Natal requiere un trabajo constante y coordinado, que incluye
+                        tareas de conservación edilicia, cuidado del entorno natural y organización de actividades
+                        culturales. Todo esto se realiza con el objetivo de preservar la autenticidad del lugar y
+                        garantizar que quienes lo visitan puedan experimentar una conexión directa con la historia.
+
+                        Además, este espacio funciona como un centro de reflexión sobre los valores sanmartinianos,
+                        tales como la libertad, la responsabilidad, la austeridad y el compromiso con el bien común.
+                        A través de distintas iniciativas, se busca transmitir estos principios a la sociedad,
+                        especialmente a los jóvenes, promoviendo una ciudadanía consciente de su historia y de su
+                        rol en el presente.
+
+                        La presencia del Regimiento en Yapeyú también tiene un fuerte componente simbólico, ya que
+                        establece un vínculo directo entre la unidad creada por San Martín y el lugar donde nació.
+                        Esta conexión refuerza la continuidad histórica y permite comprender al Regimiento no solo
+                        como una unidad militar, sino como un custodio de la memoria nacional.
+
+                        En definitiva, la preservación del Solar Natal del Libertador no es únicamente una tarea de
+                        mantenimiento, sino una misión integral que combina historia, educación y cultura,
+                        contribuyendo a mantener viva la figura de San Martín y su legado en la sociedad argentina.
+                    </p>
+                </div>
+
+                <div class="pagina">
+                    <h2>Mantener e Incrementar el Espíritu Sanmartiniano</h2>
+
+                    <p> Mantener e incrementar el espíritu sanmartiniano es una de las misiones más profundas y
+                        trascendentes del Regimiento de Granaderos a Caballo en la actualidad. Este objetivo implica
+                        no solo recordar la figura de José de San Martín como líder militar, sino también transmitir
+                        los valores éticos y morales que guiaron su accionar y que continúan siendo relevantes en la
+                        sociedad contemporánea.
+
+                        El espíritu sanmartiniano se basa en principios como la disciplina, el honor, la
+                        responsabilidad, el sacrificio y el compromiso con la patria. Estos valores son inculcados
+                        en cada integrante del Regimiento a través de su formación diaria, que combina entrenamiento
+                        físico, instrucción militar y educación en historia y ética. De esta manera, los granaderos
+                        no solo se preparan como soldados, sino también como ciudadanos ejemplares.
+
+                        Una de las formas en que el Regimiento promueve estos valores es mediante su participación
+                        en actividades educativas y culturales. Esto incluye visitas a escuelas, charlas, actos
+                        conmemorativos y eventos comunitarios, donde se busca acercar la figura de San Martín a la
+                        sociedad y fomentar una reflexión sobre su legado. Estas acciones tienen un impacto
+                        significativo, especialmente en las nuevas generaciones, que encuentran en la historia una
+                        fuente de inspiración.
+
+                        Asimismo, el Regimiento mantiene vivas tradiciones que se remontan a la época de la
+                        independencia, como el uso de uniformes históricos, las formaciones militares y las
+                        ceremonias protocolares. Estas prácticas no solo tienen un valor simbólico, sino que también
+                        refuerzan el sentido de pertenencia y la continuidad histórica de la institución.
+
+                        El espíritu sanmartiniano también se manifiesta en la conducta diaria de los granaderos,
+                        quienes deben actuar con rectitud, respeto y profesionalismo en todo momento. Esto implica
+                        un compromiso constante con la excelencia y una actitud de servicio hacia la comunidad.
+
+                        En un mundo en constante cambio, donde los valores pueden verse desafiados, el Regimiento
+                        cumple un rol fundamental al preservar y transmitir principios que han demostrado su
+                        vigencia a lo largo del tiempo. De esta manera, contribuye no solo a la formación de sus
+                        integrantes, sino también al fortalecimiento de la identidad nacional.
+
+                        En conclusión, mantener vivo el espíritu sanmartiniano es una misión que trasciende lo
+                        militar, convirtiéndose en una tarea educativa, cultural y moral que busca proyectar hacia
+                        el futuro los valores que dieron origen a la nación argentina.</p>
+                </div>
+
+                <div class="pagina">
+                    <h2>Otras Actividades Operacionales</h2>
+                    <p> Además de sus funciones ceremoniales y simbólicas, el Regimiento de Granaderos a Caballo
+                        desarrolla una serie de actividades operacionales que resultan esenciales para su
+                        funcionamiento y preparación. Estas tareas, aunque menos visibles para el público general,
+                        constituyen la base sobre la cual se sostiene la eficacia y el profesionalismo de la unidad.
+
+                        Entre estas actividades se encuentran las misiones logísticas, que implican la organización
+                        y gestión de recursos necesarios para el desarrollo de sus funciones. Esto incluye el
+                        mantenimiento del equipamiento, el cuidado de los caballos, la planificación de traslados y
+                        la coordinación de operaciones en distintos puntos del país. La logística es un aspecto
+                        fundamental, ya que garantiza que el Regimiento pueda cumplir sus misiones de manera
+                        eficiente.
+
+                        El entrenamiento del personal es otro componente clave. Los granaderos reciben una formación
+                        continua que abarca tanto aspectos físicos como técnicos. Esto incluye prácticas de
+                        equitación, manejo de armas, tácticas militares y entrenamiento en ceremonial. La
+                        combinación de estas disciplinas permite que los integrantes del Regimiento estén preparados
+                        para desempeñarse en diferentes contextos con un alto nivel de profesionalismo.
+
+                        Asimismo, el Regimiento participa en ejercicios militares y actividades de cooperación con
+                        otras unidades del Ejército Argentino. Estas instancias permiten intercambiar conocimientos,
+                        mejorar la coordinación y fortalecer la capacidad operativa. Aunque su rol principal no es
+                        el combate, el entrenamiento constante asegura que la unidad mantenga un nivel adecuado de
+                        preparación.
+
+                        También se desarrollan actividades de apoyo a la comunidad, como la participación en eventos
+                        sociales, campañas solidarias y asistencia en situaciones de emergencia. Estas acciones
+                        refuerzan el vínculo entre el Regimiento y la sociedad, mostrando su compromiso no solo con
+                        la defensa, sino también con el bienestar general.
+
+                        El cuidado de los caballos merece una mención especial, ya que son parte fundamental de la
+                        identidad del Regimiento. Su entrenamiento, alimentación y salud requieren una atención
+                        constante y especializada, lo que implica la participación de personal capacitado en
+                        veterinaria y manejo equino.
+
+                        En conjunto, todas estas actividades operacionales permiten que el Regimiento de Granaderos
+                        a Caballo mantenga su prestigio y su capacidad de cumplir con las misiones que le son
+                        asignadas. Se trata de un trabajo integral que combina tradición y modernidad, asegurando
+                        que la unidad continúe siendo un símbolo de excelencia dentro del Ejército Argentino.</p>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <!-- Zona central -->
-    <div class="centro">
-        <div class="contenido">
+    <!-- FOOTER DINÁMICO -->
+    <footer id="footerMedia"></footer>
 
-            <!-- Página 1 -->
-            <div class="pagina activa" data-media="0">
-                <h2>Ceremonia de Estado y seguridad del Presidente</h2>
-                <p>El Regimiento participa en ceremonias oficiales, desfiles y guardias de honor...</p>
-            </div>
-
-            <!-- Página 2 -->
-            <div class="pagina" data-media="1">
-                <h2>Preservación del Solar Natal del Libertador</h2>
-                <p>Se encarga de mantener y proteger el Solar Natal de José de San Martín...</p>
-            </div>
-
-            <!-- Página 3 -->
-            <div class="pagina" data-media="2">
-                <h2>Mantener e Incrementar el Espíritu Sanmartiniano</h2>
-                <p>Mediante actividades educativas, culturales y protocolares...</p>
-            </div>
-
-            <!-- Página 4 -->
-            <div class="pagina" data-media="3">
-                <h2>Otras Actividades Operacionales</h2>
-                <p>Incluye misiones logísticas, apoyo ceremonial, capacitación del personal...</p>
-            </div>
-
-        </div>
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+        <span class="modal-close">&times;</span>
+        <div class="modal-content" id="modalContent"></div>
     </div>
-</div>
 
-<!-- FOOTER DINÁMICO -->
-<footer id="footerMedia"></footer>
+    <script>
+        let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const footer = document.getElementById("footerMedia");
+        const modal = document.getElementById("modal");
+        const modalContent = document.getElementById("modalContent");
 
-<!-- MODAL PARA VER MEDIA -->
-<div id="modal" class="modal" onclick="cerrarModal()">
-    <span class="modal-close">&times;</span>
-    <div class="modal-content" id="modalContent"></div>
-</div>
+        const mediaData = {
+            0: [
+                { type: 'img', src: '../../CLIPS/21F1A.BMP', nombre: 'Exposición 1' },
+                { type: 'img', src: '../../CLIPS/21F1B.BMP', nombre: 'Exposición 2' }
+            ],
+            1: [
+                { type: 'img', src: '../../CLIPS/21F2A.BMP', nombre: 'Yapeyú' }
+            ],
+            2: [
+                { type: 'img', src: '../../CLIPS/21F3A.BMP', nombre: 'Bandera' }
+            ],
+            3: [
+                { type: 'video', src: '../../VIDEOS/MA4A.mp4', nombre: '' }
+            ]
+        };
 
-<script>
-    let pagina = 0;
-    const paginas = document.querySelectorAll(".pagina");
-    const footer = document.getElementById("footerMedia");
-    const modal = document.getElementById("modal");
-    const modalContent = document.getElementById("modalContent");
+        function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
+            pagina = i;
+            actualizarFooter();
+        }
 
-    // Datos de media por página (imágenes/videos) con nombre
-    const mediaData = {
-        0: [
-            {type: 'img', src:'../../CLIPS/21F1A.BMP', nombre:'Exposicion Internacional 1'},
-            {type: 'img', src:'../../CLIPS/21F1B.BMP', nombre:'Exposicion Internacional 2'},
-            {type: 'img', src:'../../CLIPS/21F1C.BMP', nombre:'Recidencia Precidencial'},
-            {type: 'img', src:'../../CLIPS/21F1D.BMP', nombre:'Seguridad al Presidente'},
-            {type: 'img', src:'../../CLIPS/21F1E.BMP', nombre:'Patrulla'},
-        ],
-        1: [
-            {type: 'img', src:'../../CLIPS/21F2A.BMP', nombre:'Destamento Militar Yapeyu'}
-        ],
-        2: [
-            {type: 'img', src:'../../CLIPS/21F3A.BMP', nombre:'Arrio de la bandera'},
-            {type: 'img', src:'../../CLIPS/21F3B.BMP', nombre:'Custodia de la virgen de Carmen'},
-            {type: 'img', src:'../../CLIPS/21F3C.BMP', nombre:'Historico Regimiento'},
-            {type: 'img', src:'../../CLIPS/21F3D.BMP', nombre:'Regimiento de Granaderos Campo Argentino'},
-            {type: 'img', src:'../../CLIPS/21F3E.BMP', nombre:'Carga del Regimiento de Granaderos'}
-        ],
-        3: [
-            {type: 'img', src:'../../CLIPS/21F4A.BMP', nombre:'Asalto aereo 1'},
-            {type: 'img', src:'../../CLIPS/21F4B.BMP', nombre:'Asalto aereo 2'},
-            {type: 'video', src:'../../VIDEOS/MA4A.mp4', nombre:''},
-            {type: 'video', src:'../../VIDEOS/MA4B.mp4', nombre:''},
-            {type: 'video', src:'../../VIDEOS/MA4C.mp4', nombre:''}
-        ]
-    };
+        function siguiente() {
+            pagina = (pagina + 1) % paginas.length;
+            mostrarPagina(pagina);
+        }
 
-    function mostrarPagina(i) {
-        paginas.forEach(p => p.classList.remove('activa'));
-        paginas[i].classList.add('activa');
-        pagina = i;
-        actualizarFooter();
-    }
+        function anterior() {
+            pagina = (pagina - 1 + paginas.length) % paginas.length;
+            mostrarPagina(pagina);
+        }
 
-    function siguiente() {
-        if (pagina < paginas.length - 1) { pagina++; }
-        else { pagina = 0; }
-        mostrarPagina(pagina);
-    }
+        function actualizarFooter() {
+            footer.innerHTML = '';
+            const media = mediaData[pagina];
 
-    function anterior() {
-        if (pagina > 0) { pagina--; }
-        else { pagina = paginas.length -1; }
-        mostrarPagina(pagina);
-    }
+            media.forEach((m) => {
+                const div = document.createElement('div');
+                div.classList.add('media-opcion');
 
-    // ------------------- FOOTER -------------------
-    function actualizarFooter() {
-        footer.innerHTML = '';
-        const media = mediaData[pagina];
-        media.forEach((m) => {
-            const div = document.createElement('div');
-            div.classList.add('media-opcion');
+                if (m.type === 'img') {
+                    const img = document.createElement('img');
+                    img.src = m.src;
+                    img.onclick = () => abrirModal(m);
+                    div.appendChild(img);
+                } else {
+                    const vid = document.createElement('video');
+                    vid.src = m.src;
+                    vid.muted = true;
+                    vid.onclick = () => abrirModal(m);
+                    div.appendChild(vid);
+                }
 
-            if(m.type === 'img'){
+                const titulo = document.createElement('p');
+                titulo.textContent = m.nombre;
+                div.appendChild(titulo);
+
+                footer.appendChild(div);
+            });
+        }
+
+        function abrirModal(m) {
+            modal.style.display = 'flex';
+            modalContent.innerHTML = '';
+
+            if (m.type === 'img') {
                 const img = document.createElement('img');
                 img.src = m.src;
-                img.onclick = () => abrirModal(m);
-                div.appendChild(img);
-            } else if(m.type === 'video'){
+                modalContent.appendChild(img);
+            } else {
                 const vid = document.createElement('video');
                 vid.src = m.src;
-                vid.muted = true;
-                vid.onclick = () => abrirModal(m);
-                div.appendChild(vid);
+                vid.controls = true;
+                vid.autoplay = true;
+                modalContent.appendChild(vid);
             }
-
-            // Nombre debajo de la miniatura
-            const titulo = document.createElement('p');
-            titulo.textContent = m.nombre;
-            div.appendChild(titulo);
-
-            footer.appendChild(div);
-        });
-    }
-
-    // ------------------- MODAL -------------------
-    function abrirModal(m){
-        modal.style.display = 'flex';
-        modalContent.innerHTML = '';
-        if(m.type==='img'){
-            const img = document.createElement('img');
-            img.src = m.src;
-            modalContent.appendChild(img);
-        } else if(m.type==='video'){
-            const vid = document.createElement('video');
-            vid.src = m.src;
-            vid.controls = true;
-            vid.autoplay = true;
-            modalContent.appendChild(vid);
         }
-    }
 
-    function cerrarModal(){
-        modal.style.display = 'none';
-        modalContent.innerHTML = '';
-    }
+        function cerrarModal() {
+            modal.style.display = 'none';
+            modalContent.innerHTML = '';
+        }
 
-    // Inicializa footer al cargar
-    actualizarFooter();
-</script>
+        actualizarFooter();
+    </script>
 
 </body>
+
 </html>

@@ -1,57 +1,190 @@
 <!DOCTYPE html>
-
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Ayacucho 1824</title>
-<link rel="stylesheet" href="../../CSS/Diseño1.css">
-<style>
-.contenido{max-width:700px;text-align:center;}
-.flechas{margin-top:15px;display:flex;justify-content:space-between;}
-.imagen{max-width:400px;margin:15px 0;border-radius:10px;}
-h2{color:#00e0ff;}
-.flechas {
-    margin-top: 15px;
-    font-size: 18px;
-    display: flex;
-    justify-content: space-between;
-}
+    <meta charset="UTF-8">
+    <title>Ayacucho 1824</title>
+    <link rel="stylesheet" href="../../CSS/EA.css">
+    <style>
+        .contenido {
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+        }
 
-.flechas span {
-    padding: 5px 10px;
-    background: rgba(0,224,255,.2);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-.flechas span:hover {
-    background: rgba(0,224,255,.5);
-}
-</style>
+        .pagina.activa {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2, h3 {
+            color: #00e0ff;
+        }
+
+        p {
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #00e0ff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #00b8cc;
+        }
+    </style>
 </head>
+
 <body>
-<div class="contenedor">
-<div class="lado">
-<p>COMBATE HISTÓRICO</p>
-<div class="flechas">
-<span onclick="anterior()">⬅</span>
-<span onclick="siguiente()">➡</span>
-</div>
-<button onclick="window.location.href='combate.html'">Volver</button>
-</div>
+    <div class="contenedor">
 
-<div class="centro"><div class="contenido">
-<h2>Ayacucho 1824</h2>
-<img src="../Fondos/Sable15.jpg" class="imagen">
-<p>Batalla final que selló la independencia sudamericana.</p>
-</div></div>
-</div>
+        <!-- LADO IZQUIERDO -->
+        <div class="lado">
+            <p>COMBATE HISTÓRICO</p>
 
-<script>
-function siguiente(){window.location.href="combate.html";}
-function anterior(){window.location.href="junin.html";}
-</script>
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
+
+            <div class="contador" id="contador">1 / 1</div>
+
+            <button onclick="window.location.href='combate.html'">Volver</button>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="centro">
+            <div class="contenido">
+
+                <div class="pagina activa">
+                    <h2>Ayacucho 1824</h2>
+                    <img src="../Fondos/Sable15.jpg" class="imagen">
+
+                    <p>
+                        La batalla de Ayacucho, librada el 9 de diciembre de 1824, representa uno de los enfrentamientos más importantes en la historia de América del Sur, ya que selló la independencia del Perú y consolidó la emancipación de los países sudamericanos del dominio español. Esta confrontación final tuvo lugar en las pampas de Ayacucho, cerca de la ciudad homónima, donde el ejército patriota, comandado por Antonio José de Sucre bajo las órdenes de Simón Bolívar, se enfrentó a las fuerzas realistas que aún resistían en territorio peruano.
+                    </p>
+
+                    <p>
+                        El contexto previo a Ayacucho fue decisivo. Tras las victorias en Junín y la presión sostenida sobre las posiciones realistas, las fuerzas patriotas lograron concentrar un ejército disciplinado y bien coordinado. Los realistas, aunque contaban con experiencia en combates previos, se encontraban debilitados por el desgaste de meses de enfrentamientos, escasez de suministros y desmoralización interna. La batalla de Ayacucho, por tanto, no fue solo un enfrentamiento militar, sino también un choque entre estrategias logísticas, planificación y moral.
+                    </p>
+
+                    <p>
+                        Las tropas patriotas estaban formadas por un contingente diverso que incluía soldados de distintas provincias del Perú, Colombia, Venezuela, Ecuador y Argentina. Esta diversidad, lejos de ser un obstáculo, permitió combinar distintas tácticas y experiencias en combate, creando un ejército ágil capaz de reaccionar con rapidez ante los movimientos realistas. La infantería, la caballería y la artillería se coordinaron de manera precisa, siguiendo un plan estratégico diseñado por Sucre para cercar y derrotar al enemigo sin darle posibilidad de reorganizarse.
+                    </p>
+
+                    <p>
+                        La batalla comenzó temprano en la mañana con un ataque de caballería realista que buscaba romper las líneas patriotas. Sin embargo, la disciplina de los escuadrones de infantería, apoyados por la artillería, logró contener la carga inicial y, posteriormente, lanzar contraataques que pusieron en desventaja a los realistas. Sucre había planificado la batalla de manera meticulosa, ubicando a sus tropas en posiciones estratégicas que aprovecharan las ligeras elevaciones del terreno y los espacios abiertos para maniobras rápidas de caballería.
+                    </p>
+
+                    <p>
+                        Un elemento clave en Ayacucho fue la coordinación entre las unidades de vanguardia y reserva. Las tropas patriotas de reserva mantuvieron su cohesión durante la primera fase del combate, permitiendo relevar a las unidades que sufrían desgaste y reforzar los flancos en momentos críticos. Esta coordinación fue determinante para evitar rupturas en la línea defensiva y para ejecutar maniobras ofensivas en el momento oportuno, debilitando progresivamente al enemigo.
+                    </p>
+
+                    <p>
+                        La batalla de Ayacucho se distingue también por la alta moral de los combatientes patriotas. La experiencia adquirida en combates anteriores, como Junín y Riobamba, junto con la certeza de que la independencia estaba cerca, motivó a los soldados a mantener su disciplina bajo fuego intenso. Además, los oficiales supieron comunicar con claridad los objetivos y coordinar los movimientos, minimizando el caos que suele caracterizar las batallas de grandes ejércitos.
+                    </p>
+
+                    <p>
+                        El desenlace fue contundente: el ejército realista sufrió derrotas significativas, con numerosos prisioneros y una retirada que implicó la pérdida de control sobre gran parte del territorio peruano. La victoria de Ayacucho no solo consolidó la independencia del Perú, sino que también influyó decisivamente en la región, asegurando la libertad de Bolivia, parte de Ecuador y afianzando el proceso de emancipación en América del Sur. La presencia de Bolívar como líder moral y estratégico fue fundamental para coordinar estas acciones de manera efectiva.
+                    </p>
+
+                    <p>
+                        Más allá de la victoria militar, Ayacucho tuvo repercusiones políticas inmediatas. La rendición de las fuerzas realistas permitió establecer gobiernos patriotas estables en la región, consolidando la autoridad de las nuevas repúblicas. Este triunfo también reafirmó la importancia de la estrategia, la disciplina y la coordinación entre diferentes cuerpos de tropas, demostrando que el éxito militar no depende únicamente de la fuerza bruta, sino de la planificación y del liderazgo.
+                    </p>
+
+                    <p>
+                        Los historiadores consideran que Ayacucho marca el final de la dominación española en el continente sudamericano, consolidando los procesos de independencia iniciados por líderes como Bolívar, San Martín y Sucre. La batalla es un ejemplo de cómo la combinación de estrategia, moral elevada y liderazgo eficiente puede superar incluso a fuerzas enemigas que, en apariencia, contaban con ventaja táctica.
+                    </p>
+
+                    <p>
+                        En conclusión, la batalla de Ayacucho 1824 es un símbolo de la independencia sudamericana. Su desarrollo demuestra la importancia de la coordinación entre unidades diversas, la planificación estratégica y la motivación de los soldados. Su resultado no solo selló la independencia del Perú, sino que consolidó la emancipación de América del Sur del dominio español, poniendo fin a siglos de colonialismo y abriendo el camino a la formación de nuevas naciones soberanas.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const contador = document.getElementById("contador");
+
+        function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
+            contador.textContent = `${i + 1} / ${paginas.length}`;
+        }
+
+        function siguiente() {
+            window.location.href = "combate.html";
+        }
+
+        function anterior() {
+            window.location.href = "junin.html";
+        }
+
+        mostrarPagina(pagina);
+    </script>
 
 </body>
 </html>

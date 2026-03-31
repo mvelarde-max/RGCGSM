@@ -1,57 +1,203 @@
 <!DOCTYPE html>
-
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Cancha Rayada 1818</title>
-<link rel="stylesheet" href="../../CSS/Diseño1.css">
-<style>
-.contenido{max-width:700px;text-align:center;}
-.flechas{margin-top:15px;display:flex;justify-content:space-between;}
-.imagen{max-width:400px;margin:15px 0;border-radius:10px;}
-h2{color:#00e0ff;}
-.flechas {
-    margin-top: 15px;
-    font-size: 18px;
-    display: flex;
-    justify-content: space-between;
-}
+    <meta charset="UTF-8">
+    <title>Cancha Rayada 1818</title>
+    <link rel="stylesheet" href="../../CSS/EA.css">
+    <style>
+        .contenido {
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+        }
 
-.flechas span {
-    padding: 5px 10px;
-    background: rgba(0,224,255,.2);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-.flechas span:hover {
-    background: rgba(0,224,255,.5);
-}
-</style>
+        .pagina.activa {
+            display: block;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2,
+        h3 {
+            color: #00e0ff;
+        }
+
+        p {
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #00e0ff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #00b8cc;
+        }
+    </style>
 </head>
+
 <body>
-<div class="contenedor">
-<div class="lado">
-<p>COMBATE HISTÓRICO</p>
-<div class="flechas">
-<span onclick="anterior()">⬅</span>
-<span onclick="siguiente()">➡</span>
-</div>
-<button onclick="window.location.href='combate.html'">Volver</button>
-</div>
+    <div class="contenedor">
 
-<div class="centro"><div class="contenido">
-<h2>Cancha Rayada 1818</h2>
-<img src="../Fondos/Sable11.jpg" class="imagen">
-<p>Derrota patriota que obligó a reorganizar el ejército.</p>
-</div></div>
-</div>
+        <!-- LADO IZQUIERDO -->
+        <div class="lado">
+            <p>COMBATE HISTÓRICO</p>
 
-<script>
-function siguiente(){window.location.href="maipu.html";}
-function anterior(){window.location.href="talcahuano.html";}
-</script>
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
+
+            <div class="contador" id="contador">1 / 1</div>
+
+            <button onclick="window.location.href='combate.html'">Volver</button>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="centro">
+            <div class="contenido">
+
+                <!-- PÁGINA 1 -->
+                <div class="pagina activa">
+                    <h2>Cancha Rayada 1818</h2>
+                    <img src="../Fondos/Sable11.jpg" class="imagen">
+
+                    <p>
+                        La Batalla de Cancha Rayada, librada el 19 de marzo de 1818, constituye uno de los episodios más críticos de la campaña libertadora de Chile y un punto de inflexión en la guerra de independencia del Río de la Plata. Tras la exitosa victoria patriota en la batalla de Chacabuco, las fuerzas realistas, comandadas por el general Mariano Osorio, buscaban reorganizarse y recuperar terreno, aprovechando que el ejército patriota aún consolidaba su posición y que muchas tropas se encontraban dispersas o en reposo.
+                    </p>
+
+                    <p>
+                        La planificación de la batalla realista fue estratégica: Osorio aprovechó el terreno de Cancha Rayada, una llanura cercana a la ciudad de Talca, ideal para la maniobra de caballería y para sorprender a las líneas patriotas. La inteligencia militar de los realistas detectó debilidades en las posiciones de las tropas de San Martín y de Bernardo O'Higgins, en especial la falta de coordinación entre divisiones y la vulnerabilidad de la artillería ligera dispersa.
+                    </p>
+
+                    <p>
+                        El desarrollo de la batalla comenzó al atardecer, cuando la caballería realista ejecutó ataques rápidos y sorpresivos sobre los flancos patriotas. El efecto de sorpresa provocó inicialmente un gran desorden, causando confusión y pánico entre algunas unidades de infantería. La falta de visibilidad y la presión constante de la caballería enemiga contribuyeron a la retirada parcial de ciertas brigadas, lo que se tradujo en pérdidas importantes y abandono de posiciones estratégicas.
+                    </p>
+
+                    <p>
+                        Sin embargo, a pesar de la derrota táctica en Cancha Rayada, la acción permitió a los líderes patriotas evaluar sus errores y reorganizar sus fuerzas para los enfrentamientos posteriores. San Martín y O'Higgins demostraron una notable capacidad de recuperación, reorganizando rápidamente las tropas dispersas y manteniendo la cohesión del ejército. La derrota temporal no comprometió la moral general, sino que se convirtió en una lección estratégica sobre la importancia de la coordinación, vigilancia y uso del terreno.
+                    </p>
+
+                    <p>
+                        Las consecuencias inmediatas incluyeron la pérdida de equipos, caballos y armas, pero no de la iniciativa estratégica. Los patriotas aprendieron a evitar errores de dispersión de unidades y a proteger mejor la artillería y la caballería ligera en futuras batallas. Cancha Rayada también mostró la resiliencia del ejército patriota y la capacidad de San Martín para mantener el control del mando incluso en circunstancias desfavorables.
+                    </p>
+
+                    <p>
+                        Posteriormente, las fuerzas patriotas recuperaron terreno y reorganizaron su estrategia, lo que permitió ejecutar la victoria decisiva en la Batalla de Maipú pocos días después. La derrota en Cancha Rayada, por tanto, fue un paso crítico para reforzar la disciplina, coordinación y preparación de las tropas patriotas, consolidando una campaña más efectiva y eficiente hacia la independencia definitiva de Chile.
+                    </p>
+
+                    <p>
+                        Históricamente, Cancha Rayada resalta la importancia de la adaptación y el aprendizaje en medio de la guerra. Aunque fue una derrota momentánea, el análisis de las causas y la rápida recuperación permitieron a los patriotas superar el obstáculo y continuar su avance hacia objetivos mayores. La batalla enseñó que incluso en la adversidad, la capacidad de reorganización y la visión estratégica pueden convertir una derrota táctica en una victoria futura.
+                    </p>
+
+                    <p>
+                        El legado de Cancha Rayada también se refleja en la memoria histórica chilena y argentina, destacando la valentía de los soldados, la astucia de los comandantes y la importancia de la planificación logística. Las historias de heroísmo y sacrificio durante la batalla contribuyeron a consolidar la identidad patriótica y la comprensión de que la independencia requería no solo victorias gloriosas, sino también resiliencia ante los reveses del combate.
+                    </p>
+
+                    <p>
+                        En resumen, la Batalla de Cancha Rayada 1818 es una de las confrontaciones más estudiadas de la campaña libertadora: muestra cómo la estrategia, la sorpresa y las condiciones del terreno influyeron en el resultado inicial, y cómo la organización, el liderazgo y la disciplina patriota permitieron revertir los efectos de la derrota, asegurando el camino hacia la victoria definitiva en Chile.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const contador = document.getElementById("contador");
+
+        function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
+            contador.textContent = `${i + 1} / ${paginas.length}`;
+        }
+
+        function siguiente() {
+            if (pagina < paginas.length - 1) {
+                pagina++;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "maipu.html";
+            }
+        }
+
+        function anterior() {
+            if (pagina > 0) {
+                pagina--;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "talcahuano.html";
+            }
+        }
+
+        mostrarPagina(pagina);
+    </script>
 
 </body>
+
 </html>

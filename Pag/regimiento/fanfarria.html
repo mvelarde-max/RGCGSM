@@ -3,211 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <title>Fanfarria Militar Alto Perú</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <link rel="stylesheet" href="../../CSS/escuadrones.css">
+
     <style>
-        /* ==================== CONTENEDOR CENTRAL ==================== */
-        .centro {
-            flex: 1;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            text-align: center;
-            padding-bottom: 150px; /* espacio para footer */
+        .contenido {
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,224,255,0.2);
+            background: rgba(0,0,0,0.5);
         }
 
-        .centro h1 {
+        h1 {
             color: #00e0ff;
+            text-align: center;
             margin-bottom: 20px;
         }
 
-        .centro .descripcion {
-            color: #00e0ff;
-            font-size: 18px;
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
             line-height: 1.6;
-            max-width: 900px;
         }
 
-        /* ==================== FOOTER ==================== */
+        /* FOOTER IGUAL A ESCUADRONES */
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
             width: 100%;
-            background: rgba(0,0,0,0.85);
+            background: rgba(0,0,0,0.8);
             padding: 10px 0;
             display: flex;
             justify-content: center;
             gap: 15px;
-            z-index: 1000;
         }
 
-        footer .video-opcion {
-            cursor: pointer;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        footer .video-opcion video {
+        footer video {
             width: 80px;
             height: 60px;
-            object-fit: cover;
             border-radius: 8px;
-            border: 2px solid transparent;
-            transition: transform 0.4s, border 0.3s;
+            cursor: pointer;
+            transition: transform .3s;
         }
 
-        footer .video-opcion:hover video {
+        footer video:hover {
             transform: scale(1.2);
-            border: 2px solid #00e0ff;
         }
 
-        footer .video-opcion p {
-            color: #00e0ff;
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        /* ==================== MODAL ==================== */
+        /* MODAL */
         .modal {
             display: none;
             position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: rgba(0,0,0,0.9);
             justify-content: center;
             align-items: center;
         }
 
-        .modal-content {
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .modal-content video {
-            width: 100%;
-            height: auto;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-        }
-
-         p {
-            line-height: 1.4;
-    margin-bottom: 15px;
-    text-align: justify;
-    text-justify: inter-word;
+        .modal video {
+            width: 80%;
         }
     </style>
 </head>
+
 <body>
 
 <div class="contenedor">
 
-    <!-- Barra lateral -->
     <div class="lado">
         <p>Organización</p>
         <button onclick="window.location.href='../../index.html'">Inicio</button>
         <button onclick="window.location.href='../regimiento.html'">Volver</button>
     </div>
 
-    <!-- Zona central -->
     <div class="centro">
-        <h1>Fanfarria Militar Alto Perú</h1>
+        <div class="contenido">
 
-        <div class="descripcion">
-            <p>Fanfarria Militar “Alto Perú” es una unidad musical histórica del Regimiento de Granaderos a Caballo General San Martín, uno de los cuerpos más emblemáticos del Ejército Argentino, creado por José de San Martín en 1812.
+            <h1>Fanfarria Militar Alto Perú</h1>
 
-Su nombre “Alto Perú” hace referencia a la región histórica que hoy corresponde en gran parte a Bolivia, escenario de campañas militares durante las guerras de independencia. La denominación evoca ese pasado y vincula a la fanfarria con la tradición y la memoria de aquellas luchas.
+            <p>
+            La Fanfarria Militar “Alto Perú” constituye una de las formaciones musicales más representativas del Regimiento de Granaderos a Caballo General San Martín, unidad histórica creada en 1812 y estrechamente vinculada a la gesta independentista sudamericana. Esta fanfarria no solo cumple una función musical, sino que también representa un símbolo vivo de la tradición, la disciplina y la identidad nacional argentina.
+            </p>
 
-La fanfarria es un conjunto musical militar compuesto principalmente por instrumentos de viento y percusión, con una presencia destacada de trompetas, cornetas, trombones, tubas y tambores. A diferencia de una banda sinfónica completa, la fanfarria tiene un sonido más brillante y marcial, pensado para ceremonias, desfiles y actos protocolares.
+            <p>
+            Su denominación “Alto Perú” remite a una región clave durante las guerras de independencia, territorio que hoy forma parte de Bolivia. Esta zona fue escenario de numerosas campañas militares en las que participaron fuerzas patriotas en su lucha contra el dominio colonial. Al adoptar este nombre, la fanfarria establece un vínculo directo con ese pasado histórico, evocando los sacrificios, las estrategias y los ideales de libertad que marcaron aquella época.
+            </p>
 
-Dentro del regimiento, cumple funciones muy importantes:
+            <p>
+            Desde el punto de vista musical, la fanfarria se caracteriza por el uso predominante de instrumentos de viento y percusión. Trompetas, cornetas, trombones, tubas y tambores generan un sonido potente, brillante y marcial, especialmente adecuado para ceremonias al aire libre, desfiles militares y actos protocolares. Este tipo de formación difiere de una banda sinfónica tradicional, ya que está diseñada para transmitir energía, orden y solemnidad en contextos formales.
+            </p>
 
-Acompaña actos oficiales y ceremoniales
-Participa en desfiles militares
-Interviene en eventos patrios, como el 25 de Mayo o el 9 de Julio
-Forma parte del cambio de guardia en lugares históricos
+            <p>
+            Una de sus principales funciones es acompañar ceremonias oficiales del Estado, donde su música cumple un rol fundamental en la ambientación y el desarrollo de los actos. Ya sea en desfiles, recepciones de autoridades o eventos patrios, la fanfarria aporta un componente emocional que refuerza el significado simbólico de cada ocasión. Su presencia contribuye a generar un clima de respeto, orgullo y pertenencia.
+            </p>
 
-Uno de los aspectos más característicos es su uniforme histórico, que replica la vestimenta de los granaderos del siglo XIX: casacas oscuras, detalles dorados, cascos con penacho y elementos distintivos que remiten directamente a la época de San Martín. Esto refuerza su rol no solo musical, sino también simbólico y representativo.
+            <p>
+            Además, participa activamente en fechas históricas como el 25 de Mayo y el 9 de Julio, donde su intervención resulta clave para recrear el espíritu de la independencia. En estos eventos, la música militar actúa como un puente entre el pasado y el presente, permitiendo que la sociedad conecte con sus raíces históricas a través de una experiencia sensorial y cultural.
+            </p>
 
-Además de su función ceremonial, la Fanfarria Alto Perú cumple un papel cultural muy importante. A través de la música, contribuye a mantener vivas las tradiciones militares y a difundir el patrimonio histórico argentino. Su repertorio incluye marchas militares tradicionales, piezas históricas y composiciones vinculadas a la identidad nacional.
+            <p>
+            Otro aspecto distintivo es su participación en cambios de guardia y actos en lugares emblemáticos, donde la sincronización entre música y movimiento adquiere una gran importancia. La precisión en la ejecución, tanto musical como coreográfica, refleja el alto nivel de entrenamiento de sus integrantes y la rigurosidad de su formación.
+            </p>
 
-En muchos casos, sus presentaciones no solo tienen un carácter institucional, sino también educativo y cultural, acercando al público a la historia del regimiento y al legado de José de San Martín.
-</p>         
-</div>
+            <p>
+            El uniforme que utiliza la fanfarria es también un elemento clave de su identidad. Inspirado en la vestimenta de los granaderos del siglo XIX, incluye casacas oscuras, detalles dorados, cascos con penacho y otros elementos que remiten directamente a la época de San Martín. Esta indumentaria no solo cumple una función estética, sino que refuerza el carácter histórico y simbólico de la unidad.
+            </p>
+
+            <p>
+            Más allá de su rol ceremonial, la Fanfarria Alto Perú cumple una importante función cultural. A través de su repertorio, contribuye a preservar y difundir el patrimonio musical militar argentino. Sus interpretaciones incluyen marchas tradicionales, piezas históricas y composiciones que forman parte de la identidad nacional, manteniendo viva una tradición que se ha transmitido a lo largo de generaciones.
+            </p>
+
+            <p>
+            Asimismo, la fanfarria participa en actividades educativas y comunitarias, acercando la música militar al público en general. Estas iniciativas permiten que personas de distintas edades conozcan no solo la música, sino también la historia y los valores asociados al Regimiento de Granaderos a Caballo. De esta manera, se fortalece el vínculo entre la institución militar y la sociedad.
+            </p>
+
+            <p>
+            La formación de sus integrantes es exigente y abarca tanto aspectos musicales como disciplina militar. Los músicos deben dominar sus instrumentos con precisión, pero también cumplir con normas de conducta, presentación y coordinación propias del ámbito militar. Esta combinación de arte y disciplina es lo que distingue a la fanfarria y le permite alcanzar un alto nivel de excelencia.
+            </p>
+
+            <p>
+            En definitiva, la Fanfarria Militar Alto Perú no es simplemente un conjunto musical, sino una institución que encarna valores históricos, culturales y militares. Su presencia en actos oficiales, su contribución a la educación y su rol en la preservación de tradiciones la convierten en un elemento fundamental dentro del Regimiento de Granaderos a Caballo y en un símbolo vivo de la historia argentina.
+            </p>
+
+        </div>
     </div>
 </div>
 
-<!-- FOOTER CON 3 VIDEOS Y NOMBRE -->
 <footer id="footerMedia"></footer>
 
-<!-- MODAL PARA VER VIDEOS -->
 <div id="modal" class="modal" onclick="cerrarModal()">
-    <span class="modal-close">&times;</span>
-    <div class="modal-content" id="modalContent"></div>
 </div>
 
 <script>
-    const footer = document.getElementById('footerMedia');
-    const modal = document.getElementById('modal');
-    const modalContent = document.getElementById('modalContent');
+const footer = document.getElementById('footerMedia');
+const modal = document.getElementById('modal');
 
-    // Videos con nombre
-    const videos = [
-        {src:'../../VIDEOS/V022.mp4', nombre:''},
-        {src:'../../VIDEOS/V023.mp4', nombre:''},
-        {src:'../../VIDEOS/V006.mp4', nombre:''}
-    ];
+const videos = [
+    '../../VIDEOS/V022.mp4',
+    '../../VIDEOS/V023.mp4',
+    '../../VIDEOS/V006.mp4'
+];
 
-    // Crear miniaturas en footer con nombre debajo
-    videos.forEach(v => {
-        const div = document.createElement('div');
-        div.classList.add('video-opcion');
+videos.forEach(src => {
+    const vid = document.createElement('video');
+    vid.src = src;
+    vid.muted = true;
+    vid.autoplay = true;
+    vid.loop = true;
+    vid.onclick = () => abrirModal(src);
+    footer.appendChild(vid);
+});
 
-        const vid = document.createElement('video');
-        vid.src = v.src;
-        vid.muted = true;
-        vid.loop = true;
-        vid.autoplay = true;
-        vid.onclick = () => abrirModal(v.src);
+function abrirModal(src){
+    modal.style.display = 'flex';
+    modal.innerHTML = `<video src="${src}" controls autoplay></video>`;
+}
 
-        div.appendChild(vid);
-
-        const titulo = document.createElement('p');
-        titulo.textContent = v.nombre;
-        div.appendChild(titulo);
-
-        footer.appendChild(div);
-    });
-
-    // Modal
-    function abrirModal(src){
-        modal.style.display = 'flex';
-        modalContent.innerHTML = '';
-        const vid = document.createElement('video');
-        vid.src = src;
-        vid.controls = true;
-        vid.autoplay = true;
-        modalContent.appendChild(vid);
-    }
-
-    function cerrarModal(){
-        modal.style.display = 'none';
-        modalContent.innerHTML = '';
-    }
+function cerrarModal(){
+    modal.style.display = 'none';
+    modal.innerHTML = '';
+}
 </script>
 
 </body>

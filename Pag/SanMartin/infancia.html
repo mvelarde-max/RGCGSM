@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>El Padre de la Patria</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <link rel="stylesheet" href="../../CSS/EA.css">
 
     <style>
         .contenido {
             max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
             text-align: center;
-            padding-bottom: 150px;
+            padding-right: 10px;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
         }
 
         .pagina {
@@ -26,7 +31,6 @@
             to { opacity: 1; }
         }
 
-        /* Flechas (MISMO LUGAR QUE TU EJEMPLO) */
         .flechas {
             margin-top: 15px;
             font-size: 18px;
@@ -39,6 +43,17 @@
             background: rgba(0,224,255,.2);
             border-radius: 8px;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
         }
 
         h2 {
@@ -47,6 +62,7 @@
 
         p {
             color: white;
+            text-align: justify;
         }
 
         /* FOOTER */
@@ -72,7 +88,6 @@
             align-items: center;
         }
 
-        footer .media-opcion img,
         footer .media-opcion video {
             width: 60px;
             height: 60px;
@@ -81,7 +96,6 @@
             transition: transform 0.4s;
         }
 
-        footer .media-opcion:hover img,
         footer .media-opcion:hover video {
             transform: scale(1.2);
         }
@@ -106,7 +120,6 @@
             align-items: center;
         }
 
-        .modal-content img,
         .modal-content video {
             max-width: 90%;
         }
@@ -116,7 +129,6 @@
 <body>
 <div class="contenedor">
 
-    <!-- BARRA LATERAL (IGUAL A LA TUYA) -->
     <div class="lado">
         <p>El Padre de la patria</p>
 
@@ -125,47 +137,104 @@
             <span onclick="siguiente()">➡</span>
         </div>
 
+        <div class="contador" id="contador">1 / 5</div>
+
         <button onclick="window.location.href='../../index.html'">Inicio</button>
         <button onclick="window.location.href='../sanmartin.html'">Volver</button>
     </div>
 
-    <!-- CENTRO -->
     <div class="centro">
         <div class="contenido">
 
             <div class="pagina activa">
                 <h2>Hogar del nacimiento del Libertador</h2>
-                <p>Texto del hogar del nacimiento...</p>
+                <p>
+José de San Martín nació el 25 de febrero de 1778 en Yapeyú, una pequeña población ubicada en la actual provincia de Corrientes. En ese entonces, formaba parte del Virreinato del Río de la Plata y tenía un origen particular: había sido una reducción jesuítica, lo que significaba que su organización social y cultural combinaba tradiciones españolas con la influencia de los pueblos originarios, especialmente los guaraníes.
+
+El hogar donde nació San Martín era una vivienda sencilla pero acorde a la posición de su familia. Su padre, Juan de San Martín, ocupaba el cargo de teniente gobernador, por lo que la familia gozaba de cierto prestigio dentro de la comunidad. La casa estaba construida con materiales típicos de la región, como adobe y madera, y contaba con los espacios necesarios para una familia numerosa.
+
+En ese ambiente, el pequeño José dio sus primeros pasos, rodeado de un entorno natural característico del litoral argentino: ríos, vegetación abundante y una vida cotidiana marcada por las actividades rurales y administrativas. Desde sus primeros años, estuvo en contacto con una realidad diversa, donde convivían distintas culturas y costumbres.
+
+El hogar no solo era un lugar físico, sino también un espacio de formación. Allí comenzó a recibir las primeras enseñanzas, principalmente de su madre, quien le inculcó valores como el respeto, la responsabilidad y la fe. Además, la presencia de su padre como autoridad local influyó en la percepción del orden y la disciplina.
+
+Aunque San Martín dejó Yapeyú a una edad temprana, el lugar de su nacimiento quedó grabado como un símbolo de su origen. Con el tiempo, ese humilde hogar se convertiría en un sitio histórico, recordado como el punto de partida de la vida de uno de los principales protagonistas de la independencia sudamericana.
+</p>
             </div>
 
             <div class="pagina">
                 <h2>Maria Elena</h2>
-                <p>Texto sobre Maria Elena...</p>
+                <p>
+María Elena San Martín fue una de las hermanas de José de San Martín y formó parte del núcleo familiar con el que compartió sus primeros años de vida. Como integrante de una familia numerosa, su infancia estuvo marcada por la convivencia, el apoyo mutuo y la adaptación a los cambios que atravesaron.
+
+Durante los años en Yapeyú, María Elena creció en un entorno similar al de su hermano, participando de la vida cotidiana del hogar y recibiendo la educación básica que su madre podía brindar. En esa época, la formación de las mujeres estaba más orientada a las tareas domésticas y a los valores familiares, lo que influía en su rol dentro de la sociedad.
+
+El traslado de la familia a España representó un cambio significativo también para ella. Adaptarse a una nueva cultura, nuevas costumbres y un entorno distinto implicó un proceso de aprendizaje y adaptación. Este cambio no solo fue geográfico, sino también social, ya que en Europa las dinámicas familiares y educativas eran diferentes.
+
+María Elena, como sus hermanos, formó parte de ese proceso de transformación familiar. Aunque su vida no alcanzó la notoriedad histórica de José de San Martín, su presencia fue importante en el desarrollo del entorno familiar que contribuyó a la formación del futuro libertador.
+
+Las relaciones entre hermanos fueron un pilar durante la infancia, y María Elena, como hermana mayor o intermedia, cumplía un rol de acompañamiento y contención. Estas dinámicas fortalecieron los vínculos familiares y generaron un ambiente de apoyo que fue clave en una etapa de constantes cambios.
+
+En definitiva, María Elena representa una parte fundamental del entorno familiar de San Martín, contribuyendo desde su lugar a la construcción de los valores y la estabilidad emocional que marcaron su infancia.
+</p>
             </div>
 
             <div class="pagina">
                 <h2>Manuel Tadeo</h2>
-                <p>Texto sobre Manuel Tadeo...</p>
+                <p>
+Manuel Tadeo San Martín fue uno de los hermanos de José de San Martín y compartió con él tanto la infancia en América como el posterior traslado a España. Su figura forma parte del contexto familiar que influyó en la formación del futuro libertador.
+
+Durante los primeros años en Yapeyú, Manuel Tadeo vivió en un entorno similar al de sus hermanos, caracterizado por la presencia de la autoridad paterna y la educación impartida en el hogar. La vida cotidiana incluía actividades simples, pero también el aprendizaje de valores fundamentales como la disciplina y el respeto.
+
+El viaje a España marcó un punto de inflexión en la vida de toda la familia. Para Manuel Tadeo, al igual que para José, significó la oportunidad de acceder a una educación más formal y a un entorno con mayores recursos. Sin embargo, también implicó enfrentar el desafío de adaptarse a una cultura distinta.
+
+La convivencia entre los hermanos fue clave en este proceso. Manuel Tadeo formaba parte de ese círculo cercano que brindaba apoyo emocional en momentos de cambio. Estas relaciones fortalecieron el sentido de unidad familiar, algo que sería importante en la vida de José de San Martín.
+
+Aunque Manuel Tadeo no tuvo un rol destacado en la historia política o militar, su presencia en la infancia de San Martín contribuyó al desarrollo de habilidades sociales, como la cooperación y la convivencia. Estas experiencias, aunque cotidianas, fueron fundamentales en la formación del carácter del futuro líder.
+
+Así, Manuel Tadeo representa uno de los vínculos cercanos que acompañaron a San Martín en sus primeros años, formando parte de un entorno familiar que influyó en su desarrollo personal.
+</p>
             </div>
 
             <div class="pagina">
                 <h2>Juan Fermin Rafael</h2>
-                <p>Texto sobre Juan Fermin Rafael...</p>
+                <p>
+Juan Fermín Rafael San Martín fue otro de los hermanos de José de San Martín, con quien compartió tanto la infancia en Yapeyú como la etapa posterior en España. Su presencia dentro del grupo familiar contribuyó a la dinámica de convivencia que marcó los primeros años del futuro libertador.
+
+En Yapeyú, la vida familiar estaba organizada en torno a las responsabilidades del padre y las tareas del hogar. En ese contexto, Juan Fermín Rafael creció junto a sus hermanos, participando de la vida cotidiana y desarrollando vínculos que serían importantes a lo largo del tiempo.
+
+El traslado a España significó un cambio profundo para todos los integrantes de la familia. Para Juan Fermín Rafael, esto implicó adaptarse a un nuevo entorno social y cultural, con diferencias marcadas respecto a la vida en América. Este proceso de adaptación fue compartido con sus hermanos, lo que fortaleció los lazos familiares.
+
+La convivencia con Juan Fermín Rafael permitió a José de San Martín desarrollar habilidades interpersonales, como la comunicación y la resolución de conflictos. Estas capacidades serían fundamentales en su vida adulta, especialmente en su rol como líder militar.
+
+Aunque la historia no registra una participación destacada de Juan Fermín Rafael en los acontecimientos políticos de la época, su rol dentro de la familia fue importante en la formación del entorno que rodeó a San Martín durante su infancia.
+
+En conjunto, su figura forma parte del contexto familiar que contribuyó al desarrollo del carácter, los valores y la personalidad de uno de los principales protagonistas de la independencia americana.
+</p>
             </div>
 
             <div class="pagina">
                 <h2>Justo Rufino</h2>
-                <p>Texto sobre Justo Rufino...</p>
+                <p>
+Justo Rufino San Martín fue el menor de los hermanos de José de San Martín y, como tal, creció en un entorno donde la influencia de sus padres y hermanos mayores era constante. Su infancia estuvo marcada por la convivencia familiar y por los cambios que atravesó la familia al trasladarse de América a Europa.
+
+En los primeros años en Yapeyú, Justo Rufino vivió en un ambiente donde predominaban las tradiciones locales y la vida comunitaria. Aunque era el menor, formaba parte activa del núcleo familiar, participando en las dinámicas cotidianas y en el proceso de aprendizaje propio de la infancia.
+
+El viaje a España representó una transformación importante en su vida. Al igual que sus hermanos, debió adaptarse a nuevas costumbres y a un entorno diferente. Este proceso fue acompañado por su familia, lo que permitió mantener la cohesión del grupo en un momento de cambio.
+
+La relación con José de San Martín, como hermano mayor, probablemente estuvo marcada por la admiración y el aprendizaje. Estas relaciones dentro del hogar contribuyeron a generar un ambiente de apoyo y formación mutua.
+
+Aunque Justo Rufino no alcanzó relevancia histórica comparable a la de su hermano, su presencia en la infancia de San Martín formó parte del entorno familiar que influyó en su desarrollo. La convivencia con sus hermanos permitió al futuro libertador adquirir habilidades sociales y fortalecer valores como la solidaridad y el compromiso.
+
+De esta manera, Justo Rufino representa una pieza más dentro del contexto familiar que acompañó a José de San Martín en sus primeros años, contribuyendo al entorno en el que se formó uno de los grandes líderes de la historia latinoamericana.
+</p>
             </div>
 
         </div>
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer id="footerMedia"></footer>
 
-<!-- MODAL -->
 <div id="modal" class="modal" onclick="cerrarModal()">
     <div class="modal-content" id="modalContent"></div>
 </div>
@@ -173,43 +242,40 @@
 <script>
 let pagina = 0;
 const paginas = document.querySelectorAll(".pagina");
+const contador = document.getElementById("contador");
 const footer = document.getElementById("footerMedia");
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 
 const mediaData = {
-    0: [
-        {type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Desfile 1950'}
-    ],
-    1: [
-        {type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Ensayo'}
-    ],
-    2: [
-        {type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Historia'}
-    ],
-    3: [
-        {type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Evento'}
-    ],
-    4: [
-        {type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Acto oficial'}
-    ]
+    0: [{type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Desfile 1950'}],
+    1: [{type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Ensayo'}],
+    2: [{type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Historia'}],
+    3: [{type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Evento'}],
+    4: [{type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Acto oficial'}]
 };
 
 function mostrarPagina(i){
     paginas.forEach(p => p.classList.remove('activa'));
     paginas[i].classList.add('activa');
     pagina = i;
+
+    contador.textContent = `${i + 1} / ${paginas.length}`;
     actualizarFooter();
 }
 
 function siguiente(){
-    pagina = (pagina + 1) % paginas.length;
-    mostrarPagina(pagina);
+    if (pagina < paginas.length - 1) {
+        pagina++;
+        mostrarPagina(pagina);
+    }
 }
 
 function anterior(){
-    pagina = (pagina - 1 + paginas.length) % paginas.length;
-    mostrarPagina(pagina);
+    if (pagina > 0) {
+        pagina--;
+        mostrarPagina(pagina);
+    }
 }
 
 function actualizarFooter(){
@@ -248,7 +314,7 @@ function cerrarModal(){
     modalContent.innerHTML = '';
 }
 
-actualizarFooter();
+mostrarPagina(pagina);
 </script>
 
 </body>

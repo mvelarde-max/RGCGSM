@@ -7,10 +7,15 @@
 
     <style>
         .contenido {
-            max-width: 700px;
-            text-align: center;
-            padding-bottom: 120px; /* espacio para el footer */
-        }
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    padding-right: 10px;
+    border: 1px solid rgba(0, 224, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+}
 
         .pagina {
             display: none;
@@ -26,7 +31,6 @@
             to { opacity: 1; }
         }
 
-        /* Flechas */
         .flechas {
             margin-top: 15px;
             font-size: 18px;
@@ -48,26 +52,21 @@
         p {
             line-height: 1.5;
             color: white;
+            text-align: justify;
         }
 
-        /* ---------------- FOOTER DE IMÁGENES ---------------- */
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            z-index: 1000;
-        }
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
         footer .img-opcion {
             cursor: pointer;
             text-align: center;
-            transition: transform 0.3s;
         }
 
         footer .img-opcion img {
@@ -83,154 +82,180 @@
             transform: scale(1.2) rotateY(360deg);
         }
 
-        footer .img-opcion p {
-            margin: 3px 0 0 0;
-            color: #00e0ff;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        /* Imagen seleccionada */
         footer .img-opcion.activa img {
             border: 2px solid #00e0ff;
         }
-
     </style>
 </head>
 
 <body>
-    <div class="contenedor">
+<div class="contenedor">
 
-        <!-- Barra lateral -->
-        <div class="lado">
-            <p>Cronologia</p>
+<div class="lado">
+    <p>Escuadrones</p>
 
-            <div class="flechas">
-                <span onclick="anterior()">⬅</span>
-                <span onclick="siguiente()">➡</span>
-            </div>
-
-            <button onclick="window.location.href='../../index.html'">Inicio</button>
-            <button onclick="window.location.href='../regimiento.html'">Volver</button>
-        </div>
-
-        <!-- Zona central -->
-        <div class="centro">
-            <div class="contenido">
-
-                <!-- Página 1 -->
-                <div class="pagina activa">
-                    <h2>Riobamba</h2>
-                    <p>El Escuadrón Riobamba participó en las campañas de la independencia, destacando por su valentía y disciplina en las operaciones militares.</p>
-                </div>
-
-                <!-- Página 2 -->
-                <div class="pagina">
-                    <h2>Junín</h2>
-                    <p>El Escuadrón Junín se destacó en la famosa batalla de Junín, siendo un elemento crucial en la victoria de las fuerzas patriotas.</p>
-                </div>
-
-                <!-- Página 3 -->
-                <div class="pagina">
-                    <h2>San Lorenzo</h2>
-                    <p>El Escuadrón San Lorenzo honró el legado de la histórica batalla, demostrando compromiso y excelencia en las maniobras militares.</p>
-                </div>
-
-                <!-- Página 4 -->
-                <div class="pagina">
-                    <h2>Maipú</h2>
-                    <p>El Escuadrón Maipú participó activamente en la batalla homónima, contribuyendo significativamente al triunfo patriota y la consolidación de la independencia.</p>
-                </div>
-
-                <!-- Página 5 -->
-                <div class="pagina">
-                    <h2>Chacabuco</h2>
-                    <p>El Escuadrón Chacabuco jugó un papel estratégico en la campaña de Chile, destacando su disciplina y capacidad táctica en combate.</p>
-                </div>
-
-                <!-- Página 6 -->
-                <div class="pagina">
-                    <h2>Ayacucho</h2>
-                    <p>El Escuadrón Ayacucho contribuyó decisivamente a las operaciones finales de la independencia sudamericana, demostrando valor y determinación.</p>
-                </div>
-
-                <!-- Página 7 -->
-                <div class="pagina">
-                    <h2>Montevideo</h2>
-                    <p>El Escuadrón Montevideo participó en la liberación y control de la región, consolidando la presencia patriota y fortaleciendo la disciplina militar.</p>
-                </div>
-
-            </div>
-        </div>
+    <div class="flechas">
+        <span onclick="anterior()">⬅</span>
+        <span onclick="siguiente()">➡</span>
     </div>
 
-    <!-- FOOTER CON IMÁGENES -->
-    <footer>
-        <div class="img-opcion activa" onclick="mostrarPagina(0)">
-            <img src="../../CLIPS/RIOR.BMP" alt="Riobamba">
-            <p>1</p>
-        </div>
-        <div class="img-opcion" onclick="mostrarPagina(1)">
-            <img src="../../CLIPS/JUNR.BMP" alt="Junín">
-            <p>2</p>
-        </div>
-        <div class="img-opcion" onclick="mostrarPagina(2)">
-            <img src="../../CLIPS/SANR.BMP" alt="San Lorenzo">
-            <p>3</p>
-        </div>
-        <div class="img-opcion" onclick="mostrarPagina(3)">
-            <img src="../../CLIPS/MAIR.BMP" alt="Maipú">
-            <p>4</p>
-        </div>
-        <div class="img-opcion" onclick="mostrarPagina(4)">
-            <img src="../../CLIPS/CHAR.BMP" alt="Chacabuco">
-            <p>5</p>
-        </div>
-        <div class="img-opcion" onclick="mostrarPagina(5)">
-            <img src="../../CLIPS/AYAR.BMP" alt="Ayacucho">
-            <p>6</p>
-        </div>
-        <div class="img-opcion" onclick="mostrarPagina(6)">
-            <img src="../../CLIPS/MONR.BMP" alt="Montevideo">
-            <p>7</p>
-        </div>
-    </footer>
+    <button onclick="window.location.href='../../index.html'">Inicio</button>
+    <button onclick="window.location.href='../regimiento.html'">Volver</button>
+</div>
 
-    <script>
-        let pagina = 0;
-        const paginas = document.querySelectorAll(".pagina");
-        const imgsFooter = document.querySelectorAll("footer .img-opcion");
+<div class="centro">
+<div class="contenido">
 
-        function mostrarPagina(i) {
-            paginas.forEach(p => p.classList.remove("activa"));
-            paginas[i].classList.add("activa");
-            pagina = i;
+<!-- PAGINA 1 -->
+<div class="pagina activa">
+<h2>Riobamba</h2>
+<p>
+El Escuadrón Riobamba representa uno de los símbolos más destacados del valor y la capacidad de maniobra de la caballería patriota en las campañas de independencia sudamericanas. Su nombre remite directamente al combate de Riobamba, ocurrido en 1822 en territorio de la actual Ecuador, donde las fuerzas independentistas lograron imponerse mediante una acción rápida, decidida y basada en la sorpresa. Este enfrentamiento es considerado uno de los combates de caballería más importantes del proceso emancipador, y su legado quedó inmortalizado en la organización de unidades militares posteriores.
 
-            // Resaltar la imagen activa en el footer
-            imgsFooter.forEach(img => img.classList.remove("activa"));
-            imgsFooter[i].classList.add("activa");
-        }
+El combate de Riobamba se caracterizó por el uso intensivo de la caballería, una fuerza que en aquel entonces resultaba decisiva en terrenos abiertos. La velocidad, la coordinación y la disciplina eran factores clave para el éxito, y el escuadrón que llevaría este nombre heredó justamente esas cualidades. En este sentido, el Escuadrón Riobamba no solo rememora un hecho histórico, sino que también simboliza una forma de hacer la guerra basada en la audacia y la eficacia.
 
-        function siguiente() {
-            if (pagina < paginas.length - 1) {
-                pagina++;
-                mostrarPagina(pagina);
-            } else {
-                pagina = 0;
-                mostrarPagina(pagina);
-            }
-        }
+La importancia del combate radica en que permitió consolidar el avance de las fuerzas independentistas hacia el norte del continente. La acción de la caballería fue determinante para romper las líneas enemigas y generar confusión en las tropas realistas, que no pudieron reorganizarse a tiempo. Este tipo de enfrentamientos demuestra cómo la movilidad podía ser un factor decisivo frente a ejércitos más numerosos o mejor posicionados.
 
-        function anterior() {
-            if (pagina > 0) {
-                pagina--;
-                mostrarPagina(pagina);
-            } else {
-                pagina = paginas.length - 1;
-                mostrarPagina(pagina);
-            }
-        }
-    </script>
+Además, el Escuadrón Riobamba representa un ejemplo del proceso de profesionalización de las fuerzas patriotas. A medida que avanzaba la guerra, se hacía evidente la necesidad de contar con tropas entrenadas, disciplinadas y capaces de actuar de manera coordinada. Este escuadrón refleja ese cambio, pasando de milicias improvisadas a unidades organizadas con objetivos claros.
+
+En el plano simbólico, Riobamba también encarna el espíritu de sacrificio de los soldados que participaron en las campañas. Muchos de ellos eran hombres jóvenes que dejaron sus hogares para luchar por la independencia, enfrentando condiciones difíciles, escasez de recursos y constantes peligros. Su compromiso fue fundamental para el éxito de la causa.
+
+Hoy en día, el nombre Riobamba sigue evocando esos valores de valentía, disciplina y entrega. Su legado forma parte de la memoria histórica y contribuye a comprender la importancia de la caballería en las guerras de independencia. No se trata solo de un episodio militar, sino de un símbolo de lucha por la libertad y la construcción de nuevas naciones.
+</p>
+</div>
+
+<!-- PAGINA 2 -->
+<div class="pagina">
+<h2>Junín</h2>
+<p>
+El Escuadrón Junín debe su nombre a la histórica batalla de Junín, librada en 1824 en el actual territorio peruano. Este enfrentamiento es considerado uno de los últimos grandes combates de caballería de la independencia sudamericana y tuvo un papel decisivo en el desenlace del proceso emancipador. A diferencia de otras batallas, Junín se destacó por su carácter singular: fue una lucha casi exclusivamente de caballería, sin disparos de artillería, donde la destreza y el coraje de los jinetes marcaron la diferencia.
+
+La batalla de Junín fue un momento crítico, ya que las fuerzas patriotas se encontraban en una situación delicada frente al ejército realista. En ese contexto, la intervención de la caballería resultó determinante para revertir el curso del combate. La acción rápida, la reorganización de las tropas y el contraataque inesperado permitieron obtener una victoria clave que impulsó el avance hacia la definitiva independencia.
+
+El Escuadrón Junín simboliza esa capacidad de reacción y adaptación en el campo de batalla. Representa la importancia de la iniciativa individual y colectiva, así como la necesidad de mantener la cohesión incluso en situaciones adversas. Estas características fueron esenciales para lograr el triunfo en una batalla que parecía perdida.
+
+Además, Junín es un ejemplo del papel que desempeñó la caballería en las campañas finales de la independencia. En terrenos amplios y abiertos, como las pampas y altiplanos, la movilidad de los jinetes permitía realizar maniobras rápidas, sorprender al enemigo y aprovechar cualquier debilidad en sus líneas. Esto hacía que los escuadrones de caballería fueran unidades fundamentales en la estrategia militar.
+
+Desde el punto de vista histórico, la batalla de Junín abrió el camino hacia la victoria final en Ayacucho, consolidando la independencia del Perú y marcando el fin del dominio colonial español en Sudamérica. Por eso, el nombre de este escuadrón no solo remite a un hecho aislado, sino a un momento clave en la historia continental.
+
+En términos simbólicos, el Escuadrón Junín representa la perseverancia, la valentía y la capacidad de superar dificultades. Su legado continúa vigente como ejemplo de la importancia de la disciplina y el compromiso en la defensa de ideales colectivos.
+</p>
+</div>
+
+<!-- PAGINA 3 -->
+<div class="pagina">
+<h2>San Lorenzo</h2>
+<p>
+El Escuadrón San Lorenzo toma su nombre de la primera gran acción militar protagonizada por el Regimiento de Granaderos a Caballo. La batalla de San Lorenzo, librada en 1813, fue breve pero sumamente significativa, ya que marcó el inicio de una nueva etapa en la lucha por la independencia. En este enfrentamiento, la caballería organizada y disciplinada demostró su eficacia frente a fuerzas realistas.
+
+Uno de los aspectos más destacados de San Lorenzo fue la planificación y ejecución de la maniobra. El ataque sorpresa permitió desorganizar al enemigo y obtener una rápida victoria. Este tipo de acciones evidenciaba la importancia del entrenamiento y la coordinación, elementos que se convertirían en pilares fundamentales del accionar militar patriota.
+
+El Escuadrón San Lorenzo simboliza justamente ese momento fundacional, donde se puso en práctica un modelo de ejército más profesional. La disciplina, el orden y la preparación técnica comenzaron a reemplazar la improvisación, permitiendo enfrentar con mayor eficacia a las fuerzas coloniales.
+
+Además, esta batalla tiene un fuerte componente simbólico, ya que representa el compromiso con la causa independentista desde sus primeras etapas. Los soldados que participaron en San Lorenzo demostraron una gran determinación, enfrentando al enemigo con coraje y convicción.
+
+En el plano histórico, San Lorenzo consolidó la importancia de la caballería como fuerza decisiva en el campo de batalla. A partir de este momento, su rol se volvería cada vez más relevante en las campañas posteriores.
+
+El Escuadrón San Lorenzo, por lo tanto, no solo recuerda una victoria, sino que también representa el inicio de un camino que llevaría a la independencia de varios países de América del Sur. Su legado está ligado a la idea de disciplina, valentía y compromiso con la libertad.
+</p>
+</div>
+
+<!-- PAGINA 4 -->
+<div class="pagina">
+<h2>Maipú</h2>
+<p>
+El Escuadrón Maipú recuerda una de las batallas más importantes de la independencia de Chile, librada en 1818. Este enfrentamiento consolidó definitivamente la victoria patriota y aseguró la independencia del país. La participación de la caballería fue fundamental para lograr el triunfo y desarticular las fuerzas realistas.
+
+La batalla de Maipú se caracterizó por una planificación estratégica cuidadosa y una ejecución precisa. Las tropas patriotas lograron mantener la cohesión y resistir los ataques enemigos, para luego lanzar una ofensiva decisiva. En este contexto, la caballería jugó un papel clave al perseguir y dispersar al enemigo.
+
+El Escuadrón Maipú simboliza la consolidación del proceso independentista en el Cono Sur. Representa el momento en que las fuerzas patriotas lograron imponerse de manera definitiva, asegurando la libertad de un territorio clave.
+
+Además, Maipú refleja la importancia de la cooperación entre diferentes regiones y ejércitos. La lucha por la independencia no fue un proceso aislado, sino un esfuerzo conjunto que involucró a distintos pueblos y líderes.
+
+En términos simbólicos, este escuadrón representa la victoria, la unidad y la perseverancia. Su legado continúa siendo un ejemplo de cómo la organización y el trabajo en equipo pueden conducir al éxito en situaciones complejas.
+</p>
+</div>
+
+<!-- PAGINA 5 -->
+<div class="pagina">
+<h2>Chacabuco</h2>
+<p>
+El Escuadrón Chacabuco rememora la batalla que abrió el camino para la liberación de Chile en 1817. Este enfrentamiento fue clave en la estrategia de cruzar la cordillera y atacar por sorpresa a las fuerzas realistas.
+
+La batalla demostró la eficacia de una planificación audaz y una ejecución precisa. La caballería desempeñó un papel fundamental al aprovechar el terreno y la velocidad para desorganizar al enemigo.
+
+Chacabuco simboliza el ingenio estratégico y la capacidad de adaptación de las fuerzas patriotas. Representa un momento en el que la audacia y la planificación lograron superar obstáculos aparentemente insalvables.
+
+El escuadrón que lleva su nombre refleja esos valores, destacando la importancia de la iniciativa y la determinación en la lucha por la independencia.
+</p>
+</div>
+
+<!-- PAGINA 6 -->
+<div class="pagina">
+<h2>Ayacucho</h2>
+<p>
+El Escuadrón Ayacucho lleva el nombre de la batalla que selló definitivamente la independencia sudamericana en 1824. Este enfrentamiento marcó el fin del dominio colonial español en la región.
+
+La batalla de Ayacucho fue el resultado de años de संघर्ष y sacrificio. La victoria patriota consolidó la independencia de varios países y puso fin a la presencia militar española en el continente.
+
+El escuadrón simboliza el triunfo final, la culminación de un proceso histórico y el logro de un objetivo colectivo largamente esperado.
+
+Ayacucho representa la libertad definitiva y el nacimiento de nuevas naciones.
+</p>
+</div>
+
+<!-- PAGINA 7 -->
+<div class="pagina">
+<h2>Montevideo</h2>
+<p>
+El Escuadrón Montevideo recuerda las campañas en el Río de la Plata, donde la lucha por el control de la ciudad fue clave para el proceso revolucionario.
+
+Montevideo era un punto estratégico por su puerto y su posición geográfica. Su control permitía asegurar las comunicaciones y el abastecimiento de las fuerzas patriotas.
+
+El escuadrón simboliza la importancia de la estrategia y la logística en la guerra, así como el valor de las operaciones sostenidas en el tiempo.
+
+Representa también la consolidación del poder patriota en la región y el avance hacia la independencia.
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<footer>
+<div class="img-opcion activa" onclick="mostrarPagina(0)"><img src="../../CLIPS/RIOR.BMP"><p>1</p></div>
+<div class="img-opcion" onclick="mostrarPagina(1)"><img src="../../CLIPS/JUNR.BMP"><p>2</p></div>
+<div class="img-opcion" onclick="mostrarPagina(2)"><img src="../../CLIPS/SANR.BMP"><p>3</p></div>
+<div class="img-opcion" onclick="mostrarPagina(3)"><img src="../../CLIPS/MAIR.BMP"><p>4</p></div>
+<div class="img-opcion" onclick="mostrarPagina(4)"><img src="../../CLIPS/CHAR.BMP"><p>5</p></div>
+<div class="img-opcion" onclick="mostrarPagina(5)"><img src="../../CLIPS/AYAR.BMP"><p>6</p></div>
+<div class="img-opcion" onclick="mostrarPagina(6)"><img src="../../CLIPS/MONR.BMP"><p>7</p></div>
+</footer>
+
+<script>
+let pagina = 0;
+const paginas = document.querySelectorAll(".pagina");
+const imgsFooter = document.querySelectorAll("footer .img-opcion");
+
+function mostrarPagina(i){
+    paginas.forEach(p => p.classList.remove("activa"));
+    paginas[i].classList.add("activa");
+    pagina = i;
+
+    imgsFooter.forEach(img => img.classList.remove("activa"));
+    imgsFooter[i].classList.add("activa");
+}
+
+function siguiente(){
+    pagina = (pagina + 1) % paginas.length;
+    mostrarPagina(pagina);
+}
+
+function anterior(){
+    pagina = (pagina - 1 + paginas.length) % paginas.length;
+    mostrarPagina(pagina);
+}
+</script>
 
 </body>
 </html>

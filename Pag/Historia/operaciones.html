@@ -3,125 +3,639 @@
 <head>
     <meta charset="UTF-8">
     <title>Andes</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+
+    <!-- CSS CORREGIDO -->
+    <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
-    .contenido {
-        max-width: 700px;
-        text-align: center;
-    }
+        .contenido {
+            max-width: 700px;
+            text-align: center;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
 
-    .pagina {
-        display: none;
-    }
+        .pagina {
+            display: none;
+        }
 
-    .pagina.activa {
-        display: block;
-    }
+        .pagina.activa {
+            display: block;
+        }
 
-    /* 🔥 FLECHAS IGUALES A LAS OTRAS PÁGINAS */
-    .flechas {
-        margin-top: 15px;
-        font-size: 18px;
-        display: flex;
-        justify-content: space-between;
-    }
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-    .flechas span {
-        padding: 5px 10px;
-        background: rgba(0,224,255,.2);
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0,224,255,.2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .flechas span:hover {
-        background: rgba(0,224,255,.5);
-    }
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
 
-    h2 {
-        color: #00e0ff;
-    }
-</style>
+        h2 {
+            color: #00e0ff;
+        }
+
+        #indicador {
+            font-size: 14px;
+            margin-top: 5px;
+            color: #ccc;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="contenedor">
-        <div class="lado">
-            <p>CRONOLOGÍA</p>
 
-            <div class="flechas">
-                <span onclick="anterior()">⬅</span>
-                <span onclick="siguiente()">➡</span>
-            </div>
+<div class="contenedor">
 
-            <button onclick="window.location.href='cronologia.html'">Volver</button>
+    <!-- LADO IZQUIERDO -->
+    <div class="lado">
+        <p>CRONOLOGÍA</p>
+
+        <div class="flechas">
+            <span onclick="anterior()">⬅</span>
+            <span onclick="siguiente()">➡</span>
         </div>
 
-        <div class="centro">
-            <div class="contenido">
+        <p id="indicador"></p>
 
-                <div class="pagina activa">
-                    <h2>Cruce de los Andes</h2>
-                    <h3>Ejército de los Andes</h3>
-                    <p>Texto...</p>
-                </div>
-
-                <div class="pagina">
-                    <h3>Regimiento reunido</h3>
-                    <p>Texto...</p>
-                </div>
-
-                <div class="pagina">
-                    <h3>Plumerillo</h3>
-                    <p>Texto...</p>
-                </div>
-
-                <div class="pagina">
-                    <h3>Cruce de los Andes</h3>
-                    <p>Texto...</p>
-                </div>
-
-                <div class="pagina">
-                    <h3>Chacabuco</h3>
-                    <p>Texto...</p>
-                </div>
-
-                <div class="pagina">
-                    <h3>Maipú</h3>
-                    <p>Texto...</p>
-                </div>
-
-            </div>
-        </div>
+        <button onclick="window.location.href='cronologia.html'">Volver</button>
     </div>
 
-    <script>
-        let pagina = 0;
-        const paginas = document.querySelectorAll(".pagina");
+    <!-- CENTRO -->
+    <div class="centro">
+        <div class="contenido">
 
-        function mostrarPagina(i){
-            paginas.forEach(p => p.classList.remove("activa"));
-            paginas[i].classList.add("activa");
-        }
+            <!-- PAGINA 1 -->
+            <div class="pagina activa">
+    <h2>Cruce de los Andes</h2>
+    <h3>Ejército de los Andes</h3>
 
-        function siguiente(){
-            if(pagina < paginas.length - 1){
-                pagina++;
-                mostrarPagina(pagina);
-            } else {
-                window.location.href = "peru.html";
-            }
-        }
+    <p>El Cruce de los Andes y el Ejército de los Andes fueron uno de los episodios más extraordinarios de la historia de América Latina. No fue solo una campaña militar, sino una hazaña humana, política y estratégica que cambió el rumbo de la independencia en el continente.</p>
 
-        function anterior(){
-            if(pagina > 0){
-                pagina--;
-                mostrarPagina(pagina);
-            } else {
-                window.location.href = "uniforme.html";
-            }
-        }
-    </script>
+    <p><strong>🏔️ El Cruce de los Andes: visión general</strong></p>
+
+    <p>El Cruce de los Andes fue la operación militar liderada por José de San Martín entre 1816 y 1817, cuyo objetivo era liberar Chile del dominio español y luego avanzar hacia Perú, el centro del poder realista.</p>
+
+    <p>Se considera una de las maniobras militares más impresionantes de la historia, comparable a las campañas de Aníbal o Napoleón al cruzar los Alpes.</p>
+
+    <p><strong>⚔️ El Ejército de los Andes</strong></p>
+
+    <p>El Ejército de los Andes fue una fuerza organizada en la región de Cuyo (actual Mendoza), donde San Martín era gobernador.</p>
+
+    <p><strong>🔹 Composición aproximada:</strong></p>
+    <p>
+        • 4.000 soldados de combate<br>
+        • 1.200 milicianos auxiliares<br>
+        • 1.200 civiles (baqueanos, arrieros, etc.)<br>
+        • 10.000 mulas<br>
+        • 1.600 caballos<br>
+        • 18 piezas de artillería
+    </p>
+
+    <p><strong>🔹 Organización</strong></p>
+    <p>El ejército estaba dividido en 6 columnas, cada una cruzando por distintos pasos para confundir al enemigo.</p>
+
+    <p><strong>🧠 Estrategia de San Martín</strong></p>
+
+    <p>San Martín sabía que atacar directamente el Alto Perú (actual Bolivia) era muy difícil. Entonces ideó un plan revolucionario:</p>
+
+    <p>
+        • Cruzar la cordillera<br>
+        • Liberar Chile<br>
+        • Atacar Perú por mar
+    </p>
+
+    <p>Este plan fue clave para el éxito de la independencia.</p>
+
+    <p><strong>🏔️ El Cruce (1817)</strong></p>
+
+    <p>El cruce comenzó en enero de 1817 a través de la Cordillera de los Andes.</p>
+
+    <p><strong>❄️ Dificultades extremas:</strong></p>
+    <p>
+        • Alturas de más de 4.000 metros<br>
+        • Temperaturas bajo cero<br>
+        • Falta de oxígeno<br>
+        • Caminos peligrosos<br>
+        • Pérdidas de animales y hombres
+    </p>
+
+    <p>Muchos soldados sufrían mal de altura, hambre y agotamiento.</p>
+
+    <p><strong>📜 Relatos, pensamientos y frases</strong></p>
+
+    <p><strong>🧾 Frase famosa:</strong></p>
+    <p><em>“Seamos libres, lo demás no importa nada”</em></p>
+
+    <p><strong>🧠 Pensamiento estratégico:</strong></p>
+    <p>San Martín comprendía que la independencia no podía lograrse solo con batallas: necesitaba organización, disciplina y apoyo social.</p>
+
+    <p><strong>🛠️ Preparación en Mendoza</strong></p>
+
+    <p>En Mendoza se desarrolló una verdadera industria de guerra:</p>
+
+    <p>
+        • Fabricación de armas y pólvora<br>
+        • Costura de uniformes por mujeres mendocinas<br>
+        • Recolección de alimentos<br>
+        • Fundición de cañones
+    </p>
+
+    <p>El pueblo participó activamente.</p>
+
+    <p><strong>🎖️ Hechos clave</strong></p>
+
+    <p><strong>⚔️ Batalla de Chacabuco</strong><br>
+    12 de febrero de 1817<br>
+    Victoria patriota<br>
+    Liberación de Santiago de Chile</p>
+
+    <p><strong>⚔️ Batalla de Maipú</strong><br>
+    Consolidó la independencia de Chile y aseguró el plan continental.</p>
+
+    <p><strong>🧭 Misiones del Ejército de los Andes</strong></p>
+
+    <p>
+        • Liberar Chile<br>
+        • Debilitar al poder español<br>
+        • Preparar la expedición al Perú<br>
+        • Difundir ideales de libertad
+    </p>
+
+    <p><strong>🧍‍♂️ Personajes importantes</strong></p>
+
+    <p>
+        • José de San Martín (líder)<br>
+        • Bernardo O'Higgins (aliado clave)<br>
+        • Juan Gregorio de Las Heras<br>
+        • Miguel Estanislao Soler
+    </p>
+
+    <p><strong>💡 Curiosidades</strong></p>
+
+    <p>
+        • Los soldados llevaban ajos y cebollas para combatir el frío<br>
+        • Se difundieron rumores falsos para engañar a los realistas<br>
+        • Se usaron herraduras especiales para mulas<br>
+        • Muchos soldados eran afrodescendientes y gauchos
+    </p>
+
+    <p><strong>🌎 Importancia histórica</strong></p>
+
+    <p>El Cruce de los Andes fue fundamental para:</p>
+
+    <p>
+        • La independencia de Chile<br>
+        • La posterior liberación de Perú<br>
+        • El debilitamiento del Imperio Español en América
+    </p>
+
+    <p><strong>🧠 Reflexión final</strong></p>
+
+    <p>El Ejército de los Andes no fue solo un ejército: fue un proyecto colectivo de libertad. Representa la unión, el sacrificio y la inteligencia estratégica al servicio de un ideal.</p>
+</div>
+
+            <div class="pagina">
+    <h3>Regimiento reunido</h3>
+
+    <p>El concepto de “regimiento reunido” dentro del contexto del Ejército de los Andes se refiere a un momento clave en la organización y preparación militar antes del Cruce de los Andes.</p>
+
+    <p><strong>🪖 ¿Qué significa “Regimiento reunido”?</strong></p>
+
+    <p>Un regimiento reunido era una unidad militar que ya estaba completamente preparada para entrar en acción. Esto implicaba que había alcanzado un alto nivel de organización, disciplina y entrenamiento.</p>
+
+    <p>👉 En otras palabras, no era un grupo improvisado, sino una fuerza lista para la guerra.</p>
+
+    <p><strong>🔹 Características principales</strong></p>
+
+    <p>
+        • Número completo de soldados<br>
+        • División en compañías bien organizadas<br>
+        • Entrenamiento militar completo<br>
+        • Disciplina firme<br>
+        • Equipamiento listo para campaña
+    </p>
+
+    <p><strong>⚔️ En el Ejército de los Andes</strong></p>
+
+    <p>Bajo el mando de José de San Martín, los regimientos fueron cuidadosamente organizados en Mendoza antes del cruce.</p>
+
+    <p>Cuando se decía que un regimiento estaba “reunido”, significaba que ya había pasado por varias etapas fundamentales:</p>
+
+    <p><strong>🔹 Reclutamiento</strong></p>
+    <p>
+        • Gauchos<br>
+        • Ex soldados<br>
+        • Afrodescendientes<br>
+        • Voluntarios
+    </p>
+
+    <p><strong>🔹 Entrenamiento</strong></p>
+    <p>
+        • Uso de armas (fusiles, sables)<br>
+        • Formación en combate<br>
+        • Prácticas militares constantes<br>
+        • Disciplina estricta
+    </p>
+
+    <p><strong>🔹 Equipamiento</strong></p>
+    <p>
+        • Uniformes<br>
+        • Armas<br>
+        • Provisiones<br>
+        • Material de campaña
+    </p>
+
+    <p><strong>🧭 Importancia del regimiento reunido</strong></p>
+
+    <p>San Martín le daba enorme importancia a que los regimientos estuvieran completamente preparados antes de iniciar la campaña.</p>
+
+    <p>Esto permitía:</p>
+
+    <p>
+        • Evitar el desorden en combate<br>
+        • Ejecutar estrategias complejas<br>
+        • Resistir condiciones extremas (como el cruce de la cordillera)<br>
+        • Mantener la moral del ejército
+    </p>
+
+    <p>👉 Un regimiento mal organizado podía provocar el fracaso total de la campaña.</p>
+
+    <p><strong>🧠 Idea clave de San Martín</strong></p>
+
+    <p>Para José de San Martín, no bastaba con tener hombres.</p>
+
+    <p><strong>👉 Era necesario tener soldados formados, unidos y disciplinados.</strong></p>
+
+    <p>Por eso, el concepto de “regimiento reunido” representaba:</p>
+
+    <p>
+        • Orden<br>
+        • Preparación<br>
+        • Eficiencia militar
+    </p>
+
+    <p><strong>🌎 Importancia histórica</strong></p>
+
+    <p>La correcta organización de los regimientos fue una de las claves del éxito del Ejército de los Andes.</p>
+
+    <p>Gracias a esto, San Martín logró llevar a cabo una de las campañas más difíciles de la historia y asegurar victorias decisivas en Chile.</p>
+
+    <p><strong>💡 Reflexión</strong></p>
+
+    <p>El “regimiento reunido” demuestra que el éxito no depende solo del valor, sino también de la preparación, la disciplina y el trabajo en equipo.</p>
+</div>
+
+           <div class="pagina">
+    <h3>Plumerillo</h3>
+
+    <p>El Plumerillo fue el campamento militar donde se organizó y entrenó el Ejército de los Andes, bajo el mando de José de San Martín, antes del histórico Cruce de los Andes.</p>
+
+    <p><strong>🏕️ ¿Qué era El Plumerillo?</strong></p>
+
+    <p>El Plumerillo era una base militar ubicada en las afueras de Mendoza. Allí se concentraron los soldados, recursos y estrategias necesarias para llevar adelante la campaña libertadora.</p>
+
+    <p>👉 Fue el verdadero centro de preparación del ejército.</p>
+
+    <p><strong>📍 Ubicación estratégica</strong></p>
+
+    <p>San Martín eligió este lugar por su cercanía a la Cordillera de los Andes, lo que facilitaba la planificación del cruce y el entrenamiento en condiciones similares a las que enfrentarían los soldados.</p>
+
+    <p><strong>⚔️ ¿Qué se hacía en El Plumerillo?</strong></p>
+
+    <p><strong>🪖 Entrenamiento militar</strong></p>
+    <p>
+        • Prácticas de combate<br>
+        • Formación en filas<br>
+        • Disciplina militar<br>
+        • Manejo de armas
+    </p>
+
+    <p><strong>🔧 Producción y logística</strong></p>
+    <p>
+        • Fabricación de armas y municiones<br>
+        • Fundición de cañones<br>
+        • Preparación de alimentos<br>
+        • Organización de suministros
+    </p>
+
+    <p><strong>🧠 Planificación estratégica</strong></p>
+
+    <p>Desde El Plumerillo, San Martín organizaba todos los detalles de la campaña:</p>
+
+    <p>
+        • Rutas del cruce de la cordillera<br>
+        • División del ejército en columnas<br>
+        • Estrategias para engañar al enemigo
+    </p>
+
+    <p><strong>👥 Vida en el campamento</strong></p>
+
+    <p>El Plumerillo funcionaba como una pequeña ciudad militar, donde convivían diferentes roles:</p>
+
+    <p>
+        • Soldados en entrenamiento<br>
+        • Oficiales planificando operaciones<br>
+        • Mujeres cosiendo uniformes<br>
+        • Trabajadores preparando recursos
+    </p>
+
+    <p>👉 Toda la sociedad mendocina participó en la preparación del ejército.</p>
+
+    <p><strong>🧭 Importancia histórica</strong></p>
+
+    <p>El Plumerillo fue fundamental porque permitió:</p>
+
+    <p>
+        • Formar un ejército disciplinado<br>
+        • Organizar una campaña compleja<br>
+        • Preparar el Cruce de los Andes<br>
+        • Coordinar recursos humanos y materiales
+    </p>
+
+    <p>👉 Sin este campamento, la campaña libertadora no habría sido posible.</p>
+
+    <p><strong>💡 Dato interesante</strong></p>
+
+    <p>San Martín supervisaba personalmente los entrenamientos y exigía una disciplina muy estricta, ya que sabía que el éxito dependía de la preparación de cada soldado.</p>
+
+    <p><strong>🧠 Reflexión</strong></p>
+
+    <p>El Plumerillo demuestra que las grandes hazañas no se improvisan: requieren organización, esfuerzo colectivo y planificación detallada.</p>
+</div>
+
+            <!-- PAGINA 4 -->
+            <div class="pagina">
+    <h3>Cruce de los Andes</h3>
+
+    <p>🏔️ El Cruce de los Andes (1817) fue una de las mayores hazañas militares de la historia, liderada por José de San Martín para liberar Chile y avanzar hacia la independencia de Sudamérica.</p>
+
+    <p><strong>🎯 Objetivo principal</strong></p>
+    <p>
+        • Cruzar la Cordillera de los Andes<br>
+        • Liberar Chile del dominio español<br>
+        • Avanzar hacia Perú, centro del poder realista
+    </p>
+
+    <p>👉 Este plan permitía evitar un enfrentamiento directo con los realistas en el norte.</p>
+
+    <p><strong>🪖 El Ejército de los Andes</strong></p>
+    <p>Organizado en Mendoza, estaba compuesto por:</p>
+    <p>
+        • ~4.000 soldados<br>
+        • ~10.000 mulas<br>
+        • ~1.600 caballos<br>
+        • Artillería (cañones)<br>
+        • Milicianos y auxiliares
+    </p>
+    <p>Todo previamente preparado en el campamento de El Plumerillo.</p>
+
+    <p><strong>🧭 Cómo fue el cruce</strong></p>
+    <p>Comenzó en enero de 1817, con el ejército dividido en 6 columnas que cruzaron por distintos pasos para confundir al enemigo.</p>
+
+    <p><strong>🔹 Pasos importantes</strong></p>
+    <p>
+        • Los Patos<br>
+        • Uspallata
+    </p>
+    <p>Esto hizo creer a los españoles que el ataque vendría por varios lugares.</p>
+
+    <p><strong>❄️ Dificultades extremas</strong></p>
+    <p>
+        • Alturas superiores a 4.000 metros<br>
+        • Frío intenso bajo cero<br>
+        • Falta de oxígeno<br>
+        • Caminos peligrosos<br>
+        • Muerte de animales y soldados
+    </p>
+    <p>Muchos soldados sufrieron agotamiento y enfermedades.</p>
+
+    <p><strong>🧠 Claves del éxito</strong></p>
+    <p>
+        ✔️ Organización: todo planificado con anticipación<br>
+        ✔️ Disciplina: soldados entrenados y preparados<br>
+        ✔️ Apoyo del pueblo: recursos aportados por Mendoza<br>
+        ✔️ Estrategia de engaño: difusión de información falsa para despistar al enemigo
+    </p>
+
+    <p><strong>⚔️ Resultado</strong></p>
+    <p>
+        • Batalla de Chacabuco (12 de febrero de 1817): victoria patriota y liberación de Santiago de Chile<br>
+        • Batalla de Maipú: consolidó la independencia de Chile
+    </p>
+
+    <p><strong>👥 Personajes importantes</strong></p>
+    <p>
+        • José de San Martín<br>
+        • Bernardo O'Higgins<br>
+        • Juan Gregorio de Las Heras
+    </p>
+
+    <p><strong>💡 Curiosidades</strong></p>
+    <p>
+        • Usaban ajos y cebollas para resistir el frío<br>
+        • Las mulas fueron más importantes que los caballos<br>
+        • Se usaron herraduras especiales<br>
+        • Muchos soldados eran gauchos y afrodescendientes
+    </p>
+
+    <p><strong>🌎 Importancia histórica</strong></p>
+    <p>El Cruce de los Andes permitió:</p>
+    <p>
+        • La independencia de Chile<br>
+        • Debilitar al Imperio Español<br>
+        • Preparar la liberación del Perú
+    </p>
+
+    <p><strong>🧠 Frase histórica</strong></p>
+    <p><em>“Seamos libres, lo demás no importa nada” — José de San Martín</em></p>
+</div>
+
+            <!-- PAGINA 5 -->
+           <div class="pagina">
+    <h3>Batalla de Chacabuco</h3>
+
+    <p>⚔️ La Batalla de Chacabuco (1817) fue el primer gran triunfo del Ejército de los Andes tras el Cruce de los Andes, liderado por José de San Martín.</p>
+
+    <p><strong>📅 Fecha y lugar</strong></p>
+    <p>
+        • 12 de febrero de 1817<br>
+        • Cerca de Santiago, Chile
+    </p>
+
+    <p><strong>🎯 Objetivo</strong></p>
+    <p>Derrotar a las fuerzas españolas (realistas) para:</p>
+    <p>
+        • Liberar Chile<br>
+        • Asegurar el plan continental de San Martín
+    </p>
+
+    <p><strong>🪖 Bandos enfrentados</strong></p>
+    <p>
+        <strong>🇦🇷🇨🇱 Patriotas:</strong> Ejército de los Andes<br>
+        Comandante: José de San Martín<br>
+        Apoyo: Bernardo O'Higgins
+    </p>
+    <p>
+        <strong>🇪🇸 Realistas:</strong> Ejército español<br>
+        Comandante: Rafael Maroto
+    </p>
+
+    <p><strong>🧠 Estrategia</strong></p>
+    <p>San Martín dividió su ejército en dos columnas principales:</p>
+    <p>
+        • Una al mando de Bernardo O'Higgins<br>
+        • Otra dirigida por José de San Martín
+    </p>
+    <p>👉 La idea era atacar desde distintos puntos y rodear al enemigo. Sin embargo, O'Higgins se adelantó antes de lo planeado.</p>
+
+    <p><strong>⚔️ Desarrollo de la batalla</strong></p>
+    <p>
+        • O'Higgins inició el ataque con valentía<br>
+        • Al principio hubo dificultades<br>
+        • Luego San Martín llegó con el resto del ejército<br>
+        • Los patriotas lograron rodear a los realistas
+    </p>
+
+    <p><strong>🏆 Resultado</strong></p>
+    <p>
+        • Victoria decisiva del Ejército de los Andes<br>
+        • Derrota del ejército español<br>
+        • Liberación de Santiago de Chile
+    </p>
+
+    <p><strong>👑 Consecuencia importante</strong></p>
+    <p>Bernardo O'Higgins fue nombrado Director Supremo de Chile tras la victoria.</p>
+
+    <p><strong>💡 Curiosidades</strong></p>
+    <p>
+        • La batalla duró pocas horas<br>
+        • Fue clave la coordinación entre las columnas<br>
+        • Marcó el inicio de la independencia chilena
+    </p>
+
+    <p><strong>🌎 Importancia histórica</strong></p>
+    <p>La Batalla de Chacabuco permitió:</p>
+    <p>
+        • Consolidar el éxito del Cruce de los Andes<br>
+        • Asegurar una base para continuar la campaña hacia Perú
+    </p>
+</div>
+
+            <!-- PAGINA 6 -->
+            <div class="pagina">
+    <h3>Batalla de Maipú</h3>
+
+    <p>⚔️ La Batalla de Maipú (1818) fue una de las más decisivas de la independencia sudamericana, consolidando la libertad de Chile y asegurando el plan continental de José de San Martín.</p>
+
+    <p><strong>📅 Fecha y lugar</strong></p>
+    <p>
+        • 5 de abril de 1818<br>
+        • Llanos de Maipú, cerca de Santiago de Chile
+    </p>
+
+    <p><strong>🎯 Objetivo</strong></p>
+    <p>Derrotar definitivamente al ejército realista y consolidar la independencia de Chile, preparando la campaña para liberar Perú.</p>
+
+    <p><strong>🪖 Bandos enfrentados</strong></p>
+    <p>
+        <strong>🇦🇷🇨🇱 Patriotas:</strong> Ejército de los Andes<br>
+        Comandante: José de San Martín<br>
+        Aliado: Bernardo O'Higgins
+    </p>
+    <p>
+        <strong>🇪🇸 Realistas:</strong> Ejército español<br>
+        Comandante: Mariano Osorio
+    </p>
+
+    <p><strong>🧠 Contexto previo</strong></p>
+    <p>Tras la victoria en Chacabuco, los realistas reorganizaron sus fuerzas y contraatacaron, llevando a un enfrentamiento final en Maipú.</p>
+
+    <p><strong>⚔️ Desarrollo de la batalla</strong></p>
+    <p>
+        • San Martín organizó cuidadosamente sus tropas<br>
+        • Combates intensos y muy violentos<br>
+        • La artillería patriota tuvo un papel clave<br>
+        • Los realistas fueron derrotados completamente
+    </p>
+
+    <p><strong>🤝 El “Abrazo de Maipú”</strong></p>
+    <p>Uno de los momentos más famosos: José de San Martín y Bernardo O'Higgins se abrazaron tras la victoria, simbolizando:</p>
+    <p>
+        • La unión entre Argentina y Chile<br>
+        • El triunfo de la independencia
+    </p>
+
+    <p><strong>🏆 Resultado</strong></p>
+    <p>
+        • Victoria total patriota<br>
+        • Fin del dominio español en Chile<br>
+        • Consolidación de la independencia chilena
+    </p>
+
+    <p><strong>🌎 Importancia histórica</strong></p>
+    <p>La Batalla de Maipú permitió:</p>
+    <p>
+        • Asegurar el éxito del Cruce de los Andes<br>
+        • Dar estabilidad a Chile como nación libre<br>
+        • Preparar la expedición libertadora al Perú
+    </p>
+
+    <p><strong>💡 Curiosidades</strong></p>
+    <p>
+        • Fue más grande y decisiva que Chacabuco<br>
+        • La victoria fue rápida pero intensa<br>
+        • Marcó el punto sin retorno para los realistas en Chile
+    </p>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<!-- SCRIPT MEJORADO -->
+<script>
+let pagina = 0;
+const paginas = document.querySelectorAll(".pagina");
+const contador = document.getElementById("contador");
+
+function mostrarPagina(i) {
+    paginas.forEach(p => p.classList.remove("activa"));
+    paginas[i].classList.add("activa");
+    contador.textContent = `${i + 1} / ${paginas.length}`;
+}
+
+function siguiente() {
+    if (pagina < paginas.length - 1) {
+        pagina++;
+        mostrarPagina(pagina);
+    } 
+    // No hace nada si ya estás en la última página
+}
+
+function anterior() {
+    if (pagina > 0) {
+        pagina--;
+        mostrarPagina(pagina);
+    } 
+    // No hace nada si ya estás en la primera página
+}
+
+// Mostrar la primera página al cargar
+mostrarPagina(pagina);
+</script>
 
 </body>
 </html>

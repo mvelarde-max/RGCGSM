@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Europa</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <link rel="stylesheet" href="../../CSS/EA.css">
 
     <style>
         .contenido {
             max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
             text-align: center;
-            padding-bottom: 150px;
+            padding-right: 10px;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
         }
 
         .pagina {
@@ -38,6 +43,17 @@
             background: rgba(0,224,255,.2);
             border-radius: 8px;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
         }
 
         h2 {
@@ -46,7 +62,7 @@
 
         p {
             color: white;
-            line-height: 1.5;
+            text-align: justify;
         }
 
         /* FOOTER */
@@ -72,7 +88,6 @@
             align-items: center;
         }
 
-        footer .media-opcion img,
         footer .media-opcion video {
             width: 60px;
             height: 60px;
@@ -81,7 +96,6 @@
             transition: transform 0.4s;
         }
 
-        footer .media-opcion:hover img,
         footer .media-opcion:hover video {
             transform: scale(1.2);
         }
@@ -106,7 +120,6 @@
             align-items: center;
         }
 
-        .modal-content img,
         .modal-content video {
             max-width: 90%;
         }
@@ -116,7 +129,6 @@
 <body>
 <div class="contenedor">
 
-    <!-- BARRA LATERAL -->
     <div class="lado">
         <p>San Martín en Europa</p>
 
@@ -125,42 +137,77 @@
             <span onclick="siguiente()">➡</span>
         </div>
 
+        <div class="contador" id="contador">1 / 4</div>
+
         <button onclick="window.location.href='../../index.html'">Inicio</button>
         <button onclick="window.location.href='../sanmartin.html'">Volver</button>
     </div>
 
-    <!-- CENTRO -->
     <div class="centro">
         <div class="contenido">
 
+            <!-- PAGINA 1 -->
             <div class="pagina activa">
-                <h2>Comienzo del destierro: Londres y Brusela</h2>
-                <p>San Martín inicia su etapa en Europa tras dejar América. Durante su estadía en Londres y Bruselas, mantiene contacto con figuras políticas y sigue de cerca la situación de las nuevas naciones independientes.</p>
+                <h2>Comienzo del destierro: Londres y Bruselas</h2>
+                <p>
+                Tras su retiro de la vida política en América, José de San Martín viajó a Europa en 1824 junto a su hija Mercedes. Su llegada a Londres marcó el inicio de una nueva etapa, alejada de los campos de batalla pero aún ligada a los ideales de libertad.
+
+                En Inglaterra, San Martín mantuvo contacto con otros líderes y exiliados latinoamericanos. Londres era un centro de pensamiento liberal, donde circulaban ideas políticas que influían en los nuevos estados independientes. Sin embargo, él evitó involucrarse activamente en conflictos.
+
+                Posteriormente se trasladó a Bruselas, buscando una vida más tranquila. Allí se dedicó principalmente a la educación de su hija y a la reflexión personal. Esta etapa muestra a un San Martín más reservado, enfocado en su vida privada, pero siempre atento a la situación de América.
+                </p>
             </div>
 
+            <!-- PAGINA 2 -->
             <div class="pagina">
                 <h2>Vigía y custodia de la libertad de América</h2>
-                <p>Desde el exilio, continúa atento a los acontecimientos en América. Su figura sigue siendo símbolo de libertad y defensa de los ideales independentistas.</p>
+                <p>
+                A pesar de su alejamiento físico, San Martín nunca dejó de preocuparse por el destino de América Latina. Desde Europa, seguía de cerca los acontecimientos políticos y militares de los países que habían logrado su independencia.
+
+                Mantenía correspondencia con distintas figuras y analizaba la situación con preocupación, especialmente por las divisiones internas que amenazaban la estabilidad de las nuevas naciones. Consideraba que la libertad conseguida podía perderse si no se consolidaban gobiernos fuertes y organizados.
+
+                Su figura continuaba siendo un símbolo de lucha y compromiso. Aunque no participaba directamente, su pensamiento y su ejemplo seguían influyendo en quienes defendían los ideales independentistas.
+
+                Esta etapa refleja a un San Martín vigilante, comprometido con la causa americana desde la distancia, actuando más como guía moral que como líder militar.
+                </p>
             </div>
 
+            <!-- PAGINA 3 -->
             <div class="pagina">
                 <h2>Grand Bourg: Un acto solemne de la historia</h2>
-                <p>En Grand Bourg, Francia, San Martín se establece con su familia. Allí lleva una vida más tranquila, dedicada al retiro, pero siempre recordado como uno de los grandes libertadores.</p>
+                <p>
+                San Martín se estableció durante un tiempo en Grand Bourg, cerca de París, donde llevó una vida relativamente tranquila junto a su hija. Allí se alejó definitivamente de la actividad política y militar, dedicándose a la vida familiar.
+
+                En este lugar recibió visitas de personalidades importantes y fue reconocido como uno de los grandes libertadores de América. Sin embargo, siempre mantuvo una actitud humilde y reservada.
+
+                Durante su estancia en Francia, continuó reflexionando sobre los procesos políticos en América y sobre su propio papel en la historia. Su vida en Grand Bourg simboliza el retiro de un hombre que, habiendo cumplido su misión, eligió la tranquilidad antes que el poder.
+
+                Este período representa una etapa de paz, pero también de reconocimiento histórico.
+                </p>
             </div>
 
+            <!-- PAGINA 4 -->
             <div class="pagina">
                 <h2>Desde Boulogne-sur-Mer: rumbo a la gloria</h2>
-                <p>En Boulogne-sur-Mer transcurren sus últimos días. Su legado se consolida como uno de los más importantes en la historia de América Latina.</p>
+                <p>
+                En sus últimos años, San Martín se trasladó a Boulogne-sur-Mer, en Francia. Allí vivió de manera sencilla, acompañado por su hija y alejado de la vida pública.
+
+                A pesar de su retiro, su figura seguía siendo respetada y admirada. Su legado como libertador ya estaba consolidado, y su nombre comenzaba a ocupar un lugar central en la historia de América Latina.
+
+                El 17 de agosto de 1850 falleció en esta ciudad. Su muerte marcó el final de la vida de uno de los más grandes líderes de la independencia, pero también el comienzo de su legado histórico.
+
+                Con el tiempo, sus restos serían repatriados a la Argentina, donde hoy descansan como símbolo de su lucha y su compromiso con la libertad.
+
+                Su paso por Europa no fue un exilio vacío, sino una etapa de reflexión, dignidad y consolidación de su figura como héroe continental.
+                </p>
             </div>
 
         </div>
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer id="footerMedia"></footer>
 
-<!-- MODAL -->
 <div id="modal" class="modal" onclick="cerrarModal()">
     <div class="modal-content" id="modalContent"></div>
 </div>
@@ -168,40 +215,39 @@
 <script>
 let pagina = 0;
 const paginas = document.querySelectorAll(".pagina");
+const contador = document.getElementById("contador");
 const footer = document.getElementById("footerMedia");
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 
 const mediaData = {
-    0: [
-        {type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Europa 1'}
-    ],
-    1: [
-        {type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Europa 2'}
-    ],
-    2: [
-        {type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Europa 3'}
-    ],
-    3: [
-        {type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Europa 4'}
-    ]
+    0: [{type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Europa 1'}],
+    1: [{type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Europa 2'}],
+    2: [{type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Europa 3'}],
+    3: [{type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Europa 4'}]
 };
 
 function mostrarPagina(i){
     paginas.forEach(p => p.classList.remove('activa'));
     paginas[i].classList.add('activa');
     pagina = i;
+
+    contador.textContent = `${i + 1} / ${paginas.length}`;
     actualizarFooter();
 }
 
 function siguiente(){
-    pagina = (pagina + 1) % paginas.length;
-    mostrarPagina(pagina);
+    if (pagina < paginas.length - 1) {
+        pagina++;
+        mostrarPagina(pagina);
+    }
 }
 
 function anterior(){
-    pagina = (pagina - 1 + paginas.length) % paginas.length;
-    mostrarPagina(pagina);
+    if (pagina > 0) {
+        pagina--;
+        mostrarPagina(pagina);
+    }
 }
 
 function actualizarFooter(){
@@ -240,7 +286,7 @@ function cerrarModal(){
     modalContent.innerHTML = '';
 }
 
-actualizarFooter();
+mostrarPagina(pagina);
 </script>
 
 </body>

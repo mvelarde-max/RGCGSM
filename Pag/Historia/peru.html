@@ -1,127 +1,185 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Perú</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <link rel="stylesheet" href="../../CSS/EA.css">
 
     <style>
-    .contenido {
-        max-width: 700px;
-        text-align: center;
-    }
+        .contenido {
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            padding-right: 10px;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+        }
 
-    .pagina {
-        display: none;
-    }
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-    .pagina.activa {
-        display: block;
-    }
+        .pagina.activa {
+            display: block;
+        }
 
-    /* 🔥 FLECHAS IGUALES A LAS OTRAS PÁGINAS */
-    .flechas {
-        margin-top: 15px;
-        font-size: 18px;
-        display: flex;
-        justify-content: space-between;
-    }
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    .flechas span {
-        padding: 5px 10px;
-        background: rgba(0,224,255,.2);
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-    .flechas span:hover {
-        background: rgba(0,224,255,.5);
-    }
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    h2 {
-        color: #00e0ff;
-    }
-</style>
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2,
+        h3 {
+            color: #00e0ff;
+        }
+
+        p {
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #00e0ff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #00b8cc;
+        }
+    </style>
 </head>
 
 <body>
-<div class="contenedor">
+    <div class="contenedor">
 
-    <!-- 🔹 LADO IZQUIERDO -->
-    <div class="lado">
-        <p>CRONOLOGÍA</p>
+        <!-- LADO IZQUIERDO -->
+        <div class="lado">
+            <p>CRONOLOGÍA</p>
 
-        <div class="flechas">
-            <span onclick="anterior()">⬅</span>
-            <span onclick="siguiente()">➡</span>
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
+
+            <div class="contador" id="contador">1 / 5</div>
+
+            <button onclick="window.location.href='cronologia.html'">Volver</button>
         </div>
 
-        <button onclick="window.location.href='cronologia.html'">Volver</button>
-    </div>
+        <!-- CONTENIDO -->
+        <div class="centro">
+            <div class="contenido">
 
-    <!-- 🔹 CONTENIDO -->
-    <div class="centro">
-        <div class="contenido">
+                <!-- PÁGINA 1 -->
+                <div class="pagina activa">
+                    <h2>Perú y Ecuador</h2>
+                    <h3>Ejército Libertador</h3>
+                    <p>El Ejército Libertador, liderado por José de San Martín, se preparó para la campaña en el Perú tras consolidar la independencia de Chile.
+                    Su objetivo principal era liberar Lima del control español y consolidar la independencia de Sudamérica. La expedición partió desde Chile en 1820, con soldados entrenados y equipados para enfrentar la resistencia realista.
+                    El ejército estaba compuesto por veteranos de campañas anteriores, voluntarios locales y tropas auxiliares de distintas provincias, organizadas con disciplina y jerarquía militar, reflejando la experiencia acumulada por San Martín en campañas previas.</p>
+                </div>
 
-            <div class="pagina activa">
-                <h2>Perú y Ecuador</h2>
-                <h3>Ejército Libertador</h3>
-                <p>Texto...</p>
+                <!-- PÁGINA 2 -->
+                <div class="pagina">
+                    <h3>Caída de Lima</h3>
+                    <p>En julio de 1821, las fuerzas de San Martín llegaron a Lima, la capital virreinal, y tras negociaciones y demostraciones de fuerza, los realistas abandonaron la ciudad.
+                    La ocupación de Lima permitió a San Martín declarar la independencia del Perú el 28 de julio de 1821. Este hecho consolidó la presencia patriota en la región y marcó un punto decisivo en la campaña libertadora.</p>
+                </div>
+
+                <!-- PÁGINA 3 -->
+                <div class="pagina">
+                    <h3>Callao</h3>
+                    <p>El Callao, principal puerto del Perú, era clave para el control logístico y militar. Tras la ocupación de Lima, las fuerzas patriotas bloquearon y sitiaron el puerto para evitar refuerzos españoles.
+                    Durante meses, se realizaron negociaciones y combates menores hasta que finalmente, en 1826, el Callao fue asegurado por completo, eliminando la última resistencia española en la costa peruana.</p>
+                </div>
+
+                <!-- PÁGINA 4 -->
+                <div class="pagina">
+                    <h3>Ecuador</h3>
+                    <p>Tras consolidar la independencia del Perú, las tropas patriotas avanzaron hacia el norte para liberar territorios del actual Ecuador, entonces bajo dominio realista.
+                    La campaña en Ecuador, que incluyó la Batalla de Pichincha en 1822, fue liderada por Antonio José de Sucre, subordinado de Bolívar, y resultó decisiva para incorporar estos territorios a la causa de la independencia sudamericana.
+                    La victoria en Ecuador aseguró la independencia definitiva de la región y permitió la integración de estas provincias al proceso libertador continental.</p>
+                </div>
+
+                <!-- PÁGINA 5 -->
+                <div class="pagina">
+                    <h3>Fin de la guerra</h3>
+                    <p>Con la liberación de Lima, Callao y Ecuador, la resistencia española en Sudamérica quedó prácticamente eliminada. La combinación de estrategias militares, alianzas locales y liderazgo de los libertadores permitió consolidar la independencia.
+                    La campaña culminó con la retirada de las tropas realistas y la estabilización de los nuevos gobiernos independientes, marcando el fin de la guerra de independencia en estas regiones y asegurando la libertad de los pueblos del Perú y Ecuador.</p>
+                </div>
+
             </div>
-
-            <div class="pagina">
-                <h3>Caída de Lima</h3>
-                <p>Texto...</p>
-            </div>
-
-            <div class="pagina">
-                <h3>Callao</h3>
-                <p>Texto...</p>
-            </div>
-
-            <div class="pagina">
-                <h3>Ecuador</h3>
-                <p>Texto...</p>
-            </div>
-
-            <div class="pagina">
-                <h3>Fin de la guerra</h3>
-                <p>Texto...</p>
-            </div>
-
         </div>
     </div>
 
-</div>
-
-<script>
+    <script>
 let pagina = 0;
 const paginas = document.querySelectorAll(".pagina");
+const contador = document.getElementById("contador");
 
-function mostrarPagina(i){
+function mostrarPagina(i) {
     paginas.forEach(p => p.classList.remove("activa"));
     paginas[i].classList.add("activa");
+    contador.textContent = `${i + 1} / ${paginas.length}`;
 }
 
-function siguiente(){
-    if(pagina < paginas.length - 1){
+function siguiente() {
+    if (pagina < paginas.length - 1) {
         pagina++;
         mostrarPagina(pagina);
-    } else {
-        window.location.href = "recreacion.html";
-    }
+    } 
+    // No hace nada si ya estás en la última página
 }
 
-function anterior(){
-    if(pagina > 0){
+function anterior() {
+    if (pagina > 0) {
         pagina--;
         mostrarPagina(pagina);
-    } else {
-        window.location.href = "operaciones.html"; // ← vuelve atrás del flujo
-    }
+    } 
+    // No hace nada si ya estás en la primera página
 }
+
+// Mostrar la primera página al cargar
+mostrarPagina(pagina);
 </script>
 
 </body>
+
 </html>

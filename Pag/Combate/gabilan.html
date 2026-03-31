@@ -1,57 +1,198 @@
 <!DOCTYPE html>
-
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<title>Gabilan 1817</title>
-<link rel="stylesheet" href="../../CSS/Diseño1.css">
-<style>
-.contenido{max-width:700px;text-align:center;}
-.flechas{margin-top:15px;display:flex;justify-content:space-between;}
-.imagen{max-width:400px;margin:15px 0;border-radius:10px;}
-h2{color:#00e0ff;}
-.flechas {
-    margin-top: 15px;
-    font-size: 18px;
-    display: flex;
-    justify-content: space-between;
-}
+    <meta charset="UTF-8">
+    <title>Gabilán 1817</title>
+    <link rel="stylesheet" href="../../CSS/EA.css">
+    <style>
+        .contenido {
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+        }
 
-.flechas span {
-    padding: 5px 10px;
-    background: rgba(0,224,255,.2);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-.flechas span:hover {
-    background: rgba(0,224,255,.5);
-}
-</style>
+        .pagina.activa {
+            display: block;
+        }
+
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2, h3 {
+            color: #00e0ff;
+        }
+
+        p {
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #00e0ff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #00b8cc;
+        }
+    </style>
 </head>
+
 <body>
-<div class="contenedor">
-<div class="lado">
-<p>COMBATE HISTÓRICO</p>
-<div class="flechas">
-<span onclick="anterior()">⬅</span>
-<span onclick="siguiente()">➡</span>
-</div>
-<button onclick="window.location.href='combate.html'">Volver</button>
-</div>
+    <div class="contenedor">
 
-<div class="centro"><div class="contenido">
-<h2>Gabilan 1817</h2>
-<img src="../Fondos/Sable8.jpg" class="imagen">
-<p>Acción militar dentro de la consolidación del territorio chileno.</p>
-</div></div>
-</div>
+        <!-- LADO IZQUIERDO -->
+        <div class="lado">
+            <p>COMBATE HISTÓRICO</p>
 
-<script>
-function siguiente(){window.location.href="curapaligue.html";}
-function anterior(){window.location.href="chacabuco.html";}
-</script>
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
+
+            <div class="contador" id="contador">1 / 1</div>
+
+            <button onclick="window.location.href='combate.html'">Volver</button>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="centro">
+            <div class="contenido">
+
+                <!-- PÁGINA 1 -->
+                <div class="pagina activa">
+                    <h2>Batalla de Gabilán 1817</h2>
+                    <img src="../Fondos/Sable8.jpg" class="imagen">
+
+                    <p>
+                        La Batalla de Gabilán, librada en 1817, se enmarca dentro de las acciones posteriores a la victoria patriota en Chacabuco y tiene gran importancia para consolidar el control del Ejército de los Andes en territorio chileno. Tras Chacabuco, las fuerzas patriotas debían asegurar rutas estratégicas, desarticular destacamentos realistas dispersos y consolidar posiciones clave que garantizaran la defensa de Santiago y la continuidad de la campaña hacia el sur y hacia la frontera norte con las fuerzas realistas restantes. Gabilán fue uno de estos enfrentamientos menores pero estratégicamente significativos, donde se puso a prueba la disciplina, organización y capacidad de maniobra del ejército patriota.
+                    </p>
+
+                    <p>
+                        La preparación para Gabilán involucró la reorganización de las tropas tras la ardua batalla de Chacabuco. Los soldados experimentados del Ejército de los Andes se enfrentaban a retos logísticos que incluían el suministro de alimentos, municiones y caballos, así como la necesidad de mantener la moral tras días intensos de combate y marchas continuas. José de San Martín y sus oficiales establecieron destacamentos de avanzada para vigilar los movimientos enemigos y evitar que las fuerzas realistas se reagruparan o intentaran recuperar territorio perdido. La coordinación entre unidades de caballería, infantería y artillería fue clave para garantizar la efectividad del ataque y minimizar riesgos innecesarios.
+                    </p>
+
+                    <p>
+                        El terreno de Gabilán presentaba desafíos significativos: colinas, valles y áreas boscosas que los realistas utilizaban para emboscadas y movimientos encubiertos. El Ejército de los Andes, conocedor de estas dificultades por exploraciones previas, empleó tácticas de flanqueo y emboscadas controladas, anticipando los movimientos enemigos y utilizando el terreno en su beneficio. La movilidad de la caballería patriota permitió cubrir rápidamente distancias y sorprender a los realistas en sectores críticos. Las maniobras estratégicas demostraron la habilidad de San Martín como comandante, capaz de mantener la iniciativa incluso en enfrentamientos complejos.
+                    </p>
+
+                    <p>
+                        Durante la batalla, las fuerzas patriotas aplicaron técnicas de guerra combinada: la infantería se posicionaba en áreas defensivas para contener avances enemigos, mientras la caballería ejecutaba cargas decisivas en los flancos, y la artillería ligera proporcionaba apoyo constante. Esta coordinación permitió neutralizar destacamentos realistas que aún mantenían resistencia activa y evitar que se establecieran líneas defensivas fuertes. Los soldados demostraron un alto nivel de entrenamiento y disciplina, siguiendo órdenes precisas en medio del caos de la batalla.
+                    </p>
+
+                    <p>
+                        La batalla de Gabilán, aunque más corta y de menor escala que Chacabuco, tuvo un impacto estratégico importante. Al asegurar esta posición, los patriotas consolidaron el control de la región, garantizaron rutas de suministro críticas y evitaron que el enemigo realizara ataques sorpresa sobre Santiago o las poblaciones circundantes. Además, esta victoria contribuyó a mantener la cohesión del ejército y reforzar la moral de las tropas, que comprendían que cada enfrentamiento exitoso reforzaba la independencia chilena y consolidaba el proyecto de San Martín en el continente.
+                    </p>
+
+                    <p>
+                        En el ámbito político, Gabilán mostró la capacidad del nuevo gobierno patriota en Santiago para mantener autoridad sobre territorios liberados y prevenir insurrecciones locales o incursiones realistas. Las fuerzas chilenas aliadas de Bernardo O’Higgins desempeñaron un papel complementario, reforzando posiciones y coordinando con las unidades argentinas para garantizar un frente unificado. La colaboración entre soldados chilenos y argentinos simbolizó la unión de los pueblos sudamericanos en la lucha por la independencia, sentando un precedente para futuras campañas.
+                    </p>
+
+                    <p>
+                        La batalla también tuvo consecuencias culturales y simbólicas. Cada victoria menor, como Gabilán, se convirtió en un hito para la narrativa de la independencia, destacando la importancia de la disciplina, estrategia y sacrificio colectivo. Los relatos históricos posteriores ensalzaron la valentía de soldados y oficiales que, enfrentando condiciones difíciles y enemigos experimentados, contribuyeron a la liberación de Chile. Estos enfrentamientos construyeron la memoria colectiva y fortalecieron la identidad nacional emergente, recordando que la independencia no se lograba únicamente en grandes batallas, sino también en acciones tácticas bien ejecutadas.
+                    </p>
+
+                    <p>
+                        Además, Gabilán preparó el terreno para los enfrentamientos posteriores hacia el sur y hacia los territorios aún bajo control realista. Garantizar posiciones clave permitió que el Ejército de los Andes se concentrara en operaciones más ambiciosas, como la campaña de liberación de Valparaíso y otras ciudades estratégicas. Cada victoria menor, cada control territorial ganado, consolidaba la capacidad logística y estratégica del ejército patriota, fortaleciendo la campaña en su conjunto y asegurando que la independencia fuera irreversible.
+                    </p>
+
+                    <p>
+                        Finalmente, la Batalla de Gabilán representa un ejemplo de cómo la planificación estratégica, la cooperación internacional, la disciplina militar y la valentía de los soldados combinados pueden producir resultados significativos, incluso en enfrentamientos de menor escala. Su estudio permite entender la complejidad de la guerra de independencia, donde no solo las grandes batallas definen la historia, sino también la suma de operaciones tácticas inteligentes que aseguran la victoria final.
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const contador = document.getElementById("contador");
+
+        function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
+            contador.textContent = `${i + 1} / ${paginas.length}`;
+        }
+
+        function siguiente() {
+            if (pagina < paginas.length - 1) {
+                pagina++;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "curapaligue.html";
+            }
+        }
+
+        function anterior() {
+            if (pagina > 0) {
+                pagina--;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "chacabuco.html";
+            }
+        }
+
+        mostrarPagina(pagina);
+    </script>
 
 </body>
+
 </html>

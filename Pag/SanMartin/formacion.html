@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Formación</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <link rel="stylesheet" href="../../CSS/EA.css">
 
     <style>
         .contenido {
             max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
             text-align: center;
-            padding-bottom: 150px;
+            padding-right: 10px;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
         }
 
         .pagina {
@@ -38,6 +43,17 @@
             background: rgba(0,224,255,.2);
             border-radius: 8px;
             cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .flechas span:hover {
+            background: rgba(0,224,255,.5);
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
         }
 
         h2 {
@@ -46,7 +62,7 @@
 
         p {
             color: white;
-            line-height: 1.5;
+            text-align: justify;
         }
 
         /* FOOTER */
@@ -72,7 +88,6 @@
             align-items: center;
         }
 
-        footer .media-opcion img,
         footer .media-opcion video {
             width: 60px;
             height: 60px;
@@ -81,7 +96,6 @@
             transition: transform 0.4s;
         }
 
-        footer .media-opcion:hover img,
         footer .media-opcion:hover video {
             transform: scale(1.2);
         }
@@ -106,7 +120,6 @@
             align-items: center;
         }
 
-        .modal-content img,
         .modal-content video {
             max-width: 90%;
         }
@@ -116,7 +129,6 @@
 <body>
 <div class="contenedor">
 
-    <!-- BARRA LATERAL -->
     <div class="lado">
         <p>Formación de San Martín</p>
 
@@ -125,32 +137,55 @@
             <span onclick="siguiente()">➡</span>
         </div>
 
+        <div class="contador" id="contador">1 / 2</div>
+
         <button onclick="window.location.href='../../index.html'">Inicio</button>
         <button onclick="window.location.href='../sanmartin.html'">Volver</button>
     </div>
 
-    <!-- CENTRO -->
     <div class="centro">
         <div class="contenido">
 
+            <!-- PAGINA 1 -->
             <div class="pagina activa">
                 <h2>Por Real voluntad oficial a los 15 años</h2>
-                <p>José de San Martín ingresó al ejército español a una edad temprana. A los 15 años comenzó su carrera militar, formándose en disciplina, estrategia y liderazgo dentro de las fuerzas de la corona.</p>
+                <p>
+                José de San Martín inició su formación militar a una edad muy temprana, influenciado tanto por el contexto familiar como por las oportunidades que encontró en España. Luego de que su familia se trasladara a Europa, ingresó al ejército español siendo apenas un adolescente, lo que marcaría el comienzo de una larga carrera militar.
+
+                A los 15 años, su ingreso formal al ejército se dio bajo la autoridad de la corona española, lo que implicaba someterse a una estricta disciplina. En este entorno, San Martín comenzó a adquirir conocimientos fundamentales sobre la vida militar, incluyendo el manejo de armas, la organización de tropas y la obediencia a la jerarquía.
+
+                La formación en el ejército no solo se centraba en lo físico, sino también en lo moral. Se esperaba que los soldados desarrollaran valores como el honor, la responsabilidad y el respeto por sus superiores. San Martín se destacó rápidamente por su compromiso y su capacidad para adaptarse a las exigencias del servicio.
+
+                Durante sus primeros años, participó en distintas acciones militares menores, lo que le permitió adquirir experiencia en el campo. Estas vivencias fueron clave para desarrollar su capacidad de liderazgo y su comprensión de la estrategia militar.
+
+                Este período de formación inicial fue fundamental, ya que sentó las bases de lo que más tarde sería su desempeño como uno de los principales líderes militares de América. La disciplina, el conocimiento y la experiencia adquiridos en el ejército español serían herramientas esenciales en su futura lucha por la independencia.
+                </p>
             </div>
 
+            <!-- PAGINA 2 -->
             <div class="pagina">
                 <h2>La guerra de la independencia en España</h2>
-                <p>Durante su servicio en Europa, participó en la lucha contra las tropas napoleónicas. Esta experiencia fue clave en su formación militar y en el desarrollo de las tácticas que luego aplicaría en América.</p>
+                <p>
+                Uno de los momentos más importantes en la formación militar de José de San Martín fue su participación en la guerra de independencia española contra las tropas de Napoleón Bonaparte. Este conflicto, que tuvo lugar a comienzos del siglo XIX, enfrentó a España contra el avance del Imperio francés.
+
+                Durante esta guerra, San Martín tuvo la oportunidad de participar en combates reales de gran intensidad. Estas experiencias le permitieron desarrollar habilidades estratégicas y tácticas que más tarde serían fundamentales en las campañas independentistas de América.
+
+                La lucha contra Napoleón no solo fue un conflicto militar, sino también ideológico. En ese contexto, comenzaron a difundirse ideas relacionadas con la libertad, la soberanía y la autodeterminación de los pueblos. Estas influencias tuvieron un impacto significativo en la forma de pensar de San Martín.
+
+                A lo largo de la guerra, demostró valentía y capacidad de liderazgo, lo que le permitió ascender dentro del ejército. Sin embargo, también fue testigo de las dificultades, el sufrimiento y las consecuencias de los conflictos armados, lo que contribuyó a formar una visión más amplia de la guerra.
+
+                Esta etapa fue decisiva en su vida, ya que combinó la experiencia práctica en el campo de batalla con la incorporación de nuevas ideas políticas. Todo esto influiría en su decisión, años más tarde, de regresar a América y participar activamente en los procesos de independencia.
+
+                En definitiva, la guerra en España no solo lo formó como militar, sino también como pensador, preparándolo para el rol que desempeñaría en la historia de América Latina.
+                </p>
             </div>
 
         </div>
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer id="footerMedia"></footer>
 
-<!-- MODAL -->
 <div id="modal" class="modal" onclick="cerrarModal()">
     <div class="modal-content" id="modalContent"></div>
 </div>
@@ -158,34 +193,37 @@
 <script>
 let pagina = 0;
 const paginas = document.querySelectorAll(".pagina");
+const contador = document.getElementById("contador");
 const footer = document.getElementById("footerMedia");
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 
 const mediaData = {
-    0: [
-        {type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Ingreso al ejército'}
-    ],
-    1: [
-        {type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Guerra en España'}
-    ]
+    0: [{type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Ingreso al ejército'}],
+    1: [{type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Guerra en España'}]
 };
 
 function mostrarPagina(i){
     paginas.forEach(p => p.classList.remove('activa'));
     paginas[i].classList.add('activa');
     pagina = i;
+
+    contador.textContent = `${i + 1} / ${paginas.length}`;
     actualizarFooter();
 }
 
 function siguiente(){
-    pagina = (pagina + 1) % paginas.length;
-    mostrarPagina(pagina);
+    if (pagina < paginas.length - 1) {
+        pagina++;
+        mostrarPagina(pagina);
+    }
 }
 
 function anterior(){
-    pagina = (pagina - 1 + paginas.length) % paginas.length;
-    mostrarPagina(pagina);
+    if (pagina > 0) {
+        pagina--;
+        mostrarPagina(pagina);
+    }
 }
 
 function actualizarFooter(){
@@ -224,7 +262,7 @@ function cerrarModal(){
     modalContent.innerHTML = '';
 }
 
-actualizarFooter();
+mostrarPagina(pagina);
 </script>
 
 </body>

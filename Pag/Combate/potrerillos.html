@@ -1,123 +1,189 @@
 <!DOCTYPE html>
-
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Potrerillos 1817</title>
-    <link rel="stylesheet" href="../../CSS/Diseño1.css">
+    <link rel="stylesheet" href="../../CSS/EA.css">
+    <style>
+        .contenido {
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: 1px solid rgba(0, 224, 255, 0.2);
+        }
 
-```
-<style>
-    .contenido {
-        max-width: 700px;
-        text-align: center;
-    }
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-    .flechas {
-        margin-top: 15px;
-        font-size: 18px;
-        display: flex;
-        justify-content: space-between;
-    }
+        .pagina.activa {
+            display: block;
+        }
 
-    .flechas span {
-        padding: 5px 10px;
-        background: rgba(0,224,255,.2);
-        border-radius: 8px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+        @keyframes fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
-    .flechas span:hover {
-        background: rgba(0,224,255,.5);
-    }
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
 
-    h2 {
-        color: #00e0ff;
-    }
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    .imagen {
-        width: 100%;
-        max-width: 400px;
-        border-radius: 10px;
-        margin: 15px 0;
-        box-shadow: 0 0 10px rgba(0,224,255,0.5);
-    }
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
 
-    p {
-        line-height: 1.6;
-    }
-</style>
-```
+        h2, h3 {
+            color: #00e0ff;
+        }
 
+        p {
+            line-height: 1.4;
+            margin-bottom: 15px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .imagen {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+        }
+
+        .contador {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #00e0ff;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #00e0ff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #00b8cc;
+        }
+    </style>
 </head>
 
 <body>
     <div class="contenedor">
 
-```
-    <!-- LADO IZQUIERDO -->
-    <div class="lado">
-        <p>COMBATE HISTÓRICO</p>
+        <!-- LADO IZQUIERDO -->
+        <div class="lado">
+            <p>COMBATE HISTÓRICO</p>
 
-        <div class="flechas">
-            <span onclick="anterior()">⬅</span>
-            <span onclick="siguiente()">➡</span>
+            <div class="flechas">
+                <span onclick="anterior()">⬅</span>
+                <span onclick="siguiente()">➡</span>
+            </div>
+
+            <div class="contador" id="contador">1 / 1</div>
+
+            <button onclick="window.location.href='combate.html'">Volver</button>
         </div>
 
-        <button onclick="window.location.href='combate.html'">Volver</button>
-    </div>
+        <!-- CONTENIDO -->
+        <div class="centro">
+            <div class="contenido">
 
-    <!-- CONTENIDO -->
-    <div class="centro">
-        <div class="contenido">
+                <!-- PÁGINA 1 -->
+                <div class="pagina activa">
+                    <h2>Potrerillos 1817</h2>
 
-            <h2>Potrerillos 1817</h2>
+                    <img src="../Fondos/Sable3.jpg" class="imagen">
 
-            <img src="../Fondos/Sable3.jpg" class="imagen">
+                    <p>
+                        El combate de Potrerillos formó parte de las acciones previas
+                        al cruce de los Andes liderado por el General José de San Martín.
+                    </p>
 
-            <p>
-                El combate de Potrerillos formó parte de las acciones previas
-                al cruce de los Andes liderado por el General José de San Martín.
-            </p>
+                    <p>
+                        Estas operaciones tenían como objetivo asegurar rutas,
+                        confundir al enemigo y preparar el avance del Ejército de los Andes
+                        hacia territorio chileno.
+                    </p>
 
-            <p>
-                Estas operaciones tenían como objetivo asegurar rutas,
-                confundir al enemigo y preparar el avance del Ejército de los Andes
-                hacia territorio chileno.
-            </p>
+                    <p>
+                        Las fuerzas patriotas realizaron movimientos estratégicos en la zona,
+                        enfrentándose a destacamentos realistas en terrenos difíciles
+                        de montaña.
+                    </p>
 
-            <p>
-                Las fuerzas patriotas realizaron movimientos estratégicos en la zona,
-                enfrentándose a destacamentos realistas en terrenos difíciles
-                de montaña.
-            </p>
+                    <p>
+                        Estas acciones contribuyeron al éxito del plan continental,
+                        permitiendo posteriormente avanzar hacia las grandes batallas
+                        de la campaña de Chile.
+                    </p>
 
-            <p>
-                Estas acciones contribuyeron al éxito del plan continental,
-                permitiendo posteriormente avanzar hacia las grandes batallas
-                de la campaña de Chile.
-            </p>
+                    <p>
+                        Potrerillos representa uno de los pasos iniciales en la gran
+                        estrategia libertadora que culminaría en la independencia de Chile y Perú.
+                    </p>
+                </div>
 
-            <p>
-                Potrerillos representa uno de los pasos iniciales en la gran
-                estrategia libertadora que culminaría en la independencia de Chile y Perú.
-            </p>
-
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    function siguiente() {
-        window.location.href = "guardiavieja.html";
-    }
+    <script>
+        let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const contador = document.getElementById("contador");
 
-    function anterior() {
-        window.location.href = "montevideo.html";
-    }
-</script>
-```
+        function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
+            contador.textContent = `${i + 1} / ${paginas.length}`;
+        }
 
+        function siguiente() {
+            if (pagina < paginas.length - 1) {
+                pagina++;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "guardiavieja.html";
+            }
+        }
+
+        function anterior() {
+            if (pagina > 0) {
+                pagina--;
+                mostrarPagina(pagina);
+            } else {
+                window.location.href = "montevideo.html";
+            }
+        }
+
+        mostrarPagina(pagina);
+    </script>
 </body>
+
 </html>
