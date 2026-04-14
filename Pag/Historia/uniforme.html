@@ -88,6 +88,67 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+
+
+        /* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.media-opcion {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.media-opcion img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s;
+}
+
+.media-opcion:hover img {
+    transform: scale(1.2);
+}
+
+.media-opcion p {
+    color: #00e0ff;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
+    max-width: 90%;
+}
     </style>
 </head>
 
@@ -183,34 +244,104 @@ En conjunto, los servicios auxiliares eran el soporte invisible del regimiento. 
         </div>
     </div>
 
-    <script>
+
+
+
+<footer id="footerMedia"></footer>
+
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
+   <script>
 let pagina = 0;
 const paginas = document.querySelectorAll(".pagina");
 const contador = document.getElementById("contador");
+const footer = document.getElementById("footerMedia");
+const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modalContent");
+
+/* 🔥 CONFIGURACIÓN */
+const mediaData = {
+    0: [
+        {src:'img1.jpg', nombre:'Uniforme 1'},
+        {src:'img2.jpg', nombre:'Uniforme 2'}
+    ],
+    1: [],
+    2: [
+        {src:'caballo1.jpg', nombre:'Caballo 1'},
+        {src:'caballo2.jpg', nombre:'Caballo 2'},
+        {src:'caballo3.jpg', nombre:'Caballo 3'}
+    ],
+    3: [
+        {src:'servicio.jpg', nombre:'Servicios'}
+    ]
+};
 
 function mostrarPagina(i) {
     paginas.forEach(p => p.classList.remove("activa"));
     paginas[i].classList.add("activa");
+    pagina = i;
+
     contador.textContent = `${i + 1} / ${paginas.length}`;
+    actualizarFooter();
 }
 
 function siguiente() {
     if (pagina < paginas.length - 1) {
         pagina++;
         mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la última página
+    }
 }
 
 function anterior() {
     if (pagina > 0) {
         pagina--;
         mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la primera página
+    }
 }
 
-// Mostrar la primera página al cargar
+/* FOOTER */
+function actualizarFooter(){
+    footer.innerHTML = '';
+
+    if(!mediaData[pagina] || mediaData[pagina].length === 0) return;
+
+    mediaData[pagina].forEach(m => {
+        const div = document.createElement('div');
+        div.classList.add('media-opcion');
+
+        const img = document.createElement('img');
+        img.src = m.src;
+        img.onclick = () => abrirModal(m);
+
+        div.appendChild(img);
+
+        const t = document.createElement('p');
+        t.textContent = m.nombre;
+        div.appendChild(t);
+
+        footer.appendChild(div);
+    });
+}
+
+/* MODAL */
+function abrirModal(m){
+    modal.style.display = 'flex';
+    modalContent.innerHTML = '';
+
+    const img = document.createElement('img');
+    img.src = m.src;
+
+    modalContent.appendChild(img);
+}
+
+function cerrarModal(){
+    modal.style.display = 'none';
+    modalContent.innerHTML = '';
+}
+
+/* INIT */
 mostrarPagina(pagina);
 </script>
 

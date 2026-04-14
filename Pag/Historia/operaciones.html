@@ -52,6 +52,73 @@
             margin-top: 5px;
             color: #ccc;
         }
+
+
+        /* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.media-opcion {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.media-opcion img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s;
+}
+
+.media-opcion:hover img {
+    transform: scale(1.2);
+}
+
+.media-opcion p {
+    color: #00e0ff;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content img {
+    max-width: 90%;
+}
+
+/* LINK */
+.media-link {
+    color: #00e0ff;
+    text-decoration: underline;
+    cursor: pointer;
+}
     </style>
 </head>
 
@@ -605,35 +672,115 @@
     </div>
 </div>
 
+
+<footer id="footerMedia"></footer>
+
+<div id="modal" class="modal" onclick="cerrarModal()">
+    <div class="modal-content" id="modalContent"></div>
+</div>
+
 <!-- SCRIPT MEJORADO -->
 <script>
 let pagina = 0;
 const paginas = document.querySelectorAll(".pagina");
-const contador = document.getElementById("contador");
+const contador = document.getElementById("indicador"); // ⚠️ usás indicador
+const footer = document.getElementById("footerMedia");
+const modal = document.getElementById("modal");
+const modalContent = document.getElementById("modalContent");
+
+/* 🔥 CONFIGURACIÓN DE MEDIA */
+const mediaData = {
+    0: [
+        {type:'link', url:'bandaoriental.html', nombre:'Ver Banda Oriental'}
+    ],
+    1: [],
+    2: [
+        {type:'img', src:'../../IMG/andes1.jpg', nombre:'Foto 1'},
+        {type:'img', src:'../../IMG/andes2.jpg', nombre:'Foto 2'},
+        {type:'img', src:'../../IMG/andes3.jpg', nombre:'Foto 3'}
+    ],
+    3: [],
+    4: [],
+    5: []
+};
 
 function mostrarPagina(i) {
     paginas.forEach(p => p.classList.remove("activa"));
     paginas[i].classList.add("activa");
+    pagina = i;
+
     contador.textContent = `${i + 1} / ${paginas.length}`;
+    actualizarFooter();
 }
 
 function siguiente() {
     if (pagina < paginas.length - 1) {
         pagina++;
         mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la última página
+    }
 }
 
 function anterior() {
     if (pagina > 0) {
         pagina--;
         mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la primera página
+    }
 }
 
-// Mostrar la primera página al cargar
+/* 🔥 FOOTER DINÁMICO */
+function actualizarFooter(){
+    footer.innerHTML = '';
+
+    if(!mediaData[pagina] || mediaData[pagina].length === 0) return;
+
+    mediaData[pagina].forEach(m => {
+        const div = document.createElement('div');
+        div.classList.add('media-opcion');
+
+        let media;
+
+        if(m.type === 'img'){
+            media = document.createElement('img');
+            media.src = m.src;
+            media.onclick = () => abrirModal(m);
+        }
+
+        else if(m.type === 'link'){
+            media = document.createElement('p');
+            media.textContent = m.nombre;
+            media.classList.add('media-link');
+            media.onclick = () => window.location.href = m.url;
+        }
+
+        div.appendChild(media);
+
+        if(m.type !== 'link'){
+            const t = document.createElement('p');
+            t.textContent = m.nombre;
+            div.appendChild(t);
+        }
+
+        footer.appendChild(div);
+    });
+}
+
+/* 🔥 MODAL */
+function abrirModal(m){
+    modal.style.display = 'flex';
+    modalContent.innerHTML = '';
+
+    const img = document.createElement('img');
+    img.src = m.src;
+
+    modalContent.appendChild(img);
+}
+
+function cerrarModal(){
+    modal.style.display = 'none';
+    modalContent.innerHTML = '';
+}
+
+/* INIT */
 mostrarPagina(pagina);
 </script>
 
