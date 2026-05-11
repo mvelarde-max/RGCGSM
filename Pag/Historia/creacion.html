@@ -448,7 +448,9 @@ footer {
 
 
 <script>
-let pagina = 0;
+const params = new URLSearchParams(window.location.search);
+
+let pagina = parseInt(params.get("pagina")) || 0;
 const paginas = document.querySelectorAll(".pagina");
 const contador = document.getElementById("contador");
 const footer = document.getElementById("footerMedia");
@@ -458,22 +460,26 @@ const modalContent = document.getElementById("modalContent");
 /* 🔥 CONFIGURACIÓN DE MEDIA */
 const mediaData = {
     0: [
-        {type:'video', src:'../../VIDEOS/video1.mp4', nombre:'Video inicial'}
+        {type:'video', src:'../../VIDEOS/RCG2.mp4', nombre:'Video inicial'}
     ],
     1: [
-        {type:'img', src:'../../IMG/foto1.jpg', nombre:'Imagen'}
+        {type:'img', src:'../../CLIPS/1111F2A.BMP', nombre:'Imagen'}
     ],
     2: [
-        {type:'img', src:'../../IMG/f1.jpg', nombre:'Foto 1'},
-        {type:'img', src:'../../IMG/f2.jpg', nombre:'Foto 2'},
-        {type:'img', src:'../../IMG/f3.jpg', nombre:'Foto 3'},
-        {type:'img', src:'../../IMG/f4.jpg', nombre:'Foto 4'}
+        {type:'img', src:'../../CLIPS/1111F3A.BMP', nombre:'Foto 1'},
+        {type:'img', src:'../../CLIPS/1111F3B.BMP', nombre:'Foto 2'},
+        {type:'img', src:'../../CLIPS/1111F3C.BMP', nombre:'Foto 3'},
+        {type:'img', src:'../../CLIPS/1111F3D.BMP', nombre:'Foto 4'}
     ],
     3: [],
     4: [
-        {type:'video', src:'../../VIDEOS/v1.mp4', nombre:'Video 1'},
-        {type:'video', src:'../../VIDEOS/v2.mp4', nombre:'Video 2'},
-        {type:'link', url:'sanlorenzo3defebrero.html', nombre:'Ver más'}
+        {type:'video', src:'../../VIDEOS/V010.mp4', nombre:'Video 1'},
+        {type:'video', src:'../../VIDEOS/RGG3.mp4', nombre:'Video 2'},
+        {
+    type:'link',
+    url:'../Combate/sanlorenzo.html?from=creacion&page=4',
+    nombre:'Ver más'
+}
     ],
     5: []
 };
