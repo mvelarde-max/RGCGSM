@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Andes</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
         .contenido {
-    max-width: 700px;
-    max-height: 80vh;
-    overflow-y: auto;
-    text-align: center;
-    padding: 15px;
-    border-radius: 10px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
 
-    /* Fondo semi-negro y texto blanco */
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
 
-    /* Borde sutil azul como detalle */
-    border: 1px solid rgba(0, 224, 255, 0.2);
-}
+            border: 1px solid rgba(0, 224, 255, 0.2);
+        }
 
         .pagina {
             display: none;
@@ -32,8 +32,13 @@
         }
 
         @keyframes fade {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .flechas {
@@ -88,42 +93,66 @@
             background-color: #00b8cc;
         }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px;
-    z-index: 1000;
-}
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
 
-.media-opcion {
-    text-align: center;
-    cursor: pointer;
-}
+        .media-opcion {
+            text-align: center;
+            cursor: pointer;
+        }
 
-.media-opcion img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-}
+        .media-opcion img,
+        .media-opcion video {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
 
-.media-link {
-    color: #00e0ff;
-    cursor: pointer;
-}
+        .media-link {
+            color: #00e0ff;
+            cursor: pointer;
+            background: rgba(0, 224, 255, 0.15);
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
 
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 5000;
+        }
+
+        .modal-content img,
+        .modal-content video {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>CRONOLOGÍA</p>
 
             <div class="flechas">
@@ -131,185 +160,469 @@ footer {
                 <span onclick="siguiente()">➡</span>
             </div>
 
-            <div class="contador" id="contador">1 / 9</div>
+            <div class="contador" id="contador">1 / 10</div>
 
-            <button onclick="window.location.href='cronologia.html'">Volver</button>
+            <button onclick="window.location.href='cronologia.html'">
+                Volver
+            </button>
+
         </div>
 
-        <!-- CONTENIDO -->
+        <!-- CENTRO -->
         <div class="centro">
+
             <div class="contenido">
 
-<!-- 1 -->
-<div class="pagina activa">
-<h2>Cruce de los Andes</h2>
-<h3>Ejército de los Andes</h3>
-<p>...</p>
-</div>
+                <!-- 1 -->
+                <div class="pagina activa">
+                    <h2>Cruce de los Andes</h2>
+                    <h3>Ejército de los Andes</h3>
+                    <p>...</p>
+                </div>
 
-<!-- 2 -->
-<div class="pagina">
-<h3>Regimiento reunido</h3>
-<p>El Regimiento de Granaderos a Caballo volvió a reunirse en Mendoza...</p>
-</div>
+                <!-- 2 -->
+                <div class="pagina">
+                    <h3>Regimiento reunido</h3>
+                    <p>
+                        El Regimiento de Granaderos a Caballo volvió
+                        a reunirse en Mendoza...
+                    </p>
+                </div>
 
-<!-- 3 NUEVA -->
-<div class="pagina">
-<h3>Operando en la cordillera</h3>
-<p>Las tropas comenzaron a operar en condiciones reales de montaña...</p>
-</div>
+                <!-- 3 -->
+                <div class="pagina">
+                    <h3>Operando en la cordillera</h3>
+                    <p>
+                        Las tropas comenzaron a operar
+                        en condiciones reales de montaña...
+                    </p>
+                </div>
 
-<!-- 4 -->
-<div class="pagina">
-<h3>Plumerillo</h3>
-<p>...</p>
-</div>
+                <!-- 4 -->
+                <div class="pagina">
+                    <h3>Plumerillo</h3>
+                    <p>...</p>
+                </div>
 
-<!-- 5 -->
-<div class="pagina">
-<h3>Cruce de los Andes</h3>
-<p>...</p>
-</div>
+                <!-- 5 -->
+                <div class="pagina">
+                    <h3>Cruce de los Andes</h3>
+                    <p>...</p>
+                </div>
 
-<!-- 6 NUEVA -->
-<div class="pagina">
-<h3>Combate en la cordillera</h3>
-<p>Durante el avance, se produjeron enfrentamientos menores...</p>
-</div>
+                <!-- 6 -->
+                <div class="pagina">
+                    <h3>Combate en la cordillera</h3>
+                    <p>
+                        Durante el avance, se produjeron
+                        enfrentamientos menores...
+                    </p>
+                </div>
 
-<!-- 7 -->
-<div class="pagina">
-<h3>Chacabuco</h3>
-<p>...</p>
-</div>
+                <!-- 7 -->
+                <div class="pagina">
+                    <h3>Chacabuco</h3>
+                    <p>...</p>
+                </div>
 
-<!-- 8 NUEVA -->
-<div class="pagina">
-<h3>Expedición al sur de Chile</h3>
-<p>Tras consolidar posiciones, se desarrollaron expediciones hacia el sur...</p>
-</div>
+                <!-- 8 -->
+                <div class="pagina">
+                    <h3>Expedición al sur de Chile</h3>
+                    <p>
+                        Tras consolidar posiciones,
+                        se desarrollaron expediciones hacia el sur...
+                    </p>
+                </div>
 
-<!-- 9 -->
-<div class="pagina">
-<h3>Maipú</h3>
-<p>...</p>
-</div>
+                <!-- 9 -->
+                <div class="pagina">
+                    <h3>Maipú</h3>
+                    <p>...</p>
+                </div>
 
-</div>
+                <!-- 10 -->
+                <div class="pagina">
+                    <h3>FIN de la Campaña de Chile</h3>
+
+                    <p>
+                        Con la consolidación de la independencia chilena,
+                        concluyó la Campaña de Chile del Ejército de los Andes.
+                        Los Granaderos a Caballo participaron activamente
+                        en operaciones decisivas a ambos lados de la cordillera.
+                    </p>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
 
-<footer id="footerMedia"></footer>
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
 
-<div id="modal" class="modal" onclick="cerrarModal()">
-    <div class="modal-content" id="modalContent"></div>
-</div>
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
+    </div>
 
     <script>
-let pagina = 0;
-const paginas = document.querySelectorAll(".pagina");
-const contador = document.getElementById("contador");
-const footer = document.getElementById("footerMedia");
-const modal = document.getElementById("modal");
-const modalContent = document.getElementById("modalContent");
 
-/* 🔥 MEDIA */
-const mediaData = {
-    0: [], // 1
-    1: [], // 2
-    2: [], // 3
-    3: [], // 4
-    4: [ // 5 → 1 imagen
-        {type:'img', src:'../../IMG/cruce.jpg', nombre:'Cruce'}
-    ],
-    5: [ // 6 → 4 fotos + 4 links
-        {type:'img', src:'../../IMG/c1.jpg', nombre:'Combate 1'},
-        {type:'img', src:'../../IMG/c2.jpg', nombre:'Combate 2'},
-        {type:'img', src:'../../IMG/c3.jpg', nombre:'Combate 3'},
-        {type:'img', src:'../../IMG/c4.jpg', nombre:'Combate 4'},
+        let pagina = 0;
 
-        {type:'link', url:'compotrerillos.html', nombre:'Potrerillos'},
-        {type:'link', url:'comguardiav.html', nombre:'Guardia Vieja'},
-        {type:'link', url:'comachupalla.html', nombre:'Achupallas'},
-        {type:'link', url:'comcoimas.html', nombre:'Coimas'}
-    ],
-    6: [ // 7 → chacabuco
-        {type:'link', url:'batallachacabuco.html', nombre:'Ver batalla'}
-    ],
-    7: [], // 8
-    8: [ // 9 → maipu
-        {type:'link', url:'batallamaipu.html', nombre:'Ver batalla'}
-    ]
-};
+        const paginas = document.querySelectorAll(".pagina");
+        const contador = document.getElementById("contador");
 
-function mostrarPagina(i){
-    paginas.forEach(p => p.classList.remove("activa"));
-    paginas[i].classList.add("activa");
-    pagina = i;
+        const footer = document.getElementById("footerMedia");
 
-    contador.textContent = `${i+1} / ${paginas.length}`;
-    actualizarFooter();
-}
+        const modal = document.getElementById("modal");
+        const modalContent = document.getElementById("modalContent");
 
-function siguiente(){
-    if(pagina < paginas.length-1){
-        pagina++;
-        mostrarPagina(pagina);
-    }
-}
+        /* =========================
+           MEDIA
+        ========================== */
 
-function anterior(){
-    if(pagina > 0){
-        pagina--;
-        mostrarPagina(pagina);
-    }
-}
+        const mediaData = {
 
-function actualizarFooter(){
-    footer.innerHTML = '';
+            0: [],
 
-    if(!mediaData[pagina]) return;
+            1: [],
 
-    mediaData[pagina].forEach(m=>{
-        const div = document.createElement('div');
-        div.classList.add('media-opcion');
+            2: [],
 
-        let media;
+            3: [],
 
-        if(m.type==='img'){
-            media = document.createElement('img');
-            media.src = m.src;
-            media.onclick = ()=>abrirModal(m);
+            /* PAGINA 5 */
+            4: [
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F5A.BMP',
+                    nombre: 'Cruce'
+                },
+
+                {
+                    type: 'video',
+                    src: '../../VIDEOS/RCG4.MP4',
+                    nombre: 'Video Cruce'
+                }
+
+            ],
+
+            /* PAGINA 6 */
+            5: [
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F6A.BMP',
+                    nombre: 'Potrerillos'
+                },
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F6B.BMP',
+                    nombre: 'Guardia Vieja'
+                },
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F6BC.BMP',
+                    nombre: 'Achupallas'
+                },
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F6D.BMP',
+                    nombre: 'Las Coimas'
+                },
+
+                {
+                    type: 'link',
+                    url: '../Combate/potrerillos.html',
+                    nombre: 'Potrerillos'
+                },
+
+                {
+                    type: 'link',
+                    url: '../Combate/guardiavieja.html',
+                    nombre: 'Guardia Vieja'
+                },
+
+                {
+                    type: 'link',
+                    url: '../Combate/achupallas.html',
+                    nombre: 'Achupallas'
+                },
+
+                {
+                    type: 'link',
+                    url: '../Combate/lascoimas.html',
+                    nombre: 'Las Coimas'
+                }
+
+            ],
+
+            /* PAGINA 7 */
+            6: [
+
+                {
+                    type: 'link',
+                    url: '../Combate/chacabuco.html',
+                    nombre: 'Ver batalla'
+                }
+
+            ],
+
+            /* PAGINA 8 */
+            7: [],
+
+            /* PAGINA 9 */
+            8: [
+
+                 {
+                    type: 'link',
+                    url: '../Combate/maipu.html',
+                    nombre: 'Ver batalla'
+                }
+
+            ],
+
+            /* PAGINA 10 */
+            9: [
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F10A.BMP',
+                    nombre: 'Final 1'
+                },
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F10B.BMP',
+                    nombre: 'Final 2'
+                },
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F10C.BMP',
+                    nombre: 'Final 3'
+                },
+
+                {
+                    type: 'img',
+                    src: '../../CLIPS/1115F10D.BMP',
+                    nombre: 'Final 4'
+                }
+
+            ]
+
+        };
+
+        /* =========================
+           MOSTRAR PAGINA
+        ========================== */
+
+        function mostrarPagina(i) {
+
+            paginas.forEach(p => p.classList.remove("activa"));
+
+            paginas[i].classList.add("activa");
+
+            pagina = i;
+
+            contador.textContent =
+                `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
+
+            localStorage.setItem("paginaAndes", pagina);
+
         }
 
-        if(m.type==='link'){
-            media = document.createElement('p');
-            media.textContent = m.nombre;
-            media.classList.add('media-link');
-            media.onclick = ()=>window.location.href = m.url;
+        /* =========================
+           SIGUIENTE
+        ========================== */
+
+        function siguiente() {
+
+            if (pagina < paginas.length - 1) {
+
+                pagina++;
+
+                mostrarPagina(pagina);
+
+            }
+
         }
 
-        div.appendChild(media);
-        footer.appendChild(div);
-    });
+        /* =========================
+           ANTERIOR
+        ========================== */
+
+        function anterior() {
+
+            if (pagina > 0) {
+
+                pagina--;
+
+                mostrarPagina(pagina);
+
+            }
+
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        function actualizarFooter() {
+
+            footer.innerHTML = '';
+
+            if (!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div = document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                let media;
+
+                /* IMAGEN */
+
+                if (m.type === 'img') {
+
+                    media = document.createElement('img');
+
+                    media.src = m.src;
+
+                    media.onclick = () => abrirModal(m);
+
+                }
+
+                /* VIDEO */
+
+                if (m.type === 'video') {
+
+                    media = document.createElement('video');
+
+                    media.src = m.src;
+
+                    media.muted = true;
+
+                    media.onclick = () => abrirModal(m);
+
+                }
+
+                /* LINK */
+
+                if (m.type === 'link') {
+
+                    media = document.createElement('p');
+
+                    media.textContent = m.nombre;
+
+                    media.classList.add('media-link');
+
+                    media.onclick = () => {
+
+                        localStorage.setItem(
+                            "paginaAndes",
+                            pagina
+                        );
+
+                        window.location.href = m.url;
+
+                    };
+
+                }
+
+                div.appendChild(media);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* =========================
+           MODAL
+        ========================== */
+
+        function abrirModal(m) {
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            /* IMAGEN */
+
+            if (m.type === 'img') {
+
+                const img = document.createElement('img');
+
+                img.src = m.src;
+
+                modalContent.appendChild(img);
+
+            }
+
+            /* VIDEO */
+
+            if (m.type === 'video') {
+
+                const video = document.createElement('video');
+
+                video.src = m.src;
+
+                video.controls = true;
+
+                video.autoplay = true;
+
+                modalContent.appendChild(video);
+
+            }
+
+        }
+
+       function cerrarModal() {
+
+    const video = modalContent.querySelector('video');
+
+    if(video){
+
+        video.pause();
+
+        video.currentTime = 0;
+
+    }
+
+    modal.style.display = 'none';
+
+    modalContent.innerHTML = '';
+
 }
 
-function abrirModal(m){
-    modal.style.display='flex';
-    modalContent.innerHTML='';
+        /* =========================
+           RESTAURAR PAGINA
+        ========================== */
 
-    const img = document.createElement('img');
-    img.src = m.src;
+        const paginaGuardada =
+            localStorage.getItem("paginaAndes");
 
-    modalContent.appendChild(img);
-}
+        if (paginaGuardada !== null) {
 
-function cerrarModal(){
-    modal.style.display='none';
-}
+            pagina = parseInt(paginaGuardada);
 
-mostrarPagina(pagina);
-</script>
+        }
+
+        mostrarPagina(pagina);
+
+    </script>
 
 </body>
+
 </html>

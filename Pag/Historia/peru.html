@@ -4,18 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Perú</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
 
     <style>
+
         .contenido {
             max-width: 700px;
             max-height: 80vh;
             overflow-y: auto;
             text-align: center;
             padding-right: 10px;
+
             border: 1px solid rgba(0, 224, 255, 0.2);
             border-radius: 10px;
+
             padding: 15px;
+
+            background: rgba(0,0,0,0.6);
+            color: #fff;
         }
 
         .pagina {
@@ -28,8 +35,15 @@
         }
 
         @keyframes fade {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
         }
 
         .flechas {
@@ -83,102 +97,415 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.85);
+
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            padding: 10px;
+
+            z-index: 1000;
+
+            flex-wrap: wrap;
+        }
+
+        .media-opcion {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .media-opcion img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0,0,0,0.9);
+
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 5000;
+        }
+
+        .modal-content img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: 10px;
+        }
+
     </style>
+
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>CRONOLOGÍA</p>
 
             <div class="flechas">
+
                 <span onclick="anterior()">⬅</span>
+
                 <span onclick="siguiente()">➡</span>
+
             </div>
 
-            <div class="contador" id="contador">1 / 5</div>
+            <div class="contador" id="contador">
 
-            <button onclick="window.location.href='cronologia.html'">Volver</button>
+                1 / 5
+
+            </div>
+
+            <button onclick="window.location.href='cronologia.html'">
+
+                Volver
+
+            </button>
+
         </div>
 
         <!-- CONTENIDO -->
         <div class="centro">
+
             <div class="contenido">
 
                 <!-- PÁGINA 1 -->
                 <div class="pagina activa">
+
                     <h2>Perú y Ecuador</h2>
+
                     <h3>Ejército Libertador</h3>
-                    <p>El Ejército Libertador, liderado por José de San Martín, se preparó para la campaña en el Perú tras consolidar la independencia de Chile.
-                    Su objetivo principal era liberar Lima del control español y consolidar la independencia de Sudamérica. La expedición partió desde Chile en 1820, con soldados entrenados y equipados para enfrentar la resistencia realista.
-                    El ejército estaba compuesto por veteranos de campañas anteriores, voluntarios locales y tropas auxiliares de distintas provincias, organizadas con disciplina y jerarquía militar, reflejando la experiencia acumulada por San Martín en campañas previas.</p>
+
+                    <p>
+                        El Ejército Libertador, liderado por José de San Martín,
+                        se preparó para la campaña en el Perú tras consolidar
+                        la independencia de Chile.
+
+                        Su objetivo principal era liberar Lima del control español
+                        y consolidar la independencia de Sudamérica.
+
+                        La expedición partió desde Chile en 1820, con soldados
+                        entrenados y equipados para enfrentar la resistencia realista.
+
+                        El ejército estaba compuesto por veteranos de campañas anteriores,
+                        voluntarios locales y tropas auxiliares de distintas provincias,
+                        organizadas con disciplina y jerarquía militar,
+                        reflejando la experiencia acumulada por San Martín
+                        en campañas previas.
+                    </p>
+
                 </div>
 
                 <!-- PÁGINA 2 -->
                 <div class="pagina">
+
                     <h3>Caída de Lima</h3>
-                    <p>En julio de 1821, las fuerzas de San Martín llegaron a Lima, la capital virreinal, y tras negociaciones y demostraciones de fuerza, los realistas abandonaron la ciudad.
-                    La ocupación de Lima permitió a San Martín declarar la independencia del Perú el 28 de julio de 1821. Este hecho consolidó la presencia patriota en la región y marcó un punto decisivo en la campaña libertadora.</p>
+
+                    <p>
+                        En julio de 1821, las fuerzas de San Martín llegaron a Lima,
+                        la capital virreinal, y tras negociaciones y demostraciones de fuerza,
+                        los realistas abandonaron la ciudad.
+
+                        La ocupación de Lima permitió a San Martín declarar
+                        la independencia del Perú el 28 de julio de 1821.
+
+                        Este hecho consolidó la presencia patriota en la región
+                        y marcó un punto decisivo en la campaña libertadora.
+                    </p>
+
                 </div>
 
                 <!-- PÁGINA 3 -->
                 <div class="pagina">
+
                     <h3>Callao</h3>
-                    <p>El Callao, principal puerto del Perú, era clave para el control logístico y militar. Tras la ocupación de Lima, las fuerzas patriotas bloquearon y sitiaron el puerto para evitar refuerzos españoles.
-                    Durante meses, se realizaron negociaciones y combates menores hasta que finalmente, en 1826, el Callao fue asegurado por completo, eliminando la última resistencia española en la costa peruana.</p>
+
+                    <p>
+                        El Callao, principal puerto del Perú,
+                        era clave para el control logístico y militar.
+
+                        Tras la ocupación de Lima, las fuerzas patriotas
+                        bloquearon y sitiaron el puerto para evitar
+                        refuerzos españoles.
+
+                        Durante meses, se realizaron negociaciones
+                        y combates menores hasta que finalmente,
+                        en 1826, el Callao fue asegurado por completo,
+                        eliminando la última resistencia española
+                        en la costa peruana.
+                    </p>
+
                 </div>
 
                 <!-- PÁGINA 4 -->
                 <div class="pagina">
+
                     <h3>Ecuador</h3>
-                    <p>Tras consolidar la independencia del Perú, las tropas patriotas avanzaron hacia el norte para liberar territorios del actual Ecuador, entonces bajo dominio realista.
-                    La campaña en Ecuador, que incluyó la Batalla de Pichincha en 1822, fue liderada por Antonio José de Sucre, subordinado de Bolívar, y resultó decisiva para incorporar estos territorios a la causa de la independencia sudamericana.
-                    La victoria en Ecuador aseguró la independencia definitiva de la región y permitió la integración de estas provincias al proceso libertador continental.</p>
+
+                    <p>
+                        Tras consolidar la independencia del Perú,
+                        las tropas patriotas avanzaron hacia el norte
+                        para liberar territorios del actual Ecuador.
+
+                        La campaña en Ecuador incluyó la Batalla de Pichincha en 1822,
+                        liderada por Antonio José de Sucre.
+
+                        La victoria aseguró la independencia definitiva
+                        de la región y permitió la integración
+                        de estas provincias al proceso libertador continental.
+                    </p>
+
                 </div>
 
                 <!-- PÁGINA 5 -->
                 <div class="pagina">
+
                     <h3>Fin de la guerra</h3>
-                    <p>Con la liberación de Lima, Callao y Ecuador, la resistencia española en Sudamérica quedó prácticamente eliminada. La combinación de estrategias militares, alianzas locales y liderazgo de los libertadores permitió consolidar la independencia.
-                    La campaña culminó con la retirada de las tropas realistas y la estabilización de los nuevos gobiernos independientes, marcando el fin de la guerra de independencia en estas regiones y asegurando la libertad de los pueblos del Perú y Ecuador.</p>
+
+                    <p>
+                        Con la liberación de Lima, Callao y Ecuador,
+                        la resistencia española en Sudamérica
+                        quedó prácticamente eliminada.
+
+                        La combinación de estrategias militares,
+                        alianzas locales y liderazgo de los libertadores
+                        permitió consolidar la independencia.
+
+                        La campaña culminó con la retirada
+                        de las tropas realistas y la estabilización
+                        de los nuevos gobiernos independientes.
+                    </p>
+
                 </div>
 
             </div>
+
         </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
     </div>
 
     <script>
-let pagina = 0;
-const paginas = document.querySelectorAll(".pagina");
-const contador = document.getElementById("contador");
 
-function mostrarPagina(i) {
-    paginas.forEach(p => p.classList.remove("activa"));
-    paginas[i].classList.add("activa");
-    contador.textContent = `${i + 1} / ${paginas.length}`;
-}
+        let pagina = 0;
 
-function siguiente() {
-    if (pagina < paginas.length - 1) {
-        pagina++;
+        const paginas =
+            document.querySelectorAll(".pagina");
+
+        const contador =
+            document.getElementById("contador");
+
+        const footer =
+            document.getElementById("footerMedia");
+
+        const modal =
+            document.getElementById("modal");
+
+        const modalContent =
+            document.getElementById("modalContent");
+
+        /* =========================
+           IMAGENES
+        ========================== */
+
+        const mediaData = {
+
+            /* PAGINA 1 */
+            0: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1116F1A.BMP',
+                    nombre:'Perú 1'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1116F1B.BMP',
+                    nombre:'Perú 2'
+                }
+
+            ],
+
+            /* PAGINA 2 */
+            1: [],
+
+            /* PAGINA 3 */
+            2: [],
+
+            /* PAGINA 4 */
+            3: [],
+
+            /* PAGINA 5 */
+            4: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1116F4A.BMP',
+                    nombre:'Final 1'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1116F4B.BMP',
+                    nombre:'Final 2'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1116F4C.BMP',
+                    nombre:'Final 3'
+                }
+
+            ]
+
+        };
+
+        /* =========================
+           MOSTRAR PAGINA
+        ========================== */
+
+        function mostrarPagina(i){
+
+            paginas.forEach(
+                p => p.classList.remove("activa")
+            );
+
+            paginas[i].classList.add("activa");
+
+            pagina = i;
+
+            contador.textContent =
+                `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
+
+        }
+
+        /* =========================
+           SIGUIENTE
+        ========================== */
+
+        function siguiente(){
+
+            if(pagina < paginas.length - 1){
+
+                pagina++;
+
+                mostrarPagina(pagina);
+
+            }
+
+        }
+
+        /* =========================
+           ANTERIOR
+        ========================== */
+
+        function anterior(){
+
+            if(pagina > 0){
+
+                pagina--;
+
+                mostrarPagina(pagina);
+
+            }
+
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        function actualizarFooter(){
+
+            footer.innerHTML = '';
+
+            if(!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div =
+                    document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                const img =
+                    document.createElement('img');
+
+                img.src = m.src;
+
+                img.onclick = () => abrirModal(m);
+
+                div.appendChild(img);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* =========================
+           MODAL
+        ========================== */
+
+        function abrirModal(m){
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            const img =
+                document.createElement('img');
+
+            img.src = m.src;
+
+            modalContent.appendChild(img);
+
+        }
+
+        function cerrarModal(){
+
+            modal.style.display = 'none';
+
+            modalContent.innerHTML = '';
+
+        }
+
+        /* =========================
+           INICIO
+        ========================== */
+
         mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la última página
-}
 
-function anterior() {
-    if (pagina > 0) {
-        pagina--;
-        mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la primera página
-}
-
-// Mostrar la primera página al cargar
-mostrarPagina(pagina);
-</script>
+    </script>
 
 </body>
 

@@ -186,13 +186,13 @@
 
             <div class="contador" id="contador">1 / 1</div>
 
-           <button onclick="window.location.href='combate.html'">
-    Volver
-</button>
+            <button onclick="window.location.href='combate.html'">
+                Volver
+            </button>
 
-<button id="btnRegresar" style="display:none;">
-    Regresar
-</button>
+            <button id="btnRegresar" style="display:none;">
+                Regresar
+            </button>
 
         </div>
 
@@ -429,24 +429,24 @@
 
 
 
-/* BOTON REGRESAR */
-const params = new URLSearchParams(window.location.search);
+        /* BOTON REGRESAR */
+        const params = new URLSearchParams(window.location.search);
 
-const from = params.get("from");
-const page = params.get("page");
+        const from = params.get("from");
+        const page = params.get("page");
 
-const btnRegresar = document.getElementById("btnRegresar");
+        const btnRegresar = document.getElementById("btnRegresar");
 
-if (from === "creacion") {
+        if (from === "creacion") {
 
-    btnRegresar.style.display = "inline-block";
+            btnRegresar.style.display = "inline-block";
 
-    btnRegresar.onclick = () => {
+            btnRegresar.onclick = () => {
 
-        window.location.href =
-            `../Historia/creacion.html?pagina=${page}`;
-    };
-}
+                window.location.href =
+                    `../Historia/creacion.html?pagina=${page}`;
+            };
+        }
 
 
 
