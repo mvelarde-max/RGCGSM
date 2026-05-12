@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Cuartel</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
+
         .contenido {
             max-width: 700px;
             max-height: 80vh;
@@ -28,8 +31,11 @@
         }
 
         @keyframes fade {
+
             from { opacity: 0; }
+
             to { opacity: 1; }
+
         }
 
         .flechas {
@@ -83,89 +89,461 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+        footer {
+
+            position: fixed;
+
+            bottom: 0;
+
+            width: 100%;
+
+            background: rgba(0,0,0,0.85);
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            padding: 10px;
+
+            z-index: 1000;
+
+            flex-wrap: wrap;
+        }
+
+        .media-opcion {
+
+            text-align: center;
+
+            cursor: pointer;
+        }
+
+        .media-opcion img {
+
+            width: 60px;
+            height: 60px;
+
+            border-radius: 8px;
+
+            object-fit: cover;
+        }
+
+        .modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: rgba(0,0,0,0.9);
+
+            display: none;
+
+            justify-content: center;
+
+            align-items: center;
+
+            z-index: 5000;
+        }
+
+        .modal-content img {
+
+            max-width: 90vw;
+
+            max-height: 90vh;
+
+            border-radius: 10px;
+        }
+
     </style>
+
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>CRONOLOGÍA</p>
 
             <div class="flechas">
+
                 <span onclick="anterior()">⬅</span>
+
                 <span onclick="siguiente()">➡</span>
+
             </div>
 
-            <div class="contador" id="contador">1 / 4</div>
+            <div class="contador" id="contador">
 
-            <button onclick="window.location.href='cronologia.html'">Volver</button>
+                1 / 9
+
+            </div>
+
+            <button onclick="window.location.href='cronologia.html'">
+
+                Volver
+
+            </button>
+
         </div>
 
         <!-- CONTENIDO -->
         <div class="centro">
+
             <div class="contenido">
 
-                <!-- PÁGINA 1 -->
+                <!-- PAGINA 1 -->
                 <div class="pagina activa">
+
                     <h2>Nuevo Cuartel</h2>
-                    <h3>Ubicación</h3>
-                    <p>El nuevo cuartel fue estratégicamente ubicado cerca del centro de la ciudad para facilitar la movilidad de tropas y asegurar una rápida respuesta ante emergencias. Su localización permitió también un control eficiente sobre los accesos a la ciudad y la cercanía a los principales caminos de comunicación, lo que era vital para las operaciones militares y logísticas del regimiento.</p>
+
+                    <h3>Ubicación del Cuartel</h3>
+
+                    <p>
+                        El nuevo cuartel fue estratégicamente ubicado
+                        cerca del centro de la ciudad para facilitar
+                        la movilidad de tropas.
+                    </p>
+
                 </div>
 
-                <!-- PÁGINA 2 -->
+                <!-- PAGINA 2 -->
                 <div class="pagina">
-                    <h3>Construcción</h3>
-                    <p>La construcción del cuartel combinó técnicas modernas de la época con materiales locales resistentes. Se levantaron edificios para alojamiento de tropas, talleres, establos para caballos y almacenes para armas y suministros. El diseño incluyó patios internos amplios para entrenamientos y maniobras, así como fortificaciones leves que garantizaban seguridad ante cualquier amenaza externa. La obra se completó en varios años, con énfasis en la funcionalidad y durabilidad.</p>
+
+                    <h3>Construcción del Cuartel</h3>
+
+                    <p>
+                        La construcción del cuartel combinó técnicas
+                        modernas de la época con materiales resistentes.
+                    </p>
+
                 </div>
 
-                <!-- PÁGINA 3 -->
+                <!-- PAGINA 3 -->
                 <div class="pagina">
-                    <h3>Ocupación</h3>
-                    <p>El cuartel fue ocupado por el Regimiento de Granaderos a Caballo, quienes establecieron allí su vida cotidiana militar. Los soldados seguían estrictos horarios de instrucción, mantenimiento de equipo y cuidado de caballos. Se organizaban guardias, patrullas y actividades de entrenamiento constante. La ocupación del cuartel consolidó la disciplina, fomentó el sentido de pertenencia al regimiento y permitió que los oficiales supervisaran de manera directa el desempeño de cada unidad.</p>
+
+                    <h3>Ocupación del Cuartel</h3>
+
+                    <p>
+                        El cuartel fue ocupado por el Regimiento
+                        de Granaderos a Caballo.
+                    </p>
+
                 </div>
 
-                <!-- PÁGINA 4 -->
+                <!-- PAGINA 4 -->
                 <div class="pagina">
-                    <h3>Ceremonias</h3>
-                    <p>El cuartel también fue escenario de ceremonias militares, desfiles y eventos oficiales. Estas ceremonias reforzaban la disciplina, el orgullo y la identidad del regimiento. Además, incluían prácticas de honores a las banderas, presentación de tropas y conmemoraciones de victorias históricas. Los actos no solo tenían un carácter protocolar, sino que también servían para mantener la moral alta y demostrar el prestigio de la unidad ante autoridades y la población local.</p>
+
+                    <h3>Últimas Obras</h3>
+
+                    <p>
+                        Las últimas ampliaciones permitieron mejorar
+                        la capacidad operativa y ceremonial del cuartel.
+                    </p>
+
+                </div>
+
+                <!-- PAGINA 5 -->
+                <div class="pagina">
+
+                    <h3>Ceremonias Actuales</h3>
+
+                    <p>
+                        Actualmente el cuartel continúa siendo escenario
+                        de ceremonias oficiales y actos patrióticos.
+                    </p>
+
+                </div>
+
+                <!-- PAGINA 6 -->
+                <div class="pagina">
+
+                    <h3>Momento a los Granaderos I</h3>
+
+                    <p>
+                        Diversas actividades históricas y recreativas
+                        fueron desarrolladas por el regimiento.
+                    </p>
+
+                </div>
+
+                <!-- PAGINA 7 -->
+                <div class="pagina">
+
+                    <h3>Momento a los Granaderos II</h3>
+
+                    <p>
+                        Los Granaderos mantuvieron las tradiciones
+                        militares y ceremoniales del cuerpo histórico.
+                    </p>
+
+                </div>
+
+                <!-- PAGINA 8 -->
+                <div class="pagina">
+
+                    <h3>Momento a los Granaderos III</h3>
+
+                    <p>
+                        Se realizaron importantes homenajes y actos
+                        conmemorativos dentro del cuartel.
+                    </p>
+
+                </div>
+
+                <!-- PAGINA 9 -->
+                <div class="pagina">
+
+                    <h3>Momentos a los Granaderos IV</h3>
+
+                    <p>
+                        El legado histórico de los Granaderos continúa
+                        siendo preservado mediante ceremonias y actos
+                        institucionales.
+                    </p>
+
                 </div>
 
             </div>
+
         </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
     </div>
 
     <script>
-let pagina = 0;
-const paginas = document.querySelectorAll(".pagina");
-const contador = document.getElementById("contador");
 
-function mostrarPagina(i) {
-    paginas.forEach(p => p.classList.remove("activa"));
-    paginas[i].classList.add("activa");
-    contador.textContent = `${i + 1} / ${paginas.length}`;
-}
+        let pagina = 0;
 
-function siguiente() {
-    if (pagina < paginas.length - 1) {
-        pagina++;
+        const paginas =
+            document.querySelectorAll(".pagina");
+
+        const contador =
+            document.getElementById("contador");
+
+        const footer =
+            document.getElementById("footerMedia");
+
+        const modal =
+            document.getElementById("modal");
+
+        const modalContent =
+            document.getElementById("modalContent");
+
+        /* =========================
+           MEDIA
+        ========================== */
+
+        const mediaData = {
+
+            /* PAGINA 1 */
+            0: [],
+
+            /* PAGINA 2 */
+            1: [],
+
+            /* PAGINA 3 */
+            2: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1118F3A.BMP',
+                    nombre:'Ocupación'
+                }
+
+            ],
+
+            /* PAGINA 4 */
+            3: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1118F4A.BMP',
+                    nombre:'Últimas Obras'
+                }
+
+            ],
+
+            /* PAGINA 5 */
+            4: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1118F5A.BMP',
+                    nombre:'Ceremonias'
+                }
+
+            ],
+
+            /* PAGINA 6 */
+            5: [],
+
+            /* PAGINA 7 */
+            6: [],
+
+            /* PAGINA 8 */
+            7: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1118F8A.BMP',
+                    nombre:'Granaderos 1'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1118F8B.BMP',
+                    nombre:'Granaderos 2'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1118F8C.BMP',
+                    nombre:'Granaderos 3'
+                }
+
+            ],
+
+            /* PAGINA 9 */
+            8: []
+
+        };
+
+        /* =========================
+           MOSTRAR PAGINA
+        ========================== */
+
+        function mostrarPagina(i){
+
+            paginas.forEach(
+                p => p.classList.remove("activa")
+            );
+
+            paginas[i].classList.add("activa");
+
+            pagina = i;
+
+            contador.textContent =
+                `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
+
+        }
+
+        /* =========================
+           SIGUIENTE
+        ========================== */
+
+        function siguiente(){
+
+            if(pagina < paginas.length - 1){
+
+                pagina++;
+
+                mostrarPagina(pagina);
+
+            }
+
+        }
+
+        /* =========================
+           ANTERIOR
+        ========================== */
+
+        function anterior(){
+
+            if(pagina > 0){
+
+                pagina--;
+
+                mostrarPagina(pagina);
+
+            }
+
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        function actualizarFooter(){
+
+            footer.innerHTML = '';
+
+            if(!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div =
+                    document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                let media;
+
+                if(m.type === 'img'){
+
+                    media =
+                        document.createElement('img');
+
+                    media.src = m.src;
+
+                    media.onclick = () =>
+                        abrirModal(m);
+
+                }
+
+                div.appendChild(media);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* =========================
+           MODAL
+        ========================== */
+
+        function abrirModal(m){
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            const img =
+                document.createElement('img');
+
+            img.src = m.src;
+
+            modalContent.appendChild(img);
+
+        }
+
+        function cerrarModal(){
+
+            modal.style.display = 'none';
+
+            modalContent.innerHTML = '';
+
+        }
+
         mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la última página
-}
 
-function anterior() {
-    if (pagina > 0) {
-        pagina--;
-        mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la primera página
-}
-
-// Mostrar la primera página al cargar
-mostrarPagina(pagina);
-</script>
+    </script>
 
 </body>
 

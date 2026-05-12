@@ -4,27 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Recreación</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
+
         .contenido {
-    max-width: 700px;
-    max-height: 80vh;
-    overflow-y: auto;
-    text-align: center;
-    padding-right: 10px;
-    border-radius: 10px;
-    padding: 15px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            text-align: center;
+            padding-right: 10px;
+            border-radius: 10px;
+            padding: 15px;
 
-    /* fondo semi-negro como en las otras páginas */
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff; /* texto en blanco para contraste */
-}
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+        }
 
-.centro {
-    background: rgba(0,0,0,0.5);
-    padding: 20px;
-    border-radius: 12px;
-}
+        .centro {
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 12px;
+        }
 
         .pagina {
             display: none;
@@ -36,6 +38,7 @@
         }
 
         @keyframes fade {
+
             from {
                 opacity: 0;
             }
@@ -43,6 +46,7 @@
             to {
                 opacity: 1;
             }
+
         }
 
         .flechas {
@@ -96,111 +100,503 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+
+            background: rgba(0,0,0,0.85);
+
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            padding: 10px;
+
+            z-index: 1000;
+
+            flex-wrap: wrap;
+        }
+
+        .media-opcion {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .media-opcion img,
+        .media-opcion video {
+
+            width: 60px;
+            height: 60px;
+
+            border-radius: 8px;
+
+            object-fit: cover;
+        }
+
+        .modal {
+
+            position: fixed;
+            inset: 0;
+
+            background: rgba(0,0,0,0.9);
+
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 5000;
+        }
+
+        .modal-content img,
+        .modal-content video {
+
+            max-width: 90vw;
+            max-height: 90vh;
+
+            border-radius: 10px;
+        }
+
     </style>
+
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>CRONOLOGÍA</p>
 
             <div class="flechas">
+
                 <span onclick="anterior()">⬅</span>
+
                 <span onclick="siguiente()">➡</span>
+
             </div>
 
-            <div class="contador" id="contador">1 / 5</div>
+            <div class="contador" id="contador">
 
-            <button onclick="window.location.href='cronologia.html'">Volver</button>
+                1 / 5
+
+            </div>
+
+            <button onclick="window.location.href='cronologia.html'">
+
+                Volver
+
+            </button>
+
         </div>
 
         <!-- CONTENIDO -->
         <div class="centro">
+
             <div class="contenido">
 
                 <!-- PÁGINA 1 -->
                 <div class="pagina activa">
+
                     <h2>Recreación del Regimiento</h2>
+
                     <h3>1903-1908</h3>
-                    <p>Durante estos años, se llevó a cabo la reorganización formal del Regimiento de Granaderos a Caballo como unidad ceremonial y de custodia. 
-                    Se centró en restaurar la disciplina, uniformes y tradiciones históricas, siguiendo los lineamientos de José de San Martín. 
-                    Se reconstruyeron las estructuras físicas del cuartel y se formaron nuevas compañías de oficiales y tropa, con especial énfasis en la equitación y el manejo del sable. 
-                    La instrucción incluía maniobras históricas, desfiles y prácticas de combate simulado, buscando mantener viva la herencia militar del regimiento.</p>
+
+                    <p>
+                        Durante estos años, se llevó a cabo la reorganización formal
+                        del Regimiento de Granaderos a Caballo como unidad ceremonial.
+                    </p>
+
                 </div>
 
                 <!-- PÁGINA 2 -->
                 <div class="pagina">
+
                     <h3>1909-1920</h3>
-                    <p>En esta etapa, el regimiento consolidó su papel en actos oficiales y ceremoniales de la nación. 
-                    Participó en recepciones presidenciales, desfiles y eventos patrióticos. 
-                    Se incorporaron nuevas técnicas de equitación y tácticas de formación basadas en la experiencia histórica, incluyendo la recreación de la campaña de los Andes y maniobras de caballería. 
-                    Además, se inició un trabajo de preservación del patrimonio, incluyendo uniformes, armas y banderas históricas, que fueron restauradas y puestas en exhibición dentro del cuartel.</p>
+
+                    <p>
+                        En esta etapa, el regimiento consolidó su papel
+                        en actos oficiales y ceremoniales de la nación.
+                    </p>
+
                 </div>
 
                 <!-- PÁGINA 3 -->
                 <div class="pagina">
+
                     <h3>1921-1934</h3>
-                    <p>Durante este periodo, el Regimiento de Granaderos a Caballo adquirió un protagonismo creciente en la vida militar y cultural del país. 
-                    Se amplió la instrucción de la tropa, incorporando técnicas de equitación avanzada, formación en combate histórico y protocolos ceremoniales estrictos. 
-                    Se promovieron competencias internas entre las compañías para mejorar la destreza y la disciplina. 
-                    Además, el regimiento comenzó a documentar su historia y tradiciones, creando archivos de fotos, planos de uniformes y registros de desfiles y actos oficiales.</p>
+
+                    <p>
+                        Durante este periodo, el Regimiento de Granaderos
+                        adquirió un protagonismo creciente.
+                    </p>
+
                 </div>
 
                 <!-- PÁGINA 4 -->
                 <div class="pagina">
+
                     <h3>1935-1939</h3>
-                    <p>En este periodo, el regimiento se convirtió en símbolo de identidad nacional. 
-                    Participó activamente en la celebración de aniversarios patrios, inauguraciones y actos militares, siempre mostrando la disciplina y la precisión de sus formaciones. 
-                    Se reforzó el entrenamiento en maniobras complejas y desfiles, destacando el uso de sables, lanzas y caballos especialmente seleccionados. 
-                    También se fomentó la educación histórica de los soldados, con charlas y lecturas sobre la campaña libertadora y la vida de José de San Martín, consolidando la función educativa y ceremonial del regimiento.</p>
+
+                    <p>
+                        En este periodo, el regimiento se convirtió
+                        en símbolo de identidad nacional.
+                    </p>
+
                 </div>
 
                 <!-- PÁGINA 5 -->
                 <div class="pagina">
+
                     <h3>1950-1955</h3>
-                    <p>En los primeros años de la década de 1950, el Regimiento de Granaderos a Caballo reforzó su rol ceremonial y turístico. 
-                    Se realizaron grandes desfiles en Buenos Aires, exhibiciones históricas para escuelas y visitas guiadas al cuartel. 
-                    Además, se modernizó parte del equipamiento y se mantuvo la restauración de uniformes y armas históricas. 
-                    Se consolidó un legado de tradición y prestigio, que hoy sigue siendo referente de la historia militar argentina. 
-                    Esta etapa también incluyó la participación en la preservación de documentos históricos, colaborando con museos y bibliotecas, para asegurar la memoria de la recreación y continuidad del regimiento a las futuras generaciones.</p>
+
+                    <p>
+                        En los primeros años de la década de 1950,
+                        el Regimiento reforzó su rol ceremonial y turístico.
+                    </p>
+
                 </div>
 
             </div>
+
         </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
     </div>
 
     <script>
-let pagina = 0;
-const paginas = document.querySelectorAll(".pagina");
-const contador = document.getElementById("contador");
 
-function mostrarPagina(i) {
-    paginas.forEach(p => p.classList.remove("activa"));
-    paginas[i].classList.add("activa");
-    contador.textContent = `${i + 1} / ${paginas.length}`;
-}
+        let pagina = 0;
 
-function siguiente() {
-    if (pagina < paginas.length - 1) {
-        pagina++;
+        const paginas =
+            document.querySelectorAll(".pagina");
+
+        const contador =
+            document.getElementById("contador");
+
+        const footer =
+            document.getElementById("footerMedia");
+
+        const modal =
+            document.getElementById("modal");
+
+        const modalContent =
+            document.getElementById("modalContent");
+
+        /* =========================
+           MEDIA
+        ========================== */
+
+        const mediaData = {
+
+            /* PAGINA 1 */
+            0: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F1A.BMP',
+                    nombre:'Foto 1'
+                },
+
+                {
+                    type:'video',
+                    src:'../../VIDEOS/RCG6.MP4',
+                    nombre:'Video 1'
+                }
+
+            ],
+
+            /* PAGINA 2 */
+            1: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F2A.BMP',
+                    nombre:'Foto 1'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F2B.BMP',
+                    nombre:'Foto 2'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F2C.BMP',
+                    nombre:'Foto 3'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F2D.BMP',
+                    nombre:'Foto 4'
+                }
+
+            ],
+
+            /* PAGINA 3 */
+            2: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F3AA.BMP',
+                    nombre:'Foto 1'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F3AB.BMP',
+                    nombre:'Foto 2'
+                }
+
+            ],
+
+            /* PAGINA 4 */
+            3: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F4A.BMP',
+                    nombre:'Foto 1'
+                },
+
+                {
+                    type:'video',
+                    src:'../../VIDEOS/HOMENAJE.MP4',
+                    nombre:'Video 1'
+                }
+
+            ],
+
+            /* PAGINA 5 */
+            4: [
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F5A.BMP',
+                    nombre:'Foto 1'
+                },
+
+                {
+                    type:'img',
+                    src:'../../CLIPS/1117F5B.BMP',
+                    nombre:'Foto 2'
+                },
+
+                {
+                    type:'video',
+                    src:'../../VIDEOS/SIGLO.MP4',
+                    nombre:'Video 1'
+                },
+
+                {
+                    type:'video',
+                    src:'../../VIDEOS/1950.MP4',
+                    nombre:'Video 2'
+                },
+
+                {
+                    type:'video',
+                    src:'../../VIDEOS/1953.MP4',
+                    nombre:'Video 3'
+                }
+
+            ]
+
+        };
+
+        /* =========================
+           MOSTRAR PAGINA
+        ========================== */
+
+        function mostrarPagina(i){
+
+            paginas.forEach(
+                p => p.classList.remove("activa")
+            );
+
+            paginas[i].classList.add("activa");
+
+            pagina = i;
+
+            contador.textContent =
+                `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
+
+        }
+
+        /* =========================
+           SIGUIENTE
+        ========================== */
+
+        function siguiente(){
+
+            if(pagina < paginas.length - 1){
+
+                pagina++;
+
+                mostrarPagina(pagina);
+
+            }
+
+        }
+
+        /* =========================
+           ANTERIOR
+        ========================== */
+
+        function anterior(){
+
+            if(pagina > 0){
+
+                pagina--;
+
+                mostrarPagina(pagina);
+
+            }
+
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        function actualizarFooter(){
+
+            footer.innerHTML = '';
+
+            if(!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div =
+                    document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                let media;
+
+                /* IMAGEN */
+
+                if(m.type === 'img'){
+
+                    media =
+                        document.createElement('img');
+
+                    media.src = m.src;
+
+                    media.onclick = () =>
+                        abrirModal(m);
+
+                }
+
+                /* VIDEO */
+
+                if(m.type === 'video'){
+
+                    media =
+                        document.createElement('video');
+
+                    media.src = m.src;
+
+                    media.muted = true;
+
+                    media.onclick = () =>
+                        abrirModal(m);
+
+                }
+
+                div.appendChild(media);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* =========================
+           MODAL
+        ========================== */
+
+        function abrirModal(m){
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            /* IMAGEN */
+
+            if(m.type === 'img'){
+
+                const img =
+                    document.createElement('img');
+
+                img.src = m.src;
+
+                modalContent.appendChild(img);
+
+            }
+
+            /* VIDEO */
+
+            if(m.type === 'video'){
+
+                const video =
+                    document.createElement('video');
+
+                video.src = m.src;
+
+                video.controls = true;
+
+                video.autoplay = true;
+
+                modalContent.appendChild(video);
+
+            }
+
+        }
+
+        function cerrarModal(){
+
+            const video =
+                modalContent.querySelector('video');
+
+            if(video){
+
+                video.pause();
+
+                video.currentTime = 0;
+
+            }
+
+            modal.style.display = 'none';
+
+            modalContent.innerHTML = '';
+
+        }
+
+        /* =========================
+           INICIO
+        ========================== */
+
         mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la última página
-}
 
-function anterior() {
-    if (pagina > 0) {
-        pagina--;
-        mostrarPagina(pagina);
-    } 
-    // No hace nada si ya estás en la primera página
-}
-
-// Mostrar la primera página al cargar
-mostrarPagina(pagina);
-</script>
+    </script>
 
 </body>
+
 </html>
