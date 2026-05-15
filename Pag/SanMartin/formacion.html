@@ -191,7 +191,9 @@
 </div>
 
 <script>
+
 let pagina = 0;
+
 const paginas = document.querySelectorAll(".pagina");
 const contador = document.getElementById("contador");
 const footer = document.getElementById("footerMedia");
@@ -199,48 +201,109 @@ const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 
 const mediaData = {
-    0: [{type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Ingreso al ejército'}],
-    1: [{type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Guerra en España'}]
+
+    0: [
+
+        {type:'img', src:'../../CLIPS/42F1A.BMP', nombre:'Imagen 1'},
+        {type:'img', src:'../../CLIPS/42F1B.BMP', nombre:'Imagen 2'},
+        {type:'img', src:'../../CLIPS/42F1C.BMP', nombre:'Imagen 3'},
+        {type:'img', src:'../../CLIPS/42F1D.BMP', nombre:'Imagen 4'},
+        {type:'img', src:'../../CLIPS/42F1E.BMP', nombre:'Imagen 5'},
+        {type:'img', src:'../../CLIPS/42F1F.BMP', nombre:'Imagen 6'}
+
+    ],
+
+    1: [
+
+        {type:'img', src:'../../CLIPS/42F2A.BMP', nombre:'Imagen 1'},
+        {type:'img', src:'../../CLIPS/42F2B.BMP', nombre:'Imagen 2'},
+        {type:'img', src:'../../CLIPS/42F2C.BMP', nombre:'Imagen 3'},
+        {type:'img', src:'../../CLIPS/42F2D.BMP', nombre:'Imagen 4'},
+        {type:'img', src:'../../CLIPS/42F2E.BMP', nombre:'Imagen 5'},
+        {type:'img', src:'../../CLIPS/42F2F.BMP', nombre:'Imagen 6'},
+        {type:'img', src:'../../CLIPS/42F2G.BMP', nombre:'Imagen 7'},
+        {type:'img', src:'../../CLIPS/42F2H.BMP', nombre:'Imagen 8'}
+
+    ]
 };
 
 function mostrarPagina(i){
+
     paginas.forEach(p => p.classList.remove('activa'));
+
     paginas[i].classList.add('activa');
+
     pagina = i;
 
     contador.textContent = `${i + 1} / ${paginas.length}`;
+
     actualizarFooter();
 }
 
 function siguiente(){
+
     if (pagina < paginas.length - 1) {
+
         pagina++;
+
         mostrarPagina(pagina);
     }
 }
 
 function anterior(){
+
     if (pagina > 0) {
+
         pagina--;
+
         mostrarPagina(pagina);
     }
 }
 
 function actualizarFooter(){
+
     footer.innerHTML = '';
+
     mediaData[pagina].forEach(m => {
+
         const div = document.createElement('div');
+
         div.classList.add('media-opcion');
 
-        const vid = document.createElement('video');
-        vid.src = m.src;
-        vid.muted = true;
-        vid.onclick = () => abrirModal(m);
+        if(m.type === 'img'){
 
-        div.appendChild(vid);
+            const img = document.createElement('img');
+
+            img.src = m.src;
+
+            img.style.width = '60px';
+            img.style.height = '60px';
+            img.style.objectFit = 'cover';
+            img.style.borderRadius = '8px';
+            img.style.cursor = 'pointer';
+
+            img.onclick = () => abrirModal(m);
+
+            div.appendChild(img);
+        }
+
+        if(m.type === 'video'){
+
+            const vid = document.createElement('video');
+
+            vid.src = m.src;
+
+            vid.muted = true;
+
+            vid.onclick = () => abrirModal(m);
+
+            div.appendChild(vid);
+        }
 
         const t = document.createElement('p');
+
         t.textContent = m.nombre;
+
         div.appendChild(t);
 
         footer.appendChild(div);
@@ -248,21 +311,48 @@ function actualizarFooter(){
 }
 
 function abrirModal(m){
+
     modal.style.display = 'flex';
+
     modalContent.innerHTML = '';
-    const vid = document.createElement('video');
-    vid.src = m.src;
-    vid.controls = true;
-    vid.autoplay = true;
-    modalContent.appendChild(vid);
+
+    if(m.type === 'img'){
+
+        const img = document.createElement('img');
+
+        img.src = m.src;
+
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '90vh';
+        img.style.borderRadius = '10px';
+
+        modalContent.appendChild(img);
+    }
+
+    if(m.type === 'video'){
+
+        const vid = document.createElement('video');
+
+        vid.src = m.src;
+
+        vid.controls = true;
+        vid.autoplay = true;
+
+        vid.style.maxWidth = '90%';
+
+        modalContent.appendChild(vid);
+    }
 }
 
 function cerrarModal(){
+
     modal.style.display = 'none';
+
     modalContent.innerHTML = '';
 }
 
 mostrarPagina(pagina);
+
 </script>
 
 </body>

@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Junín 1824</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
         .contenido {
             max-width: 700px;
@@ -16,6 +18,7 @@
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
             border: 1px solid rgba(0, 224, 255, 0.2);
+            margin-bottom: 100px;
         }
 
         .pagina {
@@ -96,14 +99,80 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+        /* FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .media-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .media-opcion img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s;
+            border: 2px solid rgba(0, 224, 255, 0.3);
+        }
+
+        .media-opcion:hover img {
+            transform: scale(1.2);
+            border-color: #00e0ff;
+        }
+
+        .media-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            max-width: 90%;
+            max-height: 90vh;
+        }
     </style>
+
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>COMBATE HISTÓRICO</p>
 
             <div class="flechas">
@@ -113,97 +182,242 @@
 
             <div class="contador" id="contador">1 / 1</div>
 
-            <button onclick="window.location.href='combate.html'">Volver</button>
+            <button onclick="window.location.href='combate.html'">
+                Volver
+            </button>
+
+            <button onclick="volverAndes()">
+                Regresar Cronología
+            </button>
+
         </div>
 
         <!-- CONTENIDO -->
         <div class="centro">
+
             <div class="contenido">
 
                 <div class="pagina activa">
+
                     <h2>Junín 1824</h2>
-                    <img src="../Fondos/Sable14.jpg" class="imagen">
 
                     <p>
-                        La batalla de Junín, librada el 6 de agosto de 1824, fue una acción clave dentro de la campaña final de la independencia del Perú. Este combate se caracterizó principalmente por ser un enfrentamiento de caballería en las llanuras del altiplano andino, donde las fuerzas patriotas bajo el mando de Simón Bolívar y Antonio José de Sucre se enfrentaron a la caballería realista que buscaba frenar el avance de los ejércitos libertadores hacia Lima.
+                        La batalla de Junín, librada el 6 de agosto de 1824,
+                        fue una acción clave dentro de la campaña final de la
+                        independencia del Perú.
                     </p>
 
                     <p>
-                        Previamente a Junín, las fuerzas patriotas habían consolidado posiciones en la región de Ayacucho y Cusco, pero aún necesitaban asegurar las rutas de comunicación con el norte y garantizar la desorganización de los destacamentos realistas. La inteligencia militar, basada en exploradores y aliados locales, permitió ubicar la concentración de caballería enemiga en las llanuras de Junín, donde su superioridad numérica inicial parecía amenazar la moral de las tropas patriotas.
+                        Este combate se destacó por ser un enfrentamiento casi
+                        exclusivamente de caballería en las llanuras del altiplano andino.
                     </p>
 
                     <p>
-                        El enfrentamiento en Junín se desarrolló casi exclusivamente con unidades de caballería, lo que lo diferencia de batallas anteriores donde la infantería y la artillería eran decisivas. Las fuerzas patriotas, a pesar de estar en inferioridad numérica, se organizaron en columnas ágiles y coordinadas, con oficiales experimentados que podían ejecutar maniobras rápidas en un terreno plano y abierto. La sorpresa y la disciplina resultaron factores determinantes en la victoria posterior.
+                        Las fuerzas patriotas, dirigidas por Simón Bolívar y
+                        Antonio José de Sucre, buscaron frenar el avance realista.
                     </p>
 
                     <p>
-                        Bolívar y Sucre supervisaron el despliegue de las tropas desde puntos estratégicos, asegurando que los movimientos de ataque y defensa fueran sincronizados. Las cargas de caballería fueron ejecutadas con precisión: se buscó romper las líneas enemigas en puntos clave y crear confusión en el flanco realista, lo que debilitó la cohesión de sus unidades. La moral de las tropas patriotas se mantuvo alta gracias al liderazgo y la claridad de los objetivos.
+                        La inteligencia militar permitió localizar la concentración
+                        de caballería enemiga en las llanuras de Junín.
                     </p>
 
                     <p>
-                        La batalla de Junín también se destaca por la participación de unidades locales de granadero y dragones que demostraron una disciplina excepcional. Cada escuadrón tenía órdenes precisas sobre cuándo cargar y cuándo retirarse para reagruparse, evitando pérdidas innecesarias. Esta coordinación permitió que la caballería patriota atacara desde diferentes frentes, obligando a los realistas a dividir sus esfuerzos y facilitando su eventual derrota.
+                        A pesar de la inferioridad numérica inicial, las tropas
+                        patriotas mantuvieron coordinación y disciplina.
                     </p>
 
                     <p>
-                        Los historiadores destacan que la victoria en Junín, aunque sin grandes bajas ni uso extensivo de artillería, fue un golpe psicológico crucial. Rompió la confianza realista en su capacidad de controlar las llanuras del centro de Perú y abrió el camino para el avance hacia Ayacucho, donde se libraría la batalla final que consolidaría la independencia del país.
+                        Bolívar y Sucre supervisaron cuidadosamente los movimientos
+                        de ataque y defensa desde posiciones estratégicas.
                     </p>
 
                     <p>
-                        Tras Junín, las fuerzas patriotas pudieron reorganizarse y aprovechar la desmoralización enemiga. La comunicación con las columnas que se dirigían hacia la sierra y Lima se fortaleció, y se establecieron campamentos temporales en puntos estratégicos para asegurar el abastecimiento y la coordinación logística. Este nivel de planificación fue decisivo para la campaña de Ayacucho, liderada posteriormente por Sucre, que culminaría con la derrota definitiva de los realistas.
+                        Las cargas de caballería patriota lograron romper las líneas
+                        enemigas y desorganizar a los realistas.
                     </p>
 
                     <p>
-                        Además, Junín tuvo un efecto simbólico importante. La victoria demostraba que las tropas patriotas podían enfrentar y vencer a la caballería realista, que hasta ese momento había sido temida por su efectividad en terrenos abiertos. La batalla reforzó la confianza de los soldados y la población local en la causa de la independencia y consolidó el liderazgo de Bolívar y Sucre como estrategas capaces de combinar táctica, logística y conocimiento del terreno.
+                        La victoria en Junín representó un golpe psicológico clave
+                        contra las fuerzas españolas en Perú.
                     </p>
 
                     <p>
-                        El éxito de Junín permitió también coordinar futuras acciones políticas y militares, asegurando que las provincias del Perú central se mantuvieran alineadas con la causa patriota. Los realistas, debilitados y desmoralizados, comenzaron a reorganizar sus fuerzas en posiciones más defensivas, permitiendo que la ofensiva libertadora avanzara de manera sostenida hacia el sur y centro del Perú.
+                        Tras el combate, los patriotas fortalecieron la logística
+                        y la coordinación hacia futuras campañas militares.
                     </p>
 
                     <p>
-                        En definitiva, la batalla de Junín constituye un ejemplo de la importancia de la movilidad, la coordinación y el liderazgo en conflictos militares. Aunque fue breve en duración, su impacto fue profundo, marcando el inicio de la fase final de la independencia peruana y consolidando la presencia de las fuerzas patriotas en la región, lo que permitiría asegurar la independencia total con la victoria en Ayacucho meses después.
+                        Históricamente, Junín es considerada una demostración de
+                        movilidad, liderazgo y estrategia militar.
                     </p>
 
                     <p>
-                        Esta batalla también es recordada por el valor individual de oficiales y soldados, cuya disciplina y audacia resultaron cruciales para superar las adversidades del terreno y la superioridad inicial del enemigo. Junín es un testimonio de cómo la estrategia y la moral pueden ser tan decisivas como la fuerza numérica en la historia militar.
+                        El triunfo abrió el camino hacia Ayacucho, donde se
+                        consolidaría definitivamente la independencia peruana.
                     </p>
 
                 </div>
 
             </div>
+
         </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
     </div>
 
     <script>
+
         let pagina = 0;
+
         const paginas = document.querySelectorAll(".pagina");
+
         const contador = document.getElementById("contador");
 
+        const footer = document.getElementById("footerMedia");
+
+        const modal = document.getElementById("modal");
+
+        const modalContent = document.getElementById("modalContent");
+
+        /* MEDIA */
+        const mediaData = {
+
+            0: [
+                {
+                    type: 'img',
+                    src: '../../CLIPS/13M15A.BMP',
+                    nombre: 'Imagen'
+                }
+
+            ]
+
+        };
+
+        /* PAGINAS */
         function mostrarPagina(i) {
+
             paginas.forEach(p => p.classList.remove("activa"));
+
             paginas[i].classList.add("activa");
+
             contador.textContent = `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
         }
 
         function siguiente() {
+
             if (pagina < paginas.length - 1) {
+
                 pagina++;
+
                 mostrarPagina(pagina);
-            } else {
+            }
+
+            else {
+
                 window.location.href = "ayacucho.html";
             }
         }
 
         function anterior() {
+
             if (pagina > 0) {
+
                 pagina--;
+
                 mostrarPagina(pagina);
-            } else {
+            }
+
+            else {
+
                 window.location.href = "riobamba.html";
             }
         }
 
+        /* FOOTER */
+        function actualizarFooter() {
+
+            footer.innerHTML = '';
+
+            if (!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div = document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                let media;
+
+                if (m.type === 'img') {
+
+                    media = document.createElement('img');
+
+                    media.src = m.src;
+
+                    media.onclick = () => abrirModal(m);
+                }
+
+                div.appendChild(media);
+
+                const texto = document.createElement('p');
+
+                texto.textContent = m.nombre;
+
+                div.appendChild(texto);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* MODAL */
+        function abrirModal(m) {
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            let media;
+
+            if (m.type === 'img') {
+
+                media = document.createElement('img');
+
+                media.src = m.src;
+            }
+
+            modalContent.appendChild(media);
+        }
+
+        function cerrarModal() {
+
+            modal.style.display = 'none';
+
+            modalContent.innerHTML = '';
+        }
+
+        function volverAndes() {
+
+            window.location.href = '../Historia/andes.html';
+
+        }
+
+        /* INIT */
         mostrarPagina(pagina);
+
     </script>
 
 </body>

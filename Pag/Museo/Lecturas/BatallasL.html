@@ -31,10 +31,7 @@
     <div class="lado">
         <p>BATALLAS</p>
 
-        <div class="flechas">
-            <span onclick="anterior()">⬅</span>
-            <span onclick="siguiente()">➡</span>
-        </div>
+        <div class="flechas"> <span id="btnAnterior" onclick="anterior()">⬅</span> <span id="btnSiguiente" onclick="siguiente()">➡</span> </div>
 
         <button onclick="window.location.href='../../../index.html'">Inicio</button>
         <button onclick="window.location.href='../Salas.html'">Volver</button>
@@ -45,37 +42,11 @@
             <div class="contenido texto">
 
                 <!-- Subtítulos de Batallas -->
-                <div class="pagina activa" data-imagen="../../CLIPS/BatallaSanLorenzo.jpg" data-nombre="Batalla de San Lorenzo">
+                <div class="pagina activa" data-imagen="../../../CLIPS/Z320F69.BMP" data-nombre="Batalla de San Lorenzo">
                     <h2>Batalla de San Lorenzo</h2>
                     <p>Primera batalla donde participó el regimiento, liderada por San Martín.</p>
                 </div>
-
-                <div class="pagina" data-imagen="../../CLIPS/BatallaChacabuco.jpg" data-nombre="Batalla de Chacabuco">
-                    <h2>Batalla de Chacabuco</h2>
-                    <p>Victoria decisiva para la independencia de Chile y destacada participación del regimiento.</p>
-                </div>
-
-                <div class="pagina" data-imagen="../../CLIPS/BatallaMaipu.jpg" data-nombre="Batalla de Maipú">
-                    <h2>Batalla de Maipú</h2>
-                    <p>Batalla crucial para consolidar la independencia chilena, donde el regimiento tuvo un rol importante.</p>
-                </div>
-
-                <div class="pagina" data-imagen="../../CLIPS/BatallaRancagua.jpg" data-nombre="Batalla de Rancagua">
-                    <h2>Batalla de Rancagua</h2>
-                    <p>Descripción de la batalla y el impacto en la lucha por la independencia.</p>
-                </div>
-
-                <div class="pagina" data-imagen="../../CLIPS/BatallaItuzaingo.jpg" data-nombre="Batalla de Ituzaingó">
-                    <h2>Batalla de Ituzaingó</h2>
-                    <p>Batalla en el contexto de la guerra con Brasil, destacando la actuación del regimiento.</p>
-                </div>
-
-                <!-- Espacio para hasta 25 subtítulos más -->
-                <div class="pagina" data-imagen="../../CLIPS/placeholder.jpg" data-nombre="Subtitulo 6">
-                    <h2>Subtitulo 6</h2>
-                    <p>Contenido para el subtitulo 6.</p>
-                </div>
-
+                
             </div>
 
             <div class="imagen-cuadro">
@@ -87,35 +58,85 @@
 </div>
 
 <script>
+
     let pagina = 0;
+
     const paginas = document.querySelectorAll(".pagina");
     const imagenDerecha = document.getElementById("imagenDerecha");
 
+    const btnAnterior = document.getElementById("btnAnterior");
+    const btnSiguiente = document.getElementById("btnSiguiente");
+
     function mostrarPagina(i) {
+
         paginas.forEach(p => p.classList.remove("activa"));
+
         paginas[i].classList.add("activa");
-        imagenDerecha.src = paginas[i].dataset.imagen;
+
+        if(imagenDerecha){
+            imagenDerecha.src = paginas[i].dataset.imagen;
+        }
+
         document.title = paginas[i].dataset.nombre;
-        paginas[i].querySelector('h2').textContent = paginas[i].dataset.nombre;
+
+        const titulo = paginas[i].querySelector('h2');
+
+        if(titulo){
+            titulo.textContent = paginas[i].dataset.nombre;
+        }
+
+        pagina = i;
+
+        /* BOTON ANTERIOR */
+
+        if(i === 0){
+
+            btnAnterior.style.opacity = "0.3";
+            btnAnterior.style.pointerEvents = "none";
+
+        } else {
+
+            btnAnterior.style.opacity = "1";
+            btnAnterior.style.pointerEvents = "auto";
+        }
+
+        /* BOTON SIGUIENTE */
+
+        if(i === paginas.length - 1){
+
+            btnSiguiente.style.opacity = "0.3";
+            btnSiguiente.style.pointerEvents = "none";
+
+        } else {
+
+            btnSiguiente.style.opacity = "1";
+            btnSiguiente.style.pointerEvents = "auto";
+        }
     }
 
     function siguiente() {
+
         if (pagina < paginas.length - 1) {
+
             pagina++;
+
             mostrarPagina(pagina);
-        } else {
-            window.location.href = "RecreacionL.html"; // siguiente sección
         }
     }
 
     function anterior() {
+
         if (pagina > 0) {
+
             pagina--;
+
             mostrarPagina(pagina);
-        } else {
-            window.location.href = "CombateL.html"; // sección anterior
         }
     }
+
+    /* INICIO */
+    mostrarPagina(pagina);
+
 </script>
 
 </body>

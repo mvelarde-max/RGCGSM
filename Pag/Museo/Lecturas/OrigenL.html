@@ -83,9 +83,9 @@
         <p>Salas</p>
 
         <div class="flechas">
-            <span onclick="anterior()">⬅</span>
-            <span onclick="siguiente()">➡</span>
-        </div>
+    <span id="btnAnterior" onclick="anterior()">⬅</span>
+    <span id="btnSiguiente" onclick="siguiente()">➡</span>
+</div>
 
         <button onclick="window.location.href='../../../index.html'">Inicio</button>
         <button onclick="window.location.href='../Salas.html'">Volver</button>
@@ -196,35 +196,78 @@ En Argentina, este tipo de objetos forma parte del patrimonio histórico y está
 </div>
 
 <script>
+
     let pagina = 0;
+
     const paginas = document.querySelectorAll(".pagina");
     const imagenDerecha = document.getElementById("imagenDerecha");
 
+    const btnAnterior = document.getElementById("btnAnterior");
+    const btnSiguiente = document.getElementById("btnSiguiente");
+
     function mostrarPagina(i) {
+
         paginas.forEach(p => p.classList.remove("activa"));
+
         paginas[i].classList.add("activa");
+
         imagenDerecha.src = paginas[i].dataset.imagen;
+
         document.title = paginas[i].dataset.nombre;
-        paginas[i].querySelector('h2').textContent = paginas[i].dataset.nombre;
+
+        paginas[i].querySelector('h2').textContent =
+            paginas[i].dataset.nombre;
+
+        pagina = i;
+
+        /* DESHABILITAR FLECHAS */
+
+        if(i === 0){
+
+            btnAnterior.style.opacity = "0.3";
+            btnAnterior.style.pointerEvents = "none";
+
+        } else {
+
+            btnAnterior.style.opacity = "1";
+            btnAnterior.style.pointerEvents = "auto";
+        }
+
+        if(i === paginas.length - 1){
+
+            btnSiguiente.style.opacity = "0.3";
+            btnSiguiente.style.pointerEvents = "none";
+
+        } else {
+
+            btnSiguiente.style.opacity = "1";
+            btnSiguiente.style.pointerEvents = "auto";
+        }
     }
 
     function siguiente() {
+
         if (pagina < paginas.length - 1) {
+
             pagina++;
+
             mostrarPagina(pagina);
-        } else {
-            window.location.href = "ArmasL.html"; // siguiente página
         }
     }
 
     function anterior() {
+
         if (pagina > 0) {
+
             pagina--;
+
             mostrarPagina(pagina);
-        } else {
-            window.location.href = "Salas.html"; // página anterior
         }
     }
+
+    /* INICIO */
+    mostrarPagina(pagina);
+
 </script>
 
 </body>

@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Río Bamba 1822</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
         .contenido {
             max-width: 700px;
@@ -16,6 +18,7 @@
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
             border: 1px solid rgba(0, 224, 255, 0.2);
+            margin-bottom: 100px;
         }
 
         .pagina {
@@ -96,14 +99,80 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+        /* FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .media-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .media-opcion img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s;
+            border: 2px solid rgba(0, 224, 255, 0.3);
+        }
+
+        .media-opcion:hover img {
+            transform: scale(1.2);
+            border-color: #00e0ff;
+        }
+
+        .media-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            max-width: 90%;
+            max-height: 90vh;
+        }
     </style>
+
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>COMBATE HISTÓRICO</p>
 
             <div class="flechas">
@@ -113,130 +182,244 @@
 
             <div class="contador" id="contador">1 / 1</div>
 
-            <button onclick="window.location.href='combate.html'">Volver</button>
+            <button onclick="window.location.href='combate.html'">
+                Volver
+            </button>
+
+            <button onclick="volverAndes()">
+                Regresar Cronología
+            </button>
+
         </div>
 
         <!-- CONTENIDO -->
         <div class="centro">
+
             <div class="contenido">
 
                 <div class="pagina activa">
+
                     <h2>Río Bamba 1822</h2>
-                    <img src="../Fondos/Sable13.jpg" class="imagen">
 
                     <p>
-                        La campaña de Río Bamba, llevada a cabo en 1822, fue parte fundamental de la expansión de las
-                        fuerzas patriotas en la guerra por la independencia del Perú. Tras la liberación de Chile y la
-                        consolidación de la independencia chilena, el General José de San Martín dirigió sus esfuerzos
-                        hacia la liberación del territorio peruano, considerado el centro del poder español en
-                        Sudamérica.
+                        La campaña de Río Bamba, llevada a cabo en 1822,
+                        fue parte fundamental de la expansión de las fuerzas
+                        patriotas en la guerra por la independencia del Perú.
                     </p>
 
                     <p>
-                        El Ejército Libertador, compuesto por tropas chilenas, argentinas y voluntarios peruanos, marchó
-                        a través de la región andina con la intención de controlar puntos estratégicos como el valle de
-                        Río Bamba, que era un nodo crucial de comunicación y abastecimiento para los realistas. La
-                        ubicación geográfica de Río Bamba, rodeada de ríos y valles interconectados, ofrecía un control
-                        estratégico sobre las rutas hacia Quito y Lima.
+                        Tras la liberación de Chile y la consolidación de la
+                        independencia chilena, José de San Martín dirigió sus
+                        esfuerzos hacia el territorio peruano.
                     </p>
 
                     <p>
-                        La operación comenzó con un cuidadoso despliegue de tropas, considerando las dificultades del
-                        terreno montañoso y las distancias entre los puestos realistas. San Martín combinó la movilidad
-                        de la caballería con la resistencia de la infantería, asegurando que la artillería pudiera
-                        apoyar los avances sin quedar aislada. Cada movimiento estaba coordinado para sorprender a los
-                        destacamentos realistas, evitando enfrentamientos frontales innecesarios que podrían haber
-                        desgastado a las tropas patriotas.
+                        El Ejército Libertador avanzó por la región andina con
+                        el objetivo de controlar puntos estratégicos y rutas
+                        de abastecimiento realistas.
                     </p>
 
                     <p>
-                        La toma de Río Bamba incluyó una serie de combates y escaramuzas en los que la estrategia y la
-                        disciplina marcaron la diferencia. Los patriotas lograron consolidar posiciones en las alturas y
-                        valles circundantes, impidiendo que los realistas recibieran refuerzos desde otras regiones del
-                        norte. Esto provocó un aislamiento gradual del enemigo y una disminución significativa de su
-                        moral, factor clave para la eventual rendición.
+                        La ubicación geográfica de Río Bamba ofrecía control
+                        estratégico sobre caminos y comunicaciones hacia Quito
+                        y Lima.
                     </p>
 
                     <p>
-                        Durante los enfrentamientos, se destacó la coordinación de las columnas patriotas, que atacaban
-                        desde múltiples direcciones. La inteligencia militar, basada en informantes locales y
-                        exploradores, permitió a San Martín anticipar movimientos enemigos y minimizar bajas. La
-                        población local, simpatizante de la causa patriota, también proporcionó información vital sobre
-                        rutas, puentes y refugios, lo que facilitó maniobras rápidas y efectivas.
+                        La operación militar combinó movilidad de caballería,
+                        resistencia de infantería y apoyo de artillería.
                     </p>
 
                     <p>
-                        La batalla principal en Río Bamba se caracterizó por cargas de caballería que rompieron las
-                        líneas realistas y ataques de infantería que aseguraron posiciones clave. La resistencia del
-                        enemigo fue intensa, pero el liderazgo de San Martín, junto con oficiales destacados como José
-                        de La Mar y otros comandantes de caballería, permitió mantener la presión constante hasta lograr
-                        la victoria. El resultado fue la captura de Río Bamba, lo que abrió las puertas para avanzar
-                        hacia el norte y coordinarse con fuerzas que actuarían en otras provincias peruanas.
+                        Las tropas patriotas consolidaron posiciones en alturas
+                        y valles circundantes, aislando progresivamente a los
+                        realistas.
                     </p>
 
                     <p>
-                        La importancia de Río Bamba no solo radicó en su valor militar inmediato, sino también en su
-                        efecto político y psicológico. La victoria consolidó la autoridad del Ejército Libertador,
-                        demostró la incapacidad de los realistas para mantener el control sobre territorios estratégicos
-                        y facilitó la organización de gobiernos locales aliados con la causa patriota. Esto contribuyó a
-                        la expansión de la independencia a otras provincias y a la estabilidad de las rutas de
-                        suministro hacia Lima.
+                        La inteligencia militar y el apoyo de la población local
+                        permitieron anticipar movimientos enemigos y facilitar
+                        maniobras rápidas.
                     </p>
 
                     <p>
-                        Tras la victoria en Río Bamba, el ejército de San Martín pudo reorganizarse y consolidar su
-                        dominio en la región, preparando la fase final de la campaña que culminaría con la proclamación
-                        de la independencia del Perú en 1821 y la instalación de gobiernos republicanos aliados. Además,
-                        la experiencia adquirida en la coordinación de fuerzas multinacionales permitió optimizar
-                        futuras campañas, como la defensa de la independencia frente a intentos realistas de
-                        reconquista.
+                        Las cargas de caballería y los ataques coordinados de
+                        infantería permitieron romper las líneas realistas y
+                        asegurar la victoria.
                     </p>
 
                     <p>
-                        En resumen, la campaña de Río Bamba 1822 constituye un ejemplo de planificación estratégica,
-                        coordinación interregional y uso inteligente del terreno en la lucha por la independencia
-                        sudamericana. La acción militar no solo aseguró el control de un punto clave, sino que también
-                        demostró la capacidad de San Martín para combinar táctica, logística y diplomacia, sentando las
-                        bases para la consolidación definitiva de la libertad en el Perú y reforzando la independencia
-                        de Chile.
+                        La toma de Río Bamba fortaleció la autoridad del Ejército
+                        Libertador y facilitó futuras campañas independentistas.
+                    </p>
+
+                    <p>
+                        Históricamente, Río Bamba representa un ejemplo de
+                        estrategia, coordinación y uso inteligente del terreno
+                        en la independencia sudamericana.
                     </p>
 
                 </div>
 
             </div>
+
         </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
     </div>
 
     <script>
+
         let pagina = 0;
+
         const paginas = document.querySelectorAll(".pagina");
+
         const contador = document.getElementById("contador");
 
+        const footer = document.getElementById("footerMedia");
+
+        const modal = document.getElementById("modal");
+
+        const modalContent = document.getElementById("modalContent");
+
+        /* MEDIA */
+        const mediaData = {
+
+            0: [
+                {
+                    type: 'img',
+                    src: '../../CLIPS/13M14A.BMP',
+                    nombre: 'Imagen'
+                }
+
+            ]
+
+        };
+
+        /* PAGINAS */
         function mostrarPagina(i) {
+
             paginas.forEach(p => p.classList.remove("activa"));
+
             paginas[i].classList.add("activa");
+
             contador.textContent = `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
         }
 
         function siguiente() {
+
             if (pagina < paginas.length - 1) {
+
                 pagina++;
+
                 mostrarPagina(pagina);
-            } else {
+            }
+
+            else {
+
                 window.location.href = "junin.html";
             }
         }
 
         function anterior() {
+
             if (pagina > 0) {
+
                 pagina--;
+
                 mostrarPagina(pagina);
-            } else {
+            }
+
+            else {
+
                 window.location.href = "maipu.html";
             }
         }
 
+        /* FOOTER */
+        function actualizarFooter() {
+
+            footer.innerHTML = '';
+
+            if (!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div = document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                let media;
+
+                if (m.type === 'img') {
+
+                    media = document.createElement('img');
+
+                    media.src = m.src;
+
+                    media.onclick = () => abrirModal(m);
+                }
+
+                div.appendChild(media);
+
+                const texto = document.createElement('p');
+
+                texto.textContent = m.nombre;
+
+                div.appendChild(texto);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* MODAL */
+        function abrirModal(m) {
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            let media;
+
+            if (m.type === 'img') {
+
+                media = document.createElement('img');
+
+                media.src = m.src;
+            }
+
+            modalContent.appendChild(media);
+        }
+
+        function cerrarModal() {
+
+            modal.style.display = 'none';
+
+            modalContent.innerHTML = '';
+        }
+
+        function volverAndes() {
+
+            window.location.href = '../Historia/andes.html';
+
+        }
+
+        /* INIT */
         mostrarPagina(pagina);
+
     </script>
 
 </body>

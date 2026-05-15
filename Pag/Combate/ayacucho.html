@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Ayacucho 1824</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
         .contenido {
             max-width: 700px;
@@ -16,6 +18,7 @@
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
             border: 1px solid rgba(0, 224, 255, 0.2);
+            margin-bottom: 100px;
         }
 
         .pagina {
@@ -28,8 +31,13 @@
         }
 
         @keyframes fade {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .flechas {
@@ -51,7 +59,8 @@
             background: rgba(0, 224, 255, .5);
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             color: #00e0ff;
         }
 
@@ -90,14 +99,80 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+        /* FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .media-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .media-opcion img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s;
+            border: 2px solid rgba(0, 224, 255, 0.3);
+        }
+
+        .media-opcion:hover img {
+            transform: scale(1.2);
+            border-color: #00e0ff;
+        }
+
+        .media-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            max-width: 90%;
+            max-height: 90vh;
+        }
     </style>
+
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>COMBATE HISTÓRICO</p>
 
             <div class="flechas">
@@ -107,84 +182,229 @@
 
             <div class="contador" id="contador">1 / 1</div>
 
-            <button onclick="window.location.href='combate.html'">Volver</button>
+            <button onclick="window.location.href='combate.html'">
+                Volver
+            </button>
+
+            <button onclick="volverAndes()">
+                Regresar Cronología
+            </button>
+
         </div>
 
         <!-- CONTENIDO -->
         <div class="centro">
+
             <div class="contenido">
 
                 <div class="pagina activa">
+
                     <h2>Ayacucho 1824</h2>
-                    <img src="../Fondos/Sable15.jpg" class="imagen">
 
                     <p>
-                        La batalla de Ayacucho, librada el 9 de diciembre de 1824, representa uno de los enfrentamientos más importantes en la historia de América del Sur, ya que selló la independencia del Perú y consolidó la emancipación de los países sudamericanos del dominio español. Esta confrontación final tuvo lugar en las pampas de Ayacucho, cerca de la ciudad homónima, donde el ejército patriota, comandado por Antonio José de Sucre bajo las órdenes de Simón Bolívar, se enfrentó a las fuerzas realistas que aún resistían en territorio peruano.
+                        La batalla de Ayacucho, librada el 9 de diciembre de 1824,
+                        representa uno de los enfrentamientos más importantes de la
+                        independencia sudamericana.
                     </p>
 
                     <p>
-                        El contexto previo a Ayacucho fue decisivo. Tras las victorias en Junín y la presión sostenida sobre las posiciones realistas, las fuerzas patriotas lograron concentrar un ejército disciplinado y bien coordinado. Los realistas, aunque contaban con experiencia en combates previos, se encontraban debilitados por el desgaste de meses de enfrentamientos, escasez de suministros y desmoralización interna. La batalla de Ayacucho, por tanto, no fue solo un enfrentamiento militar, sino también un choque entre estrategias logísticas, planificación y moral.
+                        Esta confrontación selló la independencia del Perú y consolidó
+                        la emancipación de América del Sur del dominio español.
                     </p>
 
                     <p>
-                        Las tropas patriotas estaban formadas por un contingente diverso que incluía soldados de distintas provincias del Perú, Colombia, Venezuela, Ecuador y Argentina. Esta diversidad, lejos de ser un obstáculo, permitió combinar distintas tácticas y experiencias en combate, creando un ejército ágil capaz de reaccionar con rapidez ante los movimientos realistas. La infantería, la caballería y la artillería se coordinaron de manera precisa, siguiendo un plan estratégico diseñado por Sucre para cercar y derrotar al enemigo sin darle posibilidad de reorganizarse.
+                        Las fuerzas patriotas fueron comandadas por Antonio José de
+                        Sucre bajo las órdenes de Simón Bolívar.
                     </p>
 
                     <p>
-                        La batalla comenzó temprano en la mañana con un ataque de caballería realista que buscaba romper las líneas patriotas. Sin embargo, la disciplina de los escuadrones de infantería, apoyados por la artillería, logró contener la carga inicial y, posteriormente, lanzar contraataques que pusieron en desventaja a los realistas. Sucre había planificado la batalla de manera meticulosa, ubicando a sus tropas en posiciones estratégicas que aprovecharan las ligeras elevaciones del terreno y los espacios abiertos para maniobras rápidas de caballería.
+                        Tras las victorias en Junín y otras campañas, el ejército
+                        patriota logró concentrar tropas disciplinadas y coordinadas.
                     </p>
 
                     <p>
-                        Un elemento clave en Ayacucho fue la coordinación entre las unidades de vanguardia y reserva. Las tropas patriotas de reserva mantuvieron su cohesión durante la primera fase del combate, permitiendo relevar a las unidades que sufrían desgaste y reforzar los flancos en momentos críticos. Esta coordinación fue determinante para evitar rupturas en la línea defensiva y para ejecutar maniobras ofensivas en el momento oportuno, debilitando progresivamente al enemigo.
+                        Los realistas se encontraban debilitados por el desgaste,
+                        la falta de suministros y la desmoralización interna.
                     </p>
 
                     <p>
-                        La batalla de Ayacucho se distingue también por la alta moral de los combatientes patriotas. La experiencia adquirida en combates anteriores, como Junín y Riobamba, junto con la certeza de que la independencia estaba cerca, motivó a los soldados a mantener su disciplina bajo fuego intenso. Además, los oficiales supieron comunicar con claridad los objetivos y coordinar los movimientos, minimizando el caos que suele caracterizar las batallas de grandes ejércitos.
+                        La diversidad de soldados patriotas permitió combinar
+                        experiencias y tácticas de distintas regiones.
                     </p>
 
                     <p>
-                        El desenlace fue contundente: el ejército realista sufrió derrotas significativas, con numerosos prisioneros y una retirada que implicó la pérdida de control sobre gran parte del territorio peruano. La victoria de Ayacucho no solo consolidó la independencia del Perú, sino que también influyó decisivamente en la región, asegurando la libertad de Bolivia, parte de Ecuador y afianzando el proceso de emancipación en América del Sur. La presencia de Bolívar como líder moral y estratégico fue fundamental para coordinar estas acciones de manera efectiva.
+                        La batalla comenzó con ataques de caballería realista,
+                        contenidos por la infantería y la artillería patriota.
                     </p>
 
                     <p>
-                        Más allá de la victoria militar, Ayacucho tuvo repercusiones políticas inmediatas. La rendición de las fuerzas realistas permitió establecer gobiernos patriotas estables en la región, consolidando la autoridad de las nuevas repúblicas. Este triunfo también reafirmó la importancia de la estrategia, la disciplina y la coordinación entre diferentes cuerpos de tropas, demostrando que el éxito militar no depende únicamente de la fuerza bruta, sino de la planificación y del liderazgo.
+                        Sucre aprovechó estratégicamente las elevaciones del terreno
+                        y coordinó maniobras rápidas de ataque y defensa.
                     </p>
 
                     <p>
-                        Los historiadores consideran que Ayacucho marca el final de la dominación española en el continente sudamericano, consolidando los procesos de independencia iniciados por líderes como Bolívar, San Martín y Sucre. La batalla es un ejemplo de cómo la combinación de estrategia, moral elevada y liderazgo eficiente puede superar incluso a fuerzas enemigas que, en apariencia, contaban con ventaja táctica.
+                        La coordinación entre las reservas y las líneas principales
+                        fue decisiva para sostener la ofensiva patriota.
                     </p>
 
                     <p>
-                        En conclusión, la batalla de Ayacucho 1824 es un símbolo de la independencia sudamericana. Su desarrollo demuestra la importancia de la coordinación entre unidades diversas, la planificación estratégica y la motivación de los soldados. Su resultado no solo selló la independencia del Perú, sino que consolidó la emancipación de América del Sur del dominio español, poniendo fin a siglos de colonialismo y abriendo el camino a la formación de nuevas naciones soberanas.
+                        La moral elevada de los soldados permitió mantener la
+                        disciplina incluso durante los momentos más intensos del combate.
+                    </p>
+
+                    <p>
+                        La derrota realista aseguró la independencia del Perú y
+                        fortaleció la libertad de otras naciones sudamericanas.
+                    </p>
+
+                    <p>
+                        Históricamente, Ayacucho simboliza el final de la dominación
+                        española en América del Sur.
                     </p>
 
                 </div>
 
             </div>
+
         </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
     </div>
 
     <script>
+
         let pagina = 0;
+
         const paginas = document.querySelectorAll(".pagina");
+
         const contador = document.getElementById("contador");
 
+        const footer = document.getElementById("footerMedia");
+
+        const modal = document.getElementById("modal");
+
+        const modalContent = document.getElementById("modalContent");
+
+        /* MEDIA */
+        const mediaData = {
+
+            0: [
+                {
+                    type: 'img',
+                    src: '../../CLIPS/13M13A.BMP',
+                    nombre: 'Imagen'
+                }
+
+            ]
+
+        };
+
+        /* PAGINAS */
         function mostrarPagina(i) {
+
             paginas.forEach(p => p.classList.remove("activa"));
+
             paginas[i].classList.add("activa");
+
             contador.textContent = `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
         }
 
         function siguiente() {
+
             window.location.href = "combate.html";
         }
 
         function anterior() {
+
             window.location.href = "junin.html";
         }
 
+        /* FOOTER */
+        function actualizarFooter() {
+
+            footer.innerHTML = '';
+
+            if (!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div = document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                let media;
+
+                if (m.type === 'img') {
+
+                    media = document.createElement('img');
+
+                    media.src = m.src;
+
+                    media.onclick = () => abrirModal(m);
+                }
+
+                div.appendChild(media);
+
+                const texto = document.createElement('p');
+
+                texto.textContent = m.nombre;
+
+                div.appendChild(texto);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* MODAL */
+        function abrirModal(m) {
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            let media;
+
+            if (m.type === 'img') {
+
+                media = document.createElement('img');
+
+                media.src = m.src;
+            }
+
+            modalContent.appendChild(media);
+        }
+
+        function cerrarModal() {
+
+            modal.style.display = 'none';
+
+            modalContent.innerHTML = '';
+        }
+
+        function volverAndes() {
+
+            window.location.href = '../Historia/andes.html';
+
+        }
+
+        /* INIT */
         mostrarPagina(pagina);
+
     </script>
 
 </body>
+
 </html>

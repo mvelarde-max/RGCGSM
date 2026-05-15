@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Chacabuco 1817</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
         .contenido {
             max-width: 700px;
@@ -16,6 +18,8 @@
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
             border: 1px solid rgba(0, 224, 255, 0.2);
+
+            margin-bottom: 100px;
         }
 
         .pagina {
@@ -28,8 +32,13 @@
         }
 
         @keyframes fade {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .flechas {
@@ -51,7 +60,8 @@
             background: rgba(0, 224, 255, .5);
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             color: #00e0ff;
         }
 
@@ -90,14 +100,80 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+        /* FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .media-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .media-opcion img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s;
+            border: 2px solid rgba(0, 224, 255, 0.3);
+        }
+
+        .media-opcion:hover img {
+            transform: scale(1.2);
+            border-color: #00e0ff;
+        }
+
+        .media-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>COMBATE HISTÓRICO</p>
 
             <div class="flechas">
@@ -107,111 +183,217 @@
 
             <div class="contador" id="contador">1 / 1</div>
 
-            <button onclick="window.location.href='combate.html'">Volver</button>
-        <button onclick="volverAndes()">
-    Regresar Cronología
-</button>
+            <button onclick="window.location.href='combate.html'">
+                Volver
+            </button>
 
-<script>
+            <button onclick="volverAndes()">
+                Regresar Cronología
+            </button>
 
-function volverAndes(){
-
-   window.location.href =
-   '../Historia/andes.html';
-
-}
-
-</script>
-        
-        
-        
         </div>
 
         <!-- CONTENIDO -->
         <div class="centro">
+
             <div class="contenido">
 
-                <!-- PÁGINA 1 -->
+                <!-- PAGINA 1 -->
                 <div class="pagina activa">
+
                     <h2>Batalla de Chacabuco 1817</h2>
-                    <img src="../Fondos/Sable7.jpg" class="imagen">
 
                     <p>
-                        La Batalla de Chacabuco, librada el 12 de febrero de 1817, constituyó un momento decisivo en la independencia de Chile. Fue el resultado del exitoso cruce de los Andes por parte del Ejército de los Andes, liderado por el General José de San Martín. Esta maniobra estratégica permitió que las fuerzas patriotas sorprendieran a los realistas y tomaran control de posiciones clave que aseguraron la liberación del territorio chileno. La batalla fue breve pero intensa, y mostró la combinación de disciplina militar, planificación estratégica y valentía de los soldados patriotas.
+                        La Batalla de Chacabuco, librada el 12 de febrero de 1817,
+                        constituyó un momento decisivo en la independencia de Chile.
                     </p>
 
                     <p>
-                        Antes de Chacabuco, el ejército enfrentaba enormes desafíos logísticos y geográficos. Cruzar la cordillera de los Andes implicaba mover tropas, caballos, municiones y suministros a través de caminos montañosos peligrosos, con temperaturas extremas y terrenos difíciles. La planificación minuciosa de San Martín incluyó la selección de rutas alternas, la división de fuerzas para confundir al enemigo y la preparación psicológica y física de sus soldados, muchos de los cuales eran veteranos de campañas anteriores en el Río de la Plata. Cada paso fue calculado para garantizar sorpresa y eficacia en el combate.
+                        Fue el resultado del exitoso cruce de los Andes por parte
+                        del Ejército de los Andes liderado por José de San Martín.
                     </p>
 
                     <p>
-                        La inteligencia militar también fue fundamental. Se recopilaron informes sobre las posiciones realistas en la zona de Chacabuco, incluyendo la ubicación de cañones, barreras naturales y tropas enemigas. San Martín coordinó el ataque con el coronel Bernardo O’Higgins, quien lideraba las fuerzas patriotas locales y conocía el terreno. Esta cooperación entre líderes argentinos y chilenos fortaleció la cohesión del ejército y permitió una ejecución fluida del plan táctico. La colaboración también simbolizó la alianza que se buscaba consolidar entre las naciones sudamericanas para lograr la independencia regional.
+                        Las fuerzas patriotas sorprendieron a los realistas y lograron
+                        asegurar posiciones estratégicas fundamentales para la liberación
+                        del territorio chileno.
                     </p>
 
                     <p>
-                        La batalla comenzó en la mañana del 12 de febrero. Las fuerzas patriotas avanzaron desde posiciones estratégicas, atacando al enemigo con una combinación de caballería y artillería ligera. La sorpresa inicial desorganizó a las tropas realistas, que intentaron reagruparse, pero se encontraron con un ataque coordinado y decisivo. La caballería de los Granaderos a Caballo desempeñó un papel crucial, cargando con valentía a las líneas enemigas y rompiendo sus defensas. La disciplina y entrenamiento previo demostraron ser esenciales para mantener la cohesión de las unidades durante el enfrentamiento.
+                        La victoria abrió el camino hacia Santiago y permitió consolidar
+                        el poder patriota en Chile.
                     </p>
 
                     <p>
-                        La artillería patriota, posicionada en colinas estratégicas, logró hostigar a las tropas realistas y neutralizar sus posiciones de tiro. La combinación de ataque frontal, flanqueo y uso de terrenos elevados permitió a los patriotas controlar la batalla rápidamente. A medida que avanzaba el combate, los soldados realistas empezaron a perder cohesión y muchos fueron capturados o se vieron obligados a retirarse. Esta victoria táctica tuvo profundas implicancias estratégicas, ya que abrió el camino hacia Santiago y permitió consolidar el poder patriota en Chile.
+                        La batalla también fortaleció la alianza entre argentinos y chilenos,
+                        simbolizando la unión de los pueblos sudamericanos en la lucha
+                        por la independencia.
                     </p>
 
                     <p>
-                        Tras la victoria, el Ejército de los Andes consolidó posiciones en el territorio liberado, asegurando abastecimientos y reorganizando sus tropas. La batalla no solo representó un triunfo militar, sino que también tuvo un enorme valor simbólico. La liberación de Chacabuco inspiró a la población chilena y fortaleció la causa de independencia en toda la región. La colaboración entre fuerzas locales y extranjeras mostró que la unión y planificación estratégica podían superar las dificultades geográficas y la superioridad numérica del enemigo en ciertos sectores.
-                    </p>
-
-                    <p>
-                        El impacto político de Chacabuco fue inmediato. La victoria facilitó la formación de un gobierno patriota en Santiago y permitió a O’Higgins asumir el liderazgo como Director Supremo de Chile, consolidando la independencia efectiva del país. La batalla también fortaleció la reputación de José de San Martín como líder militar excepcional y estratega brillante. Su enfoque en logística, entrenamiento y coordinación internacional se convirtió en modelo para campañas posteriores en Perú y otras regiones.
-                    </p>
-
-                    <p>
-                        Además de su importancia militar y política, Chacabuco dejó un legado cultural e histórico. Los héroes de la batalla, tanto oficiales como soldados, fueron recordados en monumentos, relatos históricos y obras conmemorativas que celebraban la lucha por la independencia. La memoria de Chacabuco inspiró a generaciones posteriores y reforzó la identidad nacional de Chile y Argentina, destacando la solidaridad de los pueblos sudamericanos frente al dominio colonial.
-                    </p>
-
-                    <p>
-                        En resumen, la Batalla de Chacabuco no fue solo un enfrentamiento bélico, sino un evento integral que combinó estrategia, valentía, coordinación y visión política. Su importancia trascendió el campo de batalla, consolidando la independencia chilena, fortaleciendo alianzas regionales y dejando un ejemplo de liderazgo militar ejemplar. Cada elemento, desde la preparación de tropas hasta la ejecución táctica, contribuyó a un resultado que cambiaría el curso de la historia sudamericana.
-                    </p>
-
-                    <p>
-                        Este evento marca el inicio de una serie de victorias patriotas que culminarían en campañas hacia Perú y consolidarían la independencia del continente. La planificación y disciplina mostradas en Chacabuco siguen siendo estudiadas en academias militares y recordadas como símbolo de la capacidad estratégica y resistencia de los ejércitos independentistas de Sudamérica. Sin duda, Chacabuco representa un hito crucial en la historia de la independencia, donde la audacia, el sacrificio y la cooperación se combinaron para lograr un cambio definitivo en la región.
+                        Chacabuco es recordada como una de las victorias más importantes
+                        de la campaña libertadora.
                     </p>
 
                 </div>
 
             </div>
+
         </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
     </div>
 
     <script>
+
         let pagina = 0;
+
         const paginas = document.querySelectorAll(".pagina");
+
         const contador = document.getElementById("contador");
 
+        const footer = document.getElementById("footerMedia");
+
+        const modal = document.getElementById("modal");
+
+        const modalContent = document.getElementById("modalContent");
+
+        /* MEDIA */
+        const mediaData = {
+
+            0: [
+                {
+                    type: 'img',
+                    src: '../../CLIPS/13M7A.BMP',
+                    nombre: 'Imagen'
+                }
+            ]
+        };
+
+        /* PAGINAS */
         function mostrarPagina(i) {
+
             paginas.forEach(p => p.classList.remove("activa"));
+
             paginas[i].classList.add("activa");
+
             contador.textContent = `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
         }
 
         function siguiente() {
+
             if (pagina < paginas.length - 1) {
+
                 pagina++;
+
                 mostrarPagina(pagina);
-            } else {
+            }
+
+            else {
+
                 window.location.href = "gabilan.html";
             }
         }
 
         function anterior() {
+
             if (pagina > 0) {
+
                 pagina--;
+
                 mostrarPagina(pagina);
-            } else {
+            }
+
+            else {
+
                 window.location.href = "lascoimas.html";
             }
         }
 
+        /* FOOTER */
+        function actualizarFooter() {
+
+            footer.innerHTML = '';
+
+            if (!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div = document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                let media;
+
+                if (m.type === 'img') {
+
+                    media = document.createElement('img');
+
+                    media.src = m.src;
+
+                    media.onclick = () => abrirModal(m);
+                }
+
+                div.appendChild(media);
+
+                const texto = document.createElement('p');
+
+                texto.textContent = m.nombre;
+
+                div.appendChild(texto);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* MODAL */
+        function abrirModal(m) {
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            let media;
+
+            if (m.type === 'img') {
+
+                media = document.createElement('img');
+
+                media.src = m.src;
+            }
+
+            modalContent.appendChild(media);
+        }
+
+        function cerrarModal() {
+
+            modal.style.display = 'none';
+
+            modalContent.innerHTML = '';
+        }
+
+        /* INIT */
         mostrarPagina(pagina);
+
+        /* VOLVER */
+        function volverAndes() {
+
+            window.location.href = '../Historia/andes.html';
+        }
+
     </script>
 
 </body>

@@ -62,31 +62,298 @@
 </div>
 
 <script>
+
+const datosCondecoraciones = {
+
+"Medalla de Baylen": {
+    otorgada: 'Junta Suprema de Sevilla',
+    fecha: '11 de Agosto de 1808',
+    resena: 'La batalla de Bailén fue librada el 19 de julio de 1808 entre el ejército español de Andalucía y las fuerzas invasoras francesas de Napoleón Bonaparte.',
+    anverso: 'Campo oval con esmalte blanco y bordura azul. Presenta sables cruzados y emblemas militares.',
+    reverso: 'Liso cóncavo.',
+    modulo: '35 mm',
+    cinta: 'Roja con bordes amarillos.',
+    observaciones: 'La medalla se encuentra en el Museo Histórico Nacional.'
+},
+
+"Medalla de Montevideo": {
+    otorgada: 'Gobierno de las Provincias Unidas',
+    fecha: '1814',
+    resena: 'Condecoración otorgada por la toma de Montevideo durante las campañas revolucionarias del Río de la Plata.',
+    anverso: 'Escudo patriótico rodeado por laureles.',
+    reverso: 'Inscripción alusiva a la campaña.',
+    modulo: '36 mm',
+    cinta: 'Celeste y blanca.',
+    observaciones: 'Otorgada a oficiales y tropas participantes.'
+},
+
+"Medalla de Chacabuco": {
+    otorgada: 'Gobierno de Chile',
+    fecha: '1817',
+    resena: 'Otorgada por la victoria patriota en la batalla de Chacabuco del 12 de febrero de 1817.',
+    anverso: 'Sol radiante con inscripción patriótica.',
+    reverso: 'Leyenda conmemorativa.',
+    modulo: '38 mm',
+    cinta: 'Roja, azul y blanca.',
+    observaciones: 'Relacionada con el Ejército Libertador de los Andes.'
+},
+
+"Escudo Especial de Chacabuco (Libertador)": {
+    otorgada: 'Gobierno de Chile',
+    fecha: '1817',
+    resena: 'Distinción especial entregada a los participantes destacados de la batalla de Chacabuco.',
+    anverso: 'Escudo bordado con laureles.',
+    reverso: 'Tela reforzada.',
+    modulo: 'Variable',
+    cinta: 'No posee.',
+    observaciones: 'Usado sobre uniforme militar.'
+},
+
+"Medalla Especial por Chacabuco": {
+    otorgada: 'Gobierno de Chile',
+    fecha: '1817',
+    resena: 'Premio especial por acciones distinguidas durante la campaña libertadora.',
+    anverso: 'Figura alegórica de la libertad.',
+    reverso: 'Inscripción de honor.',
+    modulo: '35 mm',
+    cinta: 'Azul y blanca.',
+    observaciones: 'Reservada a oficiales distinguidos.'
+},
+
+"Legion de Merito de Chile (Libertador)": {
+    otorgada: 'República de Chile',
+    fecha: '1817',
+    resena: 'Máxima distinción otorgada a los libertadores de Chile.',
+    anverso: 'Estrella dorada esmaltada.',
+    reverso: 'Escudo nacional chileno.',
+    modulo: '45 mm',
+    cinta: 'Azul oscuro.',
+    observaciones: 'Recibida por altos mandos.'
+},
+
+"LEgion de MErito de Chile (Gran Oficial)": {
+    otorgada: 'República de Chile',
+    fecha: '1817',
+    resena: 'Categoría de Gran Oficial de la Legión de Mérito.',
+    anverso: 'Estrella de múltiples puntas.',
+    reverso: 'Leyenda institucional.',
+    modulo: '45 mm',
+    cinta: 'Azul con franjas blancas.',
+    observaciones: 'Condecoración de alto rango.'
+},
+
+"Escudo de Carampage": {
+    otorgada: 'Ejército Libertador',
+    fecha: '1818',
+    resena: 'Escudo conmemorativo de acciones militares patriotas.',
+    anverso: 'Escudo bordado.',
+    reverso: 'Tela reforzada.',
+    modulo: 'Variable',
+    cinta: 'No posee.',
+    observaciones: 'Usado sobre uniforme.'
+},
+
+"Medalla de Maipu": {
+    otorgada: 'Gobierno de Chile',
+    fecha: '1818',
+    resena: 'Condecoración otorgada por la victoria patriota en la batalla de Maipú.',
+    anverso: 'Sol naciente y laureles.',
+    reverso: 'Inscripción conmemorativa.',
+    modulo: '38 mm',
+    cinta: 'Roja, azul y blanca.',
+    observaciones: 'Una de las medallas más emblemáticas.'
+},
+
+"Escudo de Chancay": {
+    otorgada: 'Gobierno del Perú',
+    fecha: '1820',
+    resena: 'Premio militar por campañas en territorio peruano.',
+    anverso: 'Escudo bordado patriótico.',
+    reverso: 'Tela simple.',
+    modulo: 'Variable',
+    cinta: 'No posee.',
+    observaciones: 'Utilizado en uniformes.'
+},
+
+"Medalla de Pasco": {
+    otorgada: 'Gobierno del Perú',
+    fecha: '1820',
+    resena: 'Otorgada por la campaña de Pasco.',
+    anverso: 'Montañas y símbolos patrióticos.',
+    reverso: 'Inscripción militar.',
+    modulo: '35 mm',
+    cinta: 'Roja y blanca.',
+    observaciones: 'Distinción peruana.'
+},
+
+"Escudo de Mirabe": {
+    otorgada: 'Ejército Libertador',
+    fecha: '1821',
+    resena: 'Escudo otorgado por servicios distinguidos.',
+    anverso: 'Bordado militar.',
+    reverso: 'Tela reforzada.',
+    modulo: 'Variable',
+    cinta: 'No posee.',
+    observaciones: 'Condecoración de campaña.'
+},
+
+"Medalla al Ejercito Libertador del Perú": {
+    otorgada: 'Gobierno del Perú',
+    fecha: '1821',
+    resena: 'Premio al Ejército Libertador por la independencia del Perú.',
+    anverso: 'Escudo del Perú rodeado de laureles.',
+    reverso: 'Inscripción patriótica.',
+    modulo: '40 mm',
+    cinta: 'Roja y blanca.',
+    observaciones: 'Otorgada a tropas patriotas.'
+},
+
+"Orden del Sol": {
+    otorgada: 'República del Perú',
+    fecha: '1821',
+    resena: 'Primera orden honorífica creada en América del Sur.',
+    anverso: 'Sol radiante.',
+    reverso: 'Leyenda nacional.',
+    modulo: '50 mm',
+    cinta: 'Roja y blanca.',
+    observaciones: 'Instituida por José de San Martín.'
+},
+
+"Escudo de Robamba": {
+    otorgada: 'Ejército Libertador',
+    fecha: '1822',
+    resena: 'Escudo de campaña utilizado en Ecuador.',
+    anverso: 'Escudo textil patriótico.',
+    reverso: 'Tela simple.',
+    modulo: 'Variable',
+    cinta: 'No posee.',
+    observaciones: 'Relacionado con campañas de Quito.'
+},
+
+"Medalla de Pichincha y Liberacion de Quito": {
+    otorgada: 'Gobierno de Quito',
+    fecha: '1822',
+    resena: 'Condecoración por la victoria de Pichincha y liberación de Quito.',
+    anverso: 'Cordillera y sol.',
+    reverso: 'Leyenda patriótica.',
+    modulo: '40 mm',
+    cinta: 'Celeste y blanca.',
+    observaciones: 'Otorgada a oficiales y tropas.'
+},
+
+"Medalla del Perú a los Liberadores de Quito": {
+    otorgada: 'Gobierno del Perú',
+    fecha: '1822',
+    resena: 'Reconocimiento peruano a las fuerzas libertadoras de Quito.',
+    anverso: 'Escudo peruano.',
+    reverso: 'Inscripción de honor.',
+    modulo: '38 mm',
+    cinta: 'Roja y blanca.',
+    observaciones: 'Premio internacional.'
+},
+
+"Escudo de Chuchanga": {
+    otorgada: 'Ejército Libertador',
+    fecha: '1823',
+    resena: 'Escudo militar de campaña.',
+    anverso: 'Bordado patriótico.',
+    reverso: 'Tela simple.',
+    modulo: 'Variable',
+    cinta: 'No posee.',
+    observaciones: 'Usado por tropas distinguidas.'
+},
+
+"Medalla del Perú por Ayacucho": {
+    otorgada: 'República del Perú',
+    fecha: '1824',
+    resena: 'Conmemoración de la victoria definitiva en Ayacucho.',
+    anverso: 'Sol de Ayacucho.',
+    reverso: 'Inscripción libertadora.',
+    modulo: '40 mm',
+    cinta: 'Roja y blanca.',
+    observaciones: 'Marca el final de las guerras de independencia.'
+},
+
+"Escudo de Jinin y Ayacucho": {
+    otorgada: 'República del Perú',
+    fecha: '1824',
+    resena: 'Escudo otorgado por campañas en Junín y Ayacucho.',
+    anverso: 'Bordado militar.',
+    reverso: 'Tela reforzada.',
+    modulo: 'Variable',
+    cinta: 'No posee.',
+    observaciones: 'Distinción histórica.'
+},
+
+"Medalla del Perú a Somón Bolivar": {
+    otorgada: 'República del Perú',
+    fecha: '1825',
+    resena: 'Condecoración otorgada en honor a Simón Bolívar.',
+    anverso: 'Retrato de Bolívar.',
+    reverso: 'Leyenda republicana.',
+    modulo: '42 mm',
+    cinta: 'Roja y blanca.',
+    observaciones: 'Condecoración honorífica.'
+}
+
+};
+
 const lightbox = document.getElementById("lightbox");
 const imgGrande = document.getElementById("img-grande");
 const texto = document.getElementById("texto");
 const cerrar = document.getElementById("cerrar");
 
 document.querySelectorAll(".opcion").forEach(opcion => {
+
     opcion.addEventListener("click", function(e) {
+
         e.preventDefault();
 
         const img = this.querySelector("img").src;
-        const txt = this.querySelector("p").innerText;
+        const nombre = this.querySelector("p").innerText;
+
+        const info = datosCondecoraciones[nombre];
 
         imgGrande.src = img;
-        texto.innerText = txt;
+
+        texto.innerHTML = `
+            <h2>${nombre}</h2>
+
+            <p><strong>OTORGADA POR:</strong> ${info.otorgada}</p>
+
+            <p><strong>FECHA:</strong> ${info.fecha}</p>
+
+            <p><strong>RESEÑA HISTÓRICA:</strong><br>${info.resena}</p>
+
+            <h3>DESCRIPCIÓN</h3>
+
+            <p><strong>A- ANVERSO:</strong> ${info.anverso}</p>
+
+            <p><strong>B- REVERSO:</strong> ${info.reverso}</p>
+
+            <p><strong>C- MÓDULO:</strong> ${info.modulo}</p>
+
+            <p><strong>D- CINTA:</strong> ${info.cinta}</p>
+
+            <h3>OBSERVACIONES</h3>
+
+            <p>${info.observaciones}</p>
+        `;
 
         lightbox.style.display = "flex";
+
     });
+
 });
 
 cerrar.onclick = () => lightbox.style.display = "none";
+
 lightbox.onclick = (e) => {
     if (e.target === lightbox) {
         lightbox.style.display = "none";
     }
 };
+
 </script>
 
 </body>

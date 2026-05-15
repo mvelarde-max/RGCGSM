@@ -32,9 +32,9 @@
         <p>RECREACIÓN</p>
 
         <div class="flechas">
-            <span onclick="anterior()">⬅</span>
-            <span onclick="siguiente()">➡</span>
-        </div>
+    <span id="btnAnterior" onclick="anterior()">⬅</span>
+    <span id="btnSiguiente" onclick="siguiente()">➡</span>
+</div>
 
         <button onclick="window.location.href='../../../index.html'">Inicio</button>
         <button onclick="window.location.href='../Salas.html'">Volver</button>
@@ -45,40 +45,60 @@
             <div class="contenido texto">
 
                 <!-- Subtítulos de Recreación -->
-                <div class="pagina activa" data-imagen="../../CLIPS/Recreacion1.jpg" data-nombre="Recreación: Desfile Militar">
-                    <h2>Recreación: Desfile Militar</h2>
-                    <p>Recreación de un desfile militar histórico del regimiento, con uniforme original.</p>
-                </div>
+                <div class="pagina activa" data-imagen="../../../CLIPS/Z320F81.BMP" data-nombre="Recreación: Desfile Militar">
+    <h2>Recreación: Desfile Militar</h2>
+    <p>Recreación de un desfile militar histórico del regimiento, con uniforme original.</p>
+</div>
 
-                <div class="pagina" data-imagen="../../CLIPS/Recreacion2.jpg" data-nombre="Recreación: Batalla Escenificada">
-                    <h2>Recreación: Batalla Escenificada</h2>
-                    <p>Escenificación de una batalla histórica donde el regimiento participó activamente.</p>
-                </div>
+<div class="pagina" data-imagen="../../../CLIPS/Z320F82.BMP" data-nombre="Recreación: Formación de Tropas">
+    <h2>Recreación: Formación de Tropas</h2>
+    <p>Representación histórica de una formación militar previa al combate.</p>
+</div>
 
-                <div class="pagina" data-imagen="../../CLIPS/Recreacion3.jpg" data-nombre="Recreación: Entrenamiento de Granaderos">
-                    <h2>Recreación: Entrenamiento de Granaderos</h2>
-                    <p>Demostración de técnicas y entrenamiento de los granaderos en la época histórica.</p>
-                </div>
+<div class="pagina" data-imagen="../../../CLIPS/Z320F83.BMP" data-nombre="Recreación: Guardia de Honor">
+    <h2>Recreación: Guardia de Honor</h2>
+    <p>Escena ceremonial de guardias históricos durante actos patrióticos.</p>
+</div>
 
-                <div class="pagina" data-imagen="../../CLIPS/Recreacion4.jpg" data-nombre="Recreación: Vida en el Cuartel">
-                    <h2>Recreación: Vida en el Cuartel</h2>
-                    <p>Representación de la vida diaria en el cuartel del regimiento durante el siglo XIX.</p>
-                </div>
+<div class="pagina" data-imagen="../../../CLIPS/Z320F84.BMP" data-nombre="Recreación: Campamento Militar">
+    <h2>Recreación: Campamento Militar</h2>
+    <p>Ambientación de un campamento utilizado por tropas durante campañas históricas.</p>
+</div>
 
-                <div class="pagina" data-imagen="../../CLIPS/placeholder.jpg" data-nombre="Subtitulo 5">
-                    <h2>Subtitulo 5</h2>
-                    <p>Contenido para el subtitulo 5.</p>
-                </div>
+<div class="pagina" data-imagen="../../../CLIPS/Z320F85.BMP" data-nombre="Recreación: Caballería en Marcha">
+    <h2>Recreación: Caballería en Marcha</h2>
+    <p>Representación de escuadrones de caballería avanzando hacia el campo de batalla.</p>
+</div>
 
-                <div class="pagina" data-imagen="../../CLIPS/placeholder.jpg" data-nombre="Subtitulo 6">
-                    <h2>Subtitulo 6</h2>
-                    <p>Contenido para el subtitulo 6.</p>
-                </div>
+<div class="pagina" data-imagen="../../../CLIPS/Z320F86.BMP" data-nombre="Recreación: Batalla Histórica">
+    <h2>Recreación: Batalla Histórica</h2>
+    <p>Escena inspirada en enfrentamientos históricos del ejército patriota.</p>
+</div>
+
+<div class="pagina" data-imagen="../../../CLIPS/Z320F87.BMP" data-nombre="Recreación: Oficiales del Regimiento">
+    <h2>Recreación: Oficiales del Regimiento</h2>
+    <p>Representación de oficiales históricos utilizando uniformes de época.</p>
+</div>
+
+<div class="pagina" data-imagen="../../../CLIPS/Z320F88.BMP" data-nombre="Recreación: Ceremonia Patriótica">
+    <h2>Recreación: Ceremonia Patriótica</h2>
+    <p>Acto ceremonial inspirado en tradiciones militares argentinas.</p>
+</div>
+
+<div class="pagina" data-imagen="../../../CLIPS/Z320F89.BMP" data-nombre="Recreación: Cruce del Ejército">
+    <h2>Recreación: Cruce del Ejército</h2>
+    <p>Escena histórica representando el avance de tropas en campaña.</p>
+</div>
+
+<div class="pagina" data-imagen="../../../CLIPS/Z320F90.BMP" data-nombre="Recreación: Escolta Histórica">
+    <h2>Recreación: Escolta Histórica</h2>
+    <p>Representación de una escolta militar acompañando a oficiales superiores.</p>
+</div>
 
             </div>
 
             <div class="imagen-cuadro">
-                <img id="imagenDerecha" src="../../CLIPS/Recreacion1.jpg" alt="Imagen Recreación">
+                <img id="imagenDerecha" src="../../../CLIPS/320F8.BMP" alt="Imagen Recreación">
             </div>
         </div>
     </div>
@@ -86,35 +106,85 @@
 </div>
 
 <script>
+
     let pagina = 0;
+
     const paginas = document.querySelectorAll(".pagina");
     const imagenDerecha = document.getElementById("imagenDerecha");
 
+    const btnAnterior = document.getElementById("btnAnterior");
+    const btnSiguiente = document.getElementById("btnSiguiente");
+
     function mostrarPagina(i) {
+
         paginas.forEach(p => p.classList.remove("activa"));
+
         paginas[i].classList.add("activa");
-        imagenDerecha.src = paginas[i].dataset.imagen;
+
+        if(imagenDerecha){
+            imagenDerecha.src = paginas[i].dataset.imagen;
+        }
+
         document.title = paginas[i].dataset.nombre;
-        paginas[i].querySelector('h2').textContent = paginas[i].dataset.nombre;
+
+        const titulo = paginas[i].querySelector('h2');
+
+        if(titulo){
+            titulo.textContent = paginas[i].dataset.nombre;
+        }
+
+        pagina = i;
+
+        /* BOTON ANTERIOR */
+
+        if(i === 0){
+
+            btnAnterior.style.opacity = "0.3";
+            btnAnterior.style.pointerEvents = "none";
+
+        } else {
+
+            btnAnterior.style.opacity = "1";
+            btnAnterior.style.pointerEvents = "auto";
+        }
+
+        /* BOTON SIGUIENTE */
+
+        if(i === paginas.length - 1){
+
+            btnSiguiente.style.opacity = "0.3";
+            btnSiguiente.style.pointerEvents = "none";
+
+        } else {
+
+            btnSiguiente.style.opacity = "1";
+            btnSiguiente.style.pointerEvents = "auto";
+        }
     }
 
     function siguiente() {
+
         if (pagina < paginas.length - 1) {
+
             pagina++;
+
             mostrarPagina(pagina);
-        } else {
-            window.location.href = "../Salas.html"; // vuelve a la página principal de salas al final
         }
     }
 
     function anterior() {
+
         if (pagina > 0) {
+
             pagina--;
+
             mostrarPagina(pagina);
-        } else {
-            window.location.href = "BatallasL.html"; // sección anterior
         }
     }
+
+    /* INICIO */
+    mostrarPagina(pagina);
+
 </script>
 
 </body>

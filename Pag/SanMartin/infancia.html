@@ -241,6 +241,7 @@ De esta manera, Justo Rufino representa una pieza más dentro del contexto famil
 
 <script>
 let pagina = 0;
+
 const paginas = document.querySelectorAll(".pagina");
 const contador = document.getElementById("contador");
 const footer = document.getElementById("footerMedia");
@@ -248,19 +249,33 @@ const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
 
 const mediaData = {
-    0: [{type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Desfile 1950'}],
-    1: [{type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Ensayo'}],
-    2: [{type:'video', src:'../../VIDEOS/1950.mp4', nombre:'Historia'}],
-    3: [{type:'video', src:'../../VIDEOS/RCG1.mp4', nombre:'Evento'}],
-    4: [{type:'video', src:'../../VIDEOS/RCG6.mp4', nombre:'Acto oficial'}]
+
+    0: [
+        {type:'img', src:'../../CLIPS/41F1A.BMP', nombre:'Imagen 1'},
+        {type:'img', src:'../../CLIPS/41F1B.BMP', nombre:'Imagen 2'},
+        {type:'img', src:'../../CLIPS/41F1C.BMP', nombre:'Imagen 3'},
+        {type:'img', src:'../../CLIPS/41F1D.BMP', nombre:'Imagen 4'},
+        {type:'img', src:'../../CLIPS/41F1E.BMP', nombre:'Imagen 5'}
+    ],
+
+    1: [
+        {type:'img', src:'../../CLIPS/41F2A.BMP', nombre:'Imagen'}
+    ],
+
+    
+    4: [
+        {type:'img', src:'../../CLIPS/41F5A.BMP', nombre:'Imagen'}
+    ]
 };
 
 function mostrarPagina(i){
     paginas.forEach(p => p.classList.remove('activa'));
     paginas[i].classList.add('activa');
+
     pagina = i;
 
     contador.textContent = `${i + 1} / ${paginas.length}`;
+
     actualizarFooter();
 }
 
@@ -279,20 +294,45 @@ function anterior(){
 }
 
 function actualizarFooter(){
+
     footer.innerHTML = '';
+
     mediaData[pagina].forEach(m => {
+
         const div = document.createElement('div');
         div.classList.add('media-opcion');
 
-        const vid = document.createElement('video');
-        vid.src = m.src;
-        vid.muted = true;
-        vid.onclick = () => abrirModal(m);
+        if(m.type === 'video'){
 
-        div.appendChild(vid);
+            const vid = document.createElement('video');
+
+            vid.src = m.src;
+            vid.muted = true;
+
+            vid.onclick = () => abrirModal(m);
+
+            div.appendChild(vid);
+
+        } else if(m.type === 'img') {
+
+            const img = document.createElement('img');
+
+            img.src = m.src;
+
+            img.style.width = '60px';
+            img.style.height = '60px';
+            img.style.objectFit = 'cover';
+            img.style.borderRadius = '8px';
+
+            img.onclick = () => abrirModal(m);
+
+            div.appendChild(img);
+        }
 
         const t = document.createElement('p');
+
         t.textContent = m.nombre;
+
         div.appendChild(t);
 
         footer.appendChild(div);
@@ -300,17 +340,38 @@ function actualizarFooter(){
 }
 
 function abrirModal(m){
+
     modal.style.display = 'flex';
+
     modalContent.innerHTML = '';
-    const vid = document.createElement('video');
-    vid.src = m.src;
-    vid.controls = true;
-    vid.autoplay = true;
-    modalContent.appendChild(vid);
+
+    if(m.type === 'video'){
+
+        const vid = document.createElement('video');
+
+        vid.src = m.src;
+        vid.controls = true;
+        vid.autoplay = true;
+        vid.style.maxWidth = '90%';
+
+        modalContent.appendChild(vid);
+
+    } else if(m.type === 'img') {
+
+        const img = document.createElement('img');
+
+        img.src = m.src;
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '90vh';
+
+        modalContent.appendChild(img);
+    }
 }
 
 function cerrarModal(){
+
     modal.style.display = 'none';
+
     modalContent.innerHTML = '';
 }
 

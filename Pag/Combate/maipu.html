@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Maipú 1818</title>
+
     <link rel="stylesheet" href="../../CSS/EA.css">
+
     <style>
         .contenido {
             max-width: 700px;
@@ -16,6 +18,7 @@
             background: rgba(0, 0, 0, 0.6);
             color: #fff;
             border: 1px solid rgba(0, 224, 255, 0.2);
+            margin-bottom: 100px;
         }
 
         .pagina {
@@ -31,6 +34,7 @@
             from {
                 opacity: 0;
             }
+
             to {
                 opacity: 1;
             }
@@ -95,14 +99,80 @@
         button:hover {
             background-color: #00b8cc;
         }
+
+        /* FOOTER */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .media-opcion {
+            cursor: pointer;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .media-opcion img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.4s;
+            border: 2px solid rgba(0, 224, 255, 0.3);
+        }
+
+        .media-opcion:hover img {
+            transform: scale(1.2);
+            border-color: #00e0ff;
+        }
+
+        .media-opcion p {
+            color: #00e0ff;
+            font-size: 12px;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content img {
+            max-width: 90%;
+            max-height: 90vh;
+        }
     </style>
+
 </head>
 
 <body>
+
     <div class="contenedor">
 
         <!-- LADO IZQUIERDO -->
         <div class="lado">
+
             <p>COMBATE HISTÓRICO</p>
 
             <div class="flechas">
@@ -112,111 +182,237 @@
 
             <div class="contador" id="contador">1 / 1</div>
 
-            <button onclick="window.location.href='combate.html'">Volver</button>
-        
-        
-        <button onclick="volverAndes()">
-    Regresar Cronología
-</button>
+            <button onclick="window.location.href='combate.html'">
+                Volver
+            </button>
 
-<script>
+            <button onclick="volverAndes()">
+                Regresar Cronología
+            </button>
 
-function volverAndes(){
-
-   window.location.href =
-   '../Historia/andes.html';
-
-}
-
-</script>
-        
-        
         </div>
 
         <!-- CONTENIDO -->
         <div class="centro">
+
             <div class="contenido">
 
                 <div class="pagina activa">
+
                     <h2>Maipú 1818</h2>
-                    <img src="../Fondos/Sable12.jpg" class="imagen">
 
                     <p>
-                        La Batalla de Maipú, librada el 5 de abril de 1818, constituye el enfrentamiento decisivo que consolidó la independencia de Chile y aseguró el control patriota en la región central del país. Tras la derrota sufrida en Cancha Rayada y la reorganización del ejército patriota, comandado por el General José de San Martín y Bernardo O’Higgins, las fuerzas chilenas y argentinas se prepararon para un enfrentamiento definitivo contra los realistas, que aún intentaban recuperar terreno.
+                        La Batalla de Maipú, librada el 5 de abril de 1818,
+                        constituye el enfrentamiento decisivo que consolidó la
+                        independencia de Chile.
                     </p>
 
                     <p>
-                        La campaña previa a Maipú fue fundamental para asegurar la victoria. San Martín entendió que la coordinación entre la caballería, la infantería y la artillería era clave para derrotar al enemigo. Tras días de marchas y posicionamiento estratégico, los patriotas se instalaron en las cercanías de Maipú, contando con información precisa sobre los movimientos de las fuerzas realistas.
+                        Tras la derrota sufrida en Cancha Rayada, el ejército
+                        patriota reorganizó rápidamente sus fuerzas bajo el mando
+                        de José de San Martín y Bernardo O’Higgins.
                     </p>
 
                     <p>
-                        El terreno jugó un papel crucial: Maipú ofrecía llanuras adecuadas para la maniobra de la caballería y la implementación de estrategias defensivas. San Martín distribuyó sus fuerzas en tres líneas: la primera línea de infantería se encargaba de contener los ataques iniciales, la segunda línea estaba preparada para avanzar en momentos críticos y la tercera línea, junto con la caballería, ejecutaría flanqueos estratégicos. La artillería patriota fue ubicada de manera que pudiera maximizar el daño al enemigo mientras minimizaba el riesgo propio.
+                        La campaña previa a Maipú fue fundamental para asegurar la
+                        victoria, coordinando caballería, infantería y artillería.
                     </p>
 
                     <p>
-                        La batalla comenzó a primeras horas de la mañana con un intenso intercambio de artillería. Los realistas, confiados en su capacidad de choque y con un número considerable de tropas, atacaron con fuerza, pero fueron repelidos gracias a la preparación patriota y la disciplina de las unidades de infantería. La caballería patriota, liderada por Miguel Estanislao Soler y otros jefes destacados, ejecutó maniobras envolventes que desbordaron los flancos enemigos.
+                        El terreno de Maipú ofrecía llanuras adecuadas para la
+                        maniobra de la caballería y la ejecución de estrategias
+                        defensivas y ofensivas.
                     </p>
 
                     <p>
-                        Durante varias horas, la lucha fue encarnizada. Ambos bandos sufrieron bajas significativas, y el terreno se llenó de humo, polvo y confusión. Sin embargo, la cohesión del ejército patriota, la presencia de líderes visibles y la moral alta de las tropas marcaron la diferencia frente a las divisiones internas y el desorden que comenzaron a aparecer entre las filas realistas.
+                        La batalla comenzó con un intenso intercambio de artillería,
+                        seguido por ataques realistas que fueron contenidos por la
+                        disciplina patriota.
                     </p>
 
                     <p>
-                        A medida que avanzaba la batalla, la infantería patriota logró mantener su posición mientras la caballería flanqueaba a los realistas, rompiendo sus formaciones. Los ataques coordinados y las cargas sorpresivas hicieron que los realistas comenzaran una retirada desordenada, consolidando la victoria patriota. La batalla terminó con un triunfo absoluto, asegurando el control de Santiago y debilitando para siempre la presencia militar española en la región central de Chile.
+                        La caballería patriota ejecutó maniobras envolventes que
+                        rompieron las líneas enemigas y consolidaron la victoria.
                     </p>
 
                     <p>
-                        Las consecuencias de la Batalla de Maipú fueron trascendentales. Políticamente, consolidó la autoridad de Bernardo O’Higgins como Director Supremo de Chile y fortaleció la influencia de José de San Martín en la región. Militarmente, permitió a los patriotas planificar futuras campañas hacia el sur de Chile y asegurar rutas estratégicas hacia Perú, donde la lucha por la independencia continuaría.
+                        El triunfo aseguró el control de Santiago y debilitó de
+                        manera definitiva la presencia militar española en Chile.
                     </p>
 
                     <p>
-                        La victoria en Maipú también tuvo un impacto profundo en la moral de las tropas y la población civil. Tras años de conflicto y sacrificio, la independencia comenzó a percibirse como una realidad alcanzable. Historias de heroísmo individual y de unidad de las fuerzas patriotas se difundieron rápidamente, reforzando la identidad nacional chilena y la cooperación entre los distintos contingentes patriotas provenientes de Argentina y Chile.
+                        Históricamente, Maipú es considerada una de las batallas
+                        más importantes de la independencia sudamericana.
                     </p>
 
                     <p>
-                        Históricamente, Maipú se considera una de las batallas más importantes de la independencia sudamericana. Demostró la eficacia de la estrategia militar de San Martín, la importancia de la coordinación interregional y la necesidad de mantener la disciplina y la moral en momentos críticos. Además, la batalla reflejó cómo la experiencia previa, como la sufrida en Cancha Rayada, permitió a los patriotas aprender de sus errores y convertirlos en fortalezas decisivas.
-                    </p>
-
-                    <p>
-                        En conclusión, la Batalla de Maipú 1818 no solo aseguró la independencia chilena, sino que consolidó las bases para el posterior avance patriota hacia el norte y la eventual independencia del Perú. Fue una demostración de liderazgo, estrategia y valor que dejó un legado duradero en la historia militar y política de América del Sur.
+                        La victoria consolidó las bases para futuras campañas
+                        patriotas hacia el Perú y fortaleció la independencia
+                        chilena.
                     </p>
 
                 </div>
 
             </div>
+
         </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="footerMedia"></footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal" onclick="cerrarModal()">
+
+        <div class="modal-content" id="modalContent"></div>
+
     </div>
 
     <script>
+
         let pagina = 0;
+
         const paginas = document.querySelectorAll(".pagina");
+
         const contador = document.getElementById("contador");
 
+        const footer = document.getElementById("footerMedia");
+
+        const modal = document.getElementById("modal");
+
+        const modalContent = document.getElementById("modalContent");
+
+        /* MEDIA */
+        const mediaData = {
+
+    0: [
+        {
+            type: 'img',
+            src: '../../CLIPS/13M12A.BMP',
+            nombre: 'Imagen'
+        }
+
+    ]
+
+};
+
+        /* PAGINAS */
         function mostrarPagina(i) {
+
             paginas.forEach(p => p.classList.remove("activa"));
+
             paginas[i].classList.add("activa");
+
             contador.textContent = `${i + 1} / ${paginas.length}`;
+
+            actualizarFooter();
         }
 
         function siguiente() {
+
             if (pagina < paginas.length - 1) {
+
                 pagina++;
+
                 mostrarPagina(pagina);
-            } else {
+            }
+
+            else {
+
                 window.location.href = "riobamba.html";
             }
         }
 
         function anterior() {
+
             if (pagina > 0) {
+
                 pagina--;
+
                 mostrarPagina(pagina);
-            } else {
+            }
+
+            else {
+
                 window.location.href = "cancharayada.html";
             }
         }
 
+        /* FOOTER */
+        function actualizarFooter() {
+
+            footer.innerHTML = '';
+
+            if (!mediaData[pagina]) return;
+
+            mediaData[pagina].forEach(m => {
+
+                const div = document.createElement('div');
+
+                div.classList.add('media-opcion');
+
+                let media;
+
+                /* IMAGEN */
+                if (m.type === 'img') {
+
+                    media = document.createElement('img');
+
+                    media.src = m.src;
+
+                    media.onclick = () => abrirModal(m);
+                }
+
+                div.appendChild(media);
+
+                const texto = document.createElement('p');
+
+                texto.textContent = m.nombre;
+
+                div.appendChild(texto);
+
+                footer.appendChild(div);
+
+            });
+
+        }
+
+        /* MODAL */
+        function abrirModal(m) {
+
+            modal.style.display = 'flex';
+
+            modalContent.innerHTML = '';
+
+            let media;
+
+            if (m.type === 'img') {
+
+                media = document.createElement('img');
+
+                media.src = m.src;
+            }
+
+            modalContent.appendChild(media);
+        }
+
+        function cerrarModal() {
+
+            modal.style.display = 'none';
+
+            modalContent.innerHTML = '';
+        }
+
+        function volverAndes() {
+
+            window.location.href = '../Historia/andes.html';
+
+        }
+
+        /* INIT */
         mostrarPagina(pagina);
+
     </script>
 
 </body>
