@@ -2,13 +2,17 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: white;
+
     background-image: url("../Fondos/RGCGSM.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
-    color: white;
+
+    display: flex;
+    flex-direction: column;   
 }
 
 /* Capa oscura encima del fondo */
