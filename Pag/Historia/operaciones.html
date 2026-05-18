@@ -135,7 +135,7 @@ footer {
             <span onclick="siguiente()">➡</span>
         </div>
 
-        <p id="indicador"></p>
+        <div class="contador" id="contador">1 / 6</div>
 
         <button onclick="window.location.href='cronologia.html'">Volver</button>
     </div>
@@ -683,7 +683,7 @@ footer {
 <script>
 let pagina = 0;
 const paginas = document.querySelectorAll(".pagina");
-const contador = document.getElementById("indicador"); // ⚠️ usás indicador
+const contador = document.getElementById("contador");
 const footer = document.getElementById("footerMedia");
 const modal = document.getElementById("modal");
 const modalContent = document.getElementById("modalContent");
