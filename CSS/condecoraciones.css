@@ -75,7 +75,6 @@ body::before {
     gap: 40px;
 }
 
-/* Título de la galería */
 .centro h1 {
     color: white;
     text-align: center;
@@ -85,13 +84,12 @@ body::before {
 /* ==================== GALERÍA ==================== */
 .galeria {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 20px;
     width: 100%;
     justify-items: center;
 }
 
-/* Cada imagen dentro de la galería */
 .galeria .opcion {
     text-align: center;
     cursor: pointer;
@@ -114,7 +112,6 @@ body::before {
     color: white;
 }
 
-/* Hover sobre imagen */
 .galeria .opcion:hover {
     transform: scale(1.15);
     text-shadow: 0 0 10px white;
@@ -126,16 +123,12 @@ body::before {
 
 /* ==================== RESPONSIVE ==================== */
 @media screen and (max-width: 1400px) {
-    .galeria {
-        grid-template-columns: repeat(5, 1fr);
-    }
+    .galeria { grid-template-columns: repeat(5, 1fr); }
     .galeria .opcion img { width: 100px; height: 100px; }
 }
 
 @media screen and (max-width: 1000px) {
-    .galeria {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .galeria { grid-template-columns: repeat(3, 1fr); }
     .galeria .opcion img { width: 90px; height: 90px; }
 }
 
@@ -151,52 +144,125 @@ body::before {
 #lightbox {
     display: none;
     position: fixed;
+    inset: 0;
     z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-
+    background: rgba(0,0,0,0.92);
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    padding: 20px;
 }
 
-/* Imagen ampliada */
-#lightbox img {
-    max-width: 80%;
-    max-height: 80%;
+/* FICHA PRINCIPAL */
+.ficha {
+    width: min(1000px, 92vw);
+    height: min(85vh, 700px);
+    background: rgba(10,10,10,0.95);
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 15px;
-    box-shadow: 0 0 30px white;
-    animation: zoom 0.3s ease;
+    box-shadow: 0 0 40px rgba(0,255,255,0.15);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-/* Texto debajo */
-#lightbox p {
+/* TÍTULO */
+.ficha h2 {
+    margin: 10px 0;
+    text-align: center;
+    color: #00e0ff;
+}
+
+/* CONTENIDO HORIZONTAL */
+.contenido-ficha {
+    display: flex;
+    gap: 25px;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* TEXTO (SOLO ESTE SCROLLEA) */
+.info-ficha {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* SCROLL PERSONALIZADO */
+.info-ficha::-webkit-scrollbar {
+    width: 6px;
+}
+.info-ficha::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 10px;
+}
+
+/* BLOQUES */
+.bloque {
     margin-top: 15px;
-    color: white;
-    font-size: 18px;
+    padding: 10px;
+    border-left: 3px solid #3b82f6;
+    background: rgba(255,255,255,0.03);
 }
 
-/* Botón cerrar */
+.bloque h3 {
+    margin: 5px 0;
+    color: #fff;
+}
+
+/* META INFO */
+.meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+/* IMAGEN */
+.img-ficha {
+    flex: 0 0 280px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.img-ficha img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.15);
+}
+
+/* RESPONSIVE LIGHTBOX */
+@media screen and (max-width: 900px) {
+    .contenido-ficha {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .img-ficha {
+        order: -1;
+        margin-bottom: 15px;
+    }
+
+    .img-ficha img {
+        max-width: 200px;
+    }
+}
+
+/* BOTÓN CERRAR */
 #cerrar {
     position: absolute;
     top: 20px;
-    right: 40px;
+    right: 30px;
     font-size: 40px;
-    color: white;
     cursor: pointer;
+    color: white;
+    transition: 0.3s;
 }
 
-/* Animación */
-@keyframes zoom {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+#cerrar:hover {
+    color: #3b82f6;
 }

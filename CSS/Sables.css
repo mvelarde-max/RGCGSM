@@ -2,11 +2,12 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    background-image: url("../Fondos/RGCGSM.jpg");
+    min-height: 100vh;
+    background-image: url("../Fondos/Mil.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: Arial, sans-serif;
     color: white;
 }

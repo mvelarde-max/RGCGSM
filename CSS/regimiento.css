@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url("../Fondos/RGCGSM.jpg");
+    background-image: url("../Fondos/regimientofondo.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -80,8 +80,8 @@ body::before {
 .fila {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* asegura que todas las imágenes se alineen al top de la fila */
-    gap: 80px; /* espacio horizontal entre opciones */
+    align-items: center;
+    gap: 80px;
 }
 
 /* Opciones */
@@ -114,4 +114,8 @@ body::before {
 
 .opcion:hover img {
     transform: rotateY(360deg) scale(1.2);
+}
+
+.opcion{
+    width: 180px;
 }
