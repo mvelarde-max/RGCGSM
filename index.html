@@ -1,20 +1,29 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Regimiento</title>
-    <link rel="stylesheet" href="CSS/Diseño1.css">
+    <link rel="stylesheet" href="CSS/index.css">
 </head>
+
+
+
+
 <body>
 
     <div class="contenedor">
 
         <!-- Texto vertical -->
-        <div class="lado">
-            <p>Regimiento de Granaderos a Caballo General San Martín</p>
 
-            <button>Créditos</button>
-            <button>Salir</button>
+
+        <div class="lado">
+            <p class="brillo-dorado">
+                Regimiento de Granaderos a Caballo General San Martín
+            </p>
+
+            <button onclick="abrirCreditos()">Créditos</button>
+
         </div>
 
         <!-- Zona central -->
@@ -48,5 +57,48 @@
 
     </div>
 
+    <div id="modalCreditos" class="modal">
+        <div class="modal-content">
+  <span class="cerrar" onclick="cerrarCreditos()">✖</span>
+
+  <h2>Créditos</h2>
+
+  <div class="creditos">
+
+    <p><strong>Proyecto:</strong> Regimiento de Granaderos a Caballo</p>
+
+    <p><strong>Propósito del sitio:</strong> Sitio web creado con fines exclusivamente educativos y de difusión histórica.</p>
+
+    <p><strong>Adaptación y actualización de contenido educativo:</strong> Institucional</p>
+
+    <p><strong>Diseño del sitio web:</strong> Basado en recursos y plantillas de terceros</p>
+
+    <p><strong>Contenido multimedia (imágenes, videos y material audiovisual):</strong>  
+    Todo el contenido pertenece a sus respectivos autores. Este sitio no reclama derechos sobre imágenes, videos ni diseño gráfico utilizado.</p>
+
+    <p><strong>Contenido histórico:</strong> Basado en la vida y trayectoria del General José de San Martín y el Regimiento de Granaderos a Caballo</p>
+
+    <p>
+      Este sitio no posee fines comerciales. Todo el material es utilizado únicamente con fines educativos,
+      de investigación y divulgación histórica.
+    </p>
+
+  </div>
+</div>
+    </div>
+
+
+    <script>
+        function abrirCreditos() {
+            document.getElementById("modalCreditos").style.display = "flex";
+        }
+
+        function cerrarCreditos() {
+            document.getElementById("modalCreditos").style.display = "none";
+        }
+    </script>
+
+
 </body>
+
 </html>
