@@ -1,198 +1,325 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Armas del Museo</title>
     <link rel="stylesheet" href="../../../CSS/museoestylo.css">
 
     <style>
-        .contenido { max-width: 600px; text-align: left; }
-        .pagina { display: none; animation: fade .5s; }
-        .pagina.activa { display: block; }
-        @keyframes fade { from {opacity:0;} to {opacity:1;} }
+        .contenido {
+            max-width: 600px;
+            text-align: left;
+        }
 
-        .flechas { margin-top: 15px; font-size: 18px; display:flex; justify-content: space-between;}
-        .flechas span { padding:5px 10px; background: rgba(0,224,255,.2); border-radius:8px; cursor:pointer; }
-        .flechas span:hover { background: rgba(0,224,255,.5); }
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-        h2 { color: #00e0ff; margin-bottom: 20px; }
+        .pagina.activa {
+            display: block;
+        }
 
-        .fila { display:flex; gap:30px; }
-        .texto { flex:2; }
-        .imagen-cuadro { flex:1; display:flex; justify-content:center; align-items:flex-start; }
-        .imagen-cuadro img { width:250px; height:auto; border-radius:10px; box-shadow:0 0 15px rgba(0,224,255,0.6);}
-        p { line-height: 1.6; }
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2 {
+            color: #00e0ff;
+            margin-bottom: 20px;
+        }
+
+        .fila {
+            display: flex;
+            gap: 30px;
+        }
+
+        .texto {
+            flex: 2;
+        }
+
+        .imagen-cuadro {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .imagen-cuadro img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+        }
+
+        p {
+            line-height: 1.6;
+        }
     </style>
 </head>
 
 <body>
-<div class="contenedor">
+    <div class="contenedor">
 
-    <div class="lado">
-        <p>ARMAS</p>
+        <div class="lado">
+            <p>ARMAS</p>
 
-        <div class="flechas">
-    <span id="btnAnterior" onclick="anterior()">⬅</span>
-    <span id="btnSiguiente" onclick="siguiente()">➡</span>
-</div>
-
-        <button onclick="window.location.href='../../../index.html'">Inicio</button>
-        <button onclick="window.location.href='../Salas.html'">Volver</button>
-    </div>
-
-    <div class="centro">
-        <div class="fila">
-            <div class="contenido texto">
-
-               <div class="pagina activa" data-imagen="../../../CLIPS/320F8.BMP" data-nombre="Foja de servicio de San Martín en el ejército español hasta 1804">
-    <h2>Foja de servicio de San Martín en el ejército español hasta 1804</h2>
-    <p>
-        La foja de servicio de José de San Martín constituye uno de los documentos más valiosos para comprender la etapa formativa del Libertador antes de su protagonismo en las guerras de independencia sudamericanas. Este registro militar detalla de manera sistemática su ingreso al ejército español, su evolución dentro de la estructura castrense y su participación en diversas campañas bélicas desarrolladas en Europa y el norte de África durante las últimas décadas del siglo XVIII y comienzos del XIX.
-
-        San Martín ingresó al ejército siendo muy joven, aproximadamente a los once años, siguiendo la tradición de muchos hijos de militares españoles nacidos en América. Su carrera militar se desarrolló inicialmente en el Regimiento de Murcia, donde comenzó como cadete. A lo largo de los años participó en conflictos de gran importancia histórica, como la Guerra del Rosellón contra la Francia revolucionaria y posteriormente en la Guerra de la Independencia Española contra la ocupación napoleónica.
-
-        Durante estas campañas adquirió experiencia directa en combate regular, tácticas de infantería, uso de caballería ligera, organización de columnas militares y estrategias de guerra de movimiento. Este aprendizaje fue decisivo, ya que más tarde aplicaría estos conocimientos en la creación del Ejército de los Andes, una de las fuerzas militares más innovadoras del continente.
-
-        La foja de servicio también registra sus ascensos progresivos, alcanzando el grado de teniente coronel, reconocimiento que refleja su disciplina, capacidad de mando y reputación dentro del ejército español. Sin embargo, a pesar de su exitosa carrera, San Martín tomó la decisión de abandonar Europa en 1811, impulsado por los movimientos independentistas en América y su deseo de contribuir a la liberación de su tierra natal.
-    </p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/320F9.BMP" data-nombre="Rosario del General San Martín">
-    <h2>Rosario del General San Martín</h2>
-    <p>
-        El rosario perteneciente al General José de San Martín es uno de los objetos más íntimos y simbólicos conservados de su vida personal. Este elemento religioso no solo representa su fe católica, sino también su dimensión espiritual en medio de una vida marcada por la guerra, la estrategia militar y las decisiones políticas trascendentales.
-
-        A lo largo de su vida, San Martín mantuvo una relación compleja pero constante con la religión. Aunque su figura histórica suele asociarse principalmente a la acción militar y política, este objeto demuestra que también poseía una vida interior profundamente influenciada por la espiritualidad cristiana. El rosario lo acompañó especialmente durante su exilio en Europa, en particular en Francia, donde vivió sus últimos años en relativa soledad.
-
-        En ese período, el Libertador se alejó de la vida pública y se dedicó a la reflexión personal, la educación de su hija Mercedes y el contacto limitado con círculos sociales. El rosario, en este contexto, simboliza consuelo, introspección y continuidad espiritual en una etapa final de su vida marcada por el retiro voluntario.
-
-        Para los estudios históricos, este objeto permite humanizar la figura de San Martín, mostrando no solo al estratega militar, sino también al hombre que enfrentó el exilio, la distancia de su patria y el paso del tiempo con profunda serenidad.
-    </p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/320F10.BMP" data-nombre="Escudo de las pistoleras de arzón del General San Martín">
-    <h2>Escudo de las pistoleras de arzón del General San Martín</h2>
-    <p>
-        Este escudo ornamental perteneciente a las pistoleras de arzón del General San Martín formaba parte del equipamiento de su caballo de campaña, elemento esencial en la guerra de caballería del siglo XIX. Las pistoleras de arzón eran fundas de cuero o madera reforzada que se colocaban a ambos lados de la montura para transportar armas de fuego, generalmente pistolas de avancarga.
-
-        En el contexto militar de la época, la caballería cumplía un rol fundamental en la movilidad, reconocimiento del terreno y ejecución de cargas rápidas contra formaciones enemigas. San Martín, como jefe del Regimiento de Granaderos a Caballo, prestaba especial atención a la calidad del equipamiento de sus tropas, ya que consideraba que la disciplina y la preparación eran claves para el éxito militar.
-
-        El escudo decorativo no solo cumplía una función estética, sino que también representaba el rango del oficial y su pertenencia a una unidad de élite. Este tipo de ornamentación era común en oficiales de alto rango, especialmente aquellos con formación europea, como San Martín, quien había incorporado prácticas militares aprendidas en España.
-
-        Este objeto permite comprender la importancia de la caballería en las guerras de independencia y el nivel de detalle con el que se organizaban los ejércitos libertadores.
-    </p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/320F11.BMP" data-nombre="Mate que perteneció al General San Martín">
-    <h2>Mate que perteneció al General San Martín</h2>
-    <p>
-        El mate personal de José de San Martín constituye una pieza fundamental para comprender su vida cotidiana y su relación con las tradiciones culturales del Río de la Plata. A pesar de su formación militar europea y su prolongada estadía en España, el Libertador mantuvo vínculos estrechos con las costumbres populares sudamericanas.
-
-        El mate, más que una simple bebida, representaba en el siglo XIX un espacio de sociabilidad, encuentro y comunicación, tanto en ambientes civiles como militares. En los campamentos del Ejército de los Andes, el mate era una práctica común entre oficiales y soldados, generando un sentido de igualdad y camaradería.
-
-        En el caso de San Martín, este objeto refleja su perfil austero y disciplinado. A diferencia de otros líderes de su época, mantuvo hábitos simples, evitando el lujo excesivo incluso en contextos de poder. Esto contribuyó a fortalecer su imagen de líder cercano a sus tropas, lo cual fue clave para mantener la moral del ejército durante campañas extremadamente exigentes como el Cruce de los Andes.
-
-        Este objeto permite observar la dimensión humana del Libertador, mostrando cómo las tradiciones culturales también formaban parte de la vida militar independentista.
-    </p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/320F12.BMP" data-nombre="Jarra y bandeja de plata que pertenecieron al General San Martín">
-    <h2>Jarra y bandeja de plata que pertenecieron al General San Martín</h2>
-    <p>
-        Este conjunto de jarra y bandeja de plata perteneciente a José de San Martín refleja el contexto social y cultural de la élite militar y política del siglo XIX. La platería era un símbolo de estatus, prestigio y refinamiento, especialmente en ambientes europeos donde el Libertador vivió durante su exilio.
-
-        Estos objetos probablemente fueron utilizados en reuniones formales, recepciones diplomáticas o en su vida doméstica durante su residencia en Francia. Aunque San Martín mantenía un estilo de vida relativamente austero, no era ajeno a las normas sociales de la época, que incluían el uso de vajilla de plata como signo de distinción.
-
-        La presencia de estos objetos permite comprender la dualidad de su vida en el exilio: por un lado, un hombre retirado de la política activa; por otro, una figura histórica reconocida que mantenía cierta posición social en círculos europeos.
-
-        Este tipo de piezas también evidencia la influencia cultural europea en su vida posterior a las campañas independentistas.
-    </p>
-</div>
-
+            <div class="flechas">
+                <span id="btnAnterior" onclick="anterior()">⬅</span>
+                <span id="btnSiguiente" onclick="siguiente()">➡</span>
             </div>
 
-            <div class="imagen-cuadro">
-                <img id="imagenDerecha" src="../../../CLIPS/320F8.BMP" alt="Imagen Armas">
+            <button onclick="window.location.href='../../../index.html'">Inicio</button>
+            <button onclick="window.location.href='../Salas.html'">Volver</button>
+        </div>
+
+        <div class="centro">
+            <div class="fila">
+                <div class="contenido texto">
+
+                    <div class="pagina activa" data-imagen="../../../CLIPS/320F8.BMP"
+                        data-nombre="Foja de servicio de San Martín en el ejército español hasta 1804">
+                        <h2>Foja de servicio de San Martín en el ejército español hasta 1804</h2>
+                        <p>
+                            La foja de servicio de José de San Martín constituye uno de los documentos más valiosos para
+                            comprender la etapa formativa del Libertador antes de su protagonismo en las guerras de
+                            independencia sudamericanas. Este registro militar detalla de manera sistemática su ingreso
+                            al ejército español, su evolución dentro de la estructura castrense y su participación en
+                            diversas campañas bélicas desarrolladas en Europa y el norte de África durante las últimas
+                            décadas del siglo XVIII y comienzos del XIX.
+
+                            San Martín ingresó al ejército siendo muy joven, aproximadamente a los once años, siguiendo
+                            la tradición de muchos hijos de militares españoles nacidos en América. Su carrera militar
+                            se desarrolló inicialmente en el Regimiento de Murcia, donde comenzó como cadete. A lo largo
+                            de los años participó en conflictos de gran importancia histórica, como la Guerra del
+                            Rosellón contra la Francia revolucionaria y posteriormente en la Guerra de la Independencia
+                            Española contra la ocupación napoleónica.
+
+                            Durante estas campañas adquirió experiencia directa en combate regular, tácticas de
+                            infantería, uso de caballería ligera, organización de columnas militares y estrategias de
+                            guerra de movimiento. Este aprendizaje fue decisivo, ya que más tarde aplicaría estos
+                            conocimientos en la creación del Ejército de los Andes, una de las fuerzas militares más
+                            innovadoras del continente.
+
+                            La foja de servicio también registra sus ascensos progresivos, alcanzando el grado de
+                            teniente coronel, reconocimiento que refleja su disciplina, capacidad de mando y reputación
+                            dentro del ejército español. Sin embargo, a pesar de su exitosa carrera, San Martín tomó la
+                            decisión de abandonar Europa en 1811, impulsado por los movimientos independentistas en
+                            América y su deseo de contribuir a la liberación de su tierra natal.
+                        </p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/320F9.BMP"
+                        data-nombre="Rosario del General San Martín">
+                        <h2>Rosario del General San Martín</h2>
+                        <p>
+                            El rosario perteneciente al General José de San Martín es uno de los objetos más íntimos y
+                            simbólicos conservados de su vida personal. Este elemento religioso no solo representa su fe
+                            católica, sino también su dimensión espiritual en medio de una vida marcada por la guerra,
+                            la estrategia militar y las decisiones políticas trascendentales.
+
+                            A lo largo de su vida, San Martín mantuvo una relación compleja pero constante con la
+                            religión. Aunque su figura histórica suele asociarse principalmente a la acción militar y
+                            política, este objeto demuestra que también poseía una vida interior profundamente
+                            influenciada por la espiritualidad cristiana. El rosario lo acompañó especialmente durante
+                            su exilio en Europa, en particular en Francia, donde vivió sus últimos años en relativa
+                            soledad.
+
+                            En ese período, el Libertador se alejó de la vida pública y se dedicó a la reflexión
+                            personal, la educación de su hija Mercedes y el contacto limitado con círculos sociales. El
+                            rosario, en este contexto, simboliza consuelo, introspección y continuidad espiritual en una
+                            etapa final de su vida marcada por el retiro voluntario.
+
+                            Para los estudios históricos, este objeto permite humanizar la figura de San Martín,
+                            mostrando no solo al estratega militar, sino también al hombre que enfrentó el exilio, la
+                            distancia de su patria y el paso del tiempo con profunda serenidad.
+                        </p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/320F10.BMP"
+                        data-nombre="Escudo de las pistoleras de arzón del General San Martín">
+                        <h2>Escudo de las pistoleras de arzón del General San Martín</h2>
+                        <p>
+                            Este escudo ornamental perteneciente a las pistoleras de arzón del General San Martín
+                            formaba parte del equipamiento de su caballo de campaña, elemento esencial en la guerra de
+                            caballería del siglo XIX. Las pistoleras de arzón eran fundas de cuero o madera reforzada
+                            que se colocaban a ambos lados de la montura para transportar armas de fuego, generalmente
+                            pistolas de avancarga.
+
+                            En el contexto militar de la época, la caballería cumplía un rol fundamental en la
+                            movilidad, reconocimiento del terreno y ejecución de cargas rápidas contra formaciones
+                            enemigas. San Martín, como jefe del Regimiento de Granaderos a Caballo, prestaba especial
+                            atención a la calidad del equipamiento de sus tropas, ya que consideraba que la disciplina y
+                            la preparación eran claves para el éxito militar.
+
+                            El escudo decorativo no solo cumplía una función estética, sino que también representaba el
+                            rango del oficial y su pertenencia a una unidad de élite. Este tipo de ornamentación era
+                            común en oficiales de alto rango, especialmente aquellos con formación europea, como San
+                            Martín, quien había incorporado prácticas militares aprendidas en España.
+
+                            Este objeto permite comprender la importancia de la caballería en las guerras de
+                            independencia y el nivel de detalle con el que se organizaban los ejércitos libertadores.
+                        </p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/320F11.BMP"
+                        data-nombre="Mate que perteneció al General San Martín">
+                        <h2>Mate que perteneció al General San Martín</h2>
+                        <p>
+                            El mate personal de José de San Martín constituye una pieza fundamental para comprender su
+                            vida cotidiana y su relación con las tradiciones culturales del Río de la Plata. A pesar de
+                            su formación militar europea y su prolongada estadía en España, el Libertador mantuvo
+                            vínculos estrechos con las costumbres populares sudamericanas.
+
+                            El mate, más que una simple bebida, representaba en el siglo XIX un espacio de sociabilidad,
+                            encuentro y comunicación, tanto en ambientes civiles como militares. En los campamentos del
+                            Ejército de los Andes, el mate era una práctica común entre oficiales y soldados, generando
+                            un sentido de igualdad y camaradería.
+
+                            En el caso de San Martín, este objeto refleja su perfil austero y disciplinado. A diferencia
+                            de otros líderes de su época, mantuvo hábitos simples, evitando el lujo excesivo incluso en
+                            contextos de poder. Esto contribuyó a fortalecer su imagen de líder cercano a sus tropas, lo
+                            cual fue clave para mantener la moral del ejército durante campañas extremadamente exigentes
+                            como el Cruce de los Andes.
+
+                            Este objeto permite observar la dimensión humana del Libertador, mostrando cómo las
+                            tradiciones culturales también formaban parte de la vida militar independentista.
+                        </p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/320F12.BMP"
+                        data-nombre="Jarra y bandeja de plata que pertenecieron al General San Martín">
+                        <h2>Jarra y bandeja de plata que pertenecieron al General San Martín</h2>
+                        <p>
+                            Este conjunto de jarra y bandeja de plata perteneciente a José de San Martín refleja el
+                            contexto social y cultural de la élite militar y política del siglo XIX. La platería era un
+                            símbolo de estatus, prestigio y refinamiento, especialmente en ambientes europeos donde el
+                            Libertador vivió durante su exilio.
+
+                            Estos objetos probablemente fueron utilizados en reuniones formales, recepciones
+                            diplomáticas o en su vida doméstica durante su residencia en Francia. Aunque San Martín
+                            mantenía un estilo de vida relativamente austero, no era ajeno a las normas sociales de la
+                            época, que incluían el uso de vajilla de plata como signo de distinción.
+
+                            La presencia de estos objetos permite comprender la dualidad de su vida en el exilio: por un
+                            lado, un hombre retirado de la política activa; por otro, una figura histórica reconocida
+                            que mantenía cierta posición social en círculos europeos.
+
+                            Este tipo de piezas también evidencia la influencia cultural europea en su vida posterior a
+                            las campañas independentistas.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="imagen-cuadro">
+                    <img id="imagenDerecha" src="../../../CLIPS/320F8.BMP" alt="Imagen Armas">
+                </div>
             </div>
         </div>
+
     </div>
 
-</div>
+    <script>
 
-<script>
+        let pagina = 0;
 
-    let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const imagenDerecha = document.getElementById("imagenDerecha");
 
-    const paginas = document.querySelectorAll(".pagina");
-    const imagenDerecha = document.getElementById("imagenDerecha");
+        const btnAnterior = document.getElementById("btnAnterior");
+        const btnSiguiente = document.getElementById("btnSiguiente");
 
-    const btnAnterior = document.getElementById("btnAnterior");
-    const btnSiguiente = document.getElementById("btnSiguiente");
+        function mostrarPagina(i) {
 
-    function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
 
-        paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
 
-        paginas[i].classList.add("activa");
+            imagenDerecha.src = paginas[i].dataset.imagen;
 
-        imagenDerecha.src = paginas[i].dataset.imagen;
+            document.title = paginas[i].dataset.nombre;
 
-        document.title = paginas[i].dataset.nombre;
+            paginas[i].querySelector('h2').textContent =
+                paginas[i].dataset.nombre;
 
-        paginas[i].querySelector('h2').textContent =
-            paginas[i].dataset.nombre;
+            pagina = i;
 
-        pagina = i;
+            /* DESHABILITAR FLECHAS */
 
-        /* DESHABILITAR FLECHAS */
+            if (i === 0) {
 
-        if(i === 0){
+                btnAnterior.style.opacity = "0.3";
+                btnAnterior.style.pointerEvents = "none";
 
-            btnAnterior.style.opacity = "0.3";
-            btnAnterior.style.pointerEvents = "none";
+            } else {
 
-        } else {
+                btnAnterior.style.opacity = "1";
+                btnAnterior.style.pointerEvents = "auto";
+            }
 
-            btnAnterior.style.opacity = "1";
-            btnAnterior.style.pointerEvents = "auto";
+            if (i === paginas.length - 1) {
+
+                btnSiguiente.style.opacity = "0.3";
+                btnSiguiente.style.pointerEvents = "none";
+
+            } else {
+
+                btnSiguiente.style.opacity = "1";
+                btnSiguiente.style.pointerEvents = "auto";
+            }
         }
 
-        if(i === paginas.length - 1){
+        function siguiente() {
 
-            btnSiguiente.style.opacity = "0.3";
-            btnSiguiente.style.pointerEvents = "none";
+            if (pagina < paginas.length - 1) {
 
-        } else {
+                pagina++;
 
-            btnSiguiente.style.opacity = "1";
-            btnSiguiente.style.pointerEvents = "auto";
+                mostrarPagina(pagina);
+            }
         }
-    }
 
-    function siguiente() {
+        function anterior() {
 
-        if (pagina < paginas.length - 1) {
+            if (pagina > 0) {
 
-            pagina++;
+                pagina--;
 
-            mostrarPagina(pagina);
+                mostrarPagina(pagina);
+            }
         }
-    }
 
-    function anterior() {
+        /* INICIO */
+        mostrarPagina(pagina);
 
-        if (pagina > 0) {
-
-            pagina--;
-
-            mostrarPagina(pagina);
-        }
-    }
-
-    /* INICIO */
-    mostrarPagina(pagina);
-
-</script>
+    </script>
 
 </body>
+
 </html>

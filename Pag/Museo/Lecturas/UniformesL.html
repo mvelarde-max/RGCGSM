@@ -1,244 +1,1242 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Uniformes Históricos</title>
     <link rel="stylesheet" href="../../../CSS/museoestylo.css">
 
     <style>
-        .contenido { max-width: 600px; text-align: left; }
-        .pagina { display: none; animation: fade .5s; }
-        .pagina.activa { display: block; }
-        @keyframes fade { from {opacity:0;} to {opacity:1;} }
+        .contenido {
+            max-width: 600px;
+            text-align: left;
+        }
 
-        .flechas { margin-top: 15px; font-size: 18px; display:flex; justify-content: space-between;}
-        .flechas span { padding:5px 10px; background: rgba(0,224,255,.2); border-radius:8px; cursor:pointer; }
-        .flechas span:hover { background: rgba(0,224,255,.5); }
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-        h2 { color: #00e0ff; margin-bottom: 20px; }
+        .pagina.activa {
+            display: block;
+        }
 
-        .fila { display:flex; gap:30px; }
-        .texto { flex:2; }
-        .imagen-cuadro { flex:1; display:flex; justify-content:center; align-items:flex-start; }
-        .imagen-cuadro img { width:250px; height:auto; border-radius:10px; box-shadow:0 0 15px rgba(0,224,255,0.6);}
-        p { line-height: 1.6; }
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2 {
+            color: #00e0ff;
+            margin-bottom: 20px;
+        }
+
+        .fila {
+            display: flex;
+            gap: 30px;
+        }
+
+        .texto {
+            flex: 2;
+        }
+
+        .imagen-cuadro {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .imagen-cuadro img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+        }
+
+        p {
+            line-height: 1.6;
+        }
     </style>
 </head>
 
 <body>
-<div class="contenedor">
+    <div class="contenedor">
 
-    <div class="lado">
-        <p>UNIFORMES</p>
+        <div class="lado">
+            <p>UNIFORMES</p>
 
-       <div class="flechas"> <span id="btnAnterior" onclick="anterior()">⬅</span> <span id="btnSiguiente" onclick="siguiente()">➡</span> </div>
+            <div class="flechas"> <span id="btnAnterior" onclick="anterior()">⬅</span> <span id="btnSiguiente"
+                    onclick="siguiente()">➡</span> </div>
 
-        <button onclick="window.location.href='../../../index.html'">Inicio</button>
-        <button onclick="window.location.href='../Salas.html'">Volver</button>
-    </div>
+            <button onclick="window.location.href='../../../index.html'">Inicio</button>
+            <button onclick="window.location.href='../Salas.html'">Volver</button>
+        </div>
 
-    <div class="centro">
-        <div class="fila">
-            <div class="contenido texto">
+        <div class="centro">
+            <div class="fila">
+                <div class="contenido texto">
 
-    <div class="pagina activa" data-imagen="../../../CLIPS/Z320F43.BMP" data-nombre="Uniforme de Granaderos">
-        <h2>Uniforme de Granaderos</h2>
-        <p>Uniforme histórico del Regimiento de Granaderos a Caballo.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F44.BMP" data-nombre="Uniforme de Oficial">
-        <h2>Uniforme de Oficial</h2>
-        <p>Detalle del uniforme de oficial del regimiento.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F45.BMP" data-nombre="Uniforme de Tropas">
-        <h2>Uniforme de Tropas</h2>
-        <p>Uniforme utilizado por las tropas del regimiento en distintas campañas.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F46.BMP" data-nombre="Uniforme de San Martin">
-        <h2>Uniforme de San Martin</h2>
-        <p>Uniforme del General José de San Martín durante su servicio.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F47.BMP" data-nombre="Uniforme Histórico Combinado">
-        <h2>Uniforme Histórico Combinado</h2>
-        <p>Combinación de diferentes uniformes históricos del museo.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F48.BMP" data-nombre="Uniforme de Campaña">
-        <h2>Uniforme de Campaña</h2>
-        <p>Vestimenta utilizada durante operaciones militares en campaña.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F49.BMP" data-nombre="Uniforme Ceremonial">
-        <h2>Uniforme Ceremonial</h2>
-        <p>Uniforme utilizado en actos oficiales y ceremonias militares.</p>
-    </div>
+                    <div class="pagina activa" data-imagen="../../../CLIPS/Z320F43.BMP"
+                        data-nombre="Retrato por Georges Scott">
+                        <h2>Retrato por Georges Scott</h2>
 
-    
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F51.BMP" data-nombre="Uniforme Patriota">
-        <h2>Uniforme Patriota</h2>
-        <p>Uniforme representativo de las fuerzas patriotas independentistas.</p>
-    </div>
+                        <p>Obra realizada en 1909 por el reconocido artista e ilustrador militar francés Georges Bertin
+                            Scott, más conocido como Georges Scott. Fue uno de los pintores militares más importantes de
+                            Europa a comienzos del siglo XX y colaboró durante décadas con revistas históricas y
+                            publicaciones ilustradas francesas especializadas en escenas bélicas y uniformología
+                            militar.</p>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F52.BMP" data-nombre="Uniforme de Gala">
-        <h2>Uniforme de Gala</h2>
-        <p>Vestimenta elegante utilizada en ocasiones especiales del regimiento.</p>
-    </div>
+                        <p>El retrato representa a un integrante del histórico Regimiento de Granaderos a Caballo
+                            “General San Martín”, unidad fundada el 16 de marzo de 1812 por el General José de San
+                            Martín tras su llegada al Río de la Plata. El regimiento fue creado con el objetivo de
+                            organizar una fuerza de caballería moderna capaz de participar en las campañas por la
+                            independencia sudamericana.</p>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F53.BMP" data-nombre="Uniforme de Infantería">
-        <h2>Uniforme de Infantería</h2>
-        <p>Uniforme utilizado por tropas de infantería en combate.</p>
-    </div>
+                        <p>La pintura refleja la elegancia y disciplina característica de los granaderos argentinos. El
+                            uniforme exhibe detalles propios de la caballería ceremonial de principios del siglo XX,
+                            incluyendo casaca azul oscuro, botones metálicos, correajes blancos y elementos inspirados
+                            en los modelos militares europeos utilizados durante el siglo XIX.</p>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F54.BMP" data-nombre="Uniforme de Época">
-        <h2>Uniforme de Época</h2>
-        <p>Representación histórica de uniformes utilizados en el siglo XIX.</p>
-    </div>
+                        <p>Durante la época en que Georges Scott realizó esta obra, Argentina atravesaba un período de
+                            modernización institucional y militar. El Ejército Argentino adoptaba nuevos reglamentos,
+                            equipamiento y uniformes influenciados por las tradiciones militares francesas y prusianas.
+                            El Regimiento de Granaderos mantenía además una fuerte función simbólica como guardia
+                            presidencial y escolta oficial.</p>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F55.BMP" data-nombre="Uniforme de Guardia">
-        <h2>Uniforme de Guardia</h2>
-        <p>Vestimenta asignada a las unidades de guardia y custodia.</p>
-    </div>
+                        <p>El artista francés dedicó gran parte de su carrera a representar escenas militares
+                            históricas, retratos de soldados y acontecimientos bélicos internacionales. Sus trabajos
+                            alcanzaron gran reconocimiento por el nivel de detalle en uniformes, armamentos y
+                            ambientaciones históricas.</p>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F56.BMP" data-nombre="Uniforme Militar Clásico">
-        <h2>Uniforme Militar Clásico</h2>
-        <p>Diseño tradicional representativo de la historia militar argentina.</p>
-    </div>
+                        <p>La obra de 1909 constituye además un testimonio visual del prestigio internacional alcanzado
+                            por el Regimiento de Granaderos a Caballo a casi un siglo de su creación. La unidad ya era
+                            considerada una de las formaciones militares más representativas de la República Argentina y
+                            símbolo permanente del legado sanmartiniano.</p>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F57.BMP" data-nombre="Uniforme de Batalla">
-        <h2>Uniforme de Batalla</h2>
-        <p>Uniforme utilizado durante enfrentamientos armados históricos.</p>
-    </div>
+                        <p>El Regimiento de Granaderos participó en importantes campañas militares de la independencia
+                            sudamericana, incluyendo el Combate de San Lorenzo de 1813, la Campaña de los Andes, las
+                            campañas de Chile y Perú, y diversas acciones militares junto al Ejército Libertador
+                            dirigido por San Martín.</p>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F58.BMP" data-nombre="Uniforme de Oficial Superior">
-        <h2>Uniforme de Oficial Superior</h2>
-        <p>Indumentaria distintiva de oficiales de alto rango.</p>
-    </div>
+                        <p>En la actualidad, el Regimiento de Granaderos a Caballo continúa cumpliendo funciones
+                            ceremoniales y protocolares en la República Argentina, actuando como escolta presidencial y
+                            preservando las tradiciones históricas de la caballería sanmartiniana.</p>
+                    </div>
 
-    
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F60.BMP" data-nombre="Uniforme de Regimiento">
-        <h2>Uniforme de Regimiento</h2>
-        <p>Uniforme institucional utilizado por distintas unidades regimentales.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F61.BMP" data-nombre="Uniforme de Desfile">
-        <h2>Uniforme de Desfile</h2>
-        <p>Vestimenta utilizada en desfiles y eventos patrióticos.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F63.BMP" data-nombre="Uniforme de Combate Histórico">
-        <h2>Uniforme de Combate Histórico</h2>
-        <p>Vestimenta militar utilizada en campañas históricas importantes.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F64.BMP" data-nombre="Uniforme del Ejército">
-        <h2>Uniforme del Ejército</h2>
-        <p>Modelo representativo de uniformes del Ejército Argentino.</p>
-    </div>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F65.BMP" data-nombre="Uniforme Conmemorativo">
-        <h2>Uniforme Conmemorativo</h2>
-        <p>Uniforme preservado en homenaje a hechos históricos destacados.</p>
-    </div>
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F44.BMP" data-nombre="Moriones de Granaderos">
+                        <h2>Moriones de Granaderos</h2>
 
-    <div class="pagina" data-imagen="../../../CLIPS/Z320F66.BMP" data-nombre="Uniforme Conmemorativo">
-        <h2>Uniforme Conmemorativo</h2>
-        <p>Uniforme preservado en homenaje a hechos históricos destacados.</p>
-    </div>
+                        <p>Los moriones eran cascos militares utilizados por distintas unidades de granaderos y tropas
+                            de caballería durante los siglos XVIII y XIX. Su función principal era brindar protección en
+                            combate, aunque también cumplían un importante rol ceremonial y representativo dentro de las
+                            fuerzas armadas.</p>
 
-</div>
+                        <p>El morrión se caracterizaba por su estructura metálica resistente, generalmente fabricada en
+                            acero o bronce, y por incorporar adornos como penachos, escudos nacionales, insignias
+                            regimentales y detalles ornamentales grabados a mano. Muchos modelos utilizados en
+                            Sudamérica estaban inspirados en diseños europeos, especialmente franceses y españoles.</p>
 
-            <div class="imagen-cuadro">
-                <img id="imagenDerecha" src="../../../CLIPS/Z320F49.BMP" alt="Imagen Uniformes">
+                        <p>Dentro del Regimiento de Granaderos a Caballo creado por el General José de San Martín en
+                            1812, los moriones formaban parte esencial de la imagen militar del cuerpo. El uniforme y
+                            equipamiento de los granaderos buscaban reflejar disciplina, profesionalismo y prestigio,
+                            siguiendo modelos de caballería moderna observados por San Martín durante su experiencia
+                            militar en Europa.</p>
+
+                        <p>Los granaderos utilizaban estos cascos tanto en combate como en actos oficiales. Algunos
+                            modelos poseían una cimera metálica superior y penachos de crin o plumas que permitían
+                            distinguir jerarquías y funciones dentro del regimiento. Los oficiales solían portar
+                            versiones más elaboradas y ornamentadas.</p>
+
+                        <p>Durante las campañas de independencia sudamericanas, el Regimiento de Granaderos a Caballo
+                            participó en importantes acciones militares como el Combate de San Lorenzo en 1813, el Cruce
+                            de los Andes en 1817 y las campañas libertadoras de Chile y Perú. Los moriones utilizados
+                            por la caballería se convirtieron con el tiempo en símbolos históricos asociados al Ejército
+                            Libertador.</p>
+
+                        <p>Muchos moriones históricos conservados actualmente en museos militares presentan marcas de
+                            fabricación europea, especialmente provenientes de talleres franceses, ingleses y españoles.
+                            En varios casos eran importados debido a la limitada producción metalúrgica existente en
+                            Sudamérica durante las primeras décadas del siglo XIX.</p>
+
+                        <p>Con el avance tecnológico y la modernización de los ejércitos hacia finales del siglo XIX,
+                            los moriones comenzaron a ser reemplazados por cascos militares más livianos y prácticos.
+                            Sin embargo, continuaron utilizándose en ceremonias oficiales y desfiles militares debido a
+                            su fuerte valor simbólico e histórico.</p>
+
+                        <p>En la actualidad, los moriones de granaderos representan una de las piezas más emblemáticas
+                            de la tradición militar argentina y sudamericana. Su presencia en museos y colecciones
+                            históricas permite comprender la evolución de los uniformes militares y la importancia de la
+                            caballería en las guerras de independencia.</p>
+                    </div>
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F45.BMP"
+                        data-nombre="Morrion de Oficial Subalterno">
+                        <h2>Morrion de Oficial Subalterno de Granadero</h2>
+
+                        <p>Este morrión perteneció a un oficial subalterno del Regimiento de Granaderos a Caballo,
+                            unidad creada por el General José de San Martín el 16 de marzo de 1812. Los oficiales
+                            subalternos ocupaban cargos intermedios dentro de la estructura militar y tenían la
+                            responsabilidad de dirigir tropas, mantener la disciplina y ejecutar órdenes durante
+                            campañas y maniobras militares.</p>
+
+                        <p>El morrión era una pieza fundamental del uniforme militar de caballería durante los siglos
+                            XVIII y XIX. Su estructura metálica brindaba protección en combate contra golpes de sable y
+                            otros impactos, mientras que su diseño elegante transmitía autoridad y jerarquía dentro del
+                            regimiento.</p>
+
+                        <p>Los oficiales utilizaban versiones más refinadas y ornamentadas que las empleadas por la
+                            tropa. Este tipo de morrión incluía detalles decorativos como emblemas nacionales, insignias
+                            de rango, relieves grabados, aplicaciones de bronce y penachos superiores confeccionados con
+                            crin o plumas.</p>
+
+                        <p>El diseño del morrión estaba influenciado por modelos militares europeos, especialmente
+                            franceses y españoles, que servían como referencia para la organización de los ejércitos
+                            sudamericanos durante la época de las guerras de independencia. San Martín, con experiencia
+                            militar adquirida en Europa, impulsó la adopción de uniformes modernos y disciplinados para
+                            el nuevo cuerpo de granaderos.</p>
+
+                        <p>Los oficiales subalternos del Regimiento de Granaderos participaron activamente en campañas
+                            históricas como el Combate de San Lorenzo de 1813, primera acción militar de San Martín en
+                            territorio argentino, así como en el Cruce de los Andes y las campañas libertadoras de Chile
+                            y Perú.</p>
+
+                        <p>El morrión no solo tenía una función defensiva, sino también simbólica. Su presencia
+                            distinguía a los oficiales dentro del campo de batalla y representaba honor, valentía y
+                            liderazgo militar. Durante ceremonias y actos oficiales, el brillo del metal pulido y los
+                            adornos del casco reforzaban la imagen de prestigio del cuerpo de caballería.</p>
+
+                        <p>Con el avance de la tecnología militar hacia finales del siglo XIX, este tipo de casco
+                            comenzó a ser reemplazado por modelos más prácticos y livianos. Sin embargo, continuó
+                            utilizándose en uniformes ceremoniales y actos patrióticos debido a su fuerte valor
+                            histórico.</p>
+
+                        <p>Actualmente, los morriones de oficiales subalternos son piezas históricas de gran valor
+                            patrimonial conservadas en museos militares y colecciones especializadas. Representan la
+                            tradición del Regimiento de Granaderos a Caballo y la evolución de los uniformes militares
+                            argentinos.</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F46.BMP" data-nombre="Gorra de Oficial">
+                        <h2>Gorra de Oficial de Granaderos</h2>
+
+                        <p>La gorra de oficial del Regimiento de Granaderos a Caballo es una prenda militar de uso
+                            ceremonial y de servicio que forma parte de la evolución del uniforme argentino a fines del
+                            siglo XIX y comienzos del siglo XX. Su incorporación responde al proceso de modernización
+                            del Ejército Argentino, que buscaba estandarizar la vestimenta militar siguiendo modelos
+                            europeos, especialmente franceses y prusianos.</p>
+
+                        <p>Esta prenda reemplazó progresivamente a otros tipos de cubrecabezas más antiguos como el
+                            morrión o el shako en determinadas funciones administrativas y de servicio diario, aunque
+                            estos últimos se mantuvieron en ceremonias históricas. La gorra ofrecía mayor practicidad,
+                            comodidad y adaptación a tareas fuera del combate.</p>
+
+                        <p>Las gorras de oficiales se distinguían claramente de las utilizadas por la tropa mediante
+                            insignias bordadas, escudos nacionales, galones dorados y viseras rígidas. Estos elementos
+                            no solo cumplían una función decorativa, sino que también indicaban jerarquía, rango y
+                            pertenencia institucional dentro del regimiento.</p>
+
+                        <p>El Regimiento de Granaderos a Caballo, creado por el General José de San Martín en 1812,
+                            mantuvo a lo largo del tiempo una fuerte tradición ceremonial. En ese contexto, la gorra de
+                            oficial pasó a formar parte del uniforme de gala y de uso representativo en actos
+                            patrióticos, recepciones oficiales y guardias de honor.</p>
+
+                        <p>Durante el período de consolidación del Estado argentino en la segunda mitad del siglo XIX,
+                            el Ejército adoptó una serie de reformas uniformológicas. Estas reformas incluyeron la
+                            simplificación de ciertos elementos del vestuario militar, sin perder los símbolos
+                            históricos que identificaban a cada unidad.</p>
+
+                        <p>En el caso de los Granaderos, la gorra de oficial conservó colores tradicionales asociados al
+                            regimiento, como el azul oscuro y detalles dorados, que representan la continuidad del
+                            legado sanmartiniano y la identidad histórica de la caballería argentina.</p>
+
+                        <p>Este tipo de prenda también fue utilizada en contextos diplomáticos y ceremoniales, donde los
+                            oficiales representaban al Ejército Argentino ante autoridades nacionales y extranjeras,
+                            reforzando la imagen institucional del país.</p>
+
+                        <p>En la actualidad, la gorra de oficial forma parte del uniforme ceremonial del Regimiento de
+                            Granaderos a Caballo y continúa siendo utilizada en actos oficiales en la Casa de Gobierno,
+                            el Museo Histórico y ceremonias patrióticas de relevancia nacional.</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F47.BMP" data-nombre="Casaca Modelo 1826">
+                        <h2>Casaca de Granadero Modelo 1826</h2>
+
+                        <p>La casaca de granadero modelo 1826 corresponde a una de las variantes históricas del uniforme
+                            del Regimiento de Granaderos a Caballo durante el período posterior a las guerras de
+                            independencia sudamericanas. Este tipo de prenda refleja la evolución del uniforme original
+                            creado por el General José de San Martín en 1812, adaptándose a nuevas necesidades militares
+                            y a la organización del Estado argentino en formación.</p>
+
+                        <p>La casaca estaba confeccionada en paño de lana de color azul oscuro, con vivos rojos
+                            característicos de la caballería granadera. Este esquema cromático no era casual: el azul
+                            representaba la disciplina y la formalidad militar, mientras que el rojo simbolizaba el
+                            valor y la sangre derramada en combate. Estos colores se mantuvieron como identidad visual
+                            del regimiento a lo largo del tiempo.</p>
+
+                        <p>El modelo 1826 conserva influencias claras de la uniformología europea del siglo XIX,
+                            especialmente francesa y española, que eran las principales referencias en la organización
+                            de ejércitos modernos en América del Sur. San Martín había incorporado estas ideas tras su
+                            experiencia militar en Europa, donde observó la importancia de la uniformidad y la
+                            jerarquización visual dentro de las tropas.</p>
+
+                        <p>Las casacas de este período contaban con botones metálicos alineados, cuello alto rígido,
+                            charreteras y refuerzos en las costuras, elementos diseñados tanto para la funcionalidad
+                            como para la representación del rango militar. En el caso de los granaderos, la apariencia
+                            tenía un rol fundamental en actos públicos y formaciones ceremoniales.</p>
+
+                        <p>En 1826, Argentina atravesaba un período de organización política posterior a la
+                            independencia, donde las fuerzas militares comenzaban a estructurarse de manera más formal.
+                            El Regimiento de Granaderos a Caballo ya había cumplido un rol clave en campañas decisivas
+                            como el Combate de San Lorenzo (1813) y el Cruce de los Andes (1817).</p>
+
+                        <p>Esta casaca representa una etapa de transición entre el uniforme revolucionario original de
+                            la independencia y los uniformes más reglamentados del siglo XIX tardío. Aún mantenía
+                            elementos tradicionales del diseño sanmartiniano, pero incorporaba ajustes prácticos para el
+                            servicio militar continuo en tiempos de paz relativa.</p>
+
+                        <p>En la actualidad, el modelo 1826 es considerado una pieza de gran valor histórico dentro de
+                            la evolución del uniforme del Ejército Argentino, ya que permite estudiar la continuidad del
+                            legado de San Martín y la adaptación del regimiento a las nuevas estructuras estatales.</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F48.BMP" data-nombre="Casaca Modelo 1904">
+                        <h2>Casaca de Granadero Modelo 1904</h2>
+
+                        <p>La casaca de granadero modelo 1904 corresponde a una de las etapas de modernización del
+                            uniforme del Regimiento de Granaderos a Caballo a comienzos del siglo XX. Este modelo fue
+                            incorporado en un contexto de reorganización general del Ejército Argentino, que buscaba
+                            actualizar su equipamiento sin perder la identidad histórica heredada del General José de
+                            San Martín.</p>
+
+                        <p>El diseño del uniforme conserva elementos tradicionales del siglo XIX, especialmente el uso
+                            del color azul oscuro y los detalles en rojo, pero incorpora mejoras en confección, corte y
+                            materiales. Estas modificaciones respondían a la necesidad de mayor durabilidad, comodidad y
+                            estandarización en el vestuario militar.</p>
+
+                        <p>El modelo 1904 fue utilizado principalmente en funciones ceremoniales, desfiles patrióticos y
+                            actos oficiales, ya que el Regimiento de Granaderos a Caballo había recuperado y consolidado
+                            su rol como unidad de escolta presidencial y guardia de honor de la Nación Argentina.</p>
+
+                        <p>Este uniforme refleja la influencia de las escuelas militares europeas que dominaron la
+                            uniformología de la época, especialmente la francesa y la alemana. Argentina, en ese
+                            período, modernizó su estructura militar tomando como referencia esos modelos organizativos
+                            y estéticos.</p>
+
+                        <p>Durante el siglo XIX y principios del XX, el Ejército Argentino atravesó un proceso de
+                            profesionalización que incluyó la creación de reglamentos, academias militares y nuevos
+                            sistemas de instrucción. En ese marco, el Regimiento de Granaderos mantuvo su carácter
+                            simbólico como herencia directa de las campañas libertadoras.</p>
+
+                        <p>La casaca modelo 1904 también se utilizaba en ceremonias vinculadas a fechas patrias como el
+                            25 de Mayo y el 9 de Julio, así como en recepciones oficiales a jefes de Estado extranjeros,
+                            donde los granaderos cumplían funciones de escolta y protocolo.</p>
+
+                        <p>Este uniforme es considerado una pieza clave en la transición entre la tradición
+                            sanmartiniana del siglo XIX y la uniformidad militar moderna del siglo XX en Argentina. Su
+                            preservación en museos permite comprender la evolución de la identidad visual del Ejército
+                            Argentino.</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F49.BMP" data-nombre="Casaca de Oficial 1904">
+                        <h2>Casaca de Oficial de Granaderos 1904</h2>
+
+                        <p>La casaca de oficial del Regimiento de Granaderos a Caballo modelo 1904 corresponde a la
+                            versión de gala utilizada por la oficialidad en el marco de la modernización del Ejército
+                            Argentino a comienzos del siglo XX. Este uniforme representa la continuidad del legado
+                            sanmartiniano dentro de una estructura militar profesionalizada y adaptada a los estándares
+                            internacionales de la época.</p>
+
+                        <p>Su diseño mantiene los colores tradicionales del regimiento —azul oscuro con detalles en
+                            rojo— pero incorpora un mayor nivel de ornamentación en comparación con las versiones de
+                            tropa. Los oficiales utilizaban bordados dorados, charreteras metálicas, botones con el
+                            escudo nacional y detalles de alta confección que simbolizaban jerarquía y prestigio.</p>
+
+                        <p>El modelo 1904 se enmarca en un período en el que el Ejército Argentino adoptó reformas
+                            influenciadas por modelos europeos, especialmente franceses, que eran considerados
+                            referentes en organización, disciplina y estética militar. Estas reformas buscaban unificar
+                            criterios de uniformidad y reforzar la identidad institucional de cada cuerpo.</p>
+
+                        <p>El Regimiento de Granaderos a Caballo, fundado por el General José de San Martín en 1812, ya
+                            había dejado de ser una unidad de combate activo en campañas regulares, pero conservaba su
+                            rol histórico como guardia presidencial y cuerpo ceremonial de máxima representación
+                            nacional.</p>
+
+                        <p>La casaca de oficial era utilizada en ceremonias de gran importancia, como actos patrios,
+                            recepciones diplomáticas y escoltas de honor a autoridades nacionales y extranjeras. Su
+                            presencia reforzaba la imagen del Estado argentino en eventos oficiales.</p>
+
+                        <p>Los detalles ornamentales del uniforme no eran meramente estéticos, sino que también cumplían
+                            una función simbólica: reflejar el honor, la tradición y la continuidad histórica del
+                            ejército desde las guerras de independencia hasta el Estado moderno.</p>
+
+                        <p>Este modelo también evidencia el proceso de diferenciación entre tropa y oficialidad dentro
+                            del Ejército Argentino, donde la uniformidad se mantenía en lo general, pero se jerarquizaba
+                            mediante elementos visuales específicos.</p>
+
+                        <p>En la actualidad, esta casaca es considerada una pieza representativa del patrimonio militar
+                            argentino, asociada tanto a la figura de San Martín como a la evolución institucional del
+                            Ejército en el siglo XX.</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F51.BMP" data-nombre="Botas Granaderas">
+                        <h2>Botas Granaderas Modelo 1904</h2>
+
+                        <p>Las botas granaderas modelo 1904 formaban parte del uniforme reglamentario del Regimiento de
+                            Granaderos a Caballo en su etapa de modernización a comienzos del siglo XX. Estas botas de
+                            caña alta eran un elemento esencial de la caballería, ya que estaban diseñadas
+                            específicamente para el combate montado y las actividades ecuestres militares.</p>
+
+                        <p>Su confección se realizaba en cuero negro de alta resistencia, tratado para soportar largas
+                            jornadas de uso, exposición al clima y fricción constante durante la monta. El diseño de
+                            caña alta protegía las piernas del jinete contra roces con la montura, ramas, elementos del
+                            terreno y posibles golpes durante maniobras de caballería.</p>
+
+                        <p>El modelo 1904 responde a un proceso de estandarización del equipamiento militar argentino,
+                            que buscaba modernizar el Ejército manteniendo al mismo tiempo la identidad histórica del
+                            Regimiento de Granaderos a Caballo, creado por el General José de San Martín en 1812.</p>
+
+                        <p>Las botas de caballería eran consideradas una pieza clave del equipo del soldado, junto con
+                            la montura, los correajes y las armas. En el caso de los granaderos, su uso no solo tenía
+                            una función práctica, sino también ceremonial, ya que eran visibles en desfiles patrióticos
+                            y actos oficiales.</p>
+
+                        <p>Durante el siglo XIX y principios del XX, la caballería seguía siendo un componente
+                            importante de los ejércitos, especialmente en tareas de reconocimiento, escolta y combate
+                            móvil. Las botas granaderas estaban adaptadas a estas funciones, ofreciendo firmeza al
+                            jinete y seguridad en el estribo.</p>
+
+                        <p>El diseño del calzado militar argentino de esta época también estaba influenciado por modelos
+                            europeos, particularmente franceses y prusianos, que eran referencia en la organización de
+                            las fuerzas armadas modernas.</p>
+
+                        <p>En ceremonias actuales, el Regimiento de Granaderos mantiene el uso de botas de estilo
+                            histórico como parte de su uniforme de gala, preservando la tradición ecuestre y el legado
+                            sanmartiniano.</p>
+
+                        <p>Estas botas representan no solo un elemento funcional del uniforme, sino también un símbolo
+                            de la continuidad histórica de la caballería argentina y su importancia en la formación del
+                            Ejército Nacional.</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F52.BMP" data-nombre="Foja de Oficial">
+                        <h2>Foja de Oficial</h2>
+
+                        <p>La foja de oficial es un documento administrativo militar utilizado por el Ejército para
+                            registrar de manera detallada la trayectoria profesional de cada oficial. En ella se
+                            consignaban ascensos, destinos, campañas, sanciones, méritos, condecoraciones y toda
+                            información relevante sobre el servicio prestado a la institución.</p>
+
+                        <p>Este tipo de registro comenzó a formalizarse en el siglo XIX como parte del proceso de
+                            organización y profesionalización de los ejércitos modernos, incluyendo el Ejército
+                            Argentino tras la independencia. Su función era garantizar un control estricto de la carrera
+                            militar y asegurar la transparencia en los ascensos y designaciones.</p>
+
+                        <p>En el caso de oficiales vinculados al Regimiento de Granaderos a Caballo, las fojas de
+                            servicio son documentos de alto valor histórico, ya que permiten reconstruir la
+                            participación de sus integrantes en campañas fundamentales como el Combate de San Lorenzo en
+                            1813, el Cruce de los Andes en 1817 y las campañas libertadoras de Chile y Perú.</p>
+
+                        <p>La información contenida en una foja de oficial solía incluir datos personales, fecha de
+                            ingreso al ejército, grados obtenidos a lo largo del tiempo, unidades en las que sirvió y
+                            observaciones de superiores. En muchos casos, también se registraban heridas de guerra o
+                            actos de valor en combate.</p>
+
+                        <p>Durante el siglo XIX, estos documentos eran elaborados en formato manuscrito y archivados en
+                            dependencias militares. Con el tiempo, pasaron a formar parte de los archivos históricos del
+                            Ejército y se convirtieron en fuentes fundamentales para la investigación historiográfica.
+                        </p>
+
+                        <p>La foja de servicio no solo tenía un valor administrativo, sino también institucional, ya que
+                            reflejaba el honor y la reputación del oficial dentro de la estructura militar. Un registro
+                            positivo podía influir directamente en ascensos y reconocimientos.</p>
+
+                        <p>En la actualidad, estos documentos son considerados patrimonio histórico militar y son
+                            utilizados por historiadores para estudiar la evolución del Ejército Argentino, así como las
+                            trayectorias individuales de sus protagonistas.</p>
+
+                        <p>La foja de oficial representa, en definitiva, la memoria escrita de la carrera militar,
+                            siendo una pieza clave para comprender la organización y el funcionamiento de las fuerzas
+                            armadas en el siglo XIX y XX.</p>
+                    </div>
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F53.BMP" data-nombre="Bandolera y Municionero">
+                        <h2>Bandolera y Municionero</h2>
+
+                        <p>La bandolera y el municionero constituyen un conjunto fundamental del equipamiento militar de
+                            infantería y caballería durante los siglos XIX y comienzos del XX. Su función principal era
+                            permitir el transporte seguro, accesible y ordenado de municiones durante el combate o las
+                            maniobras militares.</p>
+
+                        <p>La bandolera es una correa de cuero que cruza el torso del soldado desde el hombro hasta la
+                            cadera. De ella se suspendía el municionero, una caja o cartuchera donde se almacenaban los
+                            cartuchos listos para ser utilizados. Este sistema permitía una recarga rápida del arma sin
+                            necesidad de manipular bolsos o depósitos más complejos.</p>
+
+                        <p>En el caso del Regimiento de Granaderos a Caballo, creado por el General José de San Martín
+                            en 1812, estos elementos eran esenciales tanto para la infantería montada como para la
+                            caballería. La eficiencia en el acceso a la munición era clave durante cargas rápidas y
+                            combates móviles.</p>
+
+                        <p>Los materiales utilizados en su fabricación eran principalmente cuero curtido, reforzado con
+                            piezas metálicas en algunos modelos. El cuero debía ser resistente al desgaste, la humedad y
+                            el uso continuo en campaña, ya que el equipo militar estaba expuesto a condiciones
+                            climáticas extremas.</p>
+
+                        <p>Durante las guerras de independencia sudamericanas, el correcto uso de la bandolera y el
+                            municionero podía influir directamente en la efectividad de las tropas, ya que la rapidez de
+                            recarga era decisiva en enfrentamientos de corta duración y alta intensidad.</p>
+
+                        <p>Estos elementos fueron adoptados por ejércitos europeos y americanos como parte de la
+                            estandarización del equipo militar moderno. Su diseño evolucionó con el tiempo, incorporando
+                            cierres metálicos, compartimentos más seguros y mejor distribución del peso.</p>
+
+                        <p>En el Ejército Argentino, su uso se extendió durante todo el siglo XIX y parte del XX, hasta
+                            ser reemplazado progresivamente por sistemas de carga más modernos con la introducción de
+                            nuevas armas y tecnologías militares.</p>
+
+                        <p>Actualmente, la bandolera y el municionero forman parte del uniforme histórico del Regimiento
+                            de Granaderos a Caballo en ceremonias y actos de carácter conmemorativo, manteniendo viva la
+                            tradición militar sanmartiniana.</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F54.BMP" data-nombre="Cinturon y Tiros">
+                        <h2>Cinturón y Tiros</h2>
+
+                        <p>El cinturón y los tiros forman parte del equipo de correaje militar utilizado por soldados de
+                            caballería e infantería durante los siglos XIX y principios del XX. Su función principal era
+                            sostener y distribuir el peso del armamento, la munición y otros elementos del equipo del
+                            soldado de manera eficiente y segura.</p>
+
+                        <p>El cinturón se fabricaba generalmente en cuero grueso y resistente, diseñado para soportar el
+                            uso continuo en campaña. Sobre él se fijaban distintos accesorios como cartucheras,
+                            bayonetas, sables o bolsas de munición, dependiendo del rol del soldado dentro de la unidad
+                            militar.</p>
+
+                        <p>Los tiros eran correas adicionales que se cruzaban sobre los hombros y el torso, permitiendo
+                            equilibrar el peso del equipo y evitar que el cinturón se desplazara durante el movimiento o
+                            el combate. Este sistema de correaje era fundamental para la movilidad en situaciones de
+                            guerra.</p>
+
+                        <p>En el Regimiento de Granaderos a Caballo, creado por el General José de San Martín en 1812,
+                            estos elementos eran esenciales para garantizar la eficacia de la caballería en combate. La
+                            correcta distribución del equipo permitía mayor rapidez en la reacción durante cargas y
+                            maniobras militares.</p>
+
+                        <p>El diseño de cinturones y tiros fue evolucionando con el tiempo, incorporando hebillas
+                            metálicas, refuerzos adicionales y sistemas de ajuste más precisos. Muchos de estos modelos
+                            estaban inspirados en reglamentos militares europeos, especialmente franceses y británicos.
+                        </p>
+
+                        <p>Durante las guerras de independencia sudamericanas, este tipo de correaje era indispensable
+                            para mantener al soldado operativo en condiciones de combate prolongado, especialmente en
+                            campañas como el Cruce de los Andes o las campañas libertadoras en Chile y Perú.</p>
+
+                        <p>Además de su función práctica, el cinturón y los tiros también cumplían un rol estético
+                            dentro del uniforme militar, aportando simetría, orden visual y jerarquía en la presentación
+                            de las tropas durante desfiles y actos oficiales.</p>
+
+                        <p>En la actualidad, estos elementos forman parte del uniforme histórico del Regimiento de
+                            Granaderos a Caballo en ceremonias y desfiles patrióticos, preservando la tradición militar
+                            y el legado del General José de San Martín.</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F55.BMP" data-nombre="Bandera del Peru">
+                        <h2>Bandera del Perú entregada por San Martín</h2>
+
+                        <p>La denominada “Bandera del Perú entregada por San Martín” se vincula directamente al proceso
+                            de independencia del Perú y al rol del Ejército Libertador bajo el mando del General
+                            :contentReference[oaicite:0]{index=0}. Su presencia en este contexto representa uno de los
+                            símbolos más importantes de la campaña emancipadora en el Pacífico sur durante el siglo XIX.
+                        </p>
+
+                        <p>El 28 de julio de 1821, en la ciudad de Lima, San Martín proclamó la independencia del
+                            :contentReference[oaicite:1]{index=1}, luego de la entrada del Ejército Libertador a la
+                            capital virreinal. En ese marco, se consolidó el uso de símbolos patrios vinculados a la
+                            nueva nación, entre ellos banderas asociadas al naciente Estado peruano y a las fuerzas
+                            libertadoras que participaron en su independencia.</p>
+
+                        <p>La bandera asociada a San Martín no solo representa un objeto textil, sino también un
+                            elemento simbólico del proceso de transición política desde el Virreinato del Perú hacia la
+                            república independiente. Durante la campaña, el Ejército de los Andes y las fuerzas
+                            combinadas chileno-argentinas jugaron un papel decisivo en el avance hacia Lima, bajo la
+                            estrategia militar de San Martín.</p>
+
+                        <p>Este tipo de banderas se utilizaba tanto en contextos militares como ceremoniales,
+                            funcionando como estandartes de reconocimiento y cohesión para las tropas. En los ejércitos
+                            del siglo XIX, la bandera era considerada un elemento sagrado, ya que representaba la
+                            soberanía, el honor del regimiento y la causa por la cual se combatía.</p>
+
+                        <p>La expedición libertadora al Perú, iniciada en 1820 desde Valparaíso, fue uno de los hitos
+                            centrales de las guerras de independencia sudamericanas. Tras el desembarco en la bahía de
+                            Paracas y la posterior ocupación progresiva del territorio, San Martín avanzó políticamente
+                            hacia la proclamación de la independencia sin necesidad de una batalla final decisiva contra
+                            las fuerzas realistas.</p>
+
+                        <p>La bandera vinculada a este proceso también refleja la importancia de la identidad visual en
+                            la construcción de los nuevos Estados sudamericanos. Los símbolos patrios surgidos en este
+                            período buscaban diferenciarse del sistema colonial español y consolidar la legitimidad de
+                            los nuevos gobiernos independientes.</p>
+
+                        <p>En la actualidad, estos estandartes o reproducciones históricas son conservados como piezas
+                            de alto valor patrimonial en museos militares y colecciones históricas, ya que permiten
+                            comprender el papel de San Martín en la emancipación del Perú y su visión política de unidad
+                            regional.</p>
+
+                        <p>La bandera, en este contexto, no es solo un objeto histórico, sino un testimonio material de
+                            una de las campañas más importantes de la independencia sudamericana.</p>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F56.BMP" data-nombre="Uniforme Brasileño">
+                        <h2>Uniforme del 1º Regimiento de Caballería de la Guardia Dragones de la Independencia de
+                            Brasil</h2>
+
+                        <p>El uniforme corresponde al 1º Regimiento de Caballería de la Guardia conocido como los
+                            “Dragones de la Independencia” del Brasil, una de las unidades militares ceremoniales más
+                            antiguas y emblemáticas del país. Fue creado en el contexto de la independencia del Imperio
+                            del Brasil, consolidado en 1822 tras la separación del Reino de Portugal.</p>
+
+                        <p>Esta unidad tiene su origen en fuerzas de caballería establecidas en el período colonial
+                            portugués, pero fue reorganizada como guardia imperial tras la proclamación de la
+                            independencia por :contentReference[oaicite:0]{index=0}, quien estableció nuevas estructuras
+                            militares para el recién formado imperio.</p>
+
+                        <p>Los Dragones de la Independencia cumplen una función principalmente ceremonial en la
+                            actualidad, siendo responsables de la guardia de honor del Palacio de la Alvorada y de
+                            ceremonias oficiales del Estado brasileño. Su uniforme es uno de los más reconocibles de
+                            Sudamérica debido a su diseño colorido y su fuerte carga simbólica.</p>
+
+                        <p>El uniforme tradicional se caracteriza por el uso de casacas ornamentadas, colores
+                            llamativos, cascos metálicos con penachos y detalles dorados. Estos elementos reflejan la
+                            influencia de la uniformología europea del siglo XIX, especialmente de tradiciones francesas
+                            y portuguesas.</p>
+
+                        <p>Durante el siglo XIX, las fuerzas de caballería eran esenciales en la organización militar de
+                            los Estados sudamericanos, cumpliendo funciones de escolta, reconocimiento y apoyo táctico.
+                            Aunque su rol de combate directo fue disminuyendo con el avance tecnológico, su importancia
+                            ceremonial se mantuvo e incluso se reforzó con el tiempo.</p>
+
+                        <p>El 1º Regimiento de Dragones de la Independencia es considerado un símbolo de la continuidad
+                            histórica del Ejército Brasileño y de la tradición monárquica del período imperial,
+                            conservando hasta hoy su carácter de unidad de élite ceremonial.</p>
+
+                        <p>En desfiles oficiales, esta unidad representa la conexión entre el pasado imperial y el
+                            presente republicano de Brasil, manteniendo viva una tradición militar que se remonta a más
+                            de dos siglos de historia.</p>
+
+                        <p>El uniforme, más allá de su función práctica original, se ha convertido en un elemento
+                            patrimonial y cultural que refleja la identidad histórica del Brasil independiente y su
+                            evolución institucional.</p>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F57.BMP" data-nombre="Toribio de Luzuriaga">
+                        <h2>Toribio de Luzuriaga (1782 - 1843)</h2>
+
+                        <p>:contentReference[oaicite:0]{index=0} fue un destacado militar y funcionario del proceso de
+                            independencia sudamericano, vinculado estrechamente a las campañas libertadoras dirigidas
+                            por el General :contentReference[oaicite:1]{index=1}. Su trayectoria se desarrolló en el
+                            contexto de las guerras emancipadoras del Río de la Plata, Chile y Perú.</p>
+
+                        <p>Originario del Virreinato del Perú, Luzuriaga se incorporó tempranamente a las fuerzas
+                            patriotas y colaboró con los movimientos independentistas que buscaban romper con el dominio
+                            español en Sudamérica. Su formación militar y su experiencia administrativa lo convirtieron
+                            en una figura de confianza dentro del círculo sanmartiniano.</p>
+
+                        <p>Uno de sus roles más importantes fue su desempeño como gobernador de la región de Cuyo, una
+                            zona estratégica en el oeste del actual territorio argentino. Desde allí se organizaron los
+                            preparativos logísticos y militares del Ejército de los Andes, incluyendo el reclutamiento,
+                            el abastecimiento y la planificación del cruce hacia Chile.</p>
+
+                        <p>Durante la preparación de la campaña libertadora de Chile (1817), Luzuriaga colaboró
+                            activamente con la estructura organizativa del ejército, apoyando la logística del cruce de
+                            la cordillera de los Andes, una de las operaciones militares más complejas del siglo XIX en
+                            América del Sur.</p>
+
+                        <p>Tras la liberación de Chile, el proceso independentista avanzó hacia el Perú, donde San
+                            Martín lideró la expedición libertadora que culminó con la proclamación de la independencia
+                            en Lima el 28 de julio de 1821. Luzuriaga formó parte del entramado político-militar que
+                            sostuvo estas campañas.</p>
+
+                        <p>Además de su rol militar, también desempeñó funciones administrativas y diplomáticas,
+                            contribuyendo a la organización de los nuevos estados independientes en el contexto
+                            posterior a la caída del sistema colonial español.</p>
+
+                        <p>Su figura representa el perfil de los oficiales criollos que combinaron funciones militares y
+                            políticas durante las guerras de independencia, siendo piezas clave en la construcción de
+                            las primeras estructuras estatales sudamericanas.</p>
+
+                        <p>Toribio de Luzuriaga falleció en 1843, dejando un legado asociado a la organización del
+                            Ejército de los Andes y a la consolidación de los movimientos emancipadores liderados por
+                            San Martín en el cono sur.</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F58.BMP" data-nombre="Morriones Historicos">
+                        <h2>Morriones Históricos de Colombia, Ecuador y Uruguay</h2>
+
+                        <p>Los morriones históricos de Colombia, Ecuador y Uruguay corresponden a una colección de
+                            cascos militares utilizados en distintas fuerzas armadas sudamericanas durante el siglo XIX,
+                            período en el que los ejércitos recién formados adoptaban modelos europeos para organizar su
+                            vestimenta y equipamiento.</p>
+
+                        <p>El morrión es un tipo de casco de origen europeo, ampliamente utilizado desde la Edad Media y
+                            reinterpretado posteriormente por los ejércitos modernos como pieza ceremonial o de gala. En
+                            América del Sur, su uso estuvo ligado principalmente a unidades de infantería y caballería
+                            en las primeras décadas posteriores a las guerras de independencia.</p>
+
+                        <p>En el caso de Colombia, Ecuador y Uruguay, estos cascos reflejan la influencia de las
+                            tradiciones militares españolas y francesas, que sirvieron como referencia para la formación
+                            de los nuevos ejércitos republicanos tras la disolución del dominio colonial español.</p>
+
+                        <p>Durante las guerras de independencia sudamericanas, líderes como
+                            :contentReference[oaicite:0]{index=0} impulsaron la creación de fuerzas militares
+                            organizadas que adoptaron uniformes estandarizados, donde el morrión cumplía una función
+                            tanto protectora como simbólica de disciplina y jerarquía.</p>
+
+                        <p>Estos cascos podían variar en diseño según el país y la unidad militar. Algunos modelos
+                            incluían penachos de colores, escudos nacionales, placas metálicas con símbolos patrios y
+                            detalles ornamentales que identificaban el cuerpo al que pertenecían.</p>
+
+                        <p>En muchos casos, los morriones eran utilizados en desfiles, ceremonias oficiales y guardias
+                            de honor, mientras que en combate fueron progresivamente reemplazados por cascos más ligeros
+                            o por otros tipos de cobertura más funcionales.</p>
+
+                        <p>La colección de morriones de Colombia, Ecuador y Uruguay permite observar la evolución de la
+                            identidad militar en Sudamérica, así como la transición desde modelos coloniales hacia
+                            estructuras republicanas propias.</p>
+
+                        <p>En la actualidad, estas piezas forman parte del patrimonio histórico militar y se conservan
+                            en museos, donde son estudiadas como ejemplos de la evolución de la uniformología y de la
+                            influencia europea en la formación de los ejércitos latinoamericanos.</p>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F59.BMP" data-nombre="Cascos Historicos">
+                        <h2>Cascos Históricos de Perú, Chile y Brasil</h2>
+
+                        <p>Este conjunto reúne cascos históricos pertenecientes a distintas tradiciones militares
+                            sudamericanas: un casco de lancero del Perú, un casco de la Escuela Militar “General
+                            Bernardo O’Higgins” de Chile y un yelmo del Regimiento de Caballería de la Guardia Dragones
+                            de la Independencia de Brasil. Estas piezas reflejan la evolución de la caballería y de los
+                            cuerpos de élite en el continente durante los siglos XIX y XX.</p>
+
+                        <p>El casco de lancero del Perú está asociado a unidades de caballería ligera que tuvieron un
+                            rol importante en las guerras de independencia y en conflictos posteriores. Su diseño
+                            buscaba combinar protección con ligereza, permitiendo movilidad rápida en el campo de
+                            batalla.</p>
+
+                        <p>La Escuela Militar “General Bernardo O’Higgins” de Chile, fundada para la formación de
+                            oficiales del Ejército chileno, adoptó cascos ceremoniales inspirados en modelos europeos,
+                            especialmente franceses. Su uso está vinculado a la formación académica militar y a
+                            ceremonias oficiales del Estado chileno.</p>
+
+                        <p>El yelmo del Regimiento de Caballería de la Guardia Dragones de la Independencia de Brasil
+                            forma parte de una de las unidades más representativas del ceremonial militar brasileño.
+                            Este regimiento tiene sus orígenes en el período imperial y mantiene hasta la actualidad
+                            funciones de escolta y representación.</p>
+
+                        <p>Estos cascos reflejan la fuerte influencia de la uniformología europea en los ejércitos
+                            sudamericanos, especialmente de Francia, Portugal y España, que sirvieron como modelos de
+                            organización militar tras las independencias del siglo XIX.</p>
+
+                        <p>Durante este período, la caballería era un componente esencial de los ejércitos, utilizada
+                            para reconocimiento, escolta, carga y apoyo táctico. Los cascos no solo cumplían una función
+                            protectora, sino que también eran símbolos de identidad, jerarquía y prestigio militar.</p>
+
+                        <p>El proceso de modernización militar en los países sudamericanos llevó progresivamente a la
+                            sustitución de estos cascos en combate, aunque muchos de ellos se conservaron para uso
+                            ceremonial y desfiles patrióticos.</p>
+
+                        <p>En la actualidad, estas piezas forman parte del patrimonio histórico de cada nación y
+                            permiten estudiar la evolución de sus fuerzas armadas, así como la construcción de sus
+                            identidades militares nacionales.</p>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F60.BMP" data-nombre="Bicornios Suizos">
+                        <h2>Bicornios de los Granaderos de Fribourg</h2>
+
+                        <p>Los bicornios pertenecientes a los Granaderos de Fribourg (Suiza) son piezas representativas
+                            de la uniformología militar europea de los siglos XVIII y XIX. El bicornio fue un tipo de
+                            sombrero militar ampliamente utilizado por oficiales y tropas de élite en distintos
+                            ejércitos europeos, especialmente durante el período napoleónico.</p>
+
+                        <p>El diseño del bicornio se caracteriza por su forma de dos puntas laterales, creada al doblar
+                            el ala del sombrero y sujetarla en posiciones específicas. Este estilo no solo tenía una
+                            función estética, sino también práctica, ya que permitía portar armas largas como espadas
+                            sin interferencia con el sombrero.</p>
+
+                        <p>Los Granaderos de Fribourg forman parte de las tradiciones militares suizas, un país con una
+                            larga historia de unidades mercenarias y cuerpos de élite reconocidos en toda Europa desde
+                            la Edad Media. Su prestigio se consolidó por la disciplina y eficacia de sus tropas en
+                            distintos conflictos europeos.</p>
+
+                        <p>Durante el siglo XVIII, muchos ejércitos europeos adoptaron el bicornio como parte del
+                            uniforme oficial, especialmente en unidades de infantería y caballería de alta jerarquía.
+                            Este elemento se convirtió en un símbolo de autoridad militar y estatus dentro de la
+                            estructura castrense.</p>
+
+                        <p>El uso del bicornio estuvo fuertemente asociado a la época de las guerras napoleónicas,
+                            cuando figuras militares y políticas lo popularizaron en toda Europa. Su presencia en
+                            retratos oficiales y desfiles reforzaba la imagen de poder y disciplina de los ejércitos
+                            modernos.</p>
+
+                        <p>Con el paso del tiempo y la evolución de los uniformes militares hacia cascos más
+                            funcionales, el bicornio fue desapareciendo del uso cotidiano en combate, pero se mantuvo en
+                            ceremonias, actos oficiales y uniformes de gala.</p>
+
+                        <p>En la actualidad, los bicornios de los Granaderos de Fribourg son piezas de valor histórico y
+                            museológico, que permiten estudiar la evolución de la indumentaria militar europea y su
+                            influencia en los uniformes de América y otras regiones del mundo.</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F61.BMP" data-nombre="Miguel Caxaraville">
+                        <h2>Miguel Caxaraville (1794 - 1852)</h2>
+
+                        <p>:contentReference[oaicite:0]{index=0} fue un militar vinculado a los procesos
+                            independentistas del Río de la Plata y a las campañas militares desarrolladas durante la
+                            primera mitad del siglo XIX en Sudamérica. Su trayectoria se enmarca en el período de
+                            formación de los nuevos Estados surgidos tras la ruptura del dominio español.</p>
+
+                        <p>Participó en distintos cuerpos militares patriotas que surgieron durante la Revolución de
+                            Mayo de 1810 y los años posteriores, cuando las Provincias Unidas del Río de la Plata
+                            comenzaron a organizar fuerzas armadas regulares para sostener la independencia y enfrentar
+                            a las fuerzas realistas.</p>
+
+                        <p>Su actividad militar se desarrolló en un contexto de intensos conflictos regionales, donde la
+                            organización de los ejércitos patriotas dependía tanto de líderes militares formados en
+                            Europa como de oficiales criollos que fueron adquiriendo experiencia en el campo de batalla.
+                        </p>
+
+                        <p>Durante este período, figuras como el General :contentReference[oaicite:1]{index=1}
+                            impulsaron la profesionalización del ejército y la creación de unidades disciplinadas como
+                            el Regimiento de Granaderos a Caballo, que sirvió de modelo para muchas fuerzas patriotas en
+                            la región.</p>
+
+                        <p>Caxaraville representa el perfil de oficiales que participaron en la consolidación militar de
+                            las nuevas repúblicas sudamericanas, en un escenario caracterizado por campañas terrestres,
+                            guerras civiles y conflictos de organización interna.</p>
+
+                        <p>Su vida militar se extendió hasta mediados del siglo XIX, período en el cual los antiguos
+                            ejércitos revolucionarios dieron paso a estructuras nacionales más estables y organizadas,
+                            con mayor control estatal y jerarquización profesional.</p>
+
+                        <p>El estudio de figuras como Miguel Caxaraville permite comprender el papel de los oficiales
+                            intermedios en la construcción de los ejércitos sudamericanos, así como la transición desde
+                            las milicias revolucionarias hacia fuerzas armadas nacionales permanentes.</p>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F63.BMP" data-nombre="Manuel de Olazabal">
+                        <h2>Manuel de Olazábal (1800 - 1872)</h2>
+
+                        <p>:contentReference[oaicite:0]{index=0} fue un militar argentino vinculado al proceso de
+                            organización del Ejército en el período posterior a las guerras de independencia
+                            sudamericanas. Su carrera se desarrolló en un contexto de formación institucional del Estado
+                            argentino durante el siglo XIX.</p>
+
+                        <p>Integró el Regimiento de Granaderos a Caballo “General San Martín”, unidad creada por el
+                            General :contentReference[oaicite:1]{index=1} en 1812, considerada una de las fuerzas más
+                            emblemáticas del proceso independentista. Aunque Olazábal no formó parte de las campañas
+                            iniciales del cruce de los Andes, su trayectoria está ligada a la tradición y continuidad
+                            del cuerpo de granaderos en décadas posteriores.</p>
+
+                        <p>Durante el siglo XIX, el Ejército Argentino atravesó múltiples transformaciones, pasando de
+                            fuerzas revolucionarias a estructuras nacionales más estables. En ese proceso, los antiguos
+                            cuerpos como los Granaderos fueron preservados como unidades de prestigio y referencia
+                            histórica.</p>
+
+                        <p>Olazábal participó en actividades militares y administrativas vinculadas al ejército en una
+                            etapa en la que la organización interna de las fuerzas armadas era clave para la
+                            consolidación del Estado argentino. Estos oficiales cumplían funciones tanto operativas como
+                            de instrucción y preservación de la memoria institucional.</p>
+
+                        <p>Además, es conocido por haber dejado testimonios escritos y memorias relacionadas con el
+                            período sanmartiniano, lo que lo convierte en una figura de interés historiográfico para el
+                            estudio del Ejército de los Andes y sus protagonistas.</p>
+
+                        <p>Sus escritos permiten reconstruir aspectos de la vida militar del siglo XIX, incluyendo la
+                            disciplina, el funcionamiento de los regimientos y la importancia simbólica del legado de
+                            San Martín dentro del Ejército Argentino.</p>
+
+                        <p>Manuel de Olazábal falleció en 1872, dejando un legado asociado a la continuidad histórica
+                            del Regimiento de Granaderos a Caballo y a la preservación de la memoria de las campañas de
+                            independencia en el Río de la Plata.</p>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F64.BMP" data-nombre="Jose Figueroa Alcorta">
+                        <h2>José Figueroa Alcorta</h2>
+
+                        <p>:contentReference[oaicite:0]{index=0} fue un abogado y político argentino que ocupó algunos
+                            de los cargos institucionales más importantes del país, convirtiéndose en una figura
+                            singular dentro de la historia política nacional por haber sido vicepresidente, presidente
+                            de la Nación y presidente de la Corte Suprema de Justicia.</p>
+
+                        <p>Asumió la presidencia de la Nación Argentina en 1906 tras el fallecimiento del presidente
+                            Manuel Quintana. Su gobierno se desarrolló en una etapa de consolidación del Estado
+                            argentino moderno, en un contexto de crecimiento económico, expansión institucional y
+                            fortalecimiento del sistema político de la época.</p>
+
+                        <p>Durante su mandato, se impulsaron obras públicas, mejoras en infraestructura urbana y avances
+                            en la organización administrativa del Estado. También se continuó con el proceso de
+                            modernización de las instituciones nacionales iniciado en las décadas anteriores.</p>
+
+                        <p>Su figura es destacada por su capacidad para ocupar distintos poderes del Estado a lo largo
+                            de su carrera: fue vicepresidente de la Nación, luego presidente, y posteriormente
+                            presidente de la Corte Suprema de Justicia, algo excepcional en la historia política
+                            argentina.</p>
+
+                        <p>Este recorrido institucional refleja la importancia del período de organización del Estado
+                            argentino a comienzos del siglo XX, cuando las estructuras políticas, judiciales y
+                            administrativas se estaban consolidando de manera definitiva.</p>
+
+                        <p>Durante su presidencia, el país atravesaba una etapa de fuerte inmigración europea,
+                            crecimiento de las ciudades y expansión del modelo agroexportador, lo que influyó
+                            directamente en la política y la economía nacional.</p>
+
+                        <p>Figueroa Alcorta también tuvo un rol importante en la resolución de conflictos políticos
+                            internos dentro del sistema conservador de la época, buscando mantener la estabilidad
+                            institucional en un período de tensiones políticas.</p>
+
+                        <p>Falleció en 1931, dejando una trayectoria marcada por su influencia en los tres poderes del
+                            Estado y por su participación en la consolidación del sistema institucional argentino
+                            moderno.</p>
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F65.BMP" data-nombre="Julio Argentino Roca">
+                        <h2>Julio A. Roca</h2>
+
+                        <p>:contentReference[oaicite:0]{index=0} fue una de las figuras más influyentes en la
+                            organización del Estado argentino moderno. Militar de carrera y político del Partido
+                            Autonomista Nacional, ocupó la presidencia de la Nación en dos períodos: 1880–1886 y
+                            1898–1904.</p>
+
+                        <p>Su formación militar estuvo vinculada a las campañas del interior argentino durante el
+                            proceso de consolidación nacional posterior a las guerras civiles. Como oficial del
+                            Ejército, participó en acciones militares clave que buscaban afirmar la autoridad del Estado
+                            nacional sobre los territorios provinciales.</p>
+
+                        <p>Durante su primera presidencia (1880–1886), se consolidó la federalización de Buenos Aires
+                            como capital del país, un hecho fundamental en la organización institucional de la República
+                            Argentina. Este proceso permitió establecer un poder central estable y fortalecer las
+                            instituciones nacionales.</p>
+
+                        <p>En su segundo mandato (1898–1904), Roca impulsó políticas de modernización estatal, expansión
+                            económica y fortalecimiento de la infraestructura nacional. El país experimentaba un
+                            crecimiento sostenido basado en el modelo agroexportador y en la fuerte inmigración europea.
+                        </p>
+
+                        <p>Su figura también está asociada a la expansión territorial del Estado argentino en el siglo
+                            XIX, proceso conocido históricamente como la “Conquista del Desierto”, que tuvo como
+                            objetivo la incorporación de nuevas tierras bajo control estatal, aunque también generó
+                            profundas controversias históricas por su impacto sobre los pueblos originarios.</p>
+
+                        <p>Roca promovió la organización administrativa del país, el desarrollo de redes ferroviarias,
+                            la modernización del sistema educativo y la consolidación de las instituciones políticas del
+                            Estado argentino.</p>
+
+                        <p>Su influencia política se extendió más allá de sus mandatos presidenciales, ya que continuó
+                            siendo una figura central dentro del sistema político argentino de fines del siglo XIX y
+                            comienzos del XX.</p>
+
+                        <p>Falleció en 1914, dejando una huella decisiva en la estructura del Estado argentino y en el
+                            proceso de modernización institucional del país.</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F66.BMP" data-nombre="Pablo Riccheri">
+                        <h2>Pablo Riccheri</h2>
+
+                        <p>:contentReference[oaicite:0]{index=0} fue un militar argentino fundamental en el proceso de
+                            modernización del Ejército Argentino a comienzos del siglo XX. Su formación militar incluyó
+                            estudios y observación de modelos europeos, especialmente en Francia, donde incorporó
+                            conceptos avanzados de organización, instrucción y logística militar.</p>
+
+                        <p>Se desempeñó como Ministro de Guerra durante la presidencia de Julio Argentino Roca en su
+                            segundo mandato (1898–1904), período en el cual impulsó profundas reformas en la estructura
+                            del Ejército Argentino, orientadas a su profesionalización y modernización técnica.</p>
+
+                        <p>Uno de sus aportes más importantes fue la sanción de la Ley de Servicio Militar Obligatorio
+                            en 1901, que estableció el sistema de conscripción en Argentina. Esta medida permitió la
+                            formación de un ejército más amplio, organizado y con instrucción homogénea, adaptado a las
+                            necesidades de un Estado moderno.</p>
+
+                        <p>Riccheri también promovió la creación de nuevas escuelas militares, la actualización de
+                            reglamentos de instrucción y la reorganización de unidades, incorporando criterios
+                            científicos y técnicos en la formación de oficiales y tropas.</p>
+
+                        <p>Durante su gestión, el Ejército Argentino adoptó armamento, uniformes y doctrinas inspiradas
+                            en los ejércitos europeos más avanzados de la época, especialmente el francés, que era
+                            considerado un modelo de referencia en materia militar.</p>
+
+                        <p>Además de sus reformas institucionales, impulsó la construcción de infraestructura militar,
+                            como cuarteles, campos de instrucción y centros de entrenamiento, lo que permitió mejorar la
+                            capacidad operativa de las fuerzas armadas.</p>
+
+                        <p>Su figura es considerada clave en la transición del Ejército Argentino desde una estructura
+                            del siglo XIX basada en campañas internas hacia una fuerza armada moderna, organizada y
+                            profesional del siglo XX.</p>
+
+                        <p>Pablo Riccheri falleció en 1936, dejando un legado fundamental en la historia militar
+                            argentina y en la consolidación del sistema de defensa nacional.</p>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+                <div class="imagen-cuadro">
+                    <img id="imagenDerecha" src="../../../CLIPS/Z320F49.BMP" alt="Imagen Uniformes">
+                </div>
             </div>
         </div>
+
     </div>
 
-</div>
+    <script>
 
-<script>
+        let pagina = 0;
 
-    let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const imagenDerecha = document.getElementById("imagenDerecha");
 
-    const paginas = document.querySelectorAll(".pagina");
-    const imagenDerecha = document.getElementById("imagenDerecha");
+        const btnAnterior = document.getElementById("btnAnterior");
+        const btnSiguiente = document.getElementById("btnSiguiente");
 
-    const btnAnterior = document.getElementById("btnAnterior");
-    const btnSiguiente = document.getElementById("btnSiguiente");
+        function mostrarPagina(i) {
 
-    function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
 
-        paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
 
-        paginas[i].classList.add("activa");
+            if (imagenDerecha) {
+                imagenDerecha.src = paginas[i].dataset.imagen;
+            }
 
-        if(imagenDerecha){
-            imagenDerecha.src = paginas[i].dataset.imagen;
+            document.title = paginas[i].dataset.nombre;
+
+            const titulo = paginas[i].querySelector('h2');
+
+            if (titulo) {
+                titulo.textContent = paginas[i].dataset.nombre;
+            }
+
+            pagina = i;
+
+            /* BOTON ANTERIOR */
+
+            if (i === 0) {
+
+                btnAnterior.style.opacity = "0.3";
+                btnAnterior.style.pointerEvents = "none";
+
+            } else {
+
+                btnAnterior.style.opacity = "1";
+                btnAnterior.style.pointerEvents = "auto";
+            }
+
+            /* BOTON SIGUIENTE */
+
+            if (i === paginas.length - 1) {
+
+                btnSiguiente.style.opacity = "0.3";
+                btnSiguiente.style.pointerEvents = "none";
+
+            } else {
+
+                btnSiguiente.style.opacity = "1";
+                btnSiguiente.style.pointerEvents = "auto";
+            }
         }
 
-        document.title = paginas[i].dataset.nombre;
+        function siguiente() {
 
-        const titulo = paginas[i].querySelector('h2');
+            if (pagina < paginas.length - 1) {
 
-        if(titulo){
-            titulo.textContent = paginas[i].dataset.nombre;
+                pagina++;
+
+                mostrarPagina(pagina);
+            }
         }
 
-        pagina = i;
+        function anterior() {
 
-        /* BOTON ANTERIOR */
+            if (pagina > 0) {
 
-        if(i === 0){
+                pagina--;
 
-            btnAnterior.style.opacity = "0.3";
-            btnAnterior.style.pointerEvents = "none";
-
-        } else {
-
-            btnAnterior.style.opacity = "1";
-            btnAnterior.style.pointerEvents = "auto";
+                mostrarPagina(pagina);
+            }
         }
 
-        /* BOTON SIGUIENTE */
+        /* INICIO */
+        mostrarPagina(pagina);
 
-        if(i === paginas.length - 1){
-
-            btnSiguiente.style.opacity = "0.3";
-            btnSiguiente.style.pointerEvents = "none";
-
-        } else {
-
-            btnSiguiente.style.opacity = "1";
-            btnSiguiente.style.pointerEvents = "auto";
-        }
-    }
-
-    function siguiente() {
-
-        if (pagina < paginas.length - 1) {
-
-            pagina++;
-
-            mostrarPagina(pagina);
-        }
-    }
-
-    function anterior() {
-
-        if (pagina > 0) {
-
-            pagina--;
-
-            mostrarPagina(pagina);
-        }
-    }
-
-    /* INICIO */
-    mostrarPagina(pagina);
-
-</script>
+    </script>
 
 </body>
+
 </html>

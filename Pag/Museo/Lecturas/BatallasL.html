@@ -1,151 +1,617 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Batallas del Regimiento</title>
     <link rel="stylesheet" href="../../../CSS/museoestylo.css">
 
     <style>
-        .contenido { max-width: 600px; text-align: left; }
-        .pagina { display: none; animation: fade .5s; }
-        .pagina.activa { display: block; }
-        @keyframes fade { from {opacity:0;} to {opacity:1;} }
+        .contenido {
+            max-width: 600px;
+            text-align: left;
+        }
 
-        .flechas { margin-top: 15px; font-size: 18px; display:flex; justify-content: space-between;}
-        .flechas span { padding:5px 10px; background: rgba(0,224,255,.2); border-radius:8px; cursor:pointer; }
-        .flechas span:hover { background: rgba(0,224,255,.5); }
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-        h2 { color: #00e0ff; margin-bottom: 20px; }
+        .pagina.activa {
+            display: block;
+        }
 
-        .fila { display:flex; gap:30px; }
-        .texto { flex:2; }
-        .imagen-cuadro { flex:1; display:flex; justify-content:center; align-items:flex-start; }
-        .imagen-cuadro img { width:250px; height:auto; border-radius:10px; box-shadow:0 0 15px rgba(0,224,255,0.6);}
-        p { line-height: 1.6; }
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2 {
+            color: #00e0ff;
+            margin-bottom: 20px;
+        }
+
+        .fila {
+            display: flex;
+            gap: 30px;
+        }
+
+        .texto {
+            flex: 2;
+        }
+
+        .imagen-cuadro {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .imagen-cuadro img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+        }
+
+        p {
+            line-height: 1.6;
+        }
     </style>
 </head>
 
 <body>
-<div class="contenedor">
+    <div class="contenedor">
 
-    <div class="lado">
-        <p>BATALLAS</p>
+        <div class="lado">
+            <p>BATALLAS</p>
 
-        <div class="flechas"> <span id="btnAnterior" onclick="anterior()">⬅</span> <span id="btnSiguiente" onclick="siguiente()">➡</span> </div>
+            <div class="flechas"> <span id="btnAnterior" onclick="anterior()">⬅</span> <span id="btnSiguiente"
+                    onclick="siguiente()">➡</span> </div>
 
-        <button onclick="window.location.href='../../../index.html'">Inicio</button>
-        <button onclick="window.location.href='../Salas.html'">Volver</button>
-    </div>
+            <button onclick="window.location.href='../../../index.html'">Inicio</button>
+            <button onclick="window.location.href='../Salas.html'">Volver</button>
+        </div>
 
-    <div class="centro">
-        <div class="fila">
-            <div class="contenido texto">
+        <div class="centro">
+            <div class="fila">
+                <div class="contenido texto">
 
-                <!-- Subtítulos de Batallas -->
-<div class="pagina activa" data-imagen="../../../CLIPS/Z320F69.BMP" data-nombre="Batalla de San Lorenzo">
-    <h2>Batalla de San Lorenzo</h2>
-    <p>
-        La Batalla de San Lorenzo, librada el 3 de febrero de 1813, fue el primer enfrentamiento militar del Regimiento de Granaderos a Caballo bajo el mando del entonces coronel José de San Martín. Este combate tuvo lugar en las cercanías del Convento de San Carlos, en la actual provincia de Santa Fe, y marcó el inicio de la actividad militar del cuerpo creado recientemente por San Martín.
+                    <!-- Subtítulos de Batallas -->
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F69.BMP" data-nombre="Poncho de Lavalle">
+                        <h2>Poncho que protegió los restos del General Lavalle</h2>
 
-        Las fuerzas realistas españolas habían desembarcado en la zona con el objetivo de obtener provisiones y controlar estratégicamente el litoral del río Paraná. Ante esta situación, San Martín organizó una rápida operación de intercepción utilizando una táctica de ataque sorpresa, dividiendo a sus granaderos en dos columnas que avanzaron desde distintos flancos del terreno.
+                        <p>Este poncho está asociado a la historia de los restos del General : Uno de los protagonistas
+                            más importantes y polémicos de las guerras civiles argentinas del siglo XIX. Tras su muerte
+                            en 1841, su cuerpo atravesó un proceso de traslado y resguardo en circunstancias complejas
+                            propias del conflicto interno de la época.</p>
 
-        El combate fue breve pero extremadamente intenso. Las cargas de caballería ejecutadas por los granaderos lograron desorganizar rápidamente a las fuerzas realistas, que no esperaban un ataque de tal magnitud. Durante el enfrentamiento, el caballo de San Martín fue abatido y el propio comandante cayó al suelo, momento en el cual el granadero Juan Bautista Cabral intervino para ayudarlo, perdiendo la vida en el acto.
+                        <p>El poncho cumple aquí una función histórica y simbólica: se lo relaciona con la protección y
+                            conservación de los restos del general durante su recorrido posterior a su fallecimiento. En
+                            el contexto del siglo XIX, el poncho era una prenda fundamental en el Río de la Plata,
+                            utilizada tanto por civiles como por militares como abrigo, protección contra el clima y, en
+                            ocasiones, como elemento improvisado de resguardo.</p>
 
-        A pesar de su corta duración, la batalla tuvo un fuerte impacto simbólico y militar, ya que representó la primera victoria del Regimiento de Granaderos y consolidó la figura de San Martín como líder militar en el proceso de independencia. Este hecho también fortaleció la moral del ejército patriota y demostró la eficacia de la caballería disciplinada frente a fuerzas realistas mejor equipadas.
-    </p>
-</div>
-                
-            </div>
+                        <p>La figura de Lavalle está estrechamente ligada a los enfrentamientos entre unitarios y
+                            federales, un período de intensa inestabilidad política en el que la violencia armada y las
+                            campañas militares internas marcaron la organización del territorio argentino tras la
+                            independencia.</p>
 
-            <div class="imagen-cuadro">
-                <img id="imagenDerecha" src="../../CLIPS/BatallaSanLorenzo.jpg" alt="Imagen Batallas">
+                        <p>Su muerte ocurrió durante la retirada de las fuerzas unitarias en el norte argentino. En ese
+                            contexto, el tratamiento de sus restos fue realizado en condiciones de urgencia y
+                            clandestinidad, debido al riesgo de que fueran capturados o profanados por fuerzas enemigas.
+                            El uso de un poncho como cobertura refleja las prácticas materiales y culturales de la época
+                            en situaciones de guerra.</p>
+
+                        <p>Posteriormente, los restos de Lavalle fueron trasladados y finalmente inhumados en la
+                            provincia de Jujuy, donde se consolidó su memoria histórica como figura central de las
+                            guerras civiles. Con el paso del tiempo, los objetos asociados a su historia adquirieron
+                            valor patrimonial y simbólico.</p>
+
+                        <p>El poncho, como prenda tradicional del ámbito rioplatense, posee además un fuerte significado
+                            cultural. Representa la vida cotidiana de soldados y pobladores del siglo XIX, así como la
+                            adaptación a condiciones de campaña en territorios extensos y climáticamente variables.</p>
+
+                        <p>En el contexto museográfico, este tipo de piezas no solo remite a un objeto material, sino
+                            también a la memoria histórica de los conflictos internos argentinos, donde se entrelazan
+                            política, guerra y construcción del Estado nacional.</p>
+
+                        <p>El poncho vinculado a Lavalle se conserva como testimonio de ese período, en el que los
+                            objetos personales y de campaña adquirieron un valor histórico por su conexión directa con
+                            figuras centrales de la historia argentina.</p>
+                    </div>
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F71.BMP"
+                        data-nombre="Orden de la Batalla de Maipú">
+                        <h2>Orden de la Batalla de Maipú</h2>
+
+                        <p>La Batalla de Maipú se libró el 5 de abril de 1818 en los llanos de Maipú, cerca de Santiago
+                            de Chile, y fue uno de los enfrentamientos decisivos de las guerras de independencia
+                            sudamericanas. Consolidó definitivamente la independencia de Chile tras la victoria patriota
+                            comandada por el General y el Ejército de los Andes.
+                        </p>
+
+                        <p>El “orden de batalla” se refiere a la disposición táctica de las fuerzas en combate, es
+                            decir, cómo estaban organizadas las tropas en el terreno. En Maipú, el ejército patriota
+                            estaba compuesto principalmente por fuerzas del Ejército de los Andes y unidades chilenas
+                            aliadas, mientras que el ejército realista defendía la posición bajo el mando del general
+                            Mariano Osorio.</p>
+
+                        <p>Del lado patriota, las fuerzas principales incluían a la infantería, caballería y artillería
+                            organizadas en columnas y divisiones. Entre los cuerpos más destacados se encontraban los
+                            Granaderos a Caballo, unidad de élite creada por San Martín en 1812, que tuvo un papel
+                            fundamental en la persecución y el choque de caballería durante la batalla.</p>
+
+                        <p>El dispositivo patriota estaba organizado en dos grandes líneas de combate. En la primera
+                            línea se ubicaban las fuerzas de infantería chilena y unidades del Ejército de los Andes,
+                            mientras que la segunda línea incluía reservas estratégicas y la caballería, lista para
+                            ejecutar maniobras de choque decisivas.</p>
+
+                        <p>Por el lado realista, las tropas españolas estaban organizadas en formaciones defensivas con
+                            infantería al centro, apoyadas por artillería y caballería en los flancos. Su objetivo era
+                            resistir el avance patriota y mantener el control del terreno.</p>
+
+                        <p>Durante el desarrollo de la batalla, la artillería patriota desempeñó un papel clave
+                            debilitando las posiciones realistas, lo que permitió el avance de la infantería.
+                            Posteriormente, la caballería ejecutó cargas decisivas que desorganizaron las líneas
+                            enemigas.</p>
+
+                        <p>Uno de los momentos más importantes fue la intervención de la reserva patriota en el momento
+                            crítico del combate, lo que terminó por quebrar la resistencia realista y asegurar la
+                            victoria final.</p>
+
+                        <p>La Batalla de Maipú concluyó con una victoria decisiva para las fuerzas independentistas,
+                            consolidando la independencia de Chile y fortaleciendo la posición de San Martín en la
+                            planificación de la campaña hacia el Perú.</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F72.BMP"
+                        data-nombre="Parte de la Batalla de Maipú">
+                        <h2>Parte de la Batalla de Maipú</h2>
+
+                        <p>La Batalla de Maipú, librada el 5 de abril de 1818 en las cercanías de Santiago de Chile, fue
+                            el enfrentamiento decisivo que aseguró la independencia chilena tras la campaña del Ejército
+                            de los Andes comandado por el General.</p>
+
+                        <p>El desarrollo del combate se caracterizó por una serie de fases intensas y coordinadas entre
+                            la infantería, la artillería y la caballería patriota. En las primeras horas del
+                            enfrentamiento, ambos ejércitos se posicionaron en el campo de batalla, con las fuerzas
+                            patriotas organizadas en líneas de ataque y reserva, mientras que el ejército realista
+                            adoptó una posición defensiva.</p>
+
+                        <p>Durante la primera etapa del combate, la artillería patriota abrió fuego contra las
+                            posiciones realistas, buscando debilitar sus líneas y desorganizar su formación. Este
+                            bombardeo inicial fue clave para preparar el avance posterior de la infantería.</p>
+
+                        <p>En la fase central de la batalla, la infantería patriota avanzó en columnas, enfrentando una
+                            fuerte resistencia del ejército realista. Los combates cuerpo a cuerpo fueron intensos, con
+                            avances y retrocesos en distintos sectores del campo de batalla.</p>
+
+                        <p>Uno de los momentos más decisivos ocurrió cuando las reservas patriotas fueron introducidas
+                            en combate, reforzando el frente y logrando estabilizar la línea de ataque. Esta maniobra
+                            permitió recuperar la iniciativa estratégica.</p>
+
+                        <p>La caballería, incluyendo a los Granaderos a Caballo, ejecutó cargas sobre los flancos
+                            enemigos, generando desorganización en las filas realistas y facilitando el colapso
+                            progresivo de su defensa.</p>
+
+                        <p>El desenlace de la batalla se produjo cuando las fuerzas realistas comenzaron a retirarse
+                            desordenadamente, dejando el campo de combate en manos del ejército patriota. La
+                            coordinación entre las distintas armas fue determinante para asegurar la victoria final.</p>
+
+                        <p>El resultado de la Batalla de Maipú consolidó la independencia de Chile y fortaleció la
+                            posición del Ejército de los Andes en su proyección hacia nuevas campañas libertadoras en
+                            Sudamérica.</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F73.BMP"
+                        data-nombre="Batalla de Maipú (Boceto)">
+                        <h2>Batalla de Maipú – Boceto de óleo sobre tela</h2>
+
+                        <p>Este boceto corresponde a la obra pictórica “Batalla de Maipú”, realizada como óleo sobre
+                            tela por el artista. La pieza forma parte de una
+                            tradición de pintura histórica que busca representar visualmente los principales hechos de
+                            las guerras de independencia sudamericanas.</p>
+
+                        <p>La obra está inspirada en la Batalla de Maipú, ocurrida el 5 de abril de 1818 en los llanos
+                            cercanos a Santiago de Chile, uno de los enfrentamientos decisivos de la campaña libertadora
+                            del General.</p>
+
+                        <p>Como boceto, esta versión funciona como estudio preliminar del artista, donde se define la
+                            composición general de la escena, la disposición de las tropas y el movimiento del combate
+                            antes de la ejecución final del óleo. En este tipo de trabajos, se prioriza la estructura
+                            narrativa y la dinámica visual sobre el detalle acabado.</p>
+
+                        <p>La representación pictórica de la batalla suele organizarse con el objetivo de destacar los
+                            momentos más significativos del enfrentamiento: el avance de la infantería, la intervención
+                            de la artillería y las cargas de caballería, especialmente las protagonizadas por los
+                            Granaderos a Caballo.</p>
+
+                        <p>En la tradición de la pintura histórica del siglo XIX y XX, este tipo de obras no solo buscan
+                            reproducir el hecho militar, sino también construir una memoria visual del proceso
+                            independentista, resaltando el heroísmo, la estrategia y el sacrificio de los ejércitos
+                            patriotas.</p>
+
+                        <p>El boceto permite observar la intención del artista de dar movimiento a la escena, utilizando
+                            diagonales, agrupamientos de figuras y contrastes de acción para transmitir la intensidad
+                            del combate en Maipú.</p>
+
+                        <p>Estas representaciones cumplen una función educativa y conmemorativa, ya que facilitan la
+                            comprensión visual de eventos históricos complejos que marcaron la formación de los Estados
+                            sudamericanos.</p>
+                    </div>
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F74.BMP" data-nombre="Abrazo de Maipú">
+                        <h2>El Abrazo de Maipú entre San Martín y O’Higgins</h2>
+
+                        <p>El llamado “Abrazo de Maipú” es una representación histórica y simbólica del encuentro entre
+                            el General y el Director Supremo de Chile
+                            tras la victoria patriota en la Batalla de Maipú, el 5
+                            de abril de 1818.</p>
+
+                        <p>Este episodio no solo representa un momento de celebración militar, sino también la
+                            consolidación de la alianza política y estratégica entre las fuerzas libertadoras del Río de
+                            la Plata y Chile. Ambos líderes habían trabajado en conjunto durante toda la campaña
+                            emancipadora, coordinando el Ejército de los Andes y el gobierno chileno independiente.</p>
+
+                        <p>La escena del abrazo simboliza la unidad de propósito entre San Martín y O’Higgins en la
+                            lucha contra el dominio español en Sudamérica. Tras la victoria en Maipú, se consolidó
+                            definitivamente la independencia de Chile, asegurando el control patriota del territorio y
+                            abriendo el camino hacia la expedición libertadora del Perú.</p>
+
+                        <p>En la tradición iconográfica e histórica, este abrazo ha sido representado en pinturas,
+                            esculturas y obras conmemorativas como un gesto de reconocimiento mutuo, respeto militar y
+                            alianza política. Aunque no existen registros contemporáneos exactos del momento preciso, su
+                            valor reside en la construcción simbólica de la unidad continental independentista.</p>
+
+                        <p>El encuentro posterior a la batalla también refleja el rol complementario de ambos líderes:
+                            San Martín como estratega militar principal del Ejército de los Andes y O’Higgins como
+                            figura política clave en la organización del Estado chileno independiente.</p>
+
+                        <p>La Batalla de Maipú marcó el punto culminante de la campaña de Chile, y el abrazo entre ambos
+                            líderes es interpretado como el cierre de una etapa decisiva de las guerras de independencia
+                            en el Cono Sur.</p>
+
+                        <p>Esta representación se ha convertido en un símbolo de hermandad sudamericana y cooperación
+                            entre naciones, siendo frecuentemente utilizada en la historiografía y en el arte
+                            conmemorativo para destacar la dimensión continental del proceso independentista.</p>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F75.BMP"
+                        data-nombre="Sable de José Matías Zapiola">
+                        <h2>Sable del Brigadier General José Matías Zapiola</h2>
+
+                        <p>Este sable perteneció al Brigadier General, uno de los oficiales más cercanos al General y
+                            figura destacada del proceso de independencia sudamericano.</p>
+
+                        <p>El sable es un arma característica de la caballería del siglo XIX, utilizada tanto en combate
+                            como en ceremonias militares. En el caso de los oficiales superiores, como Zapiola, estos
+                            sables solían ser piezas de gran valor simbólico, elaboradas con empuñaduras ornamentadas,
+                            hojas de acero templado y detalles que indicaban rango y distinción.</p>
+
+                        <p>José Matías Zapiola fue uno de los integrantes del grupo de oficiales que acompañaron a San
+                            Martín en la formación del Regimiento de Granaderos a Caballo en 1812. Este cuerpo se
+                            convirtió en la base del posterior Ejército de los Andes, que protagonizó campañas decisivas
+                            en Chile y Perú.</p>
+
+                        <p>Durante el cruce de la Cordillera de los Andes y las campañas libertadoras, los oficiales de
+                            caballería utilizaban el sable como arma principal en cargas y combates cuerpo a cuerpo,
+                            donde la movilidad y la disciplina eran fundamentales para el éxito táctico.</p>
+
+                        <p>Más allá de su función militar, el sable también representaba el honor del oficial y su
+                            compromiso con la causa independentista. En muchas ocasiones, estas armas eran conservadas
+                            como símbolos de servicio, incluso después del retiro del militar.</p>
+
+                        <p>En el caso de Zapiola, su trayectoria continuó luego de las campañas libertadoras,
+                            participando en distintos momentos de la organización militar y política del Río de la Plata
+                            durante el siglo XIX.</p>
+
+                        <p>Este tipo de piezas constituye hoy un importante testimonio histórico del período de las
+                            guerras de independencia, y permite comprender la vida y el equipamiento de los oficiales
+                            que acompañaron a San Martín en la construcción de los ejércitos patriotas.</p>
+                    </div>
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F76.BMP"
+                        data-nombre="Sable de Caballería circa 1815">
+                        <h2>Sable de Caballería circa 1815</h2>
+
+                        <p>Este sable de caballería, datado aproximadamente hacia 1815, corresponde al tipo de armamento
+                            utilizado por las fuerzas montadas durante las guerras de independencia sudamericanas. Su
+                            diseño se inscribe dentro de la tradición militar de comienzos del siglo XIX, fuertemente
+                            influenciada por los modelos europeos, especialmente franceses y españoles.</p>
+
+                        <p>El sable era el arma principal de la caballería ligera y de los granaderos a caballo,
+                            permitiendo ataques rápidos, cargas y combates cuerpo a cuerpo. Su uso requería
+                            entrenamiento, disciplina y coordinación en formación, ya que la efectividad dependía tanto
+                            del jinete como de la maniobrabilidad del caballo.</p>
+
+                        <p>En el contexto del Río de la Plata, este tipo de arma fue utilizado por oficiales y soldados
+                            que integraban las fuerzas patriotas organizadas durante y después de la Revolución de Mayo
+                            de 1810, en el proceso de formación de los ejércitos independentistas.</p>
+
+                        <p>El General José de San Martín incorporó el sable como elemento esencial del equipamiento del
+                            Regimiento de Granaderos a Caballo, creado en 1812. Esta unidad fue clave en acciones
+                            militares como el Combate de San Lorenzo y posteriormente en la organización del Ejército de
+                            los Andes.</p>
+
+                        <p>Los sables de esta época solían tener hojas curvas de acero, diseñadas para maximizar la
+                            eficacia en el corte durante el movimiento a caballo. Las empuñaduras podían variar según el
+                            rango del usuario, incluyendo detalles metálicos, guardas ornamentales y empuñaduras de
+                            madera o cuero.</p>
+
+                        <p>Más allá de su función militar, el sable también simbolizaba el honor, la autoridad y el
+                            rango del oficial dentro del ejército. En muchos casos, estas armas eran conservadas como
+                            objetos de prestigio incluso después del servicio activo.</p>
+
+                        <p>El sable circa 1815 representa una pieza característica del período de transición entre los
+                            ejércitos coloniales y las nuevas fuerzas armadas de los estados independientes
+                            sudamericanos.</p>
+                    </div>
+
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F77.BMP"
+                        data-nombre="Sable de Tropa de Caballería">
+                        <h2>Sable de Tropa de Caballería</h2>
+
+                        <p>Este sable de tropa de caballería corresponde a un modelo de origen europeo, probablemente
+                            alemán, perteneciente al tipo conocido como “latón”, una denominación asociada a armas
+                            reglamentarias de fabricación industrial utilizadas en diversos ejércitos a fines del siglo
+                            XIX y comienzos del XX.</p>
+
+                        <p>Su diseño responde a la estandarización de armamento militar propia de la modernización de
+                            los ejércitos europeos, donde se priorizaba la producción en serie, la resistencia del
+                            material y la funcionalidad en combate sobre los elementos ornamentales propios de épocas
+                            anteriores.</p>
+
+                        <p>Este tipo de sable fue utilizado por tropas de caballería en distintos países, incluyendo su
+                            adopción o adaptación en unidades sudamericanas durante los procesos de reorganización
+                            militar de finales del siglo XIX y principios del siglo XX.</p>
+
+                        <p>En el caso argentino, armas de características similares fueron empleadas por el Regimiento
+                            de Granaderos a Caballo desde su reorganización moderna en 1903-1912, bajo un esquema de
+                            actualización del equipamiento militar impulsado por el proceso de profesionalización del
+                            Ejército Argentino.</p>
+
+                        <p>El sable de tropa se diferenciaba claramente de los modelos de oficiales por su simplicidad
+                            constructiva: empuñadura más austera, menor nivel de ornamentación y énfasis en la
+                            durabilidad para el uso cotidiano en instrucción, servicio y ceremonias militares.</p>
+
+                        <p>La hoja curva de acero estaba diseñada para el combate montado, permitiendo golpes de corte
+                            eficaces durante cargas de caballería. Este tipo de armamento fue ampliamente utilizado
+                            antes de la consolidación de la guerra moderna mecanizada.</p>
+
+                        <p>En el contexto ceremonial del siglo XX, el sable continuó siendo un símbolo de la tradición
+                            militar, especialmente en unidades históricas como los Granaderos a Caballo, que preservaron
+                            el uso de armamento tradicional en desfiles y actos oficiales.</p>
+
+                        <p>Esta pieza representa la transición entre el armamento clásico de caballería del siglo XIX y
+                            los modelos industrializados del siglo XX, reflejando la evolución tecnológica y
+                            organizativa de los ejércitos modernos.</p>
+                    </div>
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F78.BMP"
+                        data-nombre="Sable del Coronel Obregoso">
+                        <h2>Sable del Coronel Obregoso</h2>
+
+                        <p>Este sable perteneció al Coronel Obregoso, oficial vinculado a las tradiciones militares
+                            sudamericanas del siglo XIX. Su pieza representa el modelo clásico de sable de oficial de
+                            caballería, utilizado tanto en combate como en ceremonias militares de alta jerarquía.</p>
+
+                        <p>El sable de oficial era una de las insignias más importantes del mando en los ejércitos del
+                            período, ya que simbolizaba autoridad, disciplina y liderazgo sobre las tropas. Su porte era
+                            característico de la caballería y de los cuerpos montados, donde el arma blanca seguía
+                            siendo fundamental para el combate cercano.</p>
+
+                        <p>Las hojas de estos sables solían ser de acero templado, ligeramente curvadas para favorecer
+                            el corte en movimiento. La empuñadura, en cambio, variaba según el rango del oficial,
+                            pudiendo incluir guardas metálicas, detalles ornamentales y acabados más refinados en los
+                            grados superiores.</p>
+
+                        <p>El uso del sable en los ejércitos sudamericanos estuvo fuertemente influenciado por la
+                            tradición militar europea del siglo XIX, especialmente la francesa y la española. Estas
+                            influencias se reflejan en la forma, proporciones y estilo de las armas utilizadas por
+                            oficiales como el Coronel Obregoso.</p>
+
+                        <p>Durante este período, el sable no solo cumplía una función práctica en combate, sino también
+                            un rol ceremonial, siendo utilizado en desfiles, formaciones y actos oficiales como símbolo
+                            del mando militar.</p>
+
+                        <p>El coronel, como rango dentro de la jerarquía militar, representaba el liderazgo de unidades
+                            completas, lo que otorgaba al sable un valor adicional como emblema de responsabilidad y
+                            autoridad sobre tropas en campaña o en guarnición.</p>
+
+                        <p>Esta pieza constituye un testimonio del equipamiento de la oficialidad en el siglo XIX y de
+                            la evolución del armamento de caballería en los ejércitos latinoamericanos, en un contexto
+                            de formación y consolidación de los Estados nacionales.</p>
+                    </div>
+
+
+
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F79.BMP"
+                        data-nombre="Espada de O'Higgins (Réplica)">
+                        <h2>Réplica de la espada de Bernardo O’Higgins</h2>
+
+                        <p>Esta pieza es una réplica de la espada perteneciente al Director Supremo de Chile, figura
+                            clave del proceso de independencia de Chile y uno de los principales aliados del General
+                            durante la campaña libertadora del sur.</p>
+
+                        <p>La espada, en su versión original, representaba el rango de mando y la autoridad militar de
+                            O’Higgins dentro del Ejército de los Andes y posteriormente como máxima autoridad política
+                            de Chile tras la proclamación de la independencia en 1818.</p>
+
+                        <p>Las réplicas de este tipo de armas suelen elaborarse con fines museográficos, educativos y
+                            conmemorativos, permitiendo representar fielmente las piezas históricas sin riesgo de
+                            deterioro o pérdida del objeto original. Mantienen la forma, dimensiones y estética del
+                            modelo histórico, aunque pueden variar en materiales de fabricación.</p>
+
+                        <p>La espada de O’Higgins refleja la influencia de la tradición militar europea del siglo XIX,
+                            donde el arma blanca era un símbolo esencial de la oficialidad. Su diseño combina
+                            funcionalidad y representación, ya que no solo servía en combate, sino que también era un
+                            emblema de autoridad y liderazgo político-militar.</p>
+
+                        <p>Durante las guerras de independencia sudamericanas, O’Higgins tuvo un papel destacado en la
+                            organización del Estado chileno y en la conducción militar junto a San Martín, especialmente
+                            en la planificación y ejecución de la campaña que culminó en la Batalla de Maipú.</p>
+
+                        <p>El uso de espadas por parte de los altos mandos era habitual en el período, tanto en el campo
+                            de batalla como en ceremonias oficiales, desfiles y actos de gobierno, donde estas armas
+                            reforzaban la imagen institucional del poder militar.</p>
+
+                        <p>Esta réplica permite preservar y difundir el valor histórico de la figura de O’Higgins y su
+                            contribución a la independencia de Chile, integrándose dentro del conjunto de objetos que
+                            representan la memoria material del proceso emancipador sudamericano.</p>
+                    </div>
+
+
+                </div>
+
+                <div class="imagen-cuadro">
+                    <img id="imagenDerecha" src="../../CLIPS/BatallaSanLorenzo.jpg" alt="Imagen Batallas">
+                </div>
             </div>
         </div>
+
     </div>
 
-</div>
+    <script>
 
-<script>
+        let pagina = 0;
 
-    let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const imagenDerecha = document.getElementById("imagenDerecha");
 
-    const paginas = document.querySelectorAll(".pagina");
-    const imagenDerecha = document.getElementById("imagenDerecha");
+        const btnAnterior = document.getElementById("btnAnterior");
+        const btnSiguiente = document.getElementById("btnSiguiente");
 
-    const btnAnterior = document.getElementById("btnAnterior");
-    const btnSiguiente = document.getElementById("btnSiguiente");
+        function mostrarPagina(i) {
 
-    function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
 
-        paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
 
-        paginas[i].classList.add("activa");
+            if (imagenDerecha) {
+                imagenDerecha.src = paginas[i].dataset.imagen;
+            }
 
-        if(imagenDerecha){
-            imagenDerecha.src = paginas[i].dataset.imagen;
+            document.title = paginas[i].dataset.nombre;
+
+            const titulo = paginas[i].querySelector('h2');
+
+            if (titulo) {
+                titulo.textContent = paginas[i].dataset.nombre;
+            }
+
+            pagina = i;
+
+            /* BOTON ANTERIOR */
+
+            if (i === 0) {
+
+                btnAnterior.style.opacity = "0.3";
+                btnAnterior.style.pointerEvents = "none";
+
+            } else {
+
+                btnAnterior.style.opacity = "1";
+                btnAnterior.style.pointerEvents = "auto";
+            }
+
+            /* BOTON SIGUIENTE */
+
+            if (i === paginas.length - 1) {
+
+                btnSiguiente.style.opacity = "0.3";
+                btnSiguiente.style.pointerEvents = "none";
+
+            } else {
+
+                btnSiguiente.style.opacity = "1";
+                btnSiguiente.style.pointerEvents = "auto";
+            }
         }
 
-        document.title = paginas[i].dataset.nombre;
+        function siguiente() {
 
-        const titulo = paginas[i].querySelector('h2');
+            if (pagina < paginas.length - 1) {
 
-        if(titulo){
-            titulo.textContent = paginas[i].dataset.nombre;
+                pagina++;
+
+                mostrarPagina(pagina);
+            }
         }
 
-        pagina = i;
+        function anterior() {
 
-        /* BOTON ANTERIOR */
+            if (pagina > 0) {
 
-        if(i === 0){
+                pagina--;
 
-            btnAnterior.style.opacity = "0.3";
-            btnAnterior.style.pointerEvents = "none";
-
-        } else {
-
-            btnAnterior.style.opacity = "1";
-            btnAnterior.style.pointerEvents = "auto";
+                mostrarPagina(pagina);
+            }
         }
 
-        /* BOTON SIGUIENTE */
+        /* INICIO */
+        mostrarPagina(pagina);
 
-        if(i === paginas.length - 1){
-
-            btnSiguiente.style.opacity = "0.3";
-            btnSiguiente.style.pointerEvents = "none";
-
-        } else {
-
-            btnSiguiente.style.opacity = "1";
-            btnSiguiente.style.pointerEvents = "auto";
-        }
-    }
-
-    function siguiente() {
-
-        if (pagina < paginas.length - 1) {
-
-            pagina++;
-
-            mostrarPagina(pagina);
-        }
-    }
-
-    function anterior() {
-
-        if (pagina > 0) {
-
-            pagina--;
-
-            mostrarPagina(pagina);
-        }
-    }
-
-    /* INICIO */
-    mostrarPagina(pagina);
-
-</script>
+    </script>
 
 </body>
+
 </html>

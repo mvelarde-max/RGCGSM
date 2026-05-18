@@ -1,191 +1,545 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Recreación Histórica</title>
     <link rel="stylesheet" href="../../../CSS/museoestylo.css">
 
     <style>
-        .contenido { max-width: 600px; text-align: left; }
-        .pagina { display: none; animation: fade .5s; }
-        .pagina.activa { display: block; }
-        @keyframes fade { from {opacity:0;} to {opacity:1;} }
+        .contenido {
+            max-width: 600px;
+            text-align: left;
+        }
 
-        .flechas { margin-top: 15px; font-size: 18px; display:flex; justify-content: space-between;}
-        .flechas span { padding:5px 10px; background: rgba(0,224,255,.2); border-radius:8px; cursor:pointer; }
-        .flechas span:hover { background: rgba(0,224,255,.5); }
+        .pagina {
+            display: none;
+            animation: fade .5s;
+        }
 
-        h2 { color: #00e0ff; margin-bottom: 20px; }
+        .pagina.activa {
+            display: block;
+        }
 
-        .fila { display:flex; gap:30px; }
-        .texto { flex:2; }
-        .imagen-cuadro { flex:1; display:flex; justify-content:center; align-items:flex-start; }
-        .imagen-cuadro img { width:250px; height:auto; border-radius:10px; box-shadow:0 0 15px rgba(0,224,255,0.6);}
-        p { line-height: 1.6; }
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .flechas {
+            margin-top: 15px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flechas span {
+            padding: 5px 10px;
+            background: rgba(0, 224, 255, .2);
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .flechas span:hover {
+            background: rgba(0, 224, 255, .5);
+        }
+
+        h2 {
+            color: #00e0ff;
+            margin-bottom: 20px;
+        }
+
+        .fila {
+            display: flex;
+            gap: 30px;
+        }
+
+        .texto {
+            flex: 2;
+        }
+
+        .imagen-cuadro {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .imagen-cuadro img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+        }
+
+        p {
+            line-height: 1.6;
+        }
     </style>
 </head>
 
 <body>
-<div class="contenedor">
+    <div class="contenedor">
 
-    <div class="lado">
-        <p>RECREACIÓN</p>
+        <div class="lado">
+            <p>RECREACIÓN</p>
 
-        <div class="flechas">
-    <span id="btnAnterior" onclick="anterior()">⬅</span>
-    <span id="btnSiguiente" onclick="siguiente()">➡</span>
-</div>
-
-        <button onclick="window.location.href='../../../index.html'">Inicio</button>
-        <button onclick="window.location.href='../Salas.html'">Volver</button>
-    </div>
-
-    <div class="centro">
-        <div class="fila">
-            <div class="contenido texto">
-
-                <!-- Subtítulos de Recreación -->
-                <div class="pagina activa" data-imagen="../../../CLIPS/Z320F81.BMP" data-nombre="Recreación: Desfile Militar">
-    <h2>Recreación: Desfile Militar</h2>
-    <p>Recreación de un desfile militar histórico del regimiento, con uniforme original.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F82.BMP" data-nombre="Recreación: Formación de Tropas">
-    <h2>Recreación: Formación de Tropas</h2>
-    <p>Representación histórica de una formación militar previa al combate.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F83.BMP" data-nombre="Recreación: Guardia de Honor">
-    <h2>Recreación: Guardia de Honor</h2>
-    <p>Escena ceremonial de guardias históricos durante actos patrióticos.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F84.BMP" data-nombre="Recreación: Campamento Militar">
-    <h2>Recreación: Campamento Militar</h2>
-    <p>Ambientación de un campamento utilizado por tropas durante campañas históricas.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F85.BMP" data-nombre="Recreación: Caballería en Marcha">
-    <h2>Recreación: Caballería en Marcha</h2>
-    <p>Representación de escuadrones de caballería avanzando hacia el campo de batalla.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F86.BMP" data-nombre="Recreación: Batalla Histórica">
-    <h2>Recreación: Batalla Histórica</h2>
-    <p>Escena inspirada en enfrentamientos históricos del ejército patriota.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F87.BMP" data-nombre="Recreación: Oficiales del Regimiento">
-    <h2>Recreación: Oficiales del Regimiento</h2>
-    <p>Representación de oficiales históricos utilizando uniformes de época.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F88.BMP" data-nombre="Recreación: Ceremonia Patriótica">
-    <h2>Recreación: Ceremonia Patriótica</h2>
-    <p>Acto ceremonial inspirado en tradiciones militares argentinas.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F89.BMP" data-nombre="Recreación: Cruce del Ejército">
-    <h2>Recreación: Cruce del Ejército</h2>
-    <p>Escena histórica representando el avance de tropas en campaña.</p>
-</div>
-
-<div class="pagina" data-imagen="../../../CLIPS/Z320F90.BMP" data-nombre="Recreación: Escolta Histórica">
-    <h2>Recreación: Escolta Histórica</h2>
-    <p>Representación de una escolta militar acompañando a oficiales superiores.</p>
-</div>
-
+            <div class="flechas">
+                <span id="btnAnterior" onclick="anterior()">⬅</span>
+                <span id="btnSiguiente" onclick="siguiente()">➡</span>
             </div>
 
-            <div class="imagen-cuadro">
-                <img id="imagenDerecha" src="../../../CLIPS/320F8.BMP" alt="Imagen Recreación">
+            <button onclick="window.location.href='../../../index.html'">Inicio</button>
+            <button onclick="window.location.href='../Salas.html'">Volver</button>
+        </div>
+
+        <div class="centro">
+            <div class="fila">
+                <div class="contenido texto">
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F81.BMP"
+                        data-nombre="Banderola de la Primera Cuadrilla de Granaderos a Caballo">
+                        <h2>Banderola de la Primera Cuadrilla de Granaderos a Caballo</h2>
+
+                        <p>Esta banderola perteneció a la Primera Cuadrilla del Regimiento de Granaderos a Caballo,
+                            unidad de caballería creada en 1812 por el General como parte del proceso de organización de
+                            fuerzas patriotas disciplinadas en las Provincias Unidas del Río de la Plata.</p>
+
+                        <p>Las banderolas eran pequeños estandartes utilizados en la caballería para identificar
+                            visualmente a cada cuadrilla o sección dentro del regimiento. Su función era táctica y
+                            organizativa, permitiendo la coordinación de movimientos en el campo de batalla,
+                            especialmente en formaciones rápidas y cargas de choque.</p>
+
+                        <p>En el caso de los Granaderos a Caballo, la Primera Cuadrilla ocupaba un rol destacado dentro
+                            de la estructura inicial del cuerpo, que fue diseñado por San Martín bajo principios de
+                            disciplina estricta, instrucción uniforme y cohesión táctica inspirados en modelos europeos
+                            contemporáneos.</p>
+
+                        <p>Durante las campañas de la independencia, estas insignias eran fundamentales para mantener el
+                            orden en combate, ya que la caballería dependía de la formación cerrada y de la
+                            identificación rápida de las unidades en movimiento.</p>
+
+                        <p>Además de su función militar, la banderola también tenía un valor simbólico, representando el
+                            honor de la unidad y su participación en acciones decisivas como el Combate de San Lorenzo
+                            en 1813, primera acción militar del Regimiento de Granaderos a Caballo.</p>
+
+                        <p>Estos elementos textiles eran confeccionados con colores y emblemas específicos que permitían
+                            distinguir regimientos, escuadrones o cuadrillas dentro del mismo cuerpo militar, reforzando
+                            la identidad y el sentido de pertenencia.</p>
+
+                        <p>En la actualidad, la banderola de la Primera Cuadrilla es considerada una pieza de alto valor
+                            histórico, ya que representa la organización original del regimiento y el modelo de
+                            caballería profesional impulsado por San Martín en el inicio de la independencia
+                            sudamericana.</p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F82.BMP"
+                        data-nombre="Granadero (Florencio Molina Campos)">
+                        <h2>Granadero – Pastel 35x24 cm</h2>
+
+                        <p>Esta obra titulada “Granadero” es una pieza realizada en técnica de pastel sobre papel, con
+                            dimensiones aproximadas de 35 x 24 cm, creada por el artista argentino, reconocido por sus
+                            representaciones de la vida rural y las tradiciones populares del país.</p>
+
+                        <p>En esta obra, Molina Campos aborda la figura del granadero desde una perspectiva artística y
+                            costumbrista, alejándose de la representación estrictamente militar para destacar el
+                            carácter humano y simbólico del soldado dentro de la identidad nacional argentina.</p>
+
+                        <p>El Regimiento de Granaderos a Caballo, creado en 1812 por el General, constituye uno de los
+                            símbolos más importantes de la historia militar argentina, y ha sido frecuentemente
+                            representado en el arte como emblema de disciplina, honor y tradición.</p>
+
+                        <p>La técnica del pastel permite a Molina Campos lograr un estilo suave y expresivo, con
+                            especial énfasis en los matices de color y la textura, elementos que refuerzan la
+                            sensibilidad de la escena representada.</p>
+
+                        <p>En este tipo de obras, el artista suele combinar observación directa y síntesis visual,
+                            generando imágenes que evocan tanto la tradición rural como el imaginario histórico del
+                            país, donde la figura del soldado granadero ocupa un lugar destacado.</p>
+
+                        <p>La representación del granadero también remite a la construcción de la identidad nacional
+                            argentina, vinculando la tradición militar sanmartiniana con la cultura popular y el arte
+                            del siglo XX.</p>
+
+                        <p>Esta obra forma parte del conjunto de representaciones artísticas que reinterpretan la
+                            historia militar desde una mirada cultural, integrando elementos históricos con la
+                            sensibilidad estética propia del autor.</p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F83.BMP"
+                        data-nombre="Granadero a Caballo (Carlos P. Ripamonte)">
+                        <h2>Granadero a Caballo – Óleo sobre tela 50 x 45 cm</h2>
+
+                        <p>Esta obra titulada “Granadero a Caballo” es un óleo sobre tela de 50 x 45 cm realizado por el
+                            artista argentino :contentReference[oaicite:0]{index=0}, reconocido por sus representaciones
+                            de temas militares, patrióticos y escenas de la historia nacional.</p>
+
+                        <p>La pintura presenta la figura del soldado del Regimiento de Granaderos a Caballo, cuerpo
+                            creado en 1812 por el General :contentReference[oaicite:1]{index=1}, considerado uno de los
+                            símbolos más importantes de la independencia sudamericana.</p>
+
+                        <p>Ripamonte se inscribe dentro de la tradición de la pintura histórica argentina de fines del
+                            siglo XIX y comienzos del XX, en la que numerosos artistas buscaron reconstruir visualmente
+                            los episodios y personajes del proceso independentista.</p>
+
+                        <p>En esta obra, la figura del granadero se representa con énfasis en la disciplina, la postura
+                            militar y la indumentaria característica del regimiento, resaltando la estética del uniforme
+                            y el carácter heroico del soldado.</p>
+
+                        <p>El uso del óleo sobre tela permite al artista trabajar con gran riqueza de detalles,
+                            contrastes de luz y volumen, logrando una representación más solemne y realista del
+                            personaje histórico.</p>
+
+                        <p>Este tipo de obras no solo tiene un valor artístico, sino también conmemorativo, ya que
+                            contribuye a la construcción de la memoria visual del Ejército Argentino y de las campañas
+                            libertadoras del siglo XIX.</p>
+
+                        <p>La figura del granadero a caballo representa la continuidad del legado sanmartiniano,
+                            vinculado a valores como el honor, la disciplina y el servicio a la patria, que han sido
+                            preservados como parte de la identidad institucional del regimiento.</p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F84.BMP"
+                        data-nombre="Plano de Buenos Aires (1814)">
+                        <h2>Plano de la ciudad de Buenos Aires (1814)</h2>
+
+                        <p>Este plano de la ciudad de Buenos Aires fue confeccionado en 1814 por el ingeniero militar y
+                            cartógrafo :contentReference[oaicite:0]{index=0}, y constituye un importante testimonio del
+                            desarrollo urbano de la capital durante el período de las Provincias Unidas del Río de la
+                            Plata.</p>
+
+                        <p>La pieza, de aproximadamente 50 x 70 cm, representa la traza urbana de Buenos Aires en un
+                            momento clave de su historia, cuando la ciudad aún conservaba gran parte de su estructura
+                            colonial, pero comenzaba a consolidarse como centro político y administrativo del nuevo
+                            orden surgido tras la Revolución de Mayo de 1810.</p>
+
+                        <p>Los planos urbanos de este tipo eran herramientas fundamentales para la administración
+                            militar y civil, ya que permitían organizar defensas, proyectar expansiones urbanas y
+                            controlar el crecimiento de la ciudad en un contexto de cambios políticos y conflictos
+                            bélicos en la región.</p>
+
+                        <p>Durante este período, Buenos Aires era el principal puerto y centro de decisión de las
+                            Provincias Unidas, y su organización espacial reflejaba tanto la herencia colonial española
+                            como las primeras transformaciones impulsadas por las nuevas autoridades patriotas.</p>
+
+                        <p>El trabajo de Cerviño se inscribe dentro de la tradición de la ingeniería militar de la
+                            época, donde los planos no solo cumplían funciones técnicas, sino también estratégicas,
+                            especialmente en ciudades portuarias de importancia como Buenos Aires.</p>
+
+                        <p>Este documento cartográfico permite comprender la configuración urbana previa a las grandes
+                            transformaciones del siglo XIX, incluyendo la expansión de la ciudad, la modernización de
+                            infraestructuras y la reorganización del espacio público.</p>
+
+                        <p>En conjunto, el plano constituye una fuente histórica de gran valor para el estudio del
+                            crecimiento urbano de Buenos Aires y su evolución como capital de la República Argentina.
+                        </p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F85.BMP"
+                        data-nombre="Borrador del decreto de recreación del Regimiento">
+                        <h2>Borrador del decreto de recreación del Regimiento de Granaderos a Caballo</h2>
+
+                        <p>Este documento corresponde a un borrador manuscrito atribuido al General, en el cual se
+                            esboza la propuesta de reorganización o recreación del Regimiento de Granaderos a Caballo
+                            como unidad histórica del Ejército Argentino.</p>
+
+                        <p>El texto se enmarca dentro del proceso de modernización del Ejército Argentino a comienzos
+                            del siglo XX, etapa en la que se buscaba combinar la profesionalización militar con la
+                            preservación de las tradiciones históricas vinculadas a la independencia nacional.</p>
+
+                        <p>El Regimiento de Granaderos a Caballo, creado originalmente en 1812 por el General, había
+                            sido desarticulado como unidad activa en el siglo XIX y posteriormente restablecido en su
+                            función ceremonial y de custodia histórica como símbolo del legado sanmartiniano.</p>
+
+                        <p>En este contexto, los borradores y decretos vinculados a su reorganización reflejan el
+                            interés del Estado argentino por consolidar la identidad institucional del Ejército,
+                            reforzando la continuidad entre las campañas libertadoras y las fuerzas armadas modernas.
+                        </p>
+
+                        <p>El manuscrito de Riccheri evidencia el estilo administrativo y militar de la época,
+                            caracterizado por la redacción formal, la precisión normativa y la intención de establecer
+                            bases legales para la organización de las unidades militares.</p>
+
+                        <p>La recreación de cuerpos históricos como los Granaderos también cumplía una función
+                            simbólica, orientada a fortalecer el sentimiento patriótico y la memoria de los próceres de
+                            la independencia dentro de las instituciones militares.</p>
+
+                        <p>Este tipo de documentos son fundamentales para comprender el proceso de institucionalización
+                            del Ejército Argentino, así como la manera en que se preservaron y resignificaron las
+                            tradiciones militares del siglo XIX en el contexto del siglo XX.</p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F86.BMP"
+                        data-nombre="Vista de Buenos Aires hacia el sur">
+                        <h2>Vista de Buenos Aires hacia el sur</h2>
+
+                        <p>Este grabado titulado “Vista de Buenos Aires hacia el sur” fue realizado por el artista y
+                            viajero británico, reconocido por sus representaciones tempranas de paisajes urbanos y
+                            costumbres del Río de la Plata en el siglo XIX.</p>
+
+                        <p>La obra, de aproximadamente 32 x 50 cm, pertenece a una serie de vistas realizadas durante su
+                            estadía en la región, donde documentó escenas de la vida cotidiana, el puerto y la
+                            configuración urbana de Buenos Aires en las primeras décadas del período independiente.</p>
+
+                        <p>Este tipo de grabados constituye un valioso testimonio visual de la ciudad en una etapa de
+                            transición, cuando Buenos Aires aún conservaba rasgos coloniales, pero comenzaba a
+                            consolidarse como centro político y económico de las Provincias Unidas del Río de la Plata.
+                        </p>
+
+                        <p>La perspectiva hacia el sur permite observar la relación de la ciudad con el río y sus áreas
+                            portuarias, fundamentales para el comercio y la comunicación con el exterior, especialmente
+                            en un contexto en el que el puerto era el principal motor económico de la región.</p>
+
+                        <p>Las obras de Vidal se caracterizan por su atención al detalle y su valor documental, ya que
+                            combinan observación directa con técnicas de representación propias del arte topográfico de
+                            la época.</p>
+
+                        <p>Más allá de su valor artístico, estas imágenes cumplen una función histórica al registrar
+                            aspectos del paisaje urbano, la arquitectura y la actividad portuaria de Buenos Aires en el
+                            siglo XIX, antes de las grandes transformaciones urbanas posteriores.</p>
+
+                        <p>Este grabado forma parte de una producción visual que contribuye a reconstruir la memoria
+                            histórica de la ciudad y su evolución como capital del territorio argentino.</p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F87.BMP"
+                        data-nombre="Encuentro de San Martín y Manuel de Olazábal">
+                        <h2>Encuentro de San Martín y Manuel de Olazábal</h2>
+
+                        <p>Esta pieza es una terracota realizada por el escultor argentino Lucas Perlotti en 1930, con
+                            medidas aproximadas de 32 cm de alto, 23 cm de ancho y 15 cm de profundidad. La obra
+                            representa de manera simbólica el encuentro entre el General José de San Martín y el militar
+                            argentino Manuel de Olazábal.</p>
+
+                        <p>El General fue el principal líder del proceso independentista sudamericano y creador del
+                            Regimiento de Granaderos a Caballo en 1812, unidad clave en la formación del Ejército de los
+                            Andes.</p>
+
+                        <p>Por su parte, formó parte de la tradición militar sanmartiniana y es recordado por su
+                            vinculación con el cuerpo de Granaderos y por sus memorias sobre el período de la
+                            independencia.</p>
+
+                        <p>La obra de Lucas Perlotti pertenece al género de escultura histórica conmemorativa, muy
+                            desarrollado en Argentina durante la primera mitad del siglo XX, donde artistas buscaban
+                            recrear episodios y personajes del proceso independentista mediante formatos accesibles como
+                            la terracota.</p>
+
+                        <p>La terracota, material de arcilla cocida, permite un trabajo detallado en volúmenes y
+                            expresiones, siendo ideal para estudios y bocetos escultóricos. En este caso, se utiliza
+                            para representar una escena de encuentro entre dos figuras vinculadas al legado del Ejército
+                            de los Andes.</p>
+
+                        <p>La composición enfatiza la relación entre maestro y discípulo dentro de la tradición militar,
+                            destacando la transmisión de valores como la disciplina, el honor y el servicio a la patria,
+                            asociados al ideario sanmartiniano.</p>
+
+                        <p>Este tipo de representaciones no necesariamente documenta un hecho histórico literal, sino
+                            que construye una escena simbólica que refuerza la memoria colectiva del proceso
+                            independentista argentino.</p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F88.BMP"
+                        data-nombre="Uniforme del Coronel Martín Hernández">
+                        <h2>Uniforme del Coronel D. Martín Hernández</h2>
+
+                        <p>Esta pieza representa el uniforme perteneciente al Coronel D. Martín Hernández, oficial del
+                            Ejército que encarna el modelo de la oficialidad militar del siglo XIX en el Río de la
+                            Plata. Su indumentaria refleja los códigos de disciplina, jerarquía y representación propios
+                            de los cuerpos militares de la época.</p>
+
+                        <p>El uniforme de coronel se distinguía por sus elementos de rango claramente visibles, como
+                            charreteras, bordados, botones metálicos y distintivos de mando. Estos detalles no solo
+                            cumplían una función estética, sino también identificatoria dentro del orden jerárquico del
+                            ejército.</p>
+
+                        <p>Durante el siglo XIX, el uniforme militar en el contexto argentino y sudamericano estuvo
+                            fuertemente influenciado por los modelos europeos, especialmente franceses y españoles,
+                            adoptando cortes, colores y ornamentos que buscaban reflejar modernidad y
+                            profesionalización.</p>
+
+                        <p>El rol del coronel implicaba el mando de unidades completas, generalmente regimientos, lo que
+                            requería no solo capacidad táctica, sino también liderazgo administrativo y organizativo
+                            dentro de la estructura militar.</p>
+
+                        <p>Este tipo de uniforme también era utilizado en actos ceremoniales, desfiles y presentaciones
+                            oficiales, donde el aspecto visual del uniforme reforzaba la autoridad del oficial y la
+                            presencia institucional del ejército.</p>
+
+                        <p>La figura del Coronel Martín Hernández se inscribe dentro de la tradición de oficiales que
+                            contribuyeron a la organización y consolidación de las fuerzas armadas en el período de
+                            formación del Estado nacional.</p>
+
+                        <p>En conjunto, esta pieza permite comprender cómo el uniforme militar funcionaba como símbolo
+                            de identidad, rango y pertenencia dentro del ejército, además de ser un reflejo del contexto
+                            histórico en el que fue utilizado.</p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F89.BMP"
+                        data-nombre="Copas y platos de Julio A. Roca">
+                        <h2>Copas y platos pertenecientes al General Julio A. Roca</h2>
+
+                        <p>Este conjunto de copas y platos perteneció al General, una de las figuras centrales de la
+                            organización del Estado argentino a fines del siglo XIX y comienzos del XX.</p>
+
+                        <p>Las piezas forman parte del universo cotidiano y protocolar de la élite política y militar de
+                            la época, donde los objetos de mesa cumplían una función social importante en recepciones
+                            oficiales, banquetes diplomáticos y encuentros de carácter institucional.</p>
+
+                        <p>Durante el período en que Roca ocupó la presidencia de la Nación (1880–1886 y 1898–1904), la
+                            vida política argentina estuvo marcada por la consolidación del Estado moderno, el
+                            crecimiento económico y la expansión de las relaciones diplomáticas, lo que dio lugar a una
+                            intensa actividad social en la que este tipo de vajilla era utilizada.</p>
+
+                        <p>Las piezas de porcelana, cristal o cerámica fina eran habituales en residencias oficiales y
+                            privadas de la élite dirigente, reflejando tanto el poder económico como el protocolo
+                            asociado a la representación del Estado.</p>
+
+                        <p>Más allá de su función utilitaria, estos objetos constituyen testimonios materiales de la
+                            cultura política de la época, donde la etiqueta, la ceremonia y la vida social formaban
+                            parte del ejercicio del poder.</p>
+
+                        <p>La figura de Julio A. Roca se vincula directamente con la consolidación institucional de la
+                            Argentina moderna, por lo que los objetos asociados a su vida cotidiana adquieren valor
+                            histórico como parte del contexto en el que se desarrollaron sus gobiernos.</p>
+
+                        <p>En conjunto, este tipo de piezas permite comprender aspectos menos visibles de la historia
+                            política, vinculados a la vida privada y social de los dirigentes que participaron en la
+                            construcción del Estado nacional.</p>
+                    </div>
+
+                    <div class="pagina" data-imagen="../../../CLIPS/Z320F90.BMP"
+                        data-nombre="Antigua vajilla del Regimiento">
+                        <h2>Antigua vajilla del Regimiento</h2>
+
+                        <p>Esta antigua vajilla perteneciente al Regimiento de Granaderos a Caballo forma parte del
+                            patrimonio histórico conservado en el museo. El conjunto incluye una serie de piezas
+                            diseñadas para el servicio de mesa de aproximadamente 75 personas, lo que refleja la
+                            organización y el nivel de formalidad de la vida institucional del cuerpo.</p>
+
+                        <p>El Regimiento de Granaderos a Caballo, creado en 1812 por el General, no solo fue una unidad
+                            militar de combate, sino también una institución con una fuerte estructura interna, donde la
+                            disciplina y el orden se extendían a todos los aspectos de la vida cotidiana de sus
+                            integrantes.</p>
+
+                        <p>La existencia de vajilla reglamentaria o institucional en cuerpos militares responde a la
+                            necesidad de organizar la alimentación de tropas y oficiales, especialmente en contextos de
+                            campaña o en cuarteles, donde la logística era un elemento clave para la eficiencia del
+                            regimiento.</p>
+
+                        <p>Este tipo de conjuntos solía incluir platos, tazas, fuentes y otros elementos de servicio,
+                            fabricados en materiales resistentes y estandarizados, con el objetivo de facilitar su uso
+                            colectivo y su mantenimiento.</p>
+
+                        <p>En el caso de los Granaderos, estas piezas también adquieren un valor simbólico, ya que
+                            reflejan la continuidad institucional del regimiento a lo largo del tiempo, desde su
+                            creación en el siglo XIX hasta su función ceremonial y representativa en la actualidad.</p>
+
+                        <p>La organización para 75 personas indica una planificación estructurada de la vida interna del
+                            cuerpo, acorde con los principios de disciplina y orden establecidos por San Martín en la
+                            formación del regimiento.</p>
+
+                        <p>En conjunto, esta vajilla constituye un testimonio material de la vida cotidiana militar,
+                            complementando la historia operativa del regimiento con aspectos logísticos y domésticos que
+                            también forman parte de su patrimonio histórico.</p>
+                    </div>
+
+                </div>
+
+                <div class="imagen-cuadro">
+                    <img id="imagenDerecha" src="../../../CLIPS/320F8.BMP" alt="Imagen Recreación">
+                </div>
             </div>
         </div>
+
     </div>
 
-</div>
+    <script>
 
-<script>
+        let pagina = 0;
 
-    let pagina = 0;
+        const paginas = document.querySelectorAll(".pagina");
+        const imagenDerecha = document.getElementById("imagenDerecha");
 
-    const paginas = document.querySelectorAll(".pagina");
-    const imagenDerecha = document.getElementById("imagenDerecha");
+        const btnAnterior = document.getElementById("btnAnterior");
+        const btnSiguiente = document.getElementById("btnSiguiente");
 
-    const btnAnterior = document.getElementById("btnAnterior");
-    const btnSiguiente = document.getElementById("btnSiguiente");
+        function mostrarPagina(i) {
 
-    function mostrarPagina(i) {
+            paginas.forEach(p => p.classList.remove("activa"));
 
-        paginas.forEach(p => p.classList.remove("activa"));
+            paginas[i].classList.add("activa");
 
-        paginas[i].classList.add("activa");
+            if (imagenDerecha) {
+                imagenDerecha.src = paginas[i].dataset.imagen;
+            }
 
-        if(imagenDerecha){
-            imagenDerecha.src = paginas[i].dataset.imagen;
+            document.title = paginas[i].dataset.nombre;
+
+            const titulo = paginas[i].querySelector('h2');
+
+            if (titulo) {
+                titulo.textContent = paginas[i].dataset.nombre;
+            }
+
+            pagina = i;
+
+            /* BOTON ANTERIOR */
+
+            if (i === 0) {
+
+                btnAnterior.style.opacity = "0.3";
+                btnAnterior.style.pointerEvents = "none";
+
+            } else {
+
+                btnAnterior.style.opacity = "1";
+                btnAnterior.style.pointerEvents = "auto";
+            }
+
+            /* BOTON SIGUIENTE */
+
+            if (i === paginas.length - 1) {
+
+                btnSiguiente.style.opacity = "0.3";
+                btnSiguiente.style.pointerEvents = "none";
+
+            } else {
+
+                btnSiguiente.style.opacity = "1";
+                btnSiguiente.style.pointerEvents = "auto";
+            }
         }
 
-        document.title = paginas[i].dataset.nombre;
+        function siguiente() {
 
-        const titulo = paginas[i].querySelector('h2');
+            if (pagina < paginas.length - 1) {
 
-        if(titulo){
-            titulo.textContent = paginas[i].dataset.nombre;
+                pagina++;
+
+                mostrarPagina(pagina);
+            }
         }
 
-        pagina = i;
+        function anterior() {
 
-        /* BOTON ANTERIOR */
+            if (pagina > 0) {
 
-        if(i === 0){
+                pagina--;
 
-            btnAnterior.style.opacity = "0.3";
-            btnAnterior.style.pointerEvents = "none";
-
-        } else {
-
-            btnAnterior.style.opacity = "1";
-            btnAnterior.style.pointerEvents = "auto";
+                mostrarPagina(pagina);
+            }
         }
 
-        /* BOTON SIGUIENTE */
+        /* INICIO */
+        mostrarPagina(pagina);
 
-        if(i === paginas.length - 1){
-
-            btnSiguiente.style.opacity = "0.3";
-            btnSiguiente.style.pointerEvents = "none";
-
-        } else {
-
-            btnSiguiente.style.opacity = "1";
-            btnSiguiente.style.pointerEvents = "auto";
-        }
-    }
-
-    function siguiente() {
-
-        if (pagina < paginas.length - 1) {
-
-            pagina++;
-
-            mostrarPagina(pagina);
-        }
-    }
-
-    function anterior() {
-
-        if (pagina > 0) {
-
-            pagina--;
-
-            mostrarPagina(pagina);
-        }
-    }
-
-    /* INICIO */
-    mostrarPagina(pagina);
-
-</script>
+    </script>
 
 </body>
+
 </html>
