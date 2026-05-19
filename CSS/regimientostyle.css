@@ -1,0 +1,328 @@
+/* =========================
+   BODY
+========================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background: url("../Fondos/Mil.jpg") center/cover no-repeat;
+}
+
+/* OSCURECER FONDO */
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    z-index: -1;
+}
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.contenedor {
+    flex: 1;
+    display: flex;
+}
+
+/* =========================
+   LADO IZQUIERDO
+========================= */
+
+.lado {
+    width: 120px;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    font-size: 24px;
+}
+
+.lado button {
+    width: 80px;
+    padding: 6px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #3b82f6;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lado button:hover {
+    background: #2563eb;
+}
+
+/* =========================
+   CENTRO
+========================= */
+
+.centro {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.contenido {
+    max-width: 800px;
+    max-height: 80vh;
+
+    overflow-y: auto;
+
+    padding: 20px;
+    padding-right: 10px;
+
+    text-align: center;
+
+    border-radius: 12px;
+    border: 1px solid rgba(0, 224, 255, 0.2);
+
+    background: rgba(0, 0, 0, 0.5);
+
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.3);
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+h1,
+h2,
+h3 {
+    color: #00e0ff;
+}
+
+p {
+    margin-bottom: 15px;
+
+    line-height: 1.5;
+    text-align: justify;
+
+    color: white;
+}
+
+/* =========================
+   PAGINAS
+========================= */
+
+.pagina {
+    display: none;
+    animation: fade 0.5s;
+}
+
+.pagina.activa {
+    display: block;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* =========================
+   FLECHAS
+========================= */
+
+.flechas {
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 18px;
+}
+
+.flechas span {
+    padding: 5px 10px;
+
+    background: rgba(0, 224, 255, 0.2);
+
+    border-radius: 8px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.flechas span:hover {
+    background: rgba(0, 224, 255, 0.5);
+}
+
+/* =========================
+   CONTADOR
+========================= */
+
+.contador {
+    margin-top: 10px;
+
+    font-size: 14px;
+    color: #00e0ff;
+}
+
+/* =========================
+   BOTONES GENERALES
+========================= */
+
+button {
+    margin-top: 15px;
+    padding: 6px 12px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: #00e0ff;
+    color: #000;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00b8cc;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    padding: 10px 0;
+
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* OPCIONES DEL FOOTER */
+
+footer .img-opcion,
+footer .media-opcion {
+    cursor: pointer;
+    text-align: center;
+}
+
+/* IMAGENES Y VIDEOS */
+
+footer .img-opcion img,
+footer .media-opcion img,
+footer .media-opcion video,
+footer video {
+    width: 60px;
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+    border: 2px solid transparent;
+
+    transition: transform 0.5s, border 0.3s;
+}
+
+/* HOVER */
+
+footer .img-opcion:hover img,
+footer .media-opcion:hover img,
+footer .media-opcion:hover video,
+footer video:hover {
+    transform: scale(1.2);
+}
+
+/* ACTIVO */
+
+footer .img-opcion.activa img,
+footer .media-opcion.activa img,
+footer .media-opcion.activa video {
+    border: 2px solid #00e0ff;
+}
+
+/* TEXTO FOOTER */
+
+footer .media-opcion p {
+    margin-top: 4px;
+
+    font-size: 12px;
+    color: #00e0ff;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 2000;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img,
+.modal-content video,
+.modal video {
+    width: 100%;
+    height: auto;
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 20px;
+    right: 30px;
+
+    font-size: 30px;
+    color: white;
+
+    cursor: pointer;
+}

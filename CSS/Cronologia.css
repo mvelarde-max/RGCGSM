@@ -1,0 +1,197 @@
+/* -------------------- BODY -------------------- */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: url("../Fondos/RGCGSM.jpg") center/cover no-repeat fixed;
+    font-family: Arial, sans-serif;
+    color: white;
+    overflow: hidden; /* evita desplazamiento */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+
+/* -------------------- CONTENEDOR -------------------- */
+.contenedor {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* -------------------- LADO IZQUIERDO -------------------- */
+.lado {
+    width: 12%;
+    min-width: 120px;
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: clamp(20px, 2vw, 32px);
+    color: white;
+
+    animation: brillo 3s ease-in-out infinite;
+}
+
+/* brillo */
+@keyframes brillo {
+    0% {
+        opacity: 0.4;
+        text-shadow: 0 0 5px white;
+    }
+
+    50% {
+        opacity: 1;
+        text-shadow:
+            0 0 10px white,
+            0 0 20px white,
+            0 0 40px white;
+    }
+
+    100% {
+        opacity: 0.4;
+        text-shadow: 0 0 5px white;
+    }
+}
+
+.lado button {
+    width: 80%;
+    padding: 0.6em;
+    border: none;
+    border-radius: 5px;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+    font-size: clamp(12px, 1vw, 16px);
+    transition: 0.3s;
+}
+
+.lado button:hover {
+    background: #2563eb;
+}
+
+/* -------------------- CENTRO -------------------- */
+.centro {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2vh 2vw;
+    overflow: hidden;
+}
+
+/* -------------------- TIMELINE -------------------- */
+.timeline-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+
+/* -------------------- FILAS -------------------- */
+.fila {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+}
+
+.fila.izquierda {
+    flex-direction: row-reverse;
+}
+
+/* -------------------- EVENTOS -------------------- */
+.evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 10vw;
+    min-width: 110px;
+}
+
+.evento a {
+    text-decoration: none;
+}
+
+.evento img {
+    width: clamp(80px, 9vw, 150px);
+    height: clamp(80px, 9vw, 150px);
+
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #00e0ff;
+
+    box-shadow: 0 0 20px rgba(0,224,255,0.7);
+    transition: transform 0.5s;
+}
+
+.evento:hover img {
+    transform: scale(1.12) rotateY(360deg);
+}
+
+.evento p {
+    margin-top: 1vh;
+    font-size: clamp(11px, 0.9vw, 16px);
+    line-height: 1.3;
+    color: white;
+    text-shadow: 0 0 6px #00e0ff;
+    transition: 0.3s;
+}
+
+.evento:hover p {
+    color: #00e0ff;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media screen and (max-width: 900px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .lado {
+        width: 100%;
+        min-width: unset;
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .lado p {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+
+    .centro {
+        overflow: visible;
+        padding: 20px;
+    }
+
+    .fila {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .evento {
+        width: auto;
+    }
+}

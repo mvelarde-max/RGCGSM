@@ -1,0 +1,225 @@
+/* -------------------- BODY -------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../Fondos/padredelapatria.jfif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* Capa oscura encima del fondo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* -------------------- CONTENEDOR -------------------- */
+.contenedor {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* -------------------- LADO IZQUIERDO -------------------- */
+.lado {
+    width: 120px;
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Texto vertical */
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 22px;
+    text-align: center;
+    margin: 0;
+}
+
+/* Botones */
+.lado button {
+    width: 80px;
+    padding: 8px;
+
+    background: #3b82f6;
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.lado button:hover {
+    background: #2563eb;
+}
+
+/* -------------------- CENTRO -------------------- */
+.centro {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* -------------------- LAYOUT SAN MARTIN -------------------- */
+.sanmartin-layout {
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+}
+
+/* -------------------- FILAS -------------------- */
+.fila {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    width: 100%;
+}
+
+/* -------------------- EVENTOS -------------------- */
+.evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-decoration: none;
+
+    transition: transform 0.3s;
+}
+
+.evento:hover {
+    transform: scale(1.08);
+}
+
+/* Imágenes */
+.evento img {
+    width: 95px;
+    height: 95px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 3px solid #00e0ff;
+
+    box-shadow: 0 0 15px rgba(0,224,255,0.6);
+
+    transition: transform 0.4s;
+}
+
+.evento:hover img {
+    transform: rotateY(360deg);
+}
+
+/* Imagen central más grande */
+.fila-centro .evento img {
+    width: 120px;
+    height: 120px;
+}
+
+/* Textos */
+.evento p {
+    margin-top: 10px;
+
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+
+    text-align: center;
+    text-shadow: 2px 2px 5px black;
+}
+
+/* -------------------- TEXTO GENERAL -------------------- */
+p {
+    line-height: 1.4;
+    margin-bottom: 15px;
+
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 768px) {
+
+    .lado {
+        width: 90px;
+    }
+
+    .lado p {
+        font-size: 18px;
+    }
+
+    .fila {
+        gap: 35px;
+    }
+
+    .evento img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .fila-centro .evento img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .evento p {
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 700px) {
+
+    .sanmartin-layout {
+        gap: 12px;
+    }
+
+    .fila {
+        gap: 45px;
+    }
+
+    .evento img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .fila-centro .evento img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .evento p {
+        font-size: 13px;
+        margin-top: 6px;
+    }
+}

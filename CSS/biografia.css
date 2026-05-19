@@ -1,0 +1,222 @@
+/* -------------------- BODY -------------------- */
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+
+    font-family: Arial, sans-serif;
+    color: white;
+
+    background: url("../Fondos/RGCGSM.jpg") center/cover no-repeat fixed;
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    z-index: -1;
+}
+
+/* -------------------- CONTENEDOR -------------------- */
+
+.contenedor {
+    display: flex;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+/* -------------------- LADO -------------------- */
+
+.lado {
+    width: 12%;
+    min-width: 110px;
+
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2vh;
+}
+
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+
+    font-size: clamp(18px, 2vw, 28px);
+    text-align: center;
+}
+
+.lado button {
+    width: 75%;
+    padding: 0.6em;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #3b82f6;
+    color: white;
+
+    font-size: clamp(11px, 1vw, 15px);
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lado button:hover {
+    background: #2563eb;
+}
+
+/* -------------------- CENTRO -------------------- */
+
+.centro {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2vh 2vw;
+
+    overflow: hidden;
+}
+
+/* -------------------- BIOGRAFÍAS -------------------- */
+
+.biografia-contenedor {
+    width: 100%;
+    max-width: 1400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5vh;
+}
+
+/* FILAS */
+
+.biografia-contenedor .fila {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 3vw;
+
+    flex-wrap: nowrap;
+}
+
+/* PERSONAJES */
+
+.biografia-contenedor .personaje {
+    flex: 1;
+
+    max-width: 180px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #00e0ff;
+
+    transition: 0.3s;
+}
+
+/* IMÁGENES */
+
+.biografia-contenedor .personaje img {
+    width: clamp(80px, 9vw, 150px);
+    height: clamp(80px, 9vw, 150px);
+
+    object-fit: cover;
+    border-radius: 12px;
+
+    box-shadow: 0 0 12px rgba(0,224,255,0.7);
+
+    transition: transform 0.5s;
+}
+
+/* TEXTO */
+
+.biografia-contenedor .personaje p {
+    margin-top: 1vh;
+
+    font-size: clamp(11px, 1vw, 18px);
+    font-weight: bold;
+
+    text-align: center;
+}
+
+/* HOVER */
+
+.biografia-contenedor .personaje:hover {
+    transform: scale(1.08);
+    text-shadow: 0 0 12px #00e0ff;
+}
+
+.biografia-contenedor .personaje:hover img {
+    transform: rotateY(360deg) scale(1.15);
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+@media screen and (max-width: 900px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .lado {
+        width: 100%;
+        min-width: unset;
+
+        flex-direction: row;
+
+        padding: 10px;
+    }
+
+    .lado p {
+        writing-mode: horizontal-tb;
+        transform: none;
+    }
+
+    .centro {
+        overflow: visible;
+        padding: 20px;
+    }
+
+    .biografia-contenedor .fila {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .biografia-contenedor .personaje {
+        max-width: 120px;
+    }
+
+    .biografia-contenedor .personaje img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .biografia-contenedor .personaje p {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,270 @@
+/* =========================
+   FONDO GENERAL
+========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("../Fondos/Mil.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+/* OSCURECER FONDO */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+}
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+
+.contenedor {
+    display: flex;
+    height: 100vh;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* LADO IZQUIERDO */
+.lado {
+    width: 120px;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* antes 15px */
+    padding: 10px 0;
+    
+}
+
+.lado p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 28px;   /* antes 24px */
+    letter-spacing: 2px;
+    margin: 0;
+color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff;
+    animation: brilloCronologia 3s ease-in-out infinite;
+}
+
+@keyframes brilloCronologia {
+    0% {
+        opacity: 0.4;
+        text-shadow: 0 0 3px #fff;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 10px #fff, 0 0 25px #fff, 0 0 35px #fff;
+    }
+    100% {
+        opacity: 0.4;
+        text-shadow: 0 0 3px #fff;
+    }
+}
+
+.lado button {
+    width: 80px;
+    padding: 6px;
+    background: #3b82f6;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.lado button:hover {
+    background: #2563eb;
+}
+
+/* =========================
+   CENTRO
+========================= */
+
+/* 🔥 CENTRO MÁS ARRIBA Y CON ESPACIO REAL DE SEGURIDAD */
+.centro {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 10px;     /* antes 30px → ahora más arriba */
+    padding-bottom: 140px; /* 🔥 CLAVE: espacio real para footer */
+}
+
+/* CUADRO DE CONTENIDO */
+.contenido {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,224,255,0.3);
+
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    margin-bottom: 80px; /* aire extra abajo */
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+p {
+    line-height: 1.5;
+    text-align: justify;
+}
+
+h2, h3 {
+    color: #00e0ff;
+}
+
+/* =========================
+   PÁGINAS (SCRIPT)
+========================= */
+
+.pagina {
+    display: none;
+    animation: fade 0.5s ease;
+}
+
+.pagina.activa {
+    display: block;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* CONTADOR */
+.contador {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #00e0ff;
+}
+
+/* BOTONES */
+button {
+    margin-top: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #00e0ff;
+    color: #000;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #00b8cc;
+}
+
+/* =========================
+   FLECHAS
+========================= */
+
+.flechas {
+    margin-top: 15px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flechas span {
+    padding: 5px 10px;
+    background: rgba(0, 224, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.flechas span:hover {
+    background: rgba(0, 224, 255, 0.5);
+}
+
+/* =========================
+   FOOTER MEDIA
+========================= */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.85);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1000;
+    flex-wrap: wrap;
+}
+
+.media-opcion {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.media-opcion video,
+.media-opcion img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.4s;
+}
+
+.media-opcion:hover video,
+.media-opcion:hover img {
+    transform: scale(1.2);
+}
+
+.media-opcion p {
+    color: #00e0ff;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* LINK */
+.media-link {
+    color: #00e0ff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content video,
+.modal-content img {
+    max-width: 90%;
+}
